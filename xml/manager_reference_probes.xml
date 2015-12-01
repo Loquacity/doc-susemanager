@@ -1,34 +1,34 @@
-<?xml version="1.0"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE appendix
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE appendix PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
 <!-- 
 @maintainer:
 Seems not much work, needs to be checked
 -->
-<appendix id="ap-probes-monitoring">
- <title>Probes</title><indexterm>
+<appendix xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ap-probes-monitoring">
+ <title>Probes</title>
+ <info/><indexterm>
  <primary>macros</primary>
  <secondary>list of probes</secondary></indexterm>
  <para>
   As described in <xref linkend="s1-sm-monitor"/>, monitoring-entitled
-  systems can have probes applied that constantly check their
-  health and full operability. This appendix lists the available probes
-  sorted by command group, such as Apache.
+  systems can have probes applied that constantly check their health and
+  full operability. This appendix lists the available probes sorted by
+  command group, such as Apache.
  </para>
  <para>
   Many probes that monitor internal system aspects (such as the Linux::Disk
   Usage probe) rather than external aspects (such as the Network
-  Services::SSH probe) require the installation of the &susemgr; monitoring
-  daemon (<filename>rhnmd</filename>). This requirement is noted in the
-  individual probe reference.
+  Services::SSH probe) require the installation of the &susemgr;
+  monitoring daemon (<filename>rhnmd</filename>). This requirement is noted
+  in the individual probe reference.
  </para>
  <para>
   Each probe has its own reference in this appendix that identifies required
@@ -45,7 +45,7 @@ Seems not much work, needs to be checked
    probe references.
   </para>
  </note>
- <sect1 id="s1-probes-guidelines">
+ <sect1 xml:id="s1-probes-guidelines">
   <title>Probe Guidelines</title><indexterm>
 
   <primary>package installation</primary>
@@ -63,9 +63,9 @@ Seems not much work, needs to be checked
     <listitem>
      <para>
       State of probes that cannot collect the metrics needed to determine
-      probe state. Probes in this state might be configured incorrectly. Most
-      (though not all) probes enter this state when exceeding their timeout
-      period.
+      probe state. Probes in this state might be configured incorrectly.
+      Most (though not all) probes enter this state when exceeding their
+      timeout period.
      </para>
     </listitem>
    </varlistentry>
@@ -73,9 +73,9 @@ Seems not much work, needs to be checked
     <term>Pending</term>
     <listitem>
      <para>
-      State of probes whose data has not been received by &susemgr;. It is
-      normal for new probes to be in this state. However, if all probes move
-      into this state, your monitoring infrastructure may be failing.
+      State of probes whose data has not been received by &susemgr;. It
+      is normal for new probes to be in this state. However, if all probes
+      move into this state, your monitoring infrastructure may be failing.
      </para>
     </listitem>
    </varlistentry>
@@ -118,24 +118,23 @@ Seems not much work, needs to be checked
 
   <important>
    <para>
-    Some probes have thresholds based on time. For such CRITICAL
-    and WARNING thresholds to work as intended, their values cannot exceed
-    the amount of time allotted to the timeout period. Otherwise an UNKNOWN
-    status is returned in all instances of extended latency, thereby
-    nullifying the thresholds. For this reason, it is strongly recommended
-    to ensure that timeout periods exceed all timed thresholds.
+    Some probes have thresholds based on time. For such CRITICAL and WARNING
+    thresholds to work as intended, their values cannot exceed the amount of
+    time allotted to the timeout period. Otherwise an UNKNOWN status is
+    returned in all instances of extended latency, thereby nullifying the
+    thresholds. For this reason, it is strongly recommended to ensure that
+    timeout periods exceed all timed thresholds.
    </para>
   </important>
 
   <para>
-   Run your probes without notifications for a time to
-   establish baseline performance for each of your systems. Although the
-   default values provided for probes may suit your needs, every
-   organization has a different environment that may require different
-   thresholds.
+   Run your probes without notifications for a time to establish baseline
+   performance for each of your systems. Although the default values
+   provided for probes may suit your needs, every organization has a
+   different environment that may require different thresholds.
   </para>
  </sect1>
- <sect1 id="s1-probes-apache">
+ <sect1 xml:id="s1-probes-apache">
   <title>Apache 1.3.x and 2.0.x</title><indexterm>
 
   <primary>account</primary>
@@ -154,7 +153,7 @@ Seems not much work, needs to be checked
    port to <literal>443</literal>.
   </para>
 
-  <sect2 id="s2-probes-apache-processes">
+  <sect2 xml:id="s2-probes-apache-processes">
    <title>Apache::Processes</title><indexterm>
    <primary>account</primary>
    <secondary>Processes</secondary></indexterm><indexterm>
@@ -164,19 +163,19 @@ Seems not much work, needs to be checked
     The Apache::Processes probe monitors the processes running on an Apache
     Web server and collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      Data Transferred Per Child: records data transfer information only
-      for individual child processes. A child process is created by another
+      Data Transferred Per Child: records data transfer information only for
+      individual child processes. A child process is created by another
       process (parent).
      </para>
     </listitem>
     <listitem>
      <para>
-      Data Transferred Per Slot: the cumulative amount of data
-      transferred by a child process that restarts. The number of slots is
-      configured in the <filename>httpd.conf</filename> file using the
+      Data Transferred Per Slot: the cumulative amount of data transferred
+      by a child process that restarts. The number of slots is configured in
+      the <filename>httpd.conf</filename> file using the
       <option>MaxRequestsPerChild</option> setting.
      </para>
     </listitem>
@@ -329,7 +328,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-apache-traffic">
+  <sect2 xml:id="s2-probes-apache-traffic">
    <title>Apache::Traffic</title><indexterm>
    <primary>account</primary>
    <secondary>Traffic</secondary></indexterm><indexterm>
@@ -339,11 +338,11 @@ Seems not much work, needs to be checked
     The Apache::Traffic probe monitors the requests on an Apache Web server
     and collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      Current Requests: the number of requests being processed by the
-      server at probe runtime.
+      Current Requests: the number of requests being processed by the server
+      at probe runtime.
      </para>
     </listitem>
     <listitem>
@@ -527,7 +526,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-apache-uptime">
+  <sect2 xml:id="s2-probes-apache-uptime">
    <title>Apache::Uptime</title><indexterm>
    <primary>account</primary>
    <secondary>Uptime</secondary></indexterm><indexterm>
@@ -641,7 +640,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
  </sect1>
- <sect1 id="s1-probes-weblogic">
+ <sect1 xml:id="s1-probes-weblogic">
   <title>BEA WebLogic 6.x and higher</title><indexterm>
 
   <primary>package installation</primary>
@@ -662,10 +661,10 @@ Seems not much work, needs to be checked
   </para>
 
   <para>
-   To obtain this higher level of granularity, the <guimenu>BEA
-   Domain Admin Server</guimenu> parameter must be used to differentiate
-   between the administration server receiving SNMP queries and the managed
-   server undergoing the specified probe. If the host to be probed is the
+   To obtain this higher level of granularity, the <guimenu>BEA Domain Admin
+   Server</guimenu> parameter must be used to differentiate between the
+   administration server receiving SNMP queries and the managed server
+   undergoing the specified probe. If the host to be probed is the
    administration server, then the <guimenu>BEA Domain Admin
    Server</guimenu> parameter can be left blank, and both the SNMP queries
    and the probe will be sent to it only.
@@ -690,12 +689,13 @@ Seems not much work, needs to be checked
   </para>
 
   <para>
-   Refer to the documentation for your BEA server or information on the oracle
-   website for more details about BEA's community string naming conventions:
-   <ulink url="http://docs.oracle.com/cd/E13222_01/wls/docs81/snmpman/snmpagent.html#1072184"/>.
+   Refer to the documentation for your BEA server or information on the
+   oracle website for more details about BEA's community string naming
+   conventions:
+   <link xlink:href="http://docs.oracle.com/cd/E13222_01/wls/docs81/snmpman/snmpagent.html#1072184"/>.
   </para>
 
-  <sect2 id="s2-probes-weblogic-queue">
+  <sect2 xml:id="s2-probes-weblogic-queue">
    <title>BEA WebLogic::Execute Queue</title><indexterm>
    <primary>Apache</primary>
    <secondary>Execute Queue</secondary></indexterm><indexterm>
@@ -705,7 +705,7 @@ Seems not much work, needs to be checked
     The BEA WebLogic::Execute queue probe monitors the WebLogic execute
     queue and provides the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Idle Execute Threads: the number of execution threads in an idle
@@ -879,7 +879,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-weblogic-heap">
+  <sect2 xml:id="s2-probes-weblogic-heap">
    <title>BEA WebLogic::Heap Free</title><indexterm>
    <primary>Apache</primary>
    <secondary>Heap Free</secondary></indexterm><indexterm>
@@ -888,7 +888,7 @@ Seems not much work, needs to be checked
    <para>
     The BEA WebLogic::Heap Free probe collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Heap Free: the percentage of free heap space.
@@ -1019,7 +1019,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-weblogic-jdbc">
+  <sect2 xml:id="s2-probes-weblogic-jdbc">
    <title>BEA WebLogic::JDBC Connection Pool</title><indexterm>
    <primary>Apache</primary>
    <secondary>JDBC Connection Pool</secondary></indexterm><indexterm>
@@ -1030,7 +1030,7 @@ Seems not much work, needs to be checked
     Connection (JDBC) pool on a domain admin server only (no managed
     servers) and collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Connections: the number of connections to the JDBC.
@@ -1203,7 +1203,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-weblogic-state">
+  <sect2 xml:id="s2-probes-weblogic-state">
    <title>BEA WebLogic::Server State</title><indexterm>
    <primary>Apache</primary>
    <secondary>Server State</secondary></indexterm><indexterm>
@@ -1296,7 +1296,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-weblogic-servlet">
+  <sect2 xml:id="s2-probes-weblogic-servlet">
    <title>BEA WebLogic::Servlet</title><indexterm>
    <primary>Apache</primary>
    <secondary>Servlet</secondary></indexterm><indexterm>
@@ -1307,23 +1307,22 @@ Seems not much work, needs to be checked
     servlet deployed on a WebLogic server and collects the following
     metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      High Execution Time: the highest amount of time in milliseconds
-      that the servlet takes to execute since the system was started.
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      Low Execution Time: the lowest amount of time in milliseconds that
+      High Execution Time: the highest amount of time in milliseconds that
       the servlet takes to execute since the system was started.
      </para>
     </listitem>
     <listitem>
      <para>
-      Execution Time Moving Average: a moving average of the execution
-      time.
+      Low Execution Time: the lowest amount of time in milliseconds that the
+      servlet takes to execute since the system was started.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Execution Time Moving Average: a moving average of the execution time.
      </para>
     </listitem>
     <listitem>
@@ -1333,14 +1332,14 @@ Seems not much work, needs to be checked
     </listitem>
     <listitem>
      <para>
-      Reload Rate: the number of times the specified servlet is reloaded
-      per minute.
+      Reload Rate: the number of times the specified servlet is reloaded per
+      minute.
      </para>
     </listitem>
     <listitem>
      <para>
-      Invocation Rate: the number of times the specified servlet is
-      invoked per minute.
+      Invocation Rate: the number of times the specified servlet is invoked
+      per minute.
      </para>
     </listitem>
    </itemizedlist>
@@ -1478,7 +1477,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
  </sect1>
- <sect1 id="s1-probes-general">
+ <sect1 xml:id="s1-probes-general">
   <title>General</title><indexterm>
 
   <primary>General</primary>
@@ -1497,7 +1496,7 @@ Seems not much work, needs to be checked
    nullifying the thresholds.
   </para>
 
-  <sect2 id="s2-probes-general-remote-program">
+  <sect2 xml:id="s2-probes-general-remote-program">
    <title>General::Remote Program</title><indexterm>
    <primary>General</primary>
    <secondary>Remote Program</secondary></indexterm><indexterm>
@@ -1594,7 +1593,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-general-remote-data">
+  <sect2 xml:id="s2-probes-general-remote-data">
    <title>General::Remote Program with Data</title><indexterm>
    <primary>General</primary>
    <secondary>Remote Program with Data</secondary></indexterm><indexterm>
@@ -1606,7 +1605,7 @@ Seems not much work, needs to be checked
     string. To use this probe, you must include XML code in the body of your
     script. This probe supports the following XML tags:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       <literal>perldata</literal> <literal>perldata</literal>
@@ -1729,7 +1728,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-general-snmp-check">
+  <sect2 xml:id="s2-probes-general-snmp-check">
    <title>General::SNMP Check</title><indexterm>
    <primary>General</primary>
    <secondary>SNMP Check</secondary></indexterm><indexterm>
@@ -1741,7 +1740,7 @@ Seems not much work, needs to be checked
     <literal>1.3.6.1.2.1.1.1.0</literal>) and a threshold associated with
     the return value. It collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Remote Service Latency: the time in seconds for the SNMP server to
@@ -1750,9 +1749,9 @@ Seems not much work, needs to be checked
     </listitem>
    </itemizedlist>
    <para>
-    <emphasis>Requirements:</emphasis> SNMP must be running on the
-    monitored system to perform this probe. Only integers can be used for
-    the threshold values.
+    <emphasis>Requirements:</emphasis> SNMP must be running on the monitored
+    system to perform this probe. Only integers can be used for the
+    threshold values.
    </para>
    <para>
     This probe's transport protocol is User Datagram Protocol (UDP).
@@ -1878,7 +1877,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-general-tcp-check">
+  <sect2 xml:id="s2-probes-general-tcp-check">
    <title>General::TCP Check</title><indexterm>
    <primary>General</primary>
    <secondary>TCP Check</secondary></indexterm><indexterm>
@@ -1888,7 +1887,7 @@ Seems not much work, needs to be checked
     The General::TCP Check probe verifies your TCP server can connect to a
     system via the specified port number. It collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Remote Service Latency: the time it takes in seconds for the TCP
@@ -1990,7 +1989,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-general-udp-check">
+  <sect2 xml:id="s2-probes-general-udp-check">
    <title>General::UDP Check</title><indexterm>
    <primary>General</primary>
    <secondary>UDP Check</secondary></indexterm><indexterm>
@@ -2001,7 +2000,7 @@ Seems not much work, needs to be checked
     can connect to a system via the specified port number. It collects the
     following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Remote Service Latency: the time in seconds the UDP server takes to
@@ -2106,7 +2105,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-general-uptime-snmp">
+  <sect2 xml:id="s2-probes-general-uptime-snmp">
    <title>General::Uptime (SNMP)</title><indexterm>
    <primary>General</primary>
    <secondary>Uptime (SNMP)</secondary></indexterm><indexterm>
@@ -2114,14 +2113,12 @@ Seems not much work, needs to be checked
    <secondary>Uptime (SNMP)</secondary></indexterm>
    <para>
     The General::Uptime (SNMP) probe records the time since the device was
-    last started.
-    It uses the SNMP object identifier (OID) to obtain this value. The only
-    error status it will return is UNKNOWN.
+    last started. It uses the SNMP object identifier (OID) to obtain this
+    value. The only error status it will return is UNKNOWN.
    </para>
    <para>
-    <emphasis>Requirements:</emphasis> SNMP must be running on the
-    monitored system and access to the OID must be enabled to run this
-    probe.
+    <emphasis>Requirements:</emphasis> SNMP must be running on the monitored
+    system and access to the OID must be enabled to run this probe.
    </para>
    <para>
     This probe's transport protocol is User Datagram Protocol (UDP).
@@ -2197,7 +2194,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
  </sect1>
- <sect1 id="s1-probes-linux">
+ <sect1 xml:id="s1-probes-linux">
   <title>Linux</title><indexterm>
 
   <primary>CPU Usage</primary>
@@ -2220,7 +2217,7 @@ Seems not much work, needs to be checked
    <filename>rhnmd</filename> daemon to be running on the monitored system.
   </para>
 
-  <sect2 id="s2-probes-linux-cpu-usage">
+  <sect2 xml:id="s2-probes-linux-cpu-usage">
    <title>Linux::CPU Usage</title><indexterm>
    <primary>Linux</primary>
    <secondary>CPU Usage</secondary></indexterm><indexterm>
@@ -2230,7 +2227,7 @@ Seems not much work, needs to be checked
     The Linux::CPU Usage probe monitors the CPU utilization on a system and
     collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       CPU Percent Used: the five-second average of the percentage of CPU
@@ -2297,7 +2294,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-linux-disk-io">
+  <sect2 xml:id="s2-probes-linux-disk-io">
    <title>Linux::Disk IO Throughput</title><indexterm>
    <primary>Linux</primary>
    <secondary>Disk IO Throughput</secondary></indexterm><indexterm>
@@ -2307,7 +2304,7 @@ Seems not much work, needs to be checked
     The Linux::Disk IO Throughput probe monitors a given disk and collects
     the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Read Rate: kilobytes read per second.
@@ -2461,7 +2458,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-linux-disk-usage">
+  <sect2 xml:id="s2-probes-linux-disk-usage">
    <title>Linux::Disk Usage</title><indexterm>
    <primary>Linux</primary>
    <secondary>Disk Usage</secondary></indexterm><indexterm>
@@ -2471,11 +2468,10 @@ Seems not much work, needs to be checked
     The Linux::Disk Usage probe monitors the disk space on a specific file
     system and collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      File System Used: the percentage of the file system currently in
-      use.
+      File System Used: the percentage of the file system currently in use.
      </para>
     </listitem>
     <listitem>
@@ -2602,7 +2598,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-linux-inodes">
+  <sect2 xml:id="s2-probes-linux-inodes">
    <title>Linux::Inodes</title><indexterm>
    <primary>Linux</primary>
    <secondary>Inodes</secondary></indexterm><indexterm>
@@ -2612,7 +2608,7 @@ Seems not much work, needs to be checked
     The Linux::Inodes probe monitors the specified file system and collects
     the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Inodes: the percentage of inodes currently in use.
@@ -2696,7 +2692,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-linux-interface">
+  <sect2 xml:id="s2-probes-linux-interface">
    <title>Linux::Interface Traffic</title><indexterm>
    <primary>Linux</primary>
    <secondary>Interface Traffic</secondary></indexterm><indexterm>
@@ -2707,11 +2703,11 @@ Seems not much work, needs to be checked
     and out of the specified interface (such as eth0) and collects the
     following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      Input Rate: the traffic in bytes per second going into the
-      specified interface.
+      Input Rate: the traffic in bytes per second going into the specified
+      interface.
      </para>
     </listitem>
     <listitem>
@@ -2850,7 +2846,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-linux-load">
+  <sect2 xml:id="s2-probes-linux-load">
    <title>Linux::Load</title><indexterm>
    <primary>Linux</primary>
    <secondary>Load</secondary></indexterm><indexterm>
@@ -2860,7 +2856,7 @@ Seems not much work, needs to be checked
     The Linux::Load probe monitors the CPU of a system and collects the
     following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Load: the average load on the system CPU over various periods.
@@ -2966,7 +2962,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-linux-memory-usage">
+  <sect2 xml:id="s2-probes-linux-memory-usage">
    <title>Linux::Memory Usage</title><indexterm>
    <primary>Linux</primary>
    <secondary>Memory Usage</secondary></indexterm><indexterm>
@@ -2976,11 +2972,11 @@ Seems not much work, needs to be checked
     The Linux::Memory Usage probe monitors the memory on a system and
     collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      RAM Free: the amount of free random access memory (RAM) in
-      megabytes on a system.
+      RAM Free: the amount of free random access memory (RAM) in megabytes
+      on a system.
      </para>
     </listitem>
    </itemizedlist>
@@ -3062,7 +3058,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-linux-process-state">
+  <sect2 xml:id="s2-probes-linux-process-state">
    <title>Linux::Process Counts by State</title><indexterm>
    <primary>Linux</primary>
    <secondary>Process Counts by State</secondary></indexterm><indexterm>
@@ -3072,7 +3068,7 @@ Seems not much work, needs to be checked
     The Linux::Process Counts by State probe identifies the number of
     processes in the following states:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Blocked: a process that has been switched to the waiting queue and
@@ -3241,7 +3237,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-linux-process-total">
+  <sect2 xml:id="s2-probes-linux-process-total">
    <title>Linux::Process Count Total</title><indexterm>
    <primary>Linux</primary>
    <secondary>Process Count Total</secondary></indexterm><indexterm>
@@ -3251,7 +3247,7 @@ Seems not much work, needs to be checked
     The Linux::Process Count Total probe monitors a system and collects the
     following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Process Count — The total number of processes currently running on
@@ -3318,7 +3314,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-linux-process-health">
+  <sect2 xml:id="s2-probes-linux-process-health">
    <title>Linux::Process Health</title><indexterm>
    <primary>Linux</primary>
    <secondary>Process Health</secondary></indexterm><indexterm>
@@ -3328,11 +3324,11 @@ Seems not much work, needs to be checked
     The Linux::Process Health probe monitors user-specified processes and
     collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      CPU Usage: the CPU usage rate for a given process in milliseconds
-      per second. This metric reports the <literal>time</literal> column of
+      CPU Usage: the CPU usage rate for a given process in milliseconds per
+      second. This metric reports the <literal>time</literal> column of
       <command>ps</command> output, which is the cumulative CPU time used by
       the process. This makes the metric independent of probe interval,
       allows sane thresholds to be set, and generates usable graphs (i.e. a
@@ -3341,17 +3337,17 @@ Seems not much work, needs to be checked
     </listitem>
     <listitem>
      <para>
-      Child Process Groups: the number of child processes spawned from
-      the specified parent process. A child process inherits most of its
+      Child Process Groups: the number of child processes spawned from the
+      specified parent process. A child process inherits most of its
       attributes, such as open files, from its parent.
      </para>
     </listitem>
     <listitem>
      <para>
-      Threads: the number of running threads for a given process. A
-      thread is the smallest unit of CPU utilization and consists of a
-      program counter, a register set, and a stack space. A thread is also
-      called a lightweight process.
+      Threads: the number of running threads for a given process. A thread
+      is the smallest unit of CPU utilization and consists of a program
+      counter, a register set, and a stack space. A thread is also called a
+      lightweight process.
      </para>
     </listitem>
     <listitem>
@@ -3362,9 +3358,9 @@ Seems not much work, needs to be checked
     </listitem>
     <listitem>
      <para>
-      Virtual Memory Used: the amount of virtual memory in kilobytes used
-      by the specified process or the size of the process in real memory
-      plus swap.
+      Virtual Memory Used: the amount of virtual memory in kilobytes used by
+      the specified process or the size of the process in real memory plus
+      swap.
       <remark>taroth 2011-03-14: remark by bwiedemann: might be
        inaccurate  because mmap'ed libraries could also count into virtual
        memory</remark>
@@ -3537,7 +3533,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-linux-process-running">
+  <sect2 xml:id="s2-probes-linux-process-running">
    <title>Linux::Process Running</title><indexterm>
    <primary>Linux</primary>
    <secondary>Process Running</secondary></indexterm><indexterm>
@@ -3546,17 +3542,17 @@ Seems not much work, needs to be checked
    <para>
     The Linux::Process running probe verifies that the specified process is
     functioning properly. It counts either processes or process groups,
-    depending on whether the <guimenu>Count process groups</guimenu>
-    check box is selected.
+    depending on whether the <guimenu>Count process groups</guimenu> check
+    box is selected.
    </para>
    <para>
     By default, the check box is selected, thereby indicating that the probe
-    should count the number of process group leaders
-    independent of the number of children. This allows you, for example, to
-    verify that two instances of the Apache Web server are running
-    regardless of the (dynamic) number of child processes. If it is not
-    selected, the probe conducts a straightforward count of the number of
-    processes (children and leaders) matching the specified process.
+    should count the number of process group leaders independent of the
+    number of children. This allows you, for example, to verify that two
+    instances of the Apache Web server are running regardless of the
+    (dynamic) number of child processes. If it is not selected, the probe
+    conducts a straightforward count of the number of processes (children
+    and leaders) matching the specified process.
    </para>
    <para>
     Specify the process by its command name or process ID. (PID). Entering a
@@ -3656,7 +3652,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-linux-swap-usage">
+  <sect2 xml:id="s2-probes-linux-swap-usage">
    <title>Linux::Swap Usage</title><indexterm>
    <primary>Linux</primary>
    <secondary>Swap Usage</secondary></indexterm><indexterm>
@@ -3666,7 +3662,7 @@ Seems not much work, needs to be checked
     The Linux::Swap Usage probe monitors the swap partitions used on a
     system and reports the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Swap Free: the percentage of swap memory that is currently free.
@@ -3733,7 +3729,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-linux-tcp-state">
+  <sect2 xml:id="s2-probes-linux-tcp-state">
    <title>Linux::TCP Connections by State</title><indexterm>
    <primary>Linux</primary>
    <secondary>TCP Connections by State</secondary></indexterm><indexterm>
@@ -3743,7 +3739,7 @@ Seems not much work, needs to be checked
     The Linux::TCP Connections by State probe counts the total number of TCP
     connections and the number of connections in the following states:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       TIME_WAIT: The socket is waiting after closing for remote shutdown
@@ -3752,8 +3748,8 @@ Seems not much work, needs to be checked
     </listitem>
     <listitem>
      <para>
-      CLOSE_WAIT: The remote side has been shut down and is now waiting
-      for the socket to close.
+      CLOSE_WAIT: The remote side has been shut down and is now waiting for
+      the socket to close.
      </para>
     </listitem>
     <listitem>
@@ -3769,8 +3765,7 @@ Seems not much work, needs to be checked
     </listitem>
     <listitem>
      <para>
-      SYN_RCVD: The connection request has been received from the
-      network.
+      SYN_RCVD: The connection request has been received from the network.
      </para>
     </listitem>
    </itemizedlist>
@@ -3987,7 +3982,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-linux-users">
+  <sect2 xml:id="s2-probes-linux-users">
    <title>Linux::Users</title><indexterm>
    <primary>Linux</primary>
    <secondary>Users</secondary></indexterm><indexterm>
@@ -3997,7 +3992,7 @@ Seems not much work, needs to be checked
     The Linux::Users probe counts users logged in to a system and reports
     the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Users: the number of users currently logged in.
@@ -4005,9 +4000,9 @@ Seems not much work, needs to be checked
     </listitem>
    </itemizedlist>
    <para>
-    <emphasis>Requirements:</emphasis> — The &susemgr; monitoring daemon
-    (<filename>rhnmd</filename>) must be running on the monitored system to
-    execute this probe.
+    <emphasis>Requirements:</emphasis> — The &susemgr; monitoring
+    daemon (<filename>rhnmd</filename>) must be running on the monitored
+    system to execute this probe.
    </para>
    <table>
     <title>Linux::Users settings</title>
@@ -4064,7 +4059,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-linux-virtual-memory">
+  <sect2 xml:id="s2-probes-linux-virtual-memory">
    <title>Linux::Virtual Memory</title><indexterm>
    <primary>Linux</primary>
    <secondary>Virtual Memory</secondary></indexterm><indexterm>
@@ -4074,7 +4069,7 @@ Seems not much work, needs to be checked
     The Linux::Virtual Memory probe monitors the total system memory and
     collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Virtual Memory: the percentage of total free system memory - random
@@ -4142,7 +4137,7 @@ Seems not much work, needs to be checked
    </table>
   </sect2>
  </sect1>
- <sect1 id="s1-probes-logagent">
+ <sect1 xml:id="s1-probes-logagent">
   <title>LogAgent</title><indexterm>
 
   <primary>Log Pattern Match</primary>
@@ -4166,7 +4161,7 @@ Seems not much work, needs to be checked
    metric data. Measurements will begin on the second run.
   </para>
 
-  <sect2 id="s2-probes-logagent-pattern">
+  <sect2 xml:id="s2-probes-logagent-pattern">
    <title>LogAgent::Log Pattern Match</title><indexterm>
    <primary>Linux</primary>
    <secondary>Log Pattern Match</secondary></indexterm><indexterm>
@@ -4177,17 +4172,17 @@ Seems not much work, needs to be checked
     text located within the monitored log files and collects the following
     metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      Regular Expression Matches: the number of matches that have
-      occurred since the probe last ran.
+      Regular Expression Matches: the number of matches that have occurred
+      since the probe last ran.
      </para>
     </listitem>
     <listitem>
      <para>
-      Regular Expression Match Rate: the number of matches per minute
-      since the probe last ran.
+      Regular Expression Match Rate: the number of matches per minute since
+      the probe last ran.
      </para>
     </listitem>
    </itemizedlist>
@@ -4362,7 +4357,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-logagent-size">
+  <sect2 xml:id="s2-probes-logagent-size">
    <title>LogAgent::Log Size</title><indexterm>
    <primary>Linux</primary>
    <secondary>Log Size</secondary></indexterm><indexterm>
@@ -4372,11 +4367,11 @@ $ end of line
     The LogAgent::Log Size probe monitors log file growth and collects the
     following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      Size: the size increase of the log file in bytes since the probe
-      last ran.
+      Size: the size increase of the log file in bytes since the probe last
+      ran.
      </para>
     </listitem>
     <listitem>
@@ -4612,7 +4607,7 @@ $ end of line
    </table>
   </sect2>
  </sect1>
- <sect1 id="s1-probes-mysql">
+ <sect1 xml:id="s1-probes-mysql">
   <title>MySQL 3.23 - 3.33</title><indexterm>
 
   <primary>macros</primary>
@@ -4631,12 +4626,12 @@ $ end of line
 
   <para>
    Note that the <filename>mysql-server</filename> package must be installed
-   on the system conducting the monitoring for these probes to complete.
-   See the MySQL Installation section of the <citetitle>&susemgr;
+   on the system conducting the monitoring for these probes to complete. See
+   the MySQL Installation section of the <citetitle>&susemgr;
    Installation Guide</citetitle> for instructions.
   </para>
 
-  <sect2 id="s2-probes-mysql-access">
+  <sect2 xml:id="s2-probes-mysql-access">
    <title>MySQL::Database Accessibility</title><indexterm>
    <primary>macros</primary>
    <secondary>Database Accessibility</secondary></indexterm><indexterm>
@@ -4726,7 +4721,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-mysql-opened">
+  <sect2 xml:id="s2-probes-mysql-opened">
    <title>MySQL::Opened Tables</title><indexterm>
    <primary>macros</primary>
    <secondary>Opened Tables</secondary></indexterm><indexterm>
@@ -4736,7 +4731,7 @@ $ end of line
     The MySQL::Opened Tables probe monitors the MySQL server and collects
     the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Opened Tables. the tables opened since the server was started.
@@ -4850,7 +4845,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-mysql-open">
+  <sect2 xml:id="s2-probes-mysql-open">
    <title>MySQL::Open Tables</title><indexterm>
    <primary>macros</primary>
    <secondary>Open Tables</secondary></indexterm><indexterm>
@@ -4860,7 +4855,7 @@ $ end of line
     The MySQL::Open Tables probe monitors the MySQL server and collects the
     following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Open Tables: the number of tables open when the probe runs.
@@ -4974,7 +4969,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-mysql-query">
+  <sect2 xml:id="s2-probes-mysql-query">
    <title>MySQL::Query Rate</title><indexterm>
    <primary>macros</primary>
    <secondary>Query Rate</secondary></indexterm><indexterm>
@@ -4984,7 +4979,7 @@ $ end of line
     The MySQL::Query Rate probe monitors the MySQL server and collects the
     following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Query Rate: the average number of queries per second per database
@@ -5099,7 +5094,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-mysql-threads">
+  <sect2 xml:id="s2-probes-mysql-threads">
    <title>MySQL::Threads Running</title><indexterm>
    <primary>macros</primary>
    <secondary>Threads Running</secondary></indexterm><indexterm>
@@ -5109,7 +5104,7 @@ $ end of line
     The MySQL::Threads Running probe monitors the MySQL server and collects
     the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Threads Running: the total number of running threads within the
@@ -5224,7 +5219,7 @@ $ end of line
    </table>
   </sect2>
  </sect1>
- <sect1 id="s1-probes-network">
+ <sect1 xml:id="s1-probes-network">
   <title>Network Services</title><indexterm>
 
   <primary>navigation</primary>
@@ -5243,7 +5238,7 @@ $ end of line
    extended latency, thereby nullifying the thresholds.
   </para>
 
-  <sect2 id="s2-probes-network-dns">
+  <sect2 xml:id="s2-probes-network-dns">
    <title>Network Services::DNS Lookup</title><indexterm>
    <primary>navigation</primary>
    <secondary>DNS Lookup</secondary></indexterm><indexterm>
@@ -5255,7 +5250,7 @@ $ end of line
     the <guimenu>Host or Address to look up</guimenu> field. It collects the
     following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Query Time: the time in milliseconds required to execute the
@@ -5333,7 +5328,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-network-ftp">
+  <sect2 xml:id="s2-probes-network-ftp">
    <title>Network Services::FTP</title><indexterm>
    <primary>navigation</primary>
    <secondary>FTP</secondary></indexterm><indexterm>
@@ -5343,7 +5338,7 @@ $ end of line
     The Network Services::FTP probe uses network sockets to test FTP port
     availability. It collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Remote Service Latency: the time in seconds the FTP server takes to
@@ -5358,8 +5353,8 @@ $ end of line
     <remark>taroth 2011-03-14: remark by bwiedemann: match as in
      pattern-mtach/regexp? otherwise "compared to" might be more
      unambiguous</remark>
-    after successfully connecting to the FTP server. If the expected
-    string is not found, the probe returns a CRITICAL state.
+    after successfully connecting to the FTP server. If the expected string
+    is not found, the probe returns a CRITICAL state.
    </para>
    <table>
     <title>Network Services::FTP settings</title>
@@ -5460,7 +5455,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-network-imap">
+  <sect2 xml:id="s2-probes-network-imap">
    <title>Network Services::IMAP Mail</title><indexterm>
    <primary>navigation</primary>
    <secondary>IMAP Mail</secondary></indexterm><indexterm>
@@ -5471,7 +5466,7 @@ $ end of line
     IMAP 4 service on the monitored system. Specifying an optional port will
     override the default port 143. It collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Remote Service Latency: the time it takes in seconds for the IMAP
@@ -5481,8 +5476,8 @@ $ end of line
    </itemizedlist>
    <para>
     The required <guimenu>Expect</guimenu> value is the string to be matched
-    after successfully connecting to the IMAP server. If the
-    expected string is not found, the probe returns a CRITICAL state.
+    after successfully connecting to the IMAP server. If the expected string
+    is not found, the probe returns a CRITICAL state.
    </para>
    <table>
     <title>Network Services::IMAP Mail settings</title>
@@ -5563,7 +5558,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-network-smtp">
+  <sect2 xml:id="s2-probes-network-smtp">
    <title>Network Services::Mail Transfer (SMTP)</title><indexterm>
    <primary>navigation</primary>
    <secondary>Mail Transfer (SMTP)</secondary></indexterm><indexterm>
@@ -5575,7 +5570,7 @@ $ end of line
     port number overrides the default port 25. It collects the following
     metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Remote Service Latency: the time it takes in seconds for the SMTP
@@ -5650,22 +5645,22 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-network-ping">
+  <sect2 xml:id="s2-probes-network-ping">
    <title>Network Services::Ping</title><indexterm>
    <primary>navigation</primary>
    <secondary>Ping</secondary></indexterm><indexterm>
    <primary>Apache</primary>
    <secondary>Ping</secondary></indexterm>
    <para>
-    The Network Services::Ping probe determines if the &susemgr; server can
-    <command>ping</command> the monitored system or a specified IP address.
-    It also checks the packet loss and compares the round trip average
-    against the Warning and Critical threshold levels. The required
+    The Network Services::Ping probe determines if the &susemgr; server
+    can <command>ping</command> the monitored system or a specified IP
+    address. It also checks the packet loss and compares the round trip
+    average against the Warning and Critical threshold levels. The required
     <guimenu>Packets to send</guimenu> value allows you to control how many
     ICMP ECHO packets are sent to the system. This probe collects the
     following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Round-Trip Average: the time it takes in milliseconds for the ICMP
@@ -5688,11 +5683,11 @@ $ end of line
    </para>
    <para>
     Note that this probe conducts the <command>ping</command> from a
-    &susemgr; server and not the monitored system. Populating the IP address
-    field does not test connectivity between the system and the specified IP
-    address but between the &susemgr; server and the IP address. Therefore,
-    entering the same IP address for Ping probes on different systems
-    accomplishes precisely the same task.
+    &susemgr; server and not the monitored system. Populating the IP
+    address field does not test connectivity between the system and the
+    specified IP address but between the &susemgr; server and the IP
+    address. Therefore, entering the same IP address for Ping probes on
+    different systems accomplishes precisely the same task.
     <remark>taroth 2011-03-14: remark by
      mwiedemann: hints at possible software design improvement: probes that do
      not depend on managed systems</remark>
@@ -5797,24 +5792,23 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-network-pop">
+  <sect2 xml:id="s2-probes-network-pop">
    <title>Network Services::POP Mail</title><indexterm>
    <primary>navigation</primary>
    <secondary>POP Mail</secondary></indexterm><indexterm>
    <primary>Apache</primary>
    <secondary>POP Mail</secondary></indexterm>
    <para>
-    The Network Services::POP Mail probe determines if it can connect
-    to the POP3 port on the system. A port number must be specified;
-    specifying a different port number than <literal>110</literal>
-    overrides this default port. This probe collects the following
-    metric:
+    The Network Services::POP Mail probe determines if it can connect to the
+    POP3 port on the system. A port number must be specified; specifying a
+    different port number than <literal>110</literal> overrides this default
+    port. This probe collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      Remote Service Latency: the time in seconds it takes the POP server
-      to answer a connection request.
+      Remote Service Latency: the time in seconds it takes the POP server to
+      answer a connection request.
      </para>
     </listitem>
    </itemizedlist>
@@ -5904,7 +5898,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-network-remote-ping">
+  <sect2 xml:id="s2-probes-network-remote-ping">
    <title>Network Services::Remote Ping</title><indexterm>
    <primary>navigation</primary>
    <secondary>Remote Ping</secondary></indexterm><indexterm>
@@ -5918,7 +5912,7 @@ $ end of line
     send</guimenu> value allows you to control how many ICMP ECHO packets
     are sent to the address. This probe collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Round-Trip Average: the time it takes in milliseconds for the ICMP
@@ -6042,7 +6036,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-network-rpc">
+  <sect2 xml:id="s2-probes-network-rpc">
    <title>Network Services::RPCService</title><indexterm>
    <primary>navigation</primary>
    <secondary>RPCService</secondary></indexterm><indexterm>
@@ -6053,7 +6047,7 @@ $ end of line
     procedure call (RPC) programs on a given IP address. It collects the
     following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Remote Service Latency: the time in seconds the RPC server takes to
@@ -6158,7 +6152,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-network-https">
+  <sect2 xml:id="s2-probes-network-https">
    <title>Network Services::Secure Web Server (HTTPS)</title><indexterm>
    <primary>navigation</primary>
    <secondary>Secure Web Server (HTTPS)</secondary></indexterm><indexterm>
@@ -6168,7 +6162,7 @@ $ end of line
     The Network Services::Secure Web Server (HTTPS) probe determines the
     availability of the secure Web server and collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Remote Service Latency: the time it takes in seconds for the HTTPS
@@ -6323,7 +6317,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-network-ssh">
+  <sect2 xml:id="s2-probes-network-ssh">
    <title>Network Services::SSH</title><indexterm>
    <primary>navigation</primary>
    <secondary>SSH</secondary></indexterm><indexterm>
@@ -6333,7 +6327,7 @@ $ end of line
     The Network Services::SSH probe determines the availability of SSH on
     the specified port and collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Remote Service Latency: the time it takes in seconds for the SSH
@@ -6414,7 +6408,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-network-http">
+  <sect2 xml:id="s2-probes-network-http">
    <title>Network Services::Web Server (HTTP)</title><indexterm>
    <primary>navigation</primary>
    <secondary>Web Server (HTTP)</secondary></indexterm><indexterm>
@@ -6424,7 +6418,7 @@ $ end of line
     The Network Services::Web Server (HTTP) probe determines the
     availability of the Web server and collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Remote Service Latency: the time it takes in seconds for the HTTP
@@ -6433,25 +6427,23 @@ $ end of line
     </listitem>
    </itemizedlist>
    <para>
-    This probe checks if it can connect to the HTTP port on the
-    specified host and retrieve the specified URL. If no URL is
-    specified, the probe will fetch the root document. The probe looks
-    for an <literal>HTTP/1</literal> message from the system unless
-    you alter that value. Specifying another port number will override
-    the default port of 80. Unlike most other probes, this probe will
-    return a CRITICAL state if it cannot contact the system within the
-    timeout period.
+    This probe checks if it can connect to the HTTP port on the specified
+    host and retrieve the specified URL. If no URL is specified, the probe
+    will fetch the root document. The probe looks for an
+    <literal>HTTP/1</literal> message from the system unless you alter that
+    value. Specifying another port number will override the default port of
+    80. Unlike most other probes, this probe will return a CRITICAL state if
+    it cannot contact the system within the timeout period.
    </para>
    <para>
     This probe supports authentication. Provide a username and password in
     the appropriate fields to use this feature. Also, the optional Virtual
     Host field can be used to monitor a separate documentation set located
-    on the same physical machine presented as a standalone server.
-    If your Web server is not configured to use virtual hosts (which is
-    typically the case), you should leave this field blank. If you do have
-    virtual hosts configured, enter the domain name of the first host here.
-    Add as many probes as necessary to monitor all virtual hosts on the
-    machine.
+    on the same physical machine presented as a standalone server. If your
+    Web server is not configured to use virtual hosts (which is typically
+    the case), you should leave this field blank. If you do have virtual
+    hosts configured, enter the domain name of the first host here. Add as
+    many probes as necessary to monitor all virtual hosts on the machine.
    </para>
    <table>
     <title>Network Services::Web Server (HTTP) settings</title>
@@ -6596,7 +6588,7 @@ $ end of line
    </table>
   </sect2>
  </sect1>
- <sect1 id="s1-probes-oracle">
+ <sect1 xml:id="s1-probes-oracle">
   <title>Oracle 8i, 9i, 10g, and 11g</title><indexterm>
 
   <primary>Oracle</primary>
@@ -6627,9 +6619,9 @@ $ end of line
    performance gains, rather than avoiding outages. Therefore, it is
    recommended to schedule them to occur less frequently, between every hour
    and every two days. Longer intervals provide a better statistical
-   representation. Anomalies can easily be recognized as such.
-   This applies to the following probes: Buffer Cache, Data Dictionary
-   Cache, Disk Sort Ratio, Library Cache, and Redo Log.
+   representation. Anomalies can easily be recognized as such. This applies
+   to the following probes: Buffer Cache, Data Dictionary Cache, Disk Sort
+   Ratio, Library Cache, and Redo Log.
   </para>
 
   <para>
@@ -6648,7 +6640,7 @@ $ end of line
    the DNS name is resolved correctly.
   </para>
 
-  <sect2 id="s2-probes-oracle-active-sessions">
+  <sect2 xml:id="s2-probes-oracle-active-sessions">
    <title>Oracle::Active Sessions</title><indexterm>
    <primary>Oracle</primary>
    <secondary>Active Sessions</secondary></indexterm><indexterm>
@@ -6658,11 +6650,11 @@ $ end of line
     The Oracle::Active Sessions probe monitors an Oracle instance and
     collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      Active Sessions: the number of active sessions based on the value
-      of <command>V$PARAMETER.PROCESSES</command>.
+      Active Sessions: the number of active sessions based on the value of
+      <command>V$PARAMETER.PROCESSES</command>.
      </para>
     </listitem>
     <listitem>
@@ -6790,7 +6782,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-oracle-availability">
+  <sect2 xml:id="s2-probes-oracle-availability">
    <title>Oracle::Availability</title><indexterm>
    <primary>Oracle</primary>
    <secondary>Availability</secondary></indexterm><indexterm>
@@ -6877,7 +6869,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-oracle-block-sessions">
+  <sect2 xml:id="s2-probes-oracle-block-sessions">
    <title>Oracle::Blocking Sessions</title><indexterm>
    <primary>Oracle</primary>
    <secondary>Blocking Sessions</secondary></indexterm><indexterm>
@@ -6887,7 +6879,7 @@ $ end of line
     The Oracle::Blocking Sessions probe monitors an Oracle instance and
     collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Blocking Sessions: The number of sessions preventing other sessions
@@ -7007,7 +6999,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-oracle-buffer-cache">
+  <sect2 xml:id="s2-probes-oracle-buffer-cache">
    <title>Oracle::Buffer Cache</title><indexterm>
    <primary>Oracle</primary>
    <secondary>Buffer Cache</secondary></indexterm><indexterm>
@@ -7018,7 +7010,7 @@ $ end of line
     optimize the system global area (SGA) Database Buffer Cache size. It
     collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Db Block Gets: the number of blocks accessed via single block gets
@@ -7141,7 +7133,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-oracle-client-connect">
+  <sect2 xml:id="s2-probes-oracle-client-connect">
    <title>Oracle::Client Connectivity</title><indexterm>
    <primary>Oracle</primary>
    <secondary>Client Connectivity</secondary></indexterm><indexterm>
@@ -7275,7 +7267,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-oracle-dict-cache">
+  <sect2 xml:id="s2-probes-oracle-dict-cache">
    <title>Oracle::Data Dictionary Cache</title><indexterm>
    <primary>Oracle</primary>
    <secondary>Data Dictionary Cache</secondary></indexterm><indexterm>
@@ -7286,7 +7278,7 @@ $ end of line
     Cache Hit Ratio to optimize the SHARED_POOL_SIZE in
     <filename>init.ora</filename>. It collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Data Dictionary Hit Ratio: the ratio of cache hits to cache lookup
@@ -7298,8 +7290,8 @@ $ end of line
     </listitem>
     <listitem>
      <para>
-      Gets: the number of blocks accessed via single block gets (not
-      through the consistent get mechanism).
+      Gets: the number of blocks accessed via single block gets (not through
+      the consistent get mechanism).
      </para>
     </listitem>
     <listitem>
@@ -7406,7 +7398,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-oracle-disk-sort">
+  <sect2 xml:id="s2-probes-oracle-disk-sort">
    <title>Oracle::Disk Sort Ratio</title><indexterm>
    <primary>Oracle</primary>
    <secondary>Disk Sort Ratio</secondary></indexterm><indexterm>
@@ -7416,7 +7408,7 @@ $ end of line
     The Oracle::Disk Sort Ratio probe monitors an Oracle database instance
     and collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Disk Sort Ratio: the rate of Oracle sorts that were too large to be
@@ -7521,7 +7513,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-oracle-idle-sessions">
+  <sect2 xml:id="s2-probes-oracle-idle-sessions">
    <title>Oracle::Idle Sessions</title><indexterm>
    <primary>Oracle</primary>
    <secondary>Idle Sessions</secondary></indexterm><indexterm>
@@ -7531,7 +7523,7 @@ $ end of line
     The Oracle::Idle Sessions probe monitors an Oracle instance and collects
     the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Idle Sessions: the number of Oracle sessions that are idle, as
@@ -7650,7 +7642,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-oracle-index-extents">
+  <sect2 xml:id="s2-probes-oracle-index-extents">
    <title>Oracle::Index Extents</title><indexterm>
    <primary>Oracle</primary>
    <secondary>Index Extents</secondary></indexterm><indexterm>
@@ -7660,7 +7652,7 @@ $ end of line
     The Oracle::Index Extents probe monitors an Oracle instance and collects
     the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Allocated Extents: the number of allocated extents for any index.
@@ -7668,8 +7660,7 @@ $ end of line
     </listitem>
     <listitem>
      <para>
-      Available Extents: the percentage of available extents for any
-      index.
+      Available Extents: the percentage of available extents for any index.
      </para>
     </listitem>
    </itemizedlist>
@@ -7818,7 +7809,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-oracle-lib-cache">
+  <sect2 xml:id="s2-probes-oracle-lib-cache">
    <title>Oracle::Library Cache</title><indexterm>
    <primary>Oracle</primary>
    <secondary>Library Cache</secondary></indexterm><indexterm>
@@ -7829,13 +7820,13 @@ $ end of line
     optimize the SHARED_POOL_SIZE in <filename>init.ora</filename>. It
     collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      Library Cache Miss Ratio: the rate at which a library cache pin
-      miss occurs. This happens when a session executes a statement that it
-      has already parsed but finds that the statement is no longer in the
-      shared pool.
+      Library Cache Miss Ratio: the rate at which a library cache pin miss
+      occurs. This happens when a session executes a statement that it has
+      already parsed but finds that the statement is no longer in the shared
+      pool.
      </para>
     </listitem>
     <listitem>
@@ -7846,9 +7837,9 @@ $ end of line
     </listitem>
     <listitem>
      <para>
-      Cache Misses: the number of pins that must now retrieve the object
-      of the disk. These pins are made up of objects with previous pins
-      from the time the object handle was created .
+      Cache Misses: the number of pins that must now retrieve the object of
+      the disk. These pins are made up of objects with previous pins from
+      the time the object handle was created .
      </para>
     </listitem>
    </itemizedlist>
@@ -7949,7 +7940,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-oracle-locks">
+  <sect2 xml:id="s2-probes-oracle-locks">
    <title>Oracle::Locks</title><indexterm>
    <primary>Oracle</primary>
    <secondary>Locks</secondary></indexterm><indexterm>
@@ -7959,12 +7950,12 @@ $ end of line
     The Oracle::Locks probe monitors an Oracle database instance and
     collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      Active Locks: the current number of active locks as determined by
-      the value in the v$locks table. Database administrators should be
-      aware of high numbers of locks present in a database instance.
+      Active Locks: the current number of active locks as determined by the
+      value in the v$locks table. Database administrators should be aware of
+      high numbers of locks present in a database instance.
      </para>
     </listitem>
    </itemizedlist>
@@ -8071,7 +8062,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-oracle-redo-log">
+  <sect2 xml:id="s2-probes-oracle-redo-log">
    <title>Oracle::Redo Log</title><indexterm>
    <primary>Oracle</primary>
    <secondary>Redo Log</secondary></indexterm><indexterm>
@@ -8081,7 +8072,7 @@ $ end of line
     The Oracle::Redo Log probe monitors an Oracle database instance and
     collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Redo Log Space Request Rate: the average number of redo log space
@@ -8218,7 +8209,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-oracle-table-extents">
+  <sect2 xml:id="s2-probes-oracle-table-extents">
    <title>Oracle::Table Extents</title><indexterm>
    <primary>Oracle</primary>
    <secondary>Table Extents</secondary></indexterm><indexterm>
@@ -8228,7 +8219,7 @@ $ end of line
     The Oracle::Table Extents probe monitors an Oracle database instance and
     collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Allocated Extents-Any Table: the total number of extents for any
@@ -8237,8 +8228,8 @@ $ end of line
     </listitem>
     <listitem>
      <para>
-      Available Extents-Any Table: the percentage of available extents
-      for any table.
+      Available Extents-Any Table: the percentage of available extents for
+      any table.
      </para>
     </listitem>
    </itemizedlist>
@@ -8254,9 +8245,9 @@ $ end of line
     a maximum of 20 MB (by being extended by 1 MB ten times). This probe can
     be configured to alert by (1) the number of allocated extents (e.g.
     &quot;go critical when the table has been extended 5 or more
-    times&quot;), or (2) the table is extended past a certain percentage of
-    its max extents (e.g. &quot;go critical when the table has exhausted 80%
-    or more of its max extents&quot;).
+    times&quot;), or (2) the table is extended past a certain percentage
+    of its max extents (e.g. &quot;go critical when the table has
+    exhausted 80% or more of its max extents&quot;).
    </para>
    <para>
     The required <guimenu>Table Owner</guimenu> and <guimenu>Table
@@ -8404,7 +8395,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-oracle-table-usage">
+  <sect2 xml:id="s2-probes-oracle-table-usage">
    <title>Oracle::Tablespace Usage</title><indexterm>
    <primary>Oracle</primary>
    <secondary>Tablespace Usage</secondary></indexterm><indexterm>
@@ -8414,7 +8405,7 @@ $ end of line
     The Oracle::Tablespace Usage probe monitors an Oracle database instance
     and collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Available Space Used: the percentage of available space in each
@@ -8543,7 +8534,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-oracle-tns-ping">
+  <sect2 xml:id="s2-probes-oracle-tns-ping">
    <title>Oracle::TNS Ping</title><indexterm>
    <primary>Oracle</primary>
    <secondary>TNS Ping</secondary></indexterm><indexterm>
@@ -8553,7 +8544,7 @@ $ end of line
     The Oracle::TNS Ping probe determines if an Oracle listener is alive and
     collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Remote Service Latency: the time it takes in seconds for the Oracle
@@ -8628,7 +8619,7 @@ $ end of line
    </table>
   </sect2>
  </sect1>
- <sect1 id="s1-probes-sat">
+ <sect1 xml:id="s1-probes-sat">
   <title>&susemgr;</title><indexterm>
 
   <primary>package installation</primary>
@@ -8645,7 +8636,7 @@ $ end of line
    specific application or transport protocols are required.
   </para>
 
-  <sect2 id="s2-probes-sat-disk-space">
+  <sect2 xml:id="s2-probes-sat-disk-space">
    <title>&susemgr;::Disk Space</title><indexterm>
    <primary>Apache</primary>
    <secondary>Disk Space</secondary></indexterm><indexterm>
@@ -8655,11 +8646,10 @@ $ end of line
     The &susemgr;::Disk Space probe monitors the free disk space on a
     &susemgr; server and collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      File System Used: the percentage of the file system currently in
-      use.
+      File System Used: the percentage of the file system currently in use.
      </para>
     </listitem>
     <listitem>
@@ -8669,8 +8659,7 @@ $ end of line
     </listitem>
     <listitem>
      <para>
-      Space Available: the size of free space available on the file
-      system.
+      Space Available: the size of free space available on the file system.
      </para>
     </listitem>
    </itemizedlist>
@@ -8769,7 +8758,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-sat-exec-time">
+  <sect2 xml:id="s2-probes-sat-exec-time">
    <title>&susemgr;::Execution Time</title><indexterm>
    <primary>Apache</primary>
    <secondary>Execution Time</secondary></indexterm><indexterm>
@@ -8779,11 +8768,11 @@ $ end of line
     The &susemgr;::Execution Time probe monitors the execution time for
     probes run from a &susemgr; and collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      Probe Execution Time Average: the seconds required to fully execute
-      a probe.
+      Probe Execution Time Average: the seconds required to fully execute a
+      probe.
      </para>
     </listitem>
    </itemizedlist>
@@ -8830,17 +8819,17 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-sat-interface">
+  <sect2 xml:id="s2-probes-sat-interface">
    <title>&susemgr;::Interface Traffic</title><indexterm>
    <primary>Apache</primary>
    <secondary>Interface Traffic</secondary></indexterm><indexterm>
    <primary>reactivating</primary>
    <secondary>Interface Traffic</secondary></indexterm>
    <para>
-    The &susemgr;::Interface Traffic probe monitors the interface traffic on
-    a &susemgr; and collects the following metrics:
+    The &susemgr;::Interface Traffic probe monitors the interface traffic
+    on a &susemgr; and collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Input Rate: the amount of traffic in bytes per second the device
@@ -8921,17 +8910,17 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-sat-latency">
+  <sect2 xml:id="s2-probes-sat-latency">
    <title>&susemgr;::Latency</title><indexterm>
    <primary>Apache</primary>
    <secondary>Latency</secondary></indexterm><indexterm>
    <primary>reactivating</primary>
    <secondary>Latency</secondary></indexterm>
    <para>
-    The &susemgr;::Latency probe monitors the latency of probes on &susemgr;
-    and collects the following metric:
+    The &susemgr;::Latency probe monitors the latency of probes on
+    &susemgr; and collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Probe Latency Average: the lag in seconds between the time a probe
@@ -8985,7 +8974,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-sat-load">
+  <sect2 xml:id="s2-probes-sat-load">
    <title>&susemgr;::Load</title><indexterm>
    <primary>Apache</primary>
    <secondary>Load</secondary></indexterm><indexterm>
@@ -8995,11 +8984,10 @@ $ end of line
     The &susemgr;::Load probe monitors the CPU load on a &susemgr; and
     collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      Load: the load average on the CPU for a 1-, 5-, and 15-minute
-      period.
+      Load: the load average on the CPU for a 1-, 5-, and 15-minute period.
      </para>
     </listitem>
    </itemizedlist>
@@ -9086,7 +9074,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-sat-probe-count">
+  <sect2 xml:id="s2-probes-sat-probe-count">
    <title>&susemgr;::Probe Count</title><indexterm>
    <primary>Apache</primary>
    <secondary>Probe Count</secondary></indexterm><indexterm>
@@ -9096,7 +9084,7 @@ $ end of line
     The &susemgr;::Probe Count probe monitors the number of probes on
     &susemgr; and collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Probes: the number of individual probes running on &susemgr;.
@@ -9146,17 +9134,17 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-sat-process-counts">
+  <sect2 xml:id="s2-probes-sat-process-counts">
    <title>&susemgr;::Process Counts</title><indexterm>
    <primary>Apache</primary>
    <secondary>Process Counts</secondary></indexterm><indexterm>
    <primary>reactivating</primary>
    <secondary>Process Counts</secondary></indexterm>
    <para>
-    The &susemgr;::Process Counts probe monitors the number of processes on
-    &susemgr; and collects the following metrics:
+    The &susemgr;::Process Counts probe monitors the number of processes
+    on &susemgr; and collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Blocked: the number of processes that have been switched to the
@@ -9171,8 +9159,8 @@ $ end of line
     </listitem>
     <listitem>
      <para>
-      Defunct: the number of processes that have terminated (either
-      because they have been killed by a signal or have called
+      Defunct: the number of processes that have terminated (either because
+      they have been killed by a signal or have called
       <command>exit()</command>) and whose parent processes have not yet
       received notification of their termination by executing some form of
       the <command>wait()</command> system call.
@@ -9314,7 +9302,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-sat-processes">
+  <sect2 xml:id="s2-probes-sat-processes">
    <title>&susemgr;::Processes</title><indexterm>
    <primary>Apache</primary>
    <secondary>Processes</secondary></indexterm><indexterm>
@@ -9324,7 +9312,7 @@ $ end of line
     The &susemgr;::Processes probe monitors the number of processes on
     &susemgr; and collects the following metric:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       Processes: the number of processes running simultaneously on the
@@ -9375,7 +9363,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-sat-process-health">
+  <sect2 xml:id="s2-probes-sat-process-health">
    <title>&susemgr;::Process Health</title><indexterm>
    <primary>Apache</primary>
    <secondary>Process Health</secondary></indexterm><indexterm>
@@ -9385,7 +9373,7 @@ $ end of line
     The &susemgr;::Process Health probe monitors customer-specified
     processes and collects the following metrics:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       CPU Usage: the percentage of CPU used for a given process.
@@ -9393,30 +9381,30 @@ $ end of line
     </listitem>
     <listitem>
      <para>
-      Child Process Groups: the number of child processes spawned from
-      the specified parent process. A child process inherits most of its
+      Child Process Groups: the number of child processes spawned from the
+      specified parent process. A child process inherits most of its
       attributes, such as open files, from its parent.
      </para>
     </listitem>
     <listitem>
      <para>
-      Threads: the number of running threads for a given process. A
-      thread is the basic unit of CPU utilization and consists of a program
+      Threads: the number of running threads for a given process. A thread
+      is the basic unit of CPU utilization and consists of a program
       counter, a register set, and a stack space. A thread is also called a
       lightweight process.
      </para>
     </listitem>
     <listitem>
      <para>
-      Physical Memory Used: the amount of physical memory in kilobytes
-      being used by the specified process.
+      Physical Memory Used: the amount of physical memory in kilobytes being
+      used by the specified process.
      </para>
     </listitem>
     <listitem>
      <para>
-      Virtual Memory Used: the amount of virtual memory in kilobytes
-      being used by the specified process or the size of the process in
-      real memory plus swap.
+      Virtual Memory Used: the amount of virtual memory in kilobytes being
+      used by the specified process or the size of the process in real
+      memory plus swap.
      </para>
     </listitem>
    </itemizedlist>
@@ -9581,17 +9569,17 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-sat-process-running">
+  <sect2 xml:id="s2-probes-sat-process-running">
    <title>&susemgr;::Process Running</title><indexterm>
    <primary>Apache</primary>
    <secondary>Process Running</secondary></indexterm><indexterm>
    <primary>reactivating</primary>
    <secondary>Process Running</secondary></indexterm>
    <para>
-    The &susemgr;::Process Running probe verifies that a certain process is
-    running. Specify the process by its command name or process ID. (PID).
-    Entering a PID overrides the entry of a command name. A Critical status
-    results if the probe cannot verify the command or PID.
+    The &susemgr;::Process Running probe verifies that a certain process
+    is running. Specify the process by its command name or process ID.
+    (PID). Entering a PID overrides the entry of a command name. A Critical
+    status results if the probe cannot verify the command or PID.
    </para>
    <table>
     <title>&susemgr;::Process Running settings</title>
@@ -9656,7 +9644,7 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-sat-swap">
+  <sect2 xml:id="s2-probes-sat-swap">
    <title>&susemgr;::Swap</title><indexterm>
    <primary>Apache</primary>
    <secondary>Swap</secondary></indexterm><indexterm>
@@ -9711,17 +9699,17 @@ $ end of line
    </table>
   </sect2>
 
-  <sect2 id="s2-probes-sat-users">
+  <sect2 xml:id="s2-probes-sat-users">
    <title>&susemgr;::Users</title><indexterm>
    <primary>Apache</primary>
    <secondary>Users</secondary></indexterm><indexterm>
    <primary>reactivating</primary>
    <secondary>Users</secondary></indexterm>
    <para>
-    The &susemgr;::Users probe monitors the number of users currently logged
-    into &susemgr;. A CRITICAL status results if the value exceeds the
-    Critical threshold. A WARNING status results if the value exceeds the
-    Warning threshold.
+    The &susemgr;::Users probe monitors the number of users currently
+    logged into &susemgr;. A CRITICAL status results if the value exceeds
+    the Critical threshold. A WARNING status results if the value exceeds
+    the Warning threshold.
    </para>
    <table>
     <title>&susemgr;::Users settings</title>

@@ -1,16 +1,16 @@
-<?xml version="1.0"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE chapter PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<chapter id="ch-multiorg">
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ch-multiorg">
  <title>Managing Multiple Organizations</title>
+ <info/>
  <para>
   With &susemgr; you can create and manage multiple organizations. Divide
   systems, content, and subscriptions in different organizations or specific
@@ -20,13 +20,13 @@
   &susemgr;.
  </para>
  <para>
-  During installation and setup, &susemgr; automatically creates a default
-  administrative organization. It gets the organization ID
+  During installation and setup, &susemgr; automatically creates a
+  default administrative organization. It gets the organization ID
   <literal>1</literal> and the organization name that you entered in
   <xref linkend="step.manager.setup.org"/> in
   <xref linkend="pro.manager.setup"/>.
  </para>
- <sect1 id="s1-multiorg-models">
+ <sect1 xml:id="s1-multiorg-models">
   <title>Recommended Models for Using Multiple Organizations</title>
 
   <para>
@@ -36,28 +36,28 @@
    that you make use of the multi-org feature.
    There's no need to figure out and plan all necessary organizations on
    your &susemgr; up front. Start using organizations at whatever pace makes
-   the most sense for you.--> It may be a good idea to create an additional
-   organization for a limited set of systems and users to experiment with
-   and fully understand the impact of a multi-org &susemgr; on your
-   processes and policies before you design the best setup for your
-   purposes.
+   the most sense for you.-->
+   It may be a good idea to create an additional organization for a limited
+   set of systems and users to experiment with and fully understand the
+   impact of a multi-org &susemgr; on your processes and policies before
+   you design the best setup for your purposes.
   </para>
 
-  <sect2 id="s2-multiorg-models-central">
+  <sect2 xml:id="s2-multiorg-models-central">
    <title>Centrally-Managed &susemgr; for a Multi-Department Organization</title>
    <para>
     In this first scenario, &susemgr; is maintained by a central group of
     administrators within a business or other organization (refer to
-    <xref linkend="fig-multiorg1-fig"/>). The &susemgr; administrator treats
-    <systemitem> organization 1</systemitem> as a staging area for software
-    and system subscriptions and entitlements.
+    <xref linkend="fig-multiorg1-fig"/>). The &susemgr; administrator
+    treats <systemitem> organization 1</systemitem> as a staging area for
+    software and system subscriptions and entitlements.
    </para>
    <para>
-    The &susemgr; administrator's responsibilities include the configuration
-    of &susemgr; (any tasks available under the <guimenu>Admin</guimenu>
-    area of the Web interface), the creation and deletion of additional
-    &susemgr; organizations, and the allocation and removal of software and
-    system subscriptions and entitlements.
+    The &susemgr; administrator's responsibilities include the
+    configuration of &susemgr; (any tasks available under the
+    <guimenu>Admin</guimenu> area of the Web interface), the creation and
+    deletion of additional &susemgr; organizations, and the allocation
+    and removal of software and system subscriptions and entitlements.
    </para>
    <para>
     Additional organizations in this example are mapped to departments
@@ -68,7 +68,7 @@
     administrator account in each new organization and assign the role to
     yourself for full access.
    </para>
-   <figure id="fig-multiorg1-fig">
+   <figure xml:id="fig-multiorg1-fig">
     <title>Centralized &susemgr; Management for a Departmental Organization</title>
     <mediaobject>
      <imageobject role="html">
@@ -81,23 +81,23 @@
    </figure>
   </sect2>
 
-  <sect2 id="s2-multiorg-models-decentral">
+  <sect2 xml:id="s2-multiorg-models-decentral">
    <title>Decentralized Management of Multiple Third Party Organizations</title>
    <para>
     In this example, &susemgr; is maintained by a central group, but each
     organization is treated separately without relations or ties between the
-    different organizations on &susemgr;. Let's assume each organization is
-    a customer of your company. You manage the &susemgr; application
+    different organizations on &susemgr;. Let's assume each organization
+    is a customer of your company. You manage the &susemgr; application
     while other administrators take care of their respective organizations.
    </para>
    <para>
-    While a &susemgr; consisting of sub-organizations that are all part of
-    the same company may be more tolerant of sharing systems and content
+    While a &susemgr; consisting of sub-organizations that are all part
+    of the same company may be more tolerant of sharing systems and content
     between organizations, in this decentralized example sharing is not
     tolerable. Administrators can allocate entitlements in specific amounts
-    to each organization. Each organization will have access to all &suse;
-    content synced to &susemgr; if the organization has software channel
-    entitlements for the content.
+    to each organization. Each organization will have access to all
+    &suse; content synced to &susemgr; if the organization has
+    software channel entitlements for the content.
    </para>
    <para>
     However, if one customer pushes custom content to their organization, it
@@ -113,7 +113,7 @@
     parties, you might need to access systems in that organization and push
     content.
    </para>
-   <figure id="fig-multiorg2-fig">
+   <figure xml:id="fig-multiorg2-fig">
     <title>Decentralized &susemgr; Management for Multi-Department Organization</title>
     <mediaobject>
      <imageobject role="html">
@@ -126,11 +126,11 @@
    </figure>
   </sect2>
 
-  <sect2 id="s2-multiorg-bestpractices">
+  <sect2 xml:id="s2-multiorg-bestpractices">
    <title>Recommendations for Using Multiple Organizations</title>
    <para>
-    Regardless of which scenario you choose for managing your
-    multi-org &susemgr;, the following best practices tips can help.
+    Regardless of which scenario you choose for managing your multi-org
+    &susemgr;, the following best practices tips can help.
    </para>
    <note>
     <title>Use of Default Administrative Organization</title>
@@ -143,7 +143,7 @@
      multi-organization setup. However, in the following cases it is
      unproblematic to do so:
     </para>
-    <itemizedlist>
+    <itemizedlist mark="bullet" spacing="normal">
      <listitem>
       <para>
        if you use &susemgr; in a single-organization setup,
@@ -158,19 +158,19 @@
     </itemizedlist>
    </note>
    <para>
-    The administrative organization is a staging area for
-    subscriptions and entitlements. When you associate &susemgr; with a new
-    certificate, any new entitlements will be granted to this organization
-    by default. To make these new entitlements available to other
-    organizations on &susemgr;, you will need to explicitly allocate these
-    entitlements to other organizations from the administrative
-    organization. Vice versa, if you remove entitlements from other
-    organizations, they will automatically be re-assigned to the default
-    organization.
+    The administrative organization is a staging area for subscriptions and
+    entitlements. When you associate &susemgr; with a new certificate,
+    any new entitlements will be granted to this organization by default. To
+    make these new entitlements available to other organizations on
+    &susemgr;, you will need to explicitly allocate these entitlements to
+    other organizations from the administrative organization. Vice versa, if
+    you remove entitlements from other organizations, they will
+    automatically be re-assigned to the default organization.
    </para>
-   <sect3 id="s3-multiorg-bestpractices-cert1">
+   <sect3 xml:id="s3-multiorg-bestpractices-cert1">
     <title>Certificate Has Less Entitlements Than Are Used</title>
-    <para><remark>emap: RH moved this to trouble shooting chapter. Might make sense for us as well, though here it might be more helpful right away.</remark>
+    <para>
+     <remark>emap: RH moved this to trouble shooting chapter. Might make sense for us as well, though here it might be more helpful right away.</remark>
      If you have issued a new &susemgr; certificate and it contains less
      entitlements than the systems in the organizations of your &susemgr;
      are consuming, you cannot activate this new certificate. You will get
@@ -191,17 +191,19 @@
      profiles.
     </para>
     <para>
-     There are some situations in which you might need to free entitlements quickly
-     and may not have access to each organization. There is an option in
-     multi-org &susemgr;s that allows the server administrators to reduce an
-     organization's entitlement count below usage. In this case, log in to the
-     administrative organization and proceed as described below:
+     There are some situations in which you might need to free entitlements
+     quickly and may not have access to each organization. There is an
+     option in multi-org &susemgr;s that allows the server administrators
+     to reduce an organization's entitlement count below usage. In this
+     case, log in to the administrative organization and proceed as
+     described below:
     </para>
     <procedure>
      <step>
       <para>
-       In the <filename>/etc/rhn/rhn.conf</filename> file set
-       the <systemitem>web.force_unentitlement</systemitem> variable to <literal>1</literal>:
+       In the <filename>/etc/rhn/rhn.conf</filename> file set the
+       <systemitem>web.force_unentitlement</systemitem> variable to
+       <literal>1</literal>:
       </para>
 <screen>web.force_unentitlement=1</screen>
       <para>
@@ -219,11 +221,11 @@
      </step>
      <step>
       <para>
-       Log in to the &susemgr; default organization in the &susemgr; Web
-       interface:
+       Log in to the &susemgr; default organization in the &susemgr;
+       Web interface:
       </para>
      </step>
-     <step id="st.s3-multiorg-bestpractices-cert1.entitlements">
+     <step xml:id="st.s3-multiorg-bestpractices-cert1.entitlements">
       <para>
        Reduce the allocated entitlements either via each organization's
        <guimenu>Subscriptions</guimenu> tab or via individual entitlement's
@@ -248,36 +250,37 @@
      </step>
     </procedure>
     <para>
-     After you have a sufficient number of entitlements, you should be able to
-     activate your new &susemgr; certificate. Note that modifying the
+     After you have a sufficient number of entitlements, you should be able
+     to activate your new &susemgr; certificate. Note that modifying the
      <systemitem>web.force_unentitlement</systemitem> variable is only
      necessary to reduce an organization's allocated entitlements below what
      they are using. If an organization has more entitlements than are being
      actively used, you do not need to set this variable to remove them.
     </para>
    </sect3>
-   <sect3 id="s3-multiorg-bestpractices-cert2">
+   <sect3 xml:id="s3-multiorg-bestpractices-cert2">
     <title>Certificate Has More Entitlements Than Are Used</title>
     <para>
      If you are issued a new &susemgr; certificate and it has more
      entitlements than are being consumed on your &susemgr;, any extra
-     entitlements will be assigned to the administrative
-     organization. If you log into the Web interface as the &susemgr;
-     administrator, you will be able to allocate these entitlements to
-     other organizations. Entitlements previously allocated to other
-     organizations will be unaffected.
+     entitlements will be assigned to the administrative organization. If
+     you log into the Web interface as the &susemgr; administrator, you
+     will be able to allocate these entitlements to other organizations.
+     Entitlements previously allocated to other organizations will be
+     unaffected.
     </para>
    </sect3>
   </sect2>
  </sect1>
- <sect1 id="s1-sattools-org">
+ <sect1 xml:id="s1-sattools-org">
   <title>Organizations</title>
+
   <para>
    The <guimenu>Organizations</guimenu> page in the Web interface allows
    administrators to view, create, and manage multiple organizations across
-   &susemgr;. Administrators can allocate software and system entitlements
-   across various organizations, as well as control an organization's access
-   to systems management tasks.
+   &susemgr;. Administrators can allocate software and system
+   entitlements across various organizations, as well as control an
+   organization's access to systems management tasks.
   </para>
 
   <figure>
@@ -301,14 +304,14 @@
    about establishing organizational trusts.
   </para>
 
-  <sect2 id="s2-sattools-org-details">
-   <title><guimenu>Admin</guimenu> > <guimenu>Organizations</guimenu> > <guimenu>Details</guimenu></title>
+  <sect2 xml:id="s2-sattools-org-details">
+   <title><guimenu>Admin</guimenu> &gt; <guimenu>Organizations</guimenu> &gt; <guimenu>Details</guimenu></title>
    <para>
     Clicking on an organization displays the <guimenu>Details</guimenu>
     page, where administrators are provided with a summary of various
     aspects of the organization.
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       <guimenu>Active Users</guimenu> — The number of users in the
@@ -357,7 +360,7 @@
    </para>
   </sect2>
  </sect1>
- <sect1 id="s1-multiorg-creating">
+ <sect1 xml:id="s1-multiorg-creating">
   <title>Managing Organizations</title>
 
   <para>
@@ -373,29 +376,31 @@
   <note>
    <title>PAM Accounts</title>
    <para>
-    If your &susemgr; is configured for PAM authentication, avoid using PAM
-    accounts for the main organization administrator account in new
-    organizations.  Instead, create a &susemgr;-local account for organization
-    administrators. Reserve PAM-authenticated accounts for &susemgr; logins
-    with less elevated privileges.
+    If your &susemgr; is configured for PAM authentication, avoid using
+    PAM accounts for the main organization administrator account in new
+    organizations. Instead, create a &susemgr;-local account for
+    organization administrators. Reserve PAM-authenticated accounts for
+    &susemgr; logins with less elevated privileges.
    </para>
-   <para>For more information about PAM, see <xref
-   linkend="s1-maintenance-pam-auth"/>.</para>
+   <para>
+    For more information about PAM, see
+    <xref linkend="s1-maintenance-pam-auth"/>.
+   </para>
   </note>
 
-  <procedure id="pro.manager.config.orga">
+  <procedure xml:id="pro.manager.config.orga">
    <title>Creating and Deleting Organizations</title>
    <step>
     <para>
-     Log in to the Web interface as &susemgr; administrator or organization
-     administrator.
+     Log in to the Web interface as &susemgr; administrator or
+     organization administrator.
     </para>
    </step>
    <step>
     <para>
      Procedure to create an organization:
     </para>
-    <substeps>
+    <substeps performance="required">
      <step>
       <para>
        Switch to the <guimenu>Admin</guimenu> tab to see a list of all
@@ -459,7 +464,7 @@
     <para>
      Procedure to delete an organization:
     </para>
-    <substeps>
+    <substeps performance="required">
      <step>
       <para>
        On the <guimenu>Admin</guimenu> tab, select
@@ -482,7 +487,7 @@
    </step>
   </procedure>
  </sect1>
- <sect1 id="s1-admin-orgs-details-subs">
+ <sect1 xml:id="s1-admin-orgs-details-subs">
   <title>Managing Organization Entitlements</title>
 
   <para>
@@ -497,14 +502,15 @@
     <listitem>
      <para>
       Management entitlements are a base requirement for an organization to
-      function in &susemgr;. The maximum number of systems that may register
-      with an organization in &susemgr; depends on the number of management
-      entitlements allocated to that organization&mdash;regardless of the
-      number of software entitlements available. For example, if there are 100
-      &sle; client entitlements but only 50 management system entitlements to
-      an organization, only 50 systems can register with that
-      organization. Provisioning is also recommended, especially for systems
-      managed in organizations.
+      function in &susemgr;. The maximum number of systems that may
+      register with an organization in &susemgr; depends on the number of
+      management entitlements allocated to that
+      organization&mdash;regardless of the number of software
+      entitlements available. For example, if there are 100 &sle; client
+      entitlements but only 50 management system entitlements to an
+      organization, only 50 systems can register with that organization.
+      Provisioning is also recommended, especially for systems managed in
+      organizations.
      </para>
     </listitem>
    </varlistentry>
@@ -543,7 +549,7 @@
    as described in <xref linkend="pro.manager.config.entitlements"/>.
   </para>
 
-  <procedure id="pro.manager.config.entitlements">
+  <procedure xml:id="pro.manager.config.entitlements">
    <title>Assigning Entitlements to an Organization</title>
    <step>
     <para>
@@ -556,7 +562,7 @@
      bar, select <guimenu>Organizations</guimenu>.
     </para>
    </step>
-  <step>
+   <step>
     <para>
      Select the organization for which to assign or change entitlements and
      select the <guimenu>Subscriptions</guimenu> subtab.
@@ -566,7 +572,7 @@
     <para>
      To set any system entitlements for the selected organization:
     </para>
-    <substeps>
+    <substeps performance="required">
      <step>
       <para>
        Click the <guimenu>System Entitlements</guimenu> subtab to view the
@@ -597,7 +603,7 @@
     <para>
      To set software channel entitlements for the selected organization:
     </para>
-    <substeps>
+    <substeps performance="required">
      <step>
       <para>
        Click the <guimenu>Software Channel Entitlements</guimenu> subtab to
@@ -632,13 +638,13 @@
    Channel Entitlements</guimenu></menuchoice>.
   </para>
 
-  <sect2 id="s2-sattools-orgs-subs-soft">
-   <title><guimenu>Admin</guimenu> > <guimenu>Subscriptions</guimenu> > <guimenu>Software Channel Entitlements</guimenu></title>
+  <sect2 xml:id="s2-sattools-orgs-subs-soft">
+   <title><guimenu>Admin</guimenu> &gt; <guimenu>Subscriptions</guimenu> &gt; <guimenu>Software Channel Entitlements</guimenu></title>
    <para>
     The <guimenu>Software Channel Entitlements Across &susemgr;</guimenu>
     page lists all entitlements on &susemgr; across all organizations, as
-    well as their usage. Click on an <guimenu>Entitlement Name</guimenu> for a
-    more detailed view.
+    well as their usage. Click on an <guimenu>Entitlement Name</guimenu> for
+    a more detailed view.
    </para>
    <para>
     The <guimenu>Details</guimenu> subtab for the software channel
@@ -657,45 +663,43 @@
    </note>
   </sect2>
 
-  <sect2 id="s2-sattools-orgs-subs-sys">
-   <title><guimenu>Admin</guimenu> > <guimenu>Subscriptions</guimenu> > <guimenu>System Entitlements</guimenu></title>
+  <sect2 xml:id="s2-sattools-orgs-subs-sys">
+   <title><guimenu>Admin</guimenu> &gt; <guimenu>Subscriptions</guimenu> &gt; <guimenu>System Entitlements</guimenu></title>
    <para>
     The <guimenu>System Entitlements Across &susemgr;</guimenu> page
     lists all system entitlements on this &susemgr;, across all
-    organizations, as well as their usage. Allocations of
-    each system entitlement can be changed in the text box.
+    organizations, as well as their usage. Allocations of each system
+    entitlement can be changed in the text box.
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      <guimenu>Bootstrap (Add-On)</guimenu>: system can be configured
-      via bootstrap. For more details, see <xref
-      linkend="ch-bootstrap"/>.
+      <guimenu>Bootstrap (Add-On)</guimenu>: system can be configured via
+      bootstrap. For more details, see <xref linkend="ch-bootstrap"/>.
      </para>
     </listitem>
     <listitem>
      <para>
       <guimenu>Management (Base)</guimenu>: a base requirement for all
       organizations to function correctly. The number of management
-      entitlements allocated to an organization is equivalent to the
-      maximum number of systems that can register to that
-      organization, regardless of the number of software entitlements
-      available.
+      entitlements allocated to an organization is equivalent to the maximum
+      number of systems that can register to that organization, regardless
+      of the number of software entitlements available.
      </para>
     </listitem>
     <listitem>
      <para>
       <guimenu>Monitoring (Add-On)</guimenu>: enables the tracking of
-      monitoring data for a system. For more details on monitoring, refer to <xref
-      linkend="s1-sm-monitor"/>.
+      monitoring data for a system. For more details on monitoring, refer to
+      <xref linkend="s1-sm-monitor"/>.
      </para>
     </listitem>
     <listitem>
      <para>
-      <guimenu>Provisioning (Add-On)</guimenu>: allows various
-      advanced functionality such as autoinstallation and
-      configuration file provisioning. Recommended especially for
-      systems managed in organizations.
+      <guimenu>Provisioning (Add-On)</guimenu>: allows various advanced
+      functionality such as autoinstallation and configuration file
+      provisioning. Recommended especially for systems managed in
+      organizations.
      </para>
     </listitem>
     <listitem>
@@ -705,14 +709,14 @@
     </listitem>
     <listitem>
      <para>
-      <guimenu>Virtualization Platform (Add-On)</guimenu>: applied to
-      a &vmhost; system with unlimited guest management enabled.
+      <guimenu>Virtualization Platform (Add-On)</guimenu>: applied to a
+      &vmhost; system with unlimited guest management enabled.
      </para>
     </listitem>
    </itemizedlist>
   </sect2>
  </sect1>
- <sect1 id="s1-multiorg-systems">
+ <sect1 xml:id="s1-multiorg-systems">
   <title>Configuring Systems in an Organization</title>
 
   <para>
@@ -725,7 +729,7 @@
    organization:
   </para>
 
-  <orderedlist>
+  <orderedlist spacing="normal">
    <listitem>
     <para>
      Registering Using Login and Password — If you provide a login and
@@ -767,19 +771,18 @@
    </listitem>
   </orderedlist>
  </sect1>
- <sect1 id="s1-sattools-orgs-trust">
+ <sect1 xml:id="s1-sattools-orgs-trust">
   <title>Organizational Trusts</title>
 
   <para>
-   Organizations can share their resources with each other by
-   establishing an organizational trust in &susemgr;. An
-   organizational trust is bi-directional, meaning that once a
-   &susemgr; administrator establishes a trust between two or more
-   organizations, it is up to each organization's administrator to
-   determine what resources to share, and what shared resources from
-   other organizations in the trust to use. With trust established, it
-   is possible to share content and migrate systems between these two
-   organizations.
+   Organizations can share their resources with each other by establishing
+   an organizational trust in &susemgr;. An organizational trust is
+   bi-directional, meaning that once a &susemgr; administrator
+   establishes a trust between two or more organizations, it is up to each
+   organization's administrator to determine what resources to share, and
+   what shared resources from other organizations in the trust to use. With
+   trust established, it is possible to share content and migrate systems
+   between these two organizations.
   </para>
 
   <note>
@@ -790,13 +793,12 @@
    </para>
   </note>
 
-  <sect2 id="s2-sattools-orgs-trusts-establish">
+  <sect2 xml:id="s2-sattools-orgs-trusts-establish">
    <title>Establishing an Organizational Trust</title>
    <para>
     A &susemgr; administrator can create a trust between two or more
-    organizations.
-    To do this, click the <guimenu>Organizations</guimenu> link in the side
-    menu on the <guimenu>Admin</guimenu> main page.
+    organizations. To do this, click the <guimenu>Organizations</guimenu>
+    link in the side menu on the <guimenu>Admin</guimenu> main page.
    </para>
    <para>
     Click the name of one of the organizations and within the
@@ -821,13 +823,13 @@
     </mediaobject>
    </figure>
    <para>
-    Click the check box next to the names of the organizations you want to be
-    in the organizational trust with the current organization and click the
-    <guimenu>Modify Trusts</guimenu> button.
+    Click the check box next to the names of the organizations you want to
+    be in the organizational trust with the current organization and click
+    the <guimenu>Modify Trusts</guimenu> button.
    </para>
   </sect2>
 
-  <sect2 id="s2-sattools-orgs-trusts-share">
+  <sect2 xml:id="s2-sattools-orgs-trusts-share">
    <title>Sharing Content Channels between Organizations in a Trust</title>
    <para>
     Once an organizational trust has been established, organizations can now
@@ -838,8 +840,9 @@
    </para>
    <note>
     <para>
-     Organizations cannot share &suse; channels because they are available
-     to all organizations that have entitlements to those channels.
+     Organizations cannot share &suse; channels because they are
+     available to all organizations that have entitlements to those
+     channels.
     </para>
    </note>
    <para>
@@ -875,7 +878,7 @@
       <guimenu>Details</guimenu> page, there are three choices in
       <guimenu>Organizational Sharing</guimenu>.
      </para>
-     <itemizedlist>
+     <itemizedlist mark="bullet" spacing="normal">
       <listitem>
        <para>
         <guimenu>Private</guimenu> — Make the channel private so that it
@@ -910,8 +913,8 @@
     </step>
    </procedure>
    <para>
-    Now, other organization administrators within the trust for which
-    you have granted access to your custom channel can allow their client
+    Now, other organization administrators within the trust for which you
+    have granted access to your custom channel can allow their client
     systems to install and update packages from the shared channel.
    </para>
    <note>
@@ -925,7 +928,7 @@
    </note>
   </sect2>
 
-  <sect2 id="s2-sattools-orgs-trusts-migrate">
+  <sect2 xml:id="s2-sattools-orgs-trusts-migrate">
    <title>Migrating Systems from One Trusted Organization to Another</title>
    <para>
     In addition to sharing software channels, organizations in a trust can
@@ -934,21 +937,21 @@
     <command>migrate-system-profile</command>.
    </para>
    <note>
-   <para>
-    The &susemgr; administrator can migrate a system from one trusted
-    organization to any other within the trust. However, organization
-    administrators can only migrate a system from their own organization to
-    another in the trust.
-   </para>
+    <para>
+     The &susemgr; administrator can migrate a system from one trusted
+     organization to any other within the trust. However, organization
+     administrators can only migrate a system from their own organization to
+     another in the trust.
+    </para>
    </note>
    <para>
-     Using the web interface to migrate systems, click
-     <menuchoice><guimenu>Systems</guimenu><guimenu>Systems</guimenu></menuchoice>.
-     Click on the system name. On the subtab
-     <menuchoice><guimenu>Details</guimenu><guimenu>Migrate</guimenu></menuchoice>,
-     choose the organization the system needs to migrate to. Click
-     <guimenu>Migrate System</guimenu>. The system is successfully migrated to
-     the target organization.
+    Using the web interface to migrate systems, click
+    <menuchoice><guimenu>Systems</guimenu><guimenu>Systems</guimenu></menuchoice>.
+    Click on the system name. On the subtab
+    <menuchoice><guimenu>Details</guimenu><guimenu>Migrate</guimenu></menuchoice>,
+    choose the organization the system needs to migrate to. Click
+    <guimenu>Migrate System</guimenu>. The system is successfully migrated
+    to the target organization.
    </para>
    <para>
     The command-line tool <command>migrate-system-profile</command> uses
@@ -974,88 +977,90 @@
      to a base channel and granting entitlements.
     </para>
    </note>
-    <para>
-     Verify the ID of the system to be migrated, the ID of the organization
-     the system will migrate to (available in the web interface or use the
-     <command>spacewalk-report</command> tool), and the hostname or IP address
-     of the &susemgr; server if you are running the command from another
-     machine.
-    </para>
-    <para>
-     Use the following command:
-    </para>
+   <para>
+    Verify the ID of the system to be migrated, the ID of the organization
+    the system will migrate to (available in the web interface or use the
+    <command>spacewalk-report</command> tool), and the hostname or IP
+    address of the &susemgr; server if you are running the command from
+    another machine.
+   </para>
+   <para>
+    Use the following command:
+   </para>
 <screen>migrate-system-profile --satellite <replaceable>{&susemgr; HOSTNAME OR IP}</replaceable> --systemId=<replaceable>{SYSTEM ID}</replaceable> --to-org-id=<replaceable>{DESTINATION ORGANIZATION ID}</replaceable></screen>
-    <para>
-     In the following example, the Finance department (created as an
-     organization in &susemgr; with OrgID 2) wants to migrate a workstation
-     (with SystemID 10001020) from the Engineering department, but the
-     Finance organization administrator does not have shell access to the
-     &susemgr; server. The &susemgr; hostname is
-     <guimenu>satserver.example.com</guimenu>.
-    </para>
-    <para>
-     The finance organization administrator would type the following command
-     into a shell:
-    </para>
+   <para>
+    In the following example, the Finance department (created as an
+    organization in &susemgr; with OrgID 2) wants to migrate a
+    workstation (with SystemID 10001020) from the Engineering department,
+    but the Finance organization administrator does not have shell access to
+    the &susemgr; server. The &susemgr; hostname is
+    <guimenu>satserver.example.com</guimenu>.
+   </para>
+   <para>
+    The finance organization administrator would type the following command
+    into a shell:
+   </para>
 <screen>migrate-system-profile --satellite satserver.example.com --systemId=10001020 --to-org-id=2</screen>
-    <para>
-     The finance organization administrator is then prompted for the
-     username and password (unless they are specified by using
-     <option>--username=</option> and <option>--password=</option> at the
-     command-line).
-    </para>
-    <para>
-     The system now shows up in the <guimenu>Systems</guimenu> page of the
-     finance organization in the &susemgr; Web interface. The finance
-     organization administrator can finish the migration process by
-     assigning a base channel and granting entitlements to the client. Check
-     the system's <guimenu>History</guimenu> page in the
-     <guimenu>Events</guimenu> subtab to see previous subscriptions and
-     entitlements.
-    </para>
-    <figure>
-     <title>System History</title>
-     <mediaobject>
-      <imageobject role="fo">
-       <imagedata fileref="migrate-history.png" width="444"/>
-      </imageobject>
-      <imageobject role="html">
-       <imagedata fileref="migrate-history.png" width="444"/>
-      </imageobject>
-     </mediaobject>
-    </figure>
-    <para>
-     To migrate several systems at once, &susemgr; administrators can use
-     the <option>--csv</option> option of
-     <command>migrate-system-profile</command> to automate the process using
-     a simple comma-separated list of systems to migrate.
-    </para>
-    <para>
-     A line in the CSV file should contain the ID of the system to be
-     migrated as well as the destination organization's ID in the following
-     format:
-    </para>
+   <para>
+    The finance organization administrator is then prompted for the username
+    and password (unless they are specified by using
+    <option>--username=</option> and <option>--password=</option> at the
+    command-line).
+   </para>
+   <para>
+    The system now shows up in the <guimenu>Systems</guimenu> page of the
+    finance organization in the &susemgr; Web interface. The finance
+    organization administrator can finish the migration process by assigning
+    a base channel and granting entitlements to the client. Check the
+    system's <guimenu>History</guimenu> page in the
+    <guimenu>Events</guimenu> subtab to see previous subscriptions and
+    entitlements.
+   </para>
+   <figure>
+    <title>System History</title>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="migrate-history.png" width="444"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="migrate-history.png" width="444"/>
+     </imageobject>
+    </mediaobject>
+   </figure>
+   <para>
+    To migrate several systems at once, &susemgr; administrators can use
+    the <option>--csv</option> option of
+    <command>migrate-system-profile</command> to automate the process using
+    a simple comma-separated list of systems to migrate.
+   </para>
+   <para>
+    A line in the CSV file should contain the ID of the system to be
+    migrated as well as the destination organization's ID in the following
+    format:
+   </para>
 <screen>systemId,to-org-id</screen>
-    <para>
-     A compatible CSV might look like this:
-    </para>
+   <para>
+    A compatible CSV might look like this:
+   </para>
 <screen>1000010000,3
 1000010020,1
 1000010010,4</screen>
-    <para>
-     For more information about using
-     <command>migrate-system-profile</command> refer to the manual page by
-     typing <command>man migrate-system-profile</command> or for a basic
-     help screen type <command>migrate-system-profile -h</command>.
-    </para>
+   <para>
+    For more information about using
+    <command>migrate-system-profile</command> refer to the manual page by
+    typing <command>man migrate-system-profile</command> or for a basic help
+    screen type <command>migrate-system-profile -h</command>.
+   </para>
   </sect2>
  </sect1>
- <sect1 id="s1-sattools-orgs-users">
-  <title><guimenu>Admin</guimenu> > <guimenu>Users</guimenu></title>
+ <sect1 xml:id="s1-sattools-orgs-users">
+  <title><guimenu>Admin</guimenu> &gt; <guimenu>Users</guimenu></title>
+
   <para>
-   The <guimenu>Users Across &susemgr;</guimenu> page contains a list of all
-   users on the &susemgr; throughout all organizations.
+   The <guimenu>Users Across &susemgr;</guimenu> page contains a list of
+   all users on the &susemgr; throughout all organizations.
   </para>
+
   <note>
    <para>
     You are only able to modify the details of organization users if you are
@@ -1069,8 +1074,8 @@
    information on user configuration.
   </para>
 
-  <sect2 id="s2-sattools-orgs-details-users">
-   <title><guimenu>Admin</guimenu> > <guimenu>Organizations</guimenu> > <guimenu>Details</guimenu> > <guimenu>Users</guimenu></title>
+  <sect2 xml:id="s2-sattools-orgs-details-users">
+   <title><guimenu>Admin</guimenu> &gt; <guimenu>Organizations</guimenu> &gt; <guimenu>Details</guimenu> &gt; <guimenu>Users</guimenu></title>
    <para>
     The <guimenu>Users</guimenu> subtab lists the users assigned to the
     organization, including their real names, email address, and a check

@@ -1,32 +1,34 @@
-<?xml version="1.0"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE chapter PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<chapter id="ch-bootstrap">
- <title>Using Bootstrap</title><indexterm>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ch-bootstrap">
+<!-- ================================================================ -->
+<!-- ================================================================ -->
+ <title>Using Bootstrap</title>
+ <info/><indexterm>
  <primary>bootstrap.sh</primary>
  <secondary>preparation and use</secondary></indexterm>
  <para>
   &susemgr; provides &susemgr; Bootstrap that automates much of the
-  manual reconfiguration described in previous chapters. This tool plays
-  an integral role in the &susemgr; server installation program,
-  enabling generation of the bootstrap script during installation.
+  manual reconfiguration described in previous chapters. This tool plays an
+  integral role in the &susemgr; server installation program, enabling
+  generation of the bootstrap script during installation.
  </para>
  <para>
   &susemgr; Bootstrap, invoked with the command
   <command>mgr-bootstrap</command>, is installed by default on both
-  &susemgr; Server and &susemgr; Proxy Server.
-  The Bootstrap tool generates a script that can be run on any
-  client system to conduct the following tasks:
+  &susemgr; Server and &susemgr; Proxy Server. The Bootstrap tool
+  generates a script that can be run on any client system to conduct the
+  following tasks:
  </para>
- <itemizedlist>
+ <itemizedlist mark="bullet" spacing="normal">
   <listitem>
    <para>
     Redirect client applications to the &susemgr; Proxy or &susemgr;.
@@ -58,28 +60,27 @@
  <warning>
   <title>Security Risks</title>
   <para>
-   The inherent risks of using a script for configuration: Security
-   tools such as SSL certificates are installed by the script and
-   therefore, do not yet exist on the systems and cannot be used to
-   process transactions. This allows for the possibility of someone
-   impersonating the &susemgr; server and transmitting bad
-   data. Virtually all &susemgr; servers and client systems operate
-   behind customer firewalls and are restricted from outside traffic
-   which mitigates the risk.  Registration is conducted via SSL and is
-   therefore protected.
+   The inherent risks of using a script for configuration: Security tools
+   such as SSL certificates are installed by the script and therefore, do
+   not yet exist on the systems and cannot be used to process transactions.
+   This allows for the possibility of someone impersonating the &susemgr;
+   server and transmitting bad data. Virtually all &susemgr; servers and
+   client systems operate behind customer firewalls and are restricted from
+   outside traffic which mitigates the risk. Registration is conducted via
+   SSL and is therefore protected.
   </para>
  </warning>
  <para>
   The bootstrap script <filename>bootstrap.sh</filename> is automatically
   placed in the <filename>/srv/www/htdocs/pub/bootstrap/</filename>
-  directory on the &susemgr; server. From there it can be downloaded and run
-  on all client systems. Some preparation and post-generation
-  editing is required as identified in the following sections. Refer to
+  directory on the &susemgr; server. From there it can be downloaded and
+  run on all client systems. Some preparation and post-generation editing is
+  required as identified in the following sections. Refer to
   <xref linkend="s1-bootstrap-options"/> for the tool's complete list of
   options and to the <xref linkend="ap-sample-bootstrap-script"/> for an
   example script.
  </para>
- <sect1 id="s1-bootstrap-prep">
+ <sect1 xml:id="s1-bootstrap-prep">
 <!--status="rfc"-->
 
   <title>Preparation</title><indexterm>
@@ -89,61 +90,62 @@
   <secondary>preparing</secondary></indexterm>
 
   <para>
-   Bootstrap (<command>mgr-bootstrap</command>) depends on other
-   components of the &susemgr; infrastructure to properly configure
-   client systems. These components must be prepared before generating
-   the script. The following list identifies suggested initial measures:
+   Bootstrap (<command>mgr-bootstrap</command>) depends on other components
+   of the &susemgr; infrastructure to properly configure client systems.
+   These components must be prepared before generating the script. The
+   following list identifies suggested initial measures:
   </para>
 
-  <itemizedlist>
+  <itemizedlist mark="bullet" spacing="normal">
    <listitem>
     <para>
-     Generate activation keys to be used by the script. Activation keys
-     can be used to register client systems, entitle them to a &susemgr;
+     Generate activation keys to be used by the script. Activation keys can
+     be used to register client systems, entitle them to a &susemgr;
      service level, and subscribe them to specific channels and system
-     groups, all in one action. You must have Management
-     entitlements available to use an activation key, while Provisioning
-     entitlements are required if using multiple activation keys at once.
-     Generate activation keys through the <guimenu>Activation Keys</guimenu>
-     page within the <guimenu>Systems</guimenu> category of the &susemgr;
-     Web site. Refer to <xref linkend="s2-sm-systems-activation-keys"/>
-     for instructions on creation and use.
+     groups, all in one action. You must have Management entitlements
+     available to use an activation key, while Provisioning entitlements are
+     required if using multiple activation keys at once. Generate activation
+     keys through the <guimenu>Activation Keys</guimenu> page within the
+     <guimenu>Systems</guimenu> category of the &susemgr; Web site. Refer
+     to <xref linkend="s2-sm-systems-activation-keys"/> for instructions on
+     creation and use.
     </para>
    </listitem>
    <listitem>
     <para>
      We recommend to sign your RPMs with a custom GPG key. Make the key
-     available so you are able to refer to it in the script. <!-- Generate the
+     available so you are able to refer to it in the script.
+<!-- Generate the
      key as described in the <citetitle>Channel Management Guide</citetitle>
-     and--> Place the key in the <filename>/srv/www/htdocs/pub/</filename>
-     directory of the &susemgr; server as described in  <xref linkend="ch-gpg-keys"/>.
+     and-->
+     Place the key in the <filename>/srv/www/htdocs/pub/</filename>
+     directory of the &susemgr; server as described in
+     <xref linkend="ch-gpg-keys"/>.
     </para>
     <note>
-     <!-- bnc#722047 -->
+<!-- bnc#722047 -->
      <title>Importing Red Hat RPM GPG Key</title>
      <para>
       If the Red Hat release key is not installed, it must be provided in
-      the server's <filename>/srv/www/htdocs/pub</filename> directory,
-      and its name must be added to the bootstrap scripts
-      <literal>ORG_GPG_KEY</literal> list. This way the key gets
-      installed when the bootstrap script is run.
+      the server's <filename>/srv/www/htdocs/pub</filename> directory, and
+      its name must be added to the bootstrap scripts
+      <literal>ORG_GPG_KEY</literal> list. This way the key gets installed
+      when the bootstrap script is run.
      </para>
-     <!-- ma in the bug:
+<!-- ma in the bug:
 It's a known bug in older rpm versions, that they import a key multiple
 times. It's also not possible to fix this by removing all but one entries of a
 specific key. Rpm does not support this, you can only remove all entries of a
 specific key.
 -->
     </note>
-
-
    </listitem>
    <listitem>
     <para>
-     To deploy your CA SSL public certificate via the script,
-     have the certificate or the package (RPM) containing that certificate
-     available on the &susemgr; server and include it during script
-     generation with the <option>--ssl-cert</option> option. Refer to
+     To deploy your CA SSL public certificate via the script, have the
+     certificate or the package (RPM) containing that certificate available
+     on the &susemgr; server and include it during script generation with
+     the <option>--ssl-cert</option> option. Refer to
      <xref linkend="ch-certificates"/> for details.
     </para>
    </listitem>
@@ -151,47 +153,49 @@ specific key.
     <para>
      Have the values ready to develop one or many bootstrap scripts,
      depending on the variety of systems to be reconfigured. Since
-     <command>mgr-bootstrap</command> provides a full set of
-     reconfiguration options, use it to generate different bootstrap
-     scripts to accommodate each type of system. For instance,
+     <command>mgr-bootstrap</command> provides a full set of reconfiguration
+     options, use it to generate different bootstrap scripts to accommodate
+     each type of system. For instance,
      <filename>bootstrap-web-servers.sh</filename> might be used to
      reconfigure your Web servers while
      <filename>bootstrap-app-servers.sh</filename> can handle the
-     application servers. See <xref linkend="s1-bootstrap-options"/> for
-     the complete options list.
+     application servers. See <xref linkend="s1-bootstrap-options"/> for the
+     complete options list.
     </para>
    </listitem>
-
    <listitem>
     <para>
-     If necessary, create bootstrap repositories.  This is only
-     required if your product or appliance does not come with all
-     the up-to-date packages needed for bootstrapping and registration.
-     For more information, see <xref
-     linkend="s1-bootstrap-create-repos"/>.
+     If necessary, create bootstrap repositories. This is only required if
+     your product or appliance does not come with all the up-to-date
+     packages needed for bootstrapping and registration. For more
+     information, see <xref linkend="s1-bootstrap-create-repos"/>.
     </para>
    </listitem>
   </itemizedlist>
  </sect1>
- <!-- ================================================================ -->
- <sect1 id="s1-bootstrap-create-repos">
-  <!-- bnc#835005 -->
-  <title>Creating Bootstrap Repositories</title>
-  <indexterm>
-   <primary>bootstrap repositories</primary>
+<!-- ================================================================ -->
+ <sect1 xml:id="s1-bootstrap-create-repos">
+<!-- bnc#835005 -->
+
+  <title>Creating Bootstrap Repositories</title><indexterm>
+
+  <primary>bootstrap repositories</primary>
 
   <secondary>creating</secondary></indexterm>
+
   <para>
    If you want to register a &sle; client with &susemgr; but the
-   required packages are not installed on the client, you need a
-   repository that provides these packages. <remark
-   role="needinfo">emap 2014-05-02: Should we still keep the following about 1.2
+   required packages are not installed on the client, you need a repository
+   that provides these packages.
+   <remark role="needinfo">emap 2014-05-02: Should we still keep the following about 1.2
    or update it? The past tense makes it sound obsolete while possibly
-   interesting.</remark>On &susemgr; 1.2, &suse; delivered these
-   repositories as RPM packages to be installed on the &susemgr;
-   server for just the following distributions:
+   interesting.</remark>
+   On &susemgr; 1.2, &suse; delivered these repositories as RPM
+   packages to be installed on the &susemgr; server for just the
+   following distributions:
   </para>
-  <itemizedlist>
+
+  <itemizedlist mark="bullet" spacing="normal">
    <listitem>
     <para>
      SLE 10 SP3 and SP4
@@ -203,96 +207,106 @@ specific key.
     </para>
    </listitem>
   </itemizedlist>
+
   <para>
-   The bootstrap script then tried to add these repositories, depending
-   on a special structured path, and installed the required tools
-   automatically before the registration started.
+   The bootstrap script then tried to add these repositories, depending on a
+   special structured path, and installed the required tools automatically
+   before the registration started.
   </para>
 
   <para>
    The new <command>mgr-create-bootstrap-repo</command> introduced with
    &susemgr; 1.7 obsoletes these special RPM packages. The
    <command>mgr-create-bootstrap-repo</command> script creates the
-   repositories on the &susemgr; server reusing the current RPMs from
-   the synced channels that are available on the &susemgr; server.
+   repositories on the &susemgr; server reusing the current RPMs from the
+   synced channels that are available on the &susemgr; server.
   </para>
-   <variablelist>
-    <title><command>mgr-create-bootstrap-repo</command> Options:</title>
-    <varlistentry>
-     <term><option>-h</option>, <option>--help</option></term>
-     <listitem>
-      <para>
-       Display this list of options and exit.
-      </para>
-     </listitem>
-    </varlistentry>
 
-    <varlistentry>
-     <term><option>-n</option>, <option>--dryrun</option></term>
-     <listitem>
-      <para>
-       Dry run. Show only changes&mdash;do not execute them.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>-i</option>, <option>--interactive</option></term>
-     <listitem>
-      <para>
-       Interactive mode (default).
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>-l</option>, <option>--list</option></term>
-     <listitem>
-      <para>
-       List available distributions.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>-c <replaceable>CREATE</replaceable></option>, <option>--create=<replaceable>CREATE</replaceable></option></term>
-     <listitem>
-      <para>
-       Create bootstrap repository for a given distribution label.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>--datamodule=<replaceable>DATAMODULE</replaceable></option></term>
-     <listitem>
-      <para>
-       Use an own data module (Default: <literal>mgr_bootstrap_data</literal>).
-      </para>
-     </listitem>
-    </varlistentry>
-   </variablelist>
+  <variablelist>
+   <title><command>mgr-create-bootstrap-repo</command> Options:</title>
+   <varlistentry>
+    <term><option>-h</option>, <option>--help</option>
+    </term>
+    <listitem>
+     <para>
+      Display this list of options and exit.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>-n</option>, <option>--dryrun</option>
+    </term>
+    <listitem>
+     <para>
+      Dry run. Show only changes&mdash;do not execute them.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>-i</option>, <option>--interactive</option>
+    </term>
+    <listitem>
+     <para>
+      Interactive mode (default).
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>-l</option>, <option>--list</option>
+    </term>
+    <listitem>
+     <para>
+      List available distributions.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>-c <replaceable>CREATE</replaceable></option>, <option>--create=<replaceable>CREATE</replaceable></option>
+    </term>
+    <listitem>
+     <para>
+      Create bootstrap repository for a given distribution label.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>--datamodule=<replaceable>DATAMODULE</replaceable></option>
+    </term>
+    <listitem>
+     <para>
+      Use an own data module (Default:
+      <literal>mgr_bootstrap_data</literal>).
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
 
+  <para>
+   <command>mgr-create-bootstrap-repo</command> enforces to uninstall the
+   RPMs that are currently providing these repositories, because the script
+   will write to the same paths.
+  </para>
+
+  <para>
+   The advantage of this tool is that it uses the official RPMs synced with
+   <command>mgr-ncc-sync</command>. This also means that you can only create
+   repositories for distributions you have synced in &susemgr;.
+  </para>
+
+  <note>
    <para>
-    <command>mgr-create-bootstrap-repo</command> enforces to uninstall
-    the RPMs that are currently providing these repositories, because
-    the script will write to the same paths.
+    <remark role="needinfo">emap 2014-05-02: Does the path need updating to sle/11/3/bootstrap?</remark>
+    For compatibility reasons with old distributions consider to create a
+    <filename>susemanager-client-setup</filename> symlink pointing to the
+    <filename>sle/11/1/bootstrap</filename> path component with the
+    following commands:
    </para>
-   <para>
-    The advantage of this tool is that it uses the official RPMs synced
-    with <command>mgr-ncc-sync</command>. This also means that you can
-    only create repositories for distributions you have synced in
-    &susemgr;.
-   </para>
-   <note>
-    <para><remark role="needinfo">emap 2014-05-02: Does the path need updating to sle/11/3/bootstrap?</remark>
-     For compatibility reasons with old distributions consider to create
-     a <filename>susemanager-client-setup</filename> symlink pointing to
-     the <filename>sle/11/1/bootstrap</filename> path component with the
-     following commands:
-    </para>
-    <screen>cd /srv/www/htdocs/pub/repositories
+<screen>cd /srv/www/htdocs/pub/repositories
 ln -s sle/11/1/bootstrap susemanager-client-setup</screen>
-   </note>
+  </note>
  </sect1>
- <!-- ================================================================ -->
- <sect1 id="s1-bootstrap-gen">
+<!-- ================================================================ -->
+ <sect1 xml:id="s1-bootstrap-gen">
   <title>Generating a Bootstrap Script</title><indexterm>
 
   <primary>Alert Notification Tool</primary>
@@ -300,10 +314,11 @@ ln -s sle/11/1/bootstrap susemanager-client-setup</screen>
   <secondary>generating the script</secondary></indexterm>
 
   <para>
-   With all the necessary components in place, use <command>mgr-bootstrap</command> to generate the required scripts. Log in to
-   your &susemgr; server or &susemgr; Proxy server as root and issue the
-   <command>mgr-bootstrap</command> command followed by the desired options
-   and values. If no options are included, a
+   With all the necessary components in place, use
+   <command>mgr-bootstrap</command> to generate the required scripts. Log in
+   to your &susemgr; server or &susemgr; Proxy server as root and
+   issue the <command>mgr-bootstrap</command> command followed by the
+   desired options and values. If no options are included, a
    <filename>bootstrap.sh</filename> file is created in the
    <filename>bootstrap</filename> subdirectory that contains the essential
    values derived from the server, including hostname, the SSL certificate,
@@ -317,7 +332,7 @@ ln -s sle/11/1/bootstrap susemanager-client-setup</screen>
    manner:
   </para>
 
-  <itemizedlist>
+  <itemizedlist mark="bullet" spacing="normal">
    <listitem>
     <para>
      Use the <option>--activation-keys</option> option to include keys,
@@ -354,20 +369,19 @@ ln -s sle/11/1/bootstrap susemanager-client-setup</screen>
    When finished, your command looks similar to this:
   </para>
 
-<screen
->mgr-bootstrap --activation-keys <replaceable>KEY1,KEY2</replaceable> \
+<screen>mgr-bootstrap --activation-keys <replaceable>KEY1,KEY2</replaceable> \
               --gpg-key /srv/www/htdocs/pub/<replaceable>MY_CORPORATE_PUBLIC_KEY</replaceable> \
               --allow-config-actions \
               --allow-remote-commands</screen>
 
   <para>
-   Include the actual key names for
-   <replaceable>KEY1,KEY2</replaceable> and the actual key filename
-   <replaceable>MY_CORPORATE_PUBLIC_KEY</replaceable>.  Refer to <xref
-   linkend="s1-bootstrap-options"/> for the complete list of options.
+   Include the actual key names for <replaceable>KEY1,KEY2</replaceable> and
+   the actual key filename
+   <replaceable>MY_CORPORATE_PUBLIC_KEY</replaceable>. Refer to
+   <xref linkend="s1-bootstrap-options"/> for the complete list of options.
   </para>
  </sect1>
- <sect1 id="s1-bootstrap-use">
+ <sect1 xml:id="s1-bootstrap-use">
   <title>Using the Bootstrap Script</title><indexterm>
 
   <primary>Alert Notification Tool</primary>
@@ -377,19 +391,18 @@ ln -s sle/11/1/bootstrap susemanager-client-setup</screen>
   <para>
    When your script is prepared, log in to the &susemgr; server or
    &susemgr; Proxy server, navigate to the
-   <filename>/srv/www/htdocs/pub/bootstrap/</filename> directory, and run the
-   following command after altering the hostname and name of the script as needed
-   to suit the system type:
+   <filename>/srv/www/htdocs/pub/bootstrap/</filename> directory, and run
+   the following command after altering the hostname and name of the script
+   as needed to suit the system type:
   </para>
 
-<screen>cat bootstrap-<replaceable>EDITED-NAME</replaceable
->.sh | ssh root@<replaceable>CLIENT_MACHINE1</replaceable> /bin/bash</screen>
+<screen>cat bootstrap-<replaceable>EDITED-NAME</replaceable>.sh | ssh root@<replaceable>CLIENT_MACHINE1</replaceable> /bin/bash</screen>
 
   <para>
    A less secure alternative is to use either <command>wget</command> or
-   <command>curl</command> to retrieve and run the script from every
-   client system. Log in to each client machine and issue the following
-   command after altering script and hostname accordingly:
+   <command>curl</command> to retrieve and run the script from every client
+   system. Log in to each client machine and issue the following command
+   after altering script and hostname accordingly:
   </para>
 
   <para>
@@ -413,7 +426,7 @@ ln -s sle/11/1/bootstrap susemanager-client-setup</screen>
    finished and the &susemgr; can be used.
   </para>
  </sect1>
- <sect1 id="s1-bootstrap-options">
+ <sect1 xml:id="s1-bootstrap-options">
 <!--status="rfc"-->
 
   <title>Bootstrap Options</title><indexterm>
@@ -433,168 +446,185 @@ ln -s sle/11/1/bootstrap susemanager-client-setup</screen>
 
   <variablelist>
    <title>Bootstrap Options</title>
-    <varlistentry>
-     <term><option>-h</option>, <option>--help</option></term>
-     <listitem>
-      <para>
-        Display the help screen with a list of options specific to
-        generating the bootstrap script.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>--activation-keys=<replaceable>ACTIVATION_KEYS</replaceable></option></term>
-     <listitem>
-      <para>
-        Activation key(s) with multiple
-        entries separated by a comma and no space.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>--overrides=<replaceable>OVERRIDES</replaceable></option></term>
-     <listitem>
-      <para>
-        Configuration overrides filename. The default is
-        <filename>client-config-overrides.txt</filename>.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>--script=<replaceable>SCRIPT</replaceable></option></term>
-     <listitem>
-      <para>
-        The bootstrap script filename. The default is <filename>bootstrap.sh</filename>.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>--hostname=<replaceable>HOSTNAME</replaceable></option></term>
-     <listitem>
-      <para>
-        The fully qualified domain name (FQDN) of the server to which client
-        systems will connect.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>--ssl-cert=<replaceable>SSL_CERT</replaceable></option></term>
-     <listitem>
-      <para>
-        The path to your organization's public SSL certificate, either a
-        package or a raw certificate. It will be copied to the
-        <option>--pub-tree</option> option. A value of
-        <literal>&quot;&quot;</literal> will force a search of
-        <option>--pub-tree</option>.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>--gpg-key=<replaceable>GPG_KEY</replaceable></option></term>
-     <listitem>
-      <para>
-        The path to your organization's public GPG key, if used. It will be
-        copied to the location specified by the <option>--pub-tree</option>
-        option.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>--http-proxy=<replaceable>HTTP_PROXY</replaceable></option></term>
-     <listitem>
-      <para>
-        The HTTP proxy setting for the client systems in the form
-        <literal>hostname:port</literal>. A value of
-        <literal>&quot;&quot;</literal> disables this setting.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>--http-proxy-username=<replaceable>HTTP_PROXY_USERNAME</replaceable></option></term>
-     <listitem>
-      <para>
-        If using an authenticating HTTP proxy, specify a username. A value
-        of <literal>&quot;&quot;</literal> disables this setting.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>--http-proxy-password=<replaceable>HTTP_PROXY_PASSWORD</replaceable></option></term>
-     <listitem>
-      <para>
-        If using an authenticating HTTP proxy, specify a password.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>--allow-config-actions</option></term>
-     <listitem>
-      <para>
-        Boolean; including this option sets the system to allow all
-        configuration actions via &ncc;. This requires installing certain
-        rhncfg-* packages, possibly through an activation key.
-      </para>
-     </listitem>
-    </varlistentry>
+   <varlistentry>
+    <term><option>-h</option>, <option>--help</option>
+    </term>
+    <listitem>
+     <para>
+      Display the help screen with a list of options specific to generating
+      the bootstrap script.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>--activation-keys=<replaceable>ACTIVATION_KEYS</replaceable></option>
+    </term>
+    <listitem>
+     <para>
+      Activation key(s) with multiple entries separated by a comma and no
+      space.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>--overrides=<replaceable>OVERRIDES</replaceable></option>
+    </term>
+    <listitem>
+     <para>
+      Configuration overrides filename. The default is
+      <filename>client-config-overrides.txt</filename>.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>--script=<replaceable>SCRIPT</replaceable></option>
+    </term>
+    <listitem>
+     <para>
+      The bootstrap script filename. The default is
+      <filename>bootstrap.sh</filename>.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>--hostname=<replaceable>HOSTNAME</replaceable></option>
+    </term>
+    <listitem>
+     <para>
+      The fully qualified domain name (FQDN) of the server to which client
+      systems will connect.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>--ssl-cert=<replaceable>SSL_CERT</replaceable></option>
+    </term>
+    <listitem>
+     <para>
+      The path to your organization's public SSL certificate, either a
+      package or a raw certificate. It will be copied to the
+      <option>--pub-tree</option> option. A value of
+      <literal>&quot;&quot;</literal> will force a search of
+      <option>--pub-tree</option>.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>--gpg-key=<replaceable>GPG_KEY</replaceable></option>
+    </term>
+    <listitem>
+     <para>
+      The path to your organization's public GPG key, if used. It will be
+      copied to the location specified by the <option>--pub-tree</option>
+      option.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>--http-proxy=<replaceable>HTTP_PROXY</replaceable></option>
+    </term>
+    <listitem>
+     <para>
+      The HTTP proxy setting for the client systems in the form
+      <literal>hostname:port</literal>. A value of
+      <literal>&quot;&quot;</literal> disables this setting.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>--http-proxy-username=<replaceable>HTTP_PROXY_USERNAME</replaceable></option>
+    </term>
+    <listitem>
+     <para>
+      If using an authenticating HTTP proxy, specify a username. A value of
+      <literal>&quot;&quot;</literal> disables this setting.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>--http-proxy-password=<replaceable>HTTP_PROXY_PASSWORD</replaceable></option>
+    </term>
+    <listitem>
+     <para>
+      If using an authenticating HTTP proxy, specify a password.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>--allow-config-actions</option>
+    </term>
+    <listitem>
+     <para>
+      Boolean; including this option sets the system to allow all
+      configuration actions via &ncc;. This requires installing certain
+      rhncfg-* packages, possibly through an activation key.
+     </para>
+    </listitem>
+   </varlistentry>
 <!--FIXME TODO-->
-    <varlistentry>
-     <term><option>--allow-remote-commands</option></term>
-     <listitem>
-      <para>
-        Boolean; including this option sets the system to allow arbitrary
-        remote commands via &ncc;. This requires installing certain rhncfg-*
-        packages, possibly through an activation key.
-      </para>
-     </listitem>
-    </varlistentry>
+   <varlistentry>
+    <term><option>--allow-remote-commands</option>
+    </term>
+    <listitem>
+     <para>
+      Boolean; including this option sets the system to allow arbitrary
+      remote commands via &ncc;. This requires installing certain
+      rhncfg-* packages, possibly through an activation key.
+     </para>
+    </listitem>
+   </varlistentry>
 <!--FIXME TODO-->
-    <varlistentry>
-     <term><option>--no-ssl</option></term>
-     <listitem>
-      <para>
-        <emphasis>Not recommended</emphasis> - Boolean; including this
-        option turns SSL off on the client system.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>--no-gpg</option></term>
-     <listitem>
-      <para>
-        <emphasis>Not recommended</emphasis> - Boolean; including this
-        option turns GPG checking off on the client system.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>--pub-tree=<replaceable>PUB_TREE</replaceable></option></term>
-     <listitem>
-      <para>
-        <emphasis>Change not recommended</emphasis> - The public
-        directory tree where the CA SSL certificate and package will
-        be placed.  The default is
-        <filename>/srv/www/htdocs/pub/</filename>.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>--force</option></term>
-     <listitem>
-      <para>
-        <emphasis>Not recommended</emphasis> - Boolean; including this
-        option forces bootstrap script generation despite warnings.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><option>-v</option>, <option>--verbose</option></term>
-     <listitem>
-      <para>
-        Display verbose messaging. Accumulative; <option>-vvv</option>
-        causes extremely verbose messaging.
-      </para>
-     </listitem>
-    </varlistentry>
+   <varlistentry>
+    <term><option>--no-ssl</option>
+    </term>
+    <listitem>
+     <para>
+      <emphasis>Not recommended</emphasis> - Boolean; including this option
+      turns SSL off on the client system.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>--no-gpg</option>
+    </term>
+    <listitem>
+     <para>
+      <emphasis>Not recommended</emphasis> - Boolean; including this option
+      turns GPG checking off on the client system.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>--pub-tree=<replaceable>PUB_TREE</replaceable></option>
+    </term>
+    <listitem>
+     <para>
+      <emphasis>Change not recommended</emphasis> - The public directory
+      tree where the CA SSL certificate and package will be placed. The
+      default is <filename>/srv/www/htdocs/pub/</filename>.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>--force</option>
+    </term>
+    <listitem>
+     <para>
+      <emphasis>Not recommended</emphasis> - Boolean; including this option
+      forces bootstrap script generation despite warnings.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><option>-v</option>, <option>--verbose</option>
+    </term>
+    <listitem>
+     <para>
+      Display verbose messaging. Accumulative; <option>-vvv</option> causes
+      extremely verbose messaging.
+     </para>
+    </listitem>
+   </varlistentry>
   </variablelist>
  </sect1>
 </chapter>

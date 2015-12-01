@@ -1,89 +1,83 @@
-<?xml version="1.0"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE sect1 PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<sect1 id="s1-sm-scc">
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="s1-sm-scc">
  <title>&scc; (SCC)</title>
- <!--idx-->
- <indexterm>
-  <primary>&scc;</primary>
- </indexterm>
+
+<!--idx--><indexterm>
+
+ <primary>&scc;</primary></indexterm>
 
  <para>
-  &scc; (SCC) is the successor of the &ncc;.  On SCC, you now see all
-  your subscriptions.  Products before &sle; 12 such as &sls; 11 SP3 or
-  &sls; 10 SP4 continue to be available via NCC and can be managed with
-  NCC related tools such as <command>mgr-ncc-sync</command>.  For
-  &sle; 12 as &susemgr; clients, using SCC is a prerequisite.  Of
-  course, SCC is ready for all product lines and thus it is recommended
-  to manage <quote>older</quote> products such as &sls; 11 SP3 or
+  &scc; (SCC) is the successor of the &ncc;. On SCC, you now see all
+  your subscriptions. Products before &sle; 12 such as &sls; 11 SP3
+  or &sls; 10 SP4 continue to be available via NCC and can be managed
+  with NCC related tools such as <command>mgr-ncc-sync</command>. For
+  &sle; 12 as &susemgr; clients, using SCC is a prerequisite. Of
+  course, SCC is ready for all product lines and thus it is recommended to
+  manage <quote>older</quote> products such as &sls; 11 SP3 or
   &sls; 10 SP4 via SCC, too.
  </para>
 
- <sect2 id="s2-sm-scc-migrate">
+ <sect2 xml:id="s2-sm-scc-migrate">
   <title>Migrating a Configured &susemgr; to SCC</title>
-
   <note>
    <title>&smtool; (&smt;)</title>
-  <para>
-   If your &susemgr; server is connected to a &smtool; (&smt;) server,
-   first switch the &smt; server to &scc; (SCC), then switch the
-   &susemgr; server.
-  </para>
+   <para>
+    If your &susemgr; server is connected to a &smtool; (&smt;)
+    server, first switch the &smt; server to &scc; (SCC), then switch
+    the &susemgr; server.
+   </para>
   </note>
-
   <para>
    To migrate your &susemgr; server to SCC perform an update as usual
    (see <xref linkend="s1-maintenance-update"/>) and enable SCC before
-   refreshing your customer center data with the following commands (if
-   you prefer the Web interface, see later in this section):
+   refreshing your customer center data with the following commands (if you
+   prefer the Web interface, see later in this section):
   </para>
-
   <procedure>
    <title>Migrating to and Enabling SCC with Command Line Tools</title>
-
    <step>
     <para>
      Stop the Spacewalk service:
     </para>
-    <screen>spacewalk-service stop</screen>
+<screen>spacewalk-service stop</screen>
    </step>
    <step>
     <para>
-     Apply the &susemgr; update using either <command>zypper</command> or &yast;
-     Online Update.
+     Apply the &susemgr; update using either <command>zypper</command> or
+     &yast; Online Update.
     </para>
    </step>
    <step>
     <para>
      Upgrade the database schema with
     </para>
-    <screen>spacewalk-schema-upgrade</screen>
+<screen>spacewalk-schema-upgrade</screen>
    </step>
    <step>
     <para>
      Start the Spacewalk service:
     </para>
-    <screen>spacewalk-service start</screen>
+<screen>spacewalk-service start</screen>
    </step>
    <step>
     <para>
      Call <command>mgr-sync</command> to enable SCC:
     </para>
-    <screen>mgr-sync enable-scc</screen>
-
+<screen>mgr-sync enable-scc</screen>
     <note>
      <title>Disable Obsolete Cron Jobs</title>
      <para>
-      After switching to SCC, disable or delete obsolete cron jobs that
-      you might have enabled for <command>mgr-ncc-sync</command> (see
+      After switching to SCC, disable or delete obsolete cron jobs that you
+      might have enabled for <command>mgr-ncc-sync</command> (see
       <xref linkend="s1-maintenance-auto-sync"/>) or
       <command>mgr-inter-sync</command>.
      </para>
@@ -93,16 +87,14 @@
     <para>
      Call <command>mgr-sync</command> to refresh your customer center data:
     </para>
-    <screen>mgr-sync refresh</screen>
+<screen>mgr-sync refresh</screen>
    </step>
   </procedure>
-
   <para>
-   You can perform the migration to SCC with the Web interface as well.
-   The Web interface will detect when the migration is possible after an
-   update of the &susemgr; server, and display such a note:
+   You can perform the migration to SCC with the Web interface as well. The
+   Web interface will detect when the migration is possible after an update
+   of the &susemgr; server, and display such a note:
   </para>
-
   <figure>
    <title>Web Interface: SCC Migration Note</title>
    <mediaobject>
@@ -114,12 +106,10 @@
     </imageobject>
    </mediaobject>
   </figure>
-
   <para>
    Click <guimenu>Migrate</guimenu> in the text of the note to open the
    <guimenu>&scc;</guimenu> dialog of the <guimenu>Admin</guimenu> tab.
   </para>
-
   <figure>
    <title>Web Interface: SCC Configuration</title>
    <mediaobject>
@@ -131,29 +121,21 @@
     </imageobject>
    </mediaobject>
   </figure>
-
   <para>
    Then click <guimenu>Start Migration to &scc;</guimenu> to perform the
    actual migration to SCC.
   </para>
-
  </sect2>
 
- <sect2 id="s2-sm-scc-inst">
+ <sect2 xml:id="s2-sm-scc-inst">
   <title>Installing &susemgr; and Using SCC</title>
   <para>
    Perform a &susemgr; installation as usual and register preliminarily
-   at NCC (see <xref linkend="ch-installation"/>).
-
-   At the end of the installation, download and apply all available
-   online updates with &yast; or <command>zypper</command>.
-
-   Then run the &yast; setup program (<command>yast
-   susemanager_setup</command>).
-
-   At the end of the setup routine, you will be asked to register your
-   product at SCC.
+   at NCC (see <xref linkend="ch-installation"/>). At the end of the
+   installation, download and apply all available online updates with
+   &yast; or <command>zypper</command>. Then run the &yast; setup
+   program (<command>yast susemanager_setup</command>). At the end of the
+   setup routine, you will be asked to register your product at SCC.
   </para>
  </sect2>
-
 </sect1>

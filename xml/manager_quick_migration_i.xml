@@ -1,22 +1,21 @@
-<?xml version="1.0"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE sect1 PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<sect1 id="sec.manager.server.migration">
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.manager.server.migration">
  <title>Server Migration</title>
 
  <para>
   If you have a &susemgr; server installed in parallel to an existing
-  Satellite server, you can migrate the Satellite server to &susemgr;. The
-  &yast; &susemgr; setup module first collects the necessary information.
-  Then you execute the migration in several steps with the
+  Satellite server, you can migrate the Satellite server to &susemgr;.
+  The &yast; &susemgr; setup module first collects the necessary
+  information. Then you execute the migration in several steps with the
   <filename>migration.sh</filename> script as described in
   <xref linkend="pro.manager.server.migration"/>. Use <option>-h</option> to
   see the available options:
@@ -28,12 +27,12 @@
   <title>Supported Migration</title>
   <para>
    &susemgr; supports migration from Satellite 5.3, 5.4, 5.5, and 5.6
-   servers. We recommend you get assistance from &suse; consulting,
-   sales or partners.
+   servers. We recommend you get assistance from &suse; consulting, sales
+   or partners.
   </para>
  </note>
 
- <procedure id="pro.manager.server.migration">
+ <procedure xml:id="pro.manager.server.migration">
   <title>Migrating a &rh; Satellite to &susemgr;</title>
   <step>
    <para>
@@ -86,8 +85,8 @@
    <para>
     In the next screen, enter the <guimenu>IP Address of the &susemgr;
     Server</guimenu>, the <guimenu>Database Administrator Password</guimenu>
-    (belonging to the database's &rootuser;), and the email address of the
-    &susemgr; administrator.
+    (belonging to the database's &rootuser;), and the email address of
+    the &susemgr; administrator.
    </para>
    <figure>
     <title>Migration&mdash;&susemgr; Information</title>
@@ -108,7 +107,7 @@
    <para>
     The next screen asks for details about the database to be migrated.
    </para>
-   <substeps>
+   <substeps performance="required">
     <step>
      <para>
       If you want to migrate data from an embedded database, select
@@ -154,9 +153,9 @@
   </step>
   <step>
    <para>
-    The next screen asks for your organization credentials from the SCC. Enter
-    your <guimenu>SCC Organization Credentials Username</guimenu> and the
-    <guimenu>SCC Organization Credentials Password</guimenu>).
+    The next screen asks for your organization credentials from the SCC.
+    Enter your <guimenu>SCC Organization Credentials Username</guimenu> and
+    the <guimenu>SCC Organization Credentials Password</guimenu>).
    </para>
    <figure>
     <title>Migration&mdash;SCC Information</title>
@@ -175,8 +174,8 @@
   </step>
   <step>
    <para>
-    Click <guimenu>Next</guimenu> to close &yast; and to write the collected
-    information to a file that will be parsed by the
+    Click <guimenu>Next</guimenu> to close &yast; and to write the
+    collected information to a file that will be parsed by the
     <command>migration.sh</command> script during the next steps.
    </para>
   </step>
@@ -221,8 +220,8 @@
   <step>
    <para>
     In the DNS server, change the name of the Satellite server to the
-    &susemgr; server's IP address, so that the new &susemgr; server gets the
-    hostname of the former Satellite server.
+    &susemgr; server's IP address, so that the new &susemgr; server
+    gets the hostname of the former Satellite server.
    </para>
   </step>
  </procedure>
@@ -230,6 +229,7 @@
  <para>
   From now on, use your &susemgr; as a replacement for your Satellite
   server. Since the hostname is the same, all certificates will still work.
-  Any registered clients are automatically directed to the &susemgr; server.
+  Any registered clients are automatically directed to the &susemgr;
+  server.
  </para>
 </sect1>

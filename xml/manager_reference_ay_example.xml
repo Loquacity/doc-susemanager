@@ -1,25 +1,25 @@
-<?xml version="1.0"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE appendix
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE appendix PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<appendix id="app.ay.example_simple">
- <title>Minimalist &ay; Profile for Automated Installations and Useful
- Enhancements</title>
+<appendix xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="app.ay.example_simple">
+<!-- bnc#788758 and bnc#780261: about child channels -->
+ <title>Minimalist &ay; Profile for Automated Installations and Useful Enhancements</title>
+ <info/>
  <para>
-  The following &ay; profile will install a &sls; system with all default
-  installation options including a default network configuration with DHCP.
-  After the installation is completed, a bootstrap script located on the
-  &susemgr; server will be executed in order to register the freshly
-  installed system with &susemgr;. You need to adjust the IP address of the
-  &susemgr; server, the name of the bootstrap script and the &rootuser;
-  password according to your needs in the following lines:
+  The following &ay; profile will install a &sls; system with all
+  default installation options including a default network configuration
+  with DHCP. After the installation is completed, a bootstrap script located
+  on the &susemgr; server will be executed in order to register the
+  freshly installed system with &susemgr;. You need to adjust the IP
+  address of the &susemgr; server, the name of the bootstrap script and
+  the &rootuser; password according to your needs in the following lines:
  </para>
 <screen>&lt;user&gt;
  ...
@@ -79,12 +79,10 @@
   &lt;/init-scripts&gt;
  &lt;/scripts&gt;
 &lt;/profile&gt;</screen>
-
 <!-- bnc#788758 and bnc#780261: about child channels -->
-<para>
- Use the following enhancement fragment to add child channels:
-</para>
-
+ <para>
+  Use the following enhancement fragment to add child channels:
+ </para>
 <screen>&lt;add-on&gt;
  &lt;add_on_products config:type="list"&gt;
   &lt;listentry&gt;
@@ -97,14 +95,13 @@
 ...
  &lt;/add_on_products&gt;
 &lt;/add-on&gt;</screen>
-
  <para>
   Replace <replaceable>channel-label</replaceable> and
-  <replaceable>distribution-label</replaceable> with actual labels such
-  as <literal>sles11-sp1-updates-x86_64</literal> and
+  <replaceable>distribution-label</replaceable> with actual labels such as
+  <literal>sles11-sp1-updates-x86_64</literal> and
   <literal>sles11-sp2-x86_64</literal>, and set the variables
-  (<literal>$c_server</literal>, etc.) according to your environment.
-  For information about variable, see <xref
-  linkend="s4-sm-system-kick-dist-variables"/>.
+  (<literal>$c_server</literal>, etc.) according to your environment. For
+  information about variable, see
+  <xref linkend="s4-sm-system-kick-dist-variables"/>.
  </para>
 </appendix>

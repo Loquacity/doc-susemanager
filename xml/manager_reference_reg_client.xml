@@ -1,20 +1,20 @@
-<?xml version="1.0"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE appendix
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE appendix PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
 <!-- 
 @maintainer:
 Seems not much to do
 -->
-<appendix os="hidden" id="ap-register">
- <title>&susemgr; Registration Client</title><indexterm>
+<appendix xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" os="hidden" xml:id="ap-register">
+ <title>&susemgr; Registration Client</title>
+ <info/><indexterm>
  <primary>Registration</primary></indexterm>
  <para>
   Before you begin using &susemgr;, you must create a username, password,
@@ -33,7 +33,7 @@ Seems not much to do
    instructions on starting the &susemgr; Update Agent.
   </para>
  </warning>
- <sect1 id="s1-register-config">
+ <sect1 xml:id="s1-register-config">
   <title>Configuring the &susemgr; Registration Client</title><indexterm>
 
   <primary>package installation</primary>
@@ -63,7 +63,7 @@ Seems not much to do
    The window shown in <xref linkend="fig-register-config-fig"/> appears.
   </para>
 
-  <figure id="fig-register-config-fig">
+  <figure xml:id="fig-register-config-fig">
    <title>&susemgr; Registration Client Configuration</title>
    <mediaobject>
     <imageobject>
@@ -132,7 +132,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    <filename>/etc/sysconfig/rhn/rhn_register</filename> file.
   </para>
  </sect1>
- <sect1 id="s1-start-welcome">
+ <sect1 xml:id="s1-start-welcome">
   <title>Starting the &susemgr; Registration Client</title>
 
   <para>
@@ -161,7 +161,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    methods:
   </para>
 
-  <orderedlist>
+  <orderedlist spacing="normal">
    <remark>toms 2011-01-31: Is it also possible with GNOME/KDE?</remark>
 <!--   <listitem>
     <para>
@@ -208,15 +208,15 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
   </para>-->
 
   <para>
-   The opening screen for the &susemgr; Registration Client provides a brief
-   overview of the services available and the steps required to register
-   (see <xref linkend="fig-opening"/>). Click <guimenu>Next</guimenu> to
-   continue with the registration process. If you click
-   <guimenu>Cancel</guimenu>, the registration process ends and no
+   The opening screen for the &susemgr; Registration Client provides a
+   brief overview of the services available and the steps required to
+   register (see <xref linkend="fig-opening"/>). Click
+   <guimenu>Next</guimenu> to continue with the registration process. If you
+   click <guimenu>Cancel</guimenu>, the registration process ends and no
    information is sent.
   </para>
 
-  <figure id="fig-opening">
+  <figure xml:id="fig-opening">
    <title>Welcome Screen</title>
    <mediaobject>
     <imageobject>
@@ -233,7 +233,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    your system.
   </para>
 
-  <figure id="fig-privacy">
+  <figure xml:id="fig-privacy">
    <title>&novell;'s Privacy Statement</title>
    <mediaobject>
     <imageobject>
@@ -242,7 +242,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    </mediaobject>
   </figure>
  </sect1>
- <sect1 id="s1-register-user-account">
+ <sect1 xml:id="s1-register-user-account">
   <title>Registering a User Account</title><indexterm>
 
   <primary>reactivating</primary>
@@ -283,7 +283,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    one that has not been used.
   </para>
 
-  <figure id="fig-warning">
+  <figure xml:id="fig-warning">
    <title>Error: Username Already Exists</title>
    <mediaobject>
     <imageobject>
@@ -294,9 +294,9 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
 
   <note>
    <para>
-    If you are already a member of &novell;, you can use the same user name
-    and password. However, you must continue with the registration process
-    to create your system profile.
+    If you are already a member of &novell;, you can use the same user
+    name and password. However, you must continue with the registration
+    process to create your system profile.
    </para>
   </note>
 
@@ -304,7 +304,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    Your username has the following restrictions:
   </para>
 
-  <itemizedlist>
+  <itemizedlist mark="bullet" spacing="normal">
    <listitem>
     <para>
      Cannot contain any spaces
@@ -328,7 +328,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    password:
   </para>
 
-  <itemizedlist>
+  <itemizedlist mark="bullet" spacing="normal">
    <listitem>
     <para>
      Must be at least four characters long
@@ -352,14 +352,14 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
 
   <para>
    If you have already registered a machine and created a system profile,
-   you can add a new machine to your account. Run the &susemgr; Registration
-   Client on the new machine you wish to add, and enter your existing
-   &susemgr; username and password. The new machine is added to your
-   existing account, and you can log into &susemgr; with your username and
-   password to view all your systems simultaneously.
+   you can add a new machine to your account. Run the &susemgr;
+   Registration Client on the new machine you wish to add, and enter your
+   existing &susemgr; username and password. The new machine is added to
+   your existing account, and you can log into &susemgr; with your
+   username and password to view all your systems simultaneously.
   </para>
 
-  <figure id="fig-useraccount">
+  <figure xml:id="fig-useraccount">
    <title>Create a Unique Username and Password</title>
    <mediaobject>
     <imageobject>
@@ -374,17 +374,17 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    administrator to ensure that your system is added to that account. This
    requires entering your organization's ID and password in the provided
    text fields. If the values are valid, the system is added to the
-   organization's &susemgr; account. Your &susemgr; administrator can then
-   create your user account through the <guimenu>Users</guimenu> category of
-   the &susemgr; Web interface. Refer to <xref linkend="s1-sm-users"/> for
-   instructions.
+   organization's &susemgr; account. Your &susemgr; administrator can
+   then create your user account through the <guimenu>Users</guimenu>
+   category of the &susemgr; Web interface. Refer to
+   <xref linkend="s1-sm-users"/> for instructions.
   </para>
 
   <para>
    Click <guimenu>Next</guimenu> to continue.
   </para>
  </sect1>
- <sect1 id="s1-register-system-profile">
+ <sect1 xml:id="s1-register-system-profile">
   <title>Registering a System Profile</title><indexterm>
 
   <primary>reactivating</primary>
@@ -401,7 +401,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    to determine what software update notifications you receive.
   </para>
 
-  <sect2 id="s2-hardware">
+  <sect2 xml:id="s2-hardware">
    <title>Hardware System Profile</title><indexterm>
    <primary>reactivating</primary>
    <secondary>Hardware System Profile</secondary></indexterm>
@@ -410,7 +410,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
     &susemgr; Registration Client probes your system for the following
     information:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       &sle; version
@@ -474,7 +474,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    <para>
     Click <guimenu>Next</guimenu> to continue with the registration process.
    </para>
-   <figure id="fig-systemprofile-hardware">
+   <figure xml:id="fig-systemprofile-hardware">
     <title>System Profile - Hardware</title>
     <mediaobject>
      <imageobject>
@@ -484,7 +484,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    </figure>
   </sect2>
 
-  <sect2 id="s2-software">
+  <sect2 xml:id="s2-software">
    <title>Software System Profile</title><indexterm>
    <primary>reactivating</primary>
    <secondary>RPM Package List</secondary></indexterm><indexterm>
@@ -497,7 +497,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
     system and then allows you to customize the list by deselecting
     packages.
    </para>
-   <sect3 id="s3-rpm-packages">
+   <sect3 xml:id="s3-rpm-packages">
     <title>Gathering RPM Database Information</title>
     <para>
      Only those packages you choose during this part of the registration are
@@ -505,13 +505,13 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
      notifications about the packages in your system profile. Thus, if you
      use an older version of a package and deselect it from the list, it
      will not be replaced with a newer version. This RPM list can be
-     modified through the &susemgr; Web interface or by using the &susemgr; Update
-     Agent. <xref linkend="fig-registrationwizard"/> shows the progress bar
-     displayed while the &susemgr; Registration Client gathers a list of the
-     RPM packages installed on your system. This operation may take some
-     time depending on your system.
+     modified through the &susemgr; Web interface or by using the
+     &susemgr; Update Agent. <xref linkend="fig-registrationwizard"/>
+     shows the progress bar displayed while the &susemgr; Registration
+     Client gathers a list of the RPM packages installed on your system.
+     This operation may take some time depending on your system.
     </para>
-    <figure id="fig-registrationwizard">
+    <figure xml:id="fig-registrationwizard">
      <title>Registration Wizard</title>
      <mediaobject>
       <imageobject>
@@ -525,7 +525,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
      <guimenu>Include RPM Packages installed on this system in my System
      Profile</guimenu> omits this information from your system profile.
     </para>
-    <figure id="fig-systemprofile-software">
+    <figure xml:id="fig-systemprofile-software">
      <title>RPM Package Information</title>
      <mediaobject>
       <imageobject>
@@ -534,7 +534,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
      </mediaobject>
     </figure>
    </sect3>
-   <sect3 id="s3-exclude-rpm-packages">
+   <sect3 xml:id="s3-exclude-rpm-packages">
     <title>Choosing RPM Packages to Exclude from the System Profile</title>
     <para>
      By default, all RPM packages in your RPM database are included in your
@@ -550,7 +550,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
      click <guimenu>Next</guimenu> to continue with the registration
      process.
     </para>
-    <figure id="fig-excludepackages">
+    <figure xml:id="fig-excludepackages">
      <title>Choose which RPM Packages to Exclude from System Profile</title>
      <mediaobject>
       <imageobject>
@@ -561,7 +561,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    </sect3>
   </sect2>
  </sect1>
- <sect1 id="s1-send-finish">
+ <sect1 xml:id="s1-send-finish">
   <title>Finishing Registration</title>
 
   <para>
@@ -569,11 +569,11 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    registration is to confirm that you want to send your System Profile to
    your &susemgr; server. If you choose <guimenu>Cancel</guimenu> at this
    point, no information is sent. Clicking <guimenu>Next</guimenu> submits
-   your &susemgr; system profile. This process may take some time depending
-   on your connection speed.
+   your &susemgr; system profile. This process may take some time
+   depending on your connection speed.
   </para>
 
-  <figure id="fig-sendprofile">
+  <figure xml:id="fig-sendprofile">
    <title>Finished Collecting Information for System Profile</title>
    <mediaobject>
     <imageobject>
@@ -596,7 +596,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    details.
   </para>
 
-  <figure id="fig-finished">
+  <figure xml:id="fig-finished">
    <title>Registration Finished</title>
    <mediaobject>
     <imageobject>
@@ -605,7 +605,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    </mediaobject>
   </figure>
  </sect1>
- <sect1 id="s1-entitling-system">
+ <sect1 xml:id="s1-entitling-system">
   <title>Entitling Your System</title>
 
   <remark>toms 2011-01-31: This seems to me more of NCC to me.</remark>
@@ -617,9 +617,10 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
   </para>
 
   <para>
-   To entitle a system, go to <ulink url="http://www.novell.com/center"/>
-   and log in using the same username and password you just used in the
-   &susemgr; Registration Client.
+   To entitle a system, go to
+   <link xlink:href="http://www.novell.com/center"/> and log in using the
+   same username and password you just used in the &susemgr; Registration
+   Client.
 <!--Click
    <guimenuitem>Systems</guimenuitem> on the top navigation bar and then
    <guimenuitem>Systems Entitlements</guimenuitem> in the left navigation
@@ -671,7 +672,7 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
    available entitlements is updated at the bottom of the screen.
   </para>-->
  </sect1>
- <sect1 id="s1-text-registration">
+ <sect1 xml:id="s1-text-registration">
   <title>Text Mode &susemgr; Registration Client</title><indexterm>
 
   <primary>reactivating</primary>
@@ -684,8 +685,8 @@ Enter number of item to edit &lt;return to exit, q to quit without saving&gt;:</
   </para>
 
   <para>
-   You can force the &susemgr; Registration Client to run in text mode with
-   the command:
+   You can force the &susemgr; Registration Client to run in text mode
+   with the command:
   </para>
 
 <screen>mgr_register --nox</screen>

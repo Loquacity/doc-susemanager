@@ -1,14 +1,13 @@
-<?xml version="1.0"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE chapter PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
 <!-- 
 @maintainer: 
  Red Hat seems to be complete, add the stuff for SUSE Online Updater
@@ -16,8 +15,9 @@
  Need de-branding nevertheless: even the RH tool connects to &susemgr; and not to RHN. 
 
 -->
-<chapter id="ch-applet" os="hidden">
- <title>Red Hat Network Alert Notification Tool</title><indexterm>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ch-applet" os="hidden">
+ <title>Red Hat Network Alert Notification Tool</title>
+ <info/><indexterm>
  <primary>reactivating</primary>
  <secondary>adding to panel</secondary></indexterm><indexterm>
  <primary>reactivating</primary>
@@ -43,7 +43,7 @@
   The Red Hat Network Alert Notification Tool appears on the panel by
   default as shown in <xref linkend="fig-panel-applet-fig"/>.
  </para>
- <figure id="fig-panel-applet-fig">
+ <figure xml:id="fig-panel-applet-fig">
   <title>GNOME Panel with Red Hat Network Alert Notification Tool</title>
   <mediaobject>
    <imageobject>
@@ -55,30 +55,29 @@
  <para>
   If it does not appear on the panel, you can add it:
  </para>
- <itemizedlist>
-   <listitem>
-    <para>
-     In Red Hat Enterprise Linux 4 and later, select Applications (the main
-     menu on the panel) =&gt; <guimenu>System Tools</guimenu> =&gt;
-     <guimenu>Red Hat Network Alert Icon</guimenu>. To ensure the icon
-     appears on subsequent sessions, select the <guimenu>Save current
-     setup</guimenu> checkbox when logging out.
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     In Red Hat Enterprise Linux 2.1, select the <guimenu>Main Menu
-     Button</guimenu> =&gt; <guimenu>Panel</guimenu> =&gt; <guimenu>Add to
-     Panel</guimenu> =&gt; <guimenu>Applet</guimenu> =&gt; <guimenu>Red Hat
-     Network Monitor</guimenu>. To move it around the panel, right-click on
-     the applet, select <guimenu>Move</guimenu>, move the mouse left and
-     right until it is in the desired location, and click the mouse to place
-     the applet.
-    </para>
-   </listitem>
-  </itemizedlist>
-
- <sect1 id="s1-applet-configuring">
+ <itemizedlist mark="bullet" spacing="normal">
+  <listitem>
+   <para>
+    In Red Hat Enterprise Linux 4 and later, select Applications (the main
+    menu on the panel) =&gt; <guimenu>System Tools</guimenu> =&gt;
+    <guimenu>Red Hat Network Alert Icon</guimenu>. To ensure the icon
+    appears on subsequent sessions, select the <guimenu>Save current
+    setup</guimenu> checkbox when logging out.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    In Red Hat Enterprise Linux 2.1, select the <guimenu>Main Menu
+    Button</guimenu> =&gt; <guimenu>Panel</guimenu> =&gt; <guimenu>Add
+    to Panel</guimenu> =&gt; <guimenu>Applet</guimenu> =&gt;
+    <guimenu>Red Hat Network Monitor</guimenu>. To move it around the panel,
+    right-click on the applet, select <guimenu>Move</guimenu>, move the
+    mouse left and right until it is in the desired location, and click the
+    mouse to place the applet.
+   </para>
+  </listitem>
+ </itemizedlist>
+ <sect1 xml:id="s1-applet-configuring">
 <!--status="notrevised"-->
 
   <title>Configuring the Applet</title><indexterm>
@@ -104,7 +103,7 @@
    <xref linkend="fig-applet-proxy-config-fig"/>.
   </para>
 
-  <figure id="fig-applet-proxy-config-fig">
+  <figure xml:id="fig-applet-proxy-config-fig">
    <title>HTTP Proxy Configuration</title>
    <mediaobject>
     <imageobject>
@@ -156,7 +155,7 @@
    and select the <guimenu>Ignored Packages</guimenu> tab.
   </para>
  </sect1>
- <sect1 id="s1-applet-notification-icons">
+ <sect1 xml:id="s1-applet-notification-icons">
 <!--status="notrevised"-->
 
   <title>Notification Icons</title><indexterm>
@@ -171,7 +170,7 @@
    their meaning.
   </para>
 
-  <table id="tb-applet-icons">
+  <table xml:id="tb-applet-icons">
    <title>Red Hat Network Alert Notification Tool Icons</title>
    <tgroup cols="2">
     <thead>
@@ -291,7 +290,7 @@
    your system.
   </para>
  </sect1>
- <sect1 id="s1-applet-viewing-updates">
+ <sect1 xml:id="s1-applet-viewing-updates">
 <!--status="notrevised"-->
 
   <title>Viewing Updates</title>
@@ -312,7 +311,7 @@
    </mediaobject>
   </figure>
  </sect1>
- <sect1 id="s1-applet-applying-updates">
+ <sect1 xml:id="s1-applet-applying-updates">
 <!--status="notrevised"-->
 
   <title>Applying Updates</title><indexterm>
@@ -337,7 +336,7 @@
    <xref linkend="ch-up2date"/>.
   </para>
  </sect1>
- <sect1 id="s1-applet-launching-website">
+ <sect1 xml:id="s1-applet-launching-website">
 <!--status="notrevised"-->
 
   <title>Launching the RHN Website</title><indexterm>

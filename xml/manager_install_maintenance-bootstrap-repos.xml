@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<!DOCTYPE sect1
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE sect1 PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<sect1 id="s1-maintenance-create-bootstrap-repo">
- <title>Creating Up-to-date Bootstrap Repositories</title>  <!--bnc #858050-->
-   <indexterm><primary>Bootstrap Repositories</primary></indexterm>
-    <para>
-      To get up-to-date packages for the bootstrap repositories, use the
-      <command>mgr-create-bootstrap-repo</command> command, but first you need
-      to uninstall all packages in the old bootstrap repositories:
-    </para>
-    <screen>
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="s1-maintenance-create-bootstrap-repo">
+ <title>Creating Up-to-date Bootstrap Repositories</title>
+
+<!--bnc #858050--><indexterm>
+
+ <primary>Bootstrap Repositories</primary></indexterm>
+
+ <para>
+  To get up-to-date packages for the bootstrap repositories, use the
+  <command>mgr-create-bootstrap-repo</command> command, but first you need
+  to uninstall all packages in the old bootstrap repositories:
+ </para>
+
+<screen>
 # zypper remove spacewalk-client-repository spacewalk-client-repository-sle-10-4 
 spacewalk-client-repository-sle-10-3 spacewalk-client-repository-sle-11-1
 Loading repository data...
@@ -36,11 +40,13 @@ Removing spacewalk-client-repository-sle-10-4-0.1-0.7.2 [done]
 Removing spacewalk-client-repository-sle-11-1-0.1-0.7.1 [done]
 Removing spacewalk-client-repository-sle-10-3-0.1-0.7.2 [done] 
     </screen>
-    <para>
-     Now call the <command>mgr-create-bootstrap-repo</command> command for
-     SLE-11-SP3-x86_64:
-    </para>  
-    <screen>
+
+ <para>
+  Now call the <command>mgr-create-bootstrap-repo</command> command for
+  SLE-11-SP3-x86_64:
+ </para>
+
+<screen>
 # mgr-create-bootstrap-repo
 SLE-11-SP1-x86_64
 SLE-11-SP2-x86_64
@@ -73,18 +79,22 @@ Saving Primary metadata
 Saving file lists metadata
 Saving other metadata
     </screen>
-    <para>
-     Repeat the command for SLE-11-SP1-x86_64 and SLE-11-SP2-x86_64 if
-     necessary. Now you have the latest package versions for your bootstrap
-     repositories. For bootstrapping &sls;_11_SP_1 clients, you need to create
-     a compatibility symlink:<remark role="needinfo">emap: still relevant for SUMa 2.1?</remark>
-    </para>
-    <screen>
+
+ <para>
+  Repeat the command for SLE-11-SP1-x86_64 and SLE-11-SP2-x86_64 if
+  necessary. Now you have the latest package versions for your bootstrap
+  repositories. For bootstrapping &sls;_11_SP_1 clients, you need to
+  create a compatibility symlink:
+  <remark role="needinfo">emap: still relevant for SUMa 2.1?</remark>
+ </para>
+
+<screen>
 cd /srv/www/htdocs/pub/repositories
 ln -s sle/11/1/bootstrap susemanager-client-setup
     </screen>
-    <para>
-     For more information, refer to the
-     <command>mgr-create-bootstrap-repo</command> manpage.
-    </para>
+
+ <para>
+  For more information, refer to the
+  <command>mgr-create-bootstrap-repo</command> manpage.
+ </para>
 </sect1>

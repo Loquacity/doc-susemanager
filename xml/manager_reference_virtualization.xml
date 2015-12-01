@@ -1,66 +1,70 @@
-<?xml version="1.0"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE chapter PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<chapter id="ch-virtualization">
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ch-virtualization">
  <title>Virtualization</title>
- <abstract>
-  <para><remark role="needinfo">emap: any changes with regard to virtualization. Methods are quite different to RH.</remark>
-   &susemgr; allows to autoinstall and manage &xen; and &kvm; &vmguest;s on
-   a registered &vmhost; or integrate with &susestudio;. To autoinstall a &vmguest;, an
-   autoinstallable distribution and an autoinstallation profile (&ay; or
-   &kickstart;) need to exist on &susemgr;. &vmguest;s registered
-   with &susemgr; can be managed like <quote>regular</quote> machines. In
-   addition, basic &vmguest; management tasks such as (re)starting and
-   stopping or changing processor and memory allocation can be carried out
-   using &susemgr;.
-  </para>
+ <info>
+  <abstract>
+   <para>
+    <remark role="needinfo">emap: any changes with regard to virtualization. Methods are quite different to RH.</remark>
+    &susemgr; allows to autoinstall and manage &xen; and &kvm;
+    &vmguest;s on a registered &vmhost; or integrate with
+    &susestudio;. To autoinstall a &vmguest;, an autoinstallable
+    distribution and an autoinstallation profile (&ay; or &kickstart;)
+    need to exist on &susemgr;. &vmguest;s registered with
+    &susemgr; can be managed like <quote>regular</quote> machines. In
+    addition, basic &vmguest; management tasks such as (re)starting and
+    stopping or changing processor and memory allocation can be carried out
+    using &susemgr;.
+   </para>
 
-  <para>
-   Autoinstalling and managing &vmguest;s via &susemgr; is limited to &xen;
-   and &kvm; guests. &susemgr; uses
-   <systemitem class="library">libvirt</systemitem> for virtual machine
-   management. Currently, virtual machines from other virtualization
-   solutions such as VMware* or VirtualBox*, are recognized as &vmguest;s,
-   but cannot be managed from within &susemgr;.
-  </para>
- </abstract>
- <sect1 id="sec.virtualization.autoinstall">
+   <para>
+    Autoinstalling and managing &vmguest;s via &susemgr; is limited to
+    &xen; and &kvm; guests. &susemgr; uses
+    <systemitem class="library">libvirt</systemitem> for virtual machine
+    management. Currently, virtual machines from other virtualization
+    solutions such as VMware* or VirtualBox*, are recognized as
+    &vmguest;s, but cannot be managed from within &susemgr;.
+   </para>
+  </abstract>
+ </info>
+ <sect1 xml:id="sec.virtualization.autoinstall">
   <title>Autoinstalling &vmguest;s</title>
 
   <para>
-   With &susemgr; you can automatically deploy &xen; and &kvm; &vmguest;s
-   using &ay; or &kickstart; profiles. It is also possible to automatically
-   register the &vmguest;s, so they can immediately be managed by &susemgr;.
+   With &susemgr; you can automatically deploy &xen; and &kvm;
+   &vmguest;s using &ay; or &kickstart; profiles. It is also
+   possible to automatically register the &vmguest;s, so they can
+   immediately be managed by &susemgr;.
   </para>
 
-  <sect2 id="sec.virtualization.autoinstall.req_mgr">
+  <sect2 xml:id="sec.virtualization.autoinstall.req_mgr">
    <title>Requirements on &susemgr;</title>
    <para>
     Setting up and managing &vmguest;s with &susemgr; does not require
     special configuration options. However, you need to provide activation
     keys for the &vmhost; and the &vmguest;s, an autoinstallable
-    distribution and an autoinstallation profile. To automatically
-    register &vmguest;s with &susemgr;, a bootstrap script is needed.
+    distribution and an autoinstallation profile. To automatically register
+    &vmguest;s with &susemgr;, a bootstrap script is needed.
    </para>
-   <sect3 id="sec.virtualzation.autoinstall.req_mgr.keys">
+   <sect3 xml:id="sec.virtualzation.autoinstall.req_mgr.keys">
     <title>Activation Keys</title>
     <para>
      Just like any other client, &vmhost; and &vmguest;s need to be
-     registered with &susemgr; using activation keys. Find details on how to
-     setup activation keys at <xref linkend="pro.manager.activationkey"/>.
-     While there are no special requirements for a &vmguest; key, at least the
-     following requirements must be met for the &vmhost; activation
-     key.
+     registered with &susemgr; using activation keys. Find details on how
+     to setup activation keys at
+     <xref linkend="pro.manager.activationkey"/>. While there are no special
+     requirements for a &vmguest; key, at least the following
+     requirements must be met for the &vmhost; activation key.
     </para>
-    <itemizedlist>
+    <itemizedlist mark="bullet" spacing="normal">
      <title>&vmhost; Activation Key: Minimum Requirements</title>
      <listitem>
       <para>
@@ -69,20 +73,20 @@
      </listitem>
      <listitem>
       <para>
-       Packages: <systemitem
-       class="resource">rhn-virtualization-host</systemitem>,
+       Packages:
+       <systemitem class="resource">rhn-virtualization-host</systemitem>,
        <systemitem class="resource">osad</systemitem>.
       </para>
       <para>
-       If you want to manage the &vmhost; system
-       from &susemgr; (e.g. by executing remote scripts), the package
+       If you want to manage the &vmhost; system from &susemgr; (e.g.
+       by executing remote scripts), the package
        <systemitem class="resource">rhncfg-actions</systemitem> needs to be
        installed as well.
       </para>
      </listitem>
     </itemizedlist>
    </sect3>
-   <sect3 id="sec.virtualzation.autoinstall.req_mgr.inst_source">
+   <sect3 xml:id="sec.virtualzation.autoinstall.req_mgr.inst_source">
     <title>Setting up an Autoinstallable Distribution</title>
     <para>
      To autoinstall clients from &susemgr;, you need to provide an
@@ -93,12 +97,12 @@
      <quote>loop-mounted</quote> iso image. It must match the following
      requirements:
     </para>
-    <itemizedlist>
+    <itemizedlist mark="bullet" spacing="normal">
      <listitem>
       <para>
        Kernel and initrd location:
       </para>
-      <itemizedlist>
+      <itemizedlist mark="bullet" spacing="normal">
        <title>RedHat / Generic RPM</title>
        <listitem>
         <para>
@@ -111,7 +115,7 @@
         </para>
        </listitem>
       </itemizedlist>
-      <itemizedlist>
+      <itemizedlist mark="bullet" spacing="normal">
        <title>SUSE</title>
        <listitem>
         <para>
@@ -142,8 +146,8 @@
       fetched from the autoinstallable distribution.
      </para>
      <para>
-      As a consequence, the autoinstallable distribution for a &suse; system
-      has to be a complete installation source (same as for a regular
+      As a consequence, the autoinstallable distribution for a &suse;
+      system has to be a complete installation source (same as for a regular
       installation).
      </para>
     </important>
@@ -202,7 +206,8 @@
         </listitem>
        </varlistentry>
        <varlistentry>
-        <term><guimenu>Installer Generation</guimenu></term>
+        <term><guimenu>Installer Generation</guimenu>
+        </term>
         <listitem>
          <para>
           Operating system version matching the installation source. This
@@ -242,34 +247,35 @@
      </step>
     </procedure>
     <para>
-     To edit an existing <guimenu>Autoinstallable
-     Distribution</guimenu>, go to
+     To edit an existing <guimenu>Autoinstallable Distribution</guimenu>, go
+     to
      <menuchoice><guimenu>Systems</guimenu><guimenu>Autoinstallation</guimenu><guimenu>Distributions</guimenu></menuchoice>
      and click on a <guimenu>Label</guimenu>. Make the desired changes and
      save your settings by clicking <guimenu>Update Autoinstallable
      Distribution</guimenu>.
     </para>
    </sect3>
-   <sect3 id="sec.virtualzation.autoinstall.req_mgr.profile">
+   <sect3 xml:id="sec.virtualzation.autoinstall.req_mgr.profile">
     <title>Providing an Autoinstallation Profile</title>
     <para>
-     Autoinstallation profiles (&ay; or &kickstart; files) contain all the
-     installation and configuration data needed to install a system without
-     user intervention. They may also contain scripts that will be executed
-     after the installation has completed.
+     Autoinstallation profiles (&ay; or &kickstart; files) contain all
+     the installation and configuration data needed to install a system
+     without user intervention. They may also contain scripts that will be
+     executed after the installation has completed.
     </para>
     <para>
      All profiles can be uploaded to &susemgr; and be edited afterwards.
      Kickstart profiles can also be created from scratch with &susemgr;.
     </para>
     <para>
-     A minimalist &ay; profile including a script for registering the client
-     with &susemgr; is listed in <xref linkend="app.ay.example_simple"/>.
-     For more information, examples and HOWTOs on &ay; profiles, refer to
-     <ulink url="http://www.suse.de/~ug/"/>. For more information on
+     A minimalist &ay; profile including a script for registering the
+     client with &susemgr; is listed in
+     <xref linkend="app.ay.example_simple"/>. For more information, examples
+     and HOWTOs on &ay; profiles, refer to
+     <link xlink:href="http://www.suse.de/~ug/"/>. For more information on
      &kickstart; profiles, refer to your RedHat documentation.
     </para>
-    <sect4 id="sec.virtualzation.autoinstall.req_mgr.profile.upload">
+    <sect4 xml:id="sec.virtualzation.autoinstall.req_mgr.profile.upload">
      <title>Uploading an Autoinstallation Profile</title>
      <procedure>
       <step>
@@ -298,16 +304,16 @@
       <step>
        <para>
         Choose a <guimenu>Virtualization Type</guimenu> from the drop-down
-        menu. &kvm; and &xen; (para-virtualized and fully-virtualized) are
-        available. Do not choose <guimenu>&xen; Virtualized Host</guimenu>
-        here.
+        menu. &kvm; and &xen; (para-virtualized and fully-virtualized)
+        are available. Do not choose <guimenu>&xen; Virtualized
+        Host</guimenu> here.
        </para>
       </step>
       <step>
        <para>
-        Scroll down to the <guimenu>File to
-        Upload</guimenu> dialog, click <guimenu>Browse</guimenu> to select
-        it, then click <guimenu>Upload File</guimenu>.
+        Scroll down to the <guimenu>File to Upload</guimenu> dialog, click
+        <guimenu>Browse</guimenu> to select it, then click <guimenu>Upload
+        File</guimenu>.
        </para>
       </step>
       <step>
@@ -332,15 +338,15 @@
       <title>Editing existing &kickstart; profiles</title>
       <para>
        If you are changing the <guimenu>Virtualization Type</guimenu> of an
-       existing &kickstart; profile, it may also modify the bootloader and
-       partition options, potentially overwriting any user customizations.
-       Be sure to review the <guimenu>Partitioning</guimenu> tab to verify
-       these settings when changing the <guimenu>Virtualization
-       Type</guimenu>.
+       existing &kickstart; profile, it may also modify the bootloader
+       and partition options, potentially overwriting any user
+       customizations. Be sure to review the <guimenu>Partitioning</guimenu>
+       tab to verify these settings when changing the
+       <guimenu>Virtualization Type</guimenu>.
       </para>
      </note>
     </sect4>
-    <sect4 id="sec.virtualzation.autoinstall.req_mgr.profile.generate">
+    <sect4 xml:id="sec.virtualzation.autoinstall.req_mgr.profile.generate">
      <title>Creating a Kickstart Profile</title>
      <note>
       <para>
@@ -383,9 +389,9 @@
       <step>
        <para>
         Choose a <guimenu>Virtualization Type</guimenu> from the drop-down
-        menu. &kvm; and &xen; (para-virtualized and fully-virtualized) are
-        available. Do not choose <guimenu>&xen; Virtualized Host</guimenu>
-        here.
+        menu. &kvm; and &xen; (para-virtualized and fully-virtualized)
+        are available. Do not choose <guimenu>&xen; Virtualized
+        Host</guimenu> here.
        </para>
       </step>
       <step>
@@ -408,31 +414,31 @@
         <guimenu>Finish</guimenu> button to generate the profile.
        </para>
        <para>
-        This completes &kickstart; profile creation. After completing Step 3,
-        you are taken to the newly-created &kickstart; profile. You may browse
-        through the various tabs of the profile and modify the settings as
-        you see fit, but this is not necessary as the default settings
-        should work well for the majority of cases.
+        This completes &kickstart; profile creation. After completing
+        Step 3, you are taken to the newly-created &kickstart; profile.
+        You may browse through the various tabs of the profile and modify
+        the settings as you see fit, but this is not necessary as the
+        default settings should work well for the majority of cases.
        </para>
       </step>
      </procedure>
     </sect4>
-    <sect4 id="sec.virtualzation.autoinstall.req_mgr.profile.scripts">
+    <sect4 xml:id="sec.virtualzation.autoinstall.req_mgr.profile.scripts">
      <title>Adding a Registration Script to the Autoinstallation Profile</title>
      <para>
       A &vmguest; that is autoinstalled does not get automatically
       registered. Adding a section to the autoinstallation profile that
       invokes a bootstrap script for registration will fix this. The
       following procedure describes adding a corresponding section to an
-      &ay; profile. Refer to your RedHat Enterprise Linux documentation for
-      instructions on adding scripts to a &kickstart; file.
+      &ay; profile. Refer to your RedHat Enterprise Linux documentation
+      for instructions on adding scripts to a &kickstart; file.
      </para>
      <procedure>
       <step>
        <para>
         First, provide a bootstrap script on the &susemgr;:
        </para>
-       <substeps>
+       <substeps performance="required">
         <step>
          <para>
           Create a bootstrap script for &vmguest;s on the &susemgr; as
@@ -469,10 +475,10 @@
        </para>
        <para>
         Scroll down to the <guimenu>File Contents</guimenu> section where
-        you can edit the &ay; XML file. Add the following snippet at the end
-        of the XML file right before the closing
-        <literal>&lt;/profile&gt;</literal> tag and replace the given IP
-        address with the address of the &susemgr; server. See
+        you can edit the &ay; XML file. Add the following snippet at the
+        end of the XML file right before the closing
+        <literal>&lt;/profile&gt;</literal> tag and replace the given
+        IP address with the address of the &susemgr; server. See
         <xref linkend="app.ay.example_simple"/> for an example script.
        </para>
 <screen>&lt;scripts&gt;
@@ -489,10 +495,10 @@
         <title>Only one <literal>&lt;scripts&gt;</literal> section allowed</title>
         <para>
          If your &ay; profile already contains a
-         <literal>&lt;scripts&gt;</literal> section, do not add a second
-         one, but rather place the <literal>&lt;script&gt;</literal> part
-         above within the existing <literal>&lt;scripts&gt;</literal>
-         section!
+         <literal>&lt;scripts&gt;</literal> section, do not add a
+         second one, but rather place the
+         <literal>&lt;script&gt;</literal> part above within the
+         existing <literal>&lt;scripts&gt;</literal> section!
         </para>
        </important>
       </step>
@@ -506,17 +512,17 @@
    </sect3>
   </sect2>
 
-  <sect2 id="sec.virtualization.autoinstall.req_vmhost">
+  <sect2 xml:id="sec.virtualization.autoinstall.req_vmhost">
    <title>&vmhost; Setup</title>
    <para>
-    A &vmhost; system serving as a target for autoinstalling &vmguest;s
-    from &susemgr; must be capable of running guest operating systems. This
-    requires either &kvm; or &xen; being properly set up. For installation
-    instructions for &sls; systems refer to the guides <citetitle>SLES 11
-    Virtualization with KVM Administration Guide</citetitle> or
-    <citetitle>SLES 11 Virtualization with Xen Administration
-    Guide</citetitle> available from
-    <ulink url="http://www.suse.com/documentation/sles11/"/>. For
+    A &vmhost; system serving as a target for autoinstalling
+    &vmguest;s from &susemgr; must be capable of running guest
+    operating systems. This requires either &kvm; or &xen; being
+    properly set up. For installation instructions for &sls; systems
+    refer to the guides <citetitle>SLES 11 Virtualization with KVM
+    Administration Guide</citetitle> or <citetitle>SLES 11 Virtualization
+    with Xen Administration Guide</citetitle> available from
+    <link xlink:href="http://www.suse.com/documentation/sles11/"/>. For
     instructions on setting up a RedHat &vmhost; refer to your RedHat
     Enterprise Linux documentation.
    </para>
@@ -524,23 +530,25 @@
     Since &susemgr; uses <systemitem class="library">libvirt</systemitem>
     for &vmguest; installation and management, the
     <systemitem class="daemon">libvirtd</systemitem> needs to run on the
-    &vmhost;. The default <systemitem class="library">libvirt</systemitem>
-    configuration is sufficient to install and manage &vmguest;s from
-    &susemgr;. However, in case you want to access the VNC console of a
-    &vmguest; as a non-&rootuser; user, you need to configure
+    &vmhost;. The default
+    <systemitem class="library">libvirt</systemitem> configuration is
+    sufficient to install and manage &vmguest;s from &susemgr;.
+    However, in case you want to access the VNC console of a &vmguest; as
+    a non-&rootuser; user, you need to configure
     <systemitem class="library">libvirt</systemitem> appropriately.
     Configuration instructions for
-    <systemitem class="library">libvirt</systemitem> on &sls; are available
-    in the <citetitle>SLES 11 Virtualization with KVM Administration
-    Guide</citetitle> available from
-    <ulink url="http://www.suse.com/documentation/sles11/"/>. For
-    instructions for a RedHat &vmhost; refer to your RedHat Enterprise Linux
-    documentation.
+    <systemitem class="library">libvirt</systemitem> on &sls; are
+    available in the <citetitle>SLES 11 Virtualization with KVM
+    Administration Guide</citetitle> available from
+    <link xlink:href="http://www.suse.com/documentation/sles11/"/>. For
+    instructions for a RedHat &vmhost; refer to your RedHat Enterprise
+    Linux documentation.
    </para>
    <para>
-    Apart from being able to serve as a host for &kvm; or &xen; guests, which
-    are managed by <systemitem class="library">libvirt</systemitem>, a
-    &vmhost; must be registered with &susemgr;.
+    Apart from being able to serve as a host for &kvm; or &xen;
+    guests, which are managed by
+    <systemitem class="library">libvirt</systemitem>, a &vmhost; must be
+    registered with &susemgr;.
    </para>
    <procedure>
     <step>
@@ -558,7 +566,7 @@
      <para>
       Register the &vmhost; with &susemgr;:
      </para>
-     <substeps>
+     <substeps performance="required">
       <step>
        <para>
         Create a bootstrap script on the &susemgr; as described in
@@ -575,10 +583,10 @@
       <step>
        <para>
         Edit the bootstrap script according to your needs. The minimal
-        requirement is to include the activation key for the &vmhost; (see
-        <xref linkend="sec.virtualzation.autoinstall.req_mgr.keys"/> for
-        details). We strongly recommend to also include one or more GPG keys
-        (for example, your organization key and package signing keys).
+        requirement is to include the activation key for the &vmhost;
+        (see <xref linkend="sec.virtualzation.autoinstall.req_mgr.keys"/>
+        for details). We strongly recommend to also include one or more GPG
+        keys (for example, your organization key and package signing keys).
        </para>
       </step>
       <step>
@@ -604,12 +612,12 @@ rcosad start</screen>
      <important>
       <title><systemitem class="daemon">osad</systemitem> vs. <systemitem class="daemon">rhnsd</systemitem></title>
       <para>
-       The <systemitem class="daemon">rhnsd</systemitem> daemon checks
-       for scheduled actions every four hours, so it can take up to
-       four hours before a scheduled action is carried out. If many
-       clients are registered with &susemgr;, this long interval ensures a
-       certain level of load balancing since not all clients act on a
-       scheduled action at the same time.
+       The <systemitem class="daemon">rhnsd</systemitem> daemon checks for
+       scheduled actions every four hours, so it can take up to four hours
+       before a scheduled action is carried out. If many clients are
+       registered with &susemgr;, this long interval ensures a certain
+       level of load balancing since not all clients act on a scheduled
+       action at the same time.
       </para>
       <para>
        However, when managing &vmguest;s, you usually want actions like
@@ -628,13 +636,14 @@ rcosad start</screen>
    </procedure>
   </sect2>
 
-  <sect2 id="sec.virtualization.autoinstall.installation">
+  <sect2 xml:id="sec.virtualization.autoinstall.installation">
    <title>Autoinstalling &vmguest;s</title>
    <para>
-    Once all requirements on the &susemgr; and the &vmhost; are met, you can
-    start to autoinstall &vmguest;s on the host. Note that &vmguest;s will
-    not be automatically registered with &susemgr;, therefore we strongly
-    recommend to modify the autoinstallation profile as described in
+    Once all requirements on the &susemgr; and the &vmhost; are met,
+    you can start to autoinstall &vmguest;s on the host. Note that
+    &vmguest;s will not be automatically registered with &susemgr;,
+    therefore we strongly recommend to modify the autoinstallation profile
+    as described in
     <xref linkend="sec.virtualzation.autoinstall.req_mgr.profile.scripts"/>.
     &vmguest;s need to be registered to manage them with &susemgr;.
     Proceed as follows to autoinstall a &vmguest;;.
@@ -669,7 +678,8 @@ rcosad start</screen>
       <menuchoice><guimenu>Virtualization</guimenu><guimenu>Provisioning</guimenu></menuchoice>.
       Fill out the form by choosing an autoinstallation profile and by
       specifying a name for the &vmguest; (must not already exist on
-      &vmhost;). Choose a proxy if applicable and enter a schedule. To change the &vmguest;'s hardware profile and configuration options,
+      &vmhost;). Choose a proxy if applicable and enter a schedule. To
+      change the &vmguest;'s hardware profile and configuration options,
       click <guimenu>Advanced Options</guimenu>.
      </para>
     </step>
@@ -677,8 +687,8 @@ rcosad start</screen>
      <para>
       Finish the configuration by clicking <guimenu>Schedule
       Autoinstallation and Finish</guimenu>. The <guimenu>Session
-      Status</guimenu> page opens for you to monitor the
-      autoinstallation process.
+      Status</guimenu> page opens for you to monitor the autoinstallation
+      process.
      </para>
     </step>
    </procedure>
@@ -687,15 +697,14 @@ rcosad start</screen>
     <para>
      To view the installation log, click
      <menuchoice><guimenu>Events</guimenu><guimenu>History</guimenu></menuchoice>
-     on the <guimenu>Session Status</guimenu> page. On the
-     <guimenu>System History Event</guimenu> page you can click a
-     <guimenu>Summary</guimenu> entry to view a detailed log.
+     on the <guimenu>Session Status</guimenu> page. On the <guimenu>System
+     History Event</guimenu> page you can click a <guimenu>Summary</guimenu>
+     entry to view a detailed log.
     </para>
     <para>
      In case an installation has failed, you can
      <guimenu>Reschedule</guimenu> it from this page once you have corrected
-     the problem. You do not have to configure the installation
-     again.
+     the problem. You do not have to configure the installation again.
     </para>
     <para>
      If the event log does not contain enough information to locate a
@@ -710,17 +719,17 @@ rcosad start</screen>
    </note>
   </sect2>
  </sect1>
- <sect1 id="sec.virtualization.vmguest_manage">
+ <sect1 xml:id="sec.virtualization.vmguest_manage">
   <title>Managing &vmguest;s</title>
 
   <para>
-   Basic &vmguest; management actions such as restarting or shutting down a
-   virtual machine as well as changing the CPU and memory allocation can be
-   carried out in the &susemgr; Web interface if the following
+   Basic &vmguest; management actions such as restarting or shutting down
+   a virtual machine as well as changing the CPU and memory allocation can
+   be carried out in the &susemgr; Web interface if the following
    requirements are met:
   </para>
 
-  <itemizedlist>
+  <itemizedlist mark="bullet" spacing="normal">
    <listitem>
     <para>
      &vmhost; must be a &kvm; or &xen; host.
@@ -741,14 +750,14 @@ rcosad start</screen>
 
   <para>
    All actions can be triggered in the &susemgr; Web interface from the
-   <guimenu>Virtualization</guimenu> page of the &vmhost;. Navigate to this
-   page by clicking on the <guimenu>Systems</guimenu> tab. On the resulting
-   page, click on the &vmhost;'s name and then on
+   <guimenu>Virtualization</guimenu> page of the &vmhost;. Navigate to
+   this page by clicking on the <guimenu>Systems</guimenu> tab. On the
+   resulting page, click on the &vmhost;'s name and then on
    <guimenu>Virtualization</guimenu>. This page lists all &vmguest;s for
    this host, known to &susemgr;.
   </para>
 
-  <sect2 id="sec.virtualization.vmguest_manage.details">
+  <sect2 xml:id="sec.virtualization.vmguest_manage.details">
    <title>Displaying a &vmguest;'s Profile</title>
    <para>
     Click on the name of a &vmguest; on the &vmhost;'s
@@ -758,26 +767,26 @@ rcosad start</screen>
    </para>
    <para>
     A profile page for a virtual system does not differ from a regular
-    system's profile page. You can perform the same actions (e.g.
-    installing software or changing its configuration).
+    system's profile page. You can perform the same actions (e.g. installing
+    software or changing its configuration).
    </para>
   </sect2>
 
-  <sect2 id="sec.virtualization.vmguest_manage.status">
+  <sect2 xml:id="sec.virtualization.vmguest_manage.status">
    <title>Starting, Stopping, Suspending and Resuming a &vmguest;</title>
    <para>
-    To start, stop, restart, suspend, or resume a &vmguest;,
-    navigate to the &vmhost;'s <guimenu>Virtualization</guimenu> page. Check
-    one or more <guimenu>Guests</guimenu> listed in the table and scroll down to
-    the bottom of the page. Choose an action from the drop-down list and click
-    <guimenu>Apply Action</guimenu>. <guimenu>Confirm</guimenu> the action on the next
-    page.
+    To start, stop, restart, suspend, or resume a &vmguest;, navigate to
+    the &vmhost;'s <guimenu>Virtualization</guimenu> page. Check one or
+    more <guimenu>Guests</guimenu> listed in the table and scroll down to
+    the bottom of the page. Choose an action from the drop-down list and
+    click <guimenu>Apply Action</guimenu>. <guimenu>Confirm</guimenu> the
+    action on the next page.
    </para>
    <note>
     <title>Automatically restarting a &vmguest;</title>
     <para>
-     Automatically restarting a &vmguest; when the &vmhost; reboots is not
-     enabled by default on &vmguest;s and cannot be configured from
+     Automatically restarting a &vmguest; when the &vmhost; reboots is
+     not enabled by default on &vmguest;s and cannot be configured from
      &susemgr;. Refer to your &kvm; or &xen; documentation.
      Alternatively, you may use
      <systemitem class="library">libvirt</systemitem> to enable automatic
@@ -805,7 +814,7 @@ rcosad start</screen>
    </para>
   </sect2>
 
-  <sect2 id="sec.virtualization.vmguest_manage.delete">
+  <sect2 xml:id="sec.virtualization.vmguest_manage.delete">
    <title>Deleting a &vmguest;</title>
    <para>
     To delete a &vmguest; you must first shut it down as described in
@@ -816,7 +825,5 @@ rcosad start</screen>
    </para>
   </sect2>
  </sect1>
- 
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-    href="s1-sm-susestudio.xml"/>
+ <xi:include href="s1-sm-susestudio.xml" parse="xml"/>
 </chapter>

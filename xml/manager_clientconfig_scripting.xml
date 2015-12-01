@@ -1,45 +1,14 @@
-<?xml version="1.0"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE chapter PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<chapter id="ch-scripting">
- <title>Manually Scripting the Configuration</title><indexterm>
- <primary>client applications</primary>
- <secondary>scripting completely</secondary></indexterm>
- <para>
-  This chapter provides an alternative to using Bootstrap to generate the
-  bootstrap script. With these instructions, you should be able to create
-  your own bootstrap script from scratch.
- </para>
- <para>
-  All of the initial techniques share a common theme: the deployment
-  of necessary files in a centralized location to be retrieved and installed
-  using simple, scriptable commands run on each client. This chapter
-  explains how to create a single script that can be invoked by any system
-  in your organization.
- </para>
- <para>
-  Combining all the commands from the previous chapters on a &slsa; 11 SP1
-  system, results in the following script:<remark role="needinfo">emap 2014-04-07: use SP3 instead?</remark>
- </para>
- <remark>
-<!--Keep in mind, <filename>mgr_register</filename> does not exist
-   on Red Hat Enterprise Linux 3 or 4:-->
-<!--
-I guess we want to describe the manual configuration of a SLES11-SP1
-system here? Not a Red Hat Enterprise Linux 3 or 4.
-BTW: Whenever we describe actions to be performed on a RHEL client, we
-IMO must use the 'rhn_*' command names! The 'mgr_*' commands exist on
-SLES only.
--->
- </remark>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ch-scripting">
 <!-- emap: deleted in RH docs, moved out of screen:
 # First, install the latest client RPMs to the system.
 
@@ -50,8 +19,39 @@ zypper in spacewalk-check spacewalk-client-setup spacewalk-client-tools \
   rhncfg-actions rhncfg-client rhncfg-management zypp-plugin-spacewalk
 
 # Second,-->
-<remark role="needinfo">emap 2014-04-07: Do the directories 'rhn_register'(unsupported) and 'up2date'(obsolete) still exist on SUMa?</remark>
+ <title>Manually Scripting the Configuration</title>
+ <info/><indexterm>
+ <primary>client applications</primary>
+ <secondary>scripting completely</secondary></indexterm>
+ <para>
+  This chapter provides an alternative to using Bootstrap to generate the
+  bootstrap script. With these instructions, you should be able to create
+  your own bootstrap script from scratch.
+ </para>
+ <para>
+  All of the initial techniques share a common theme: the deployment of
+  necessary files in a centralized location to be retrieved and installed
+  using simple, scriptable commands run on each client. This chapter
+  explains how to create a single script that can be invoked by any system
+  in your organization.
+ </para>
+ <para>
+  Combining all the commands from the previous chapters on a &slsa; 11
+  SP1 system, results in the following script:
+  <remark role="needinfo">emap 2014-04-07: use SP3 instead?</remark>
+ </para>
+ <remark></remark>
+<!-- emap: deleted in RH docs, moved out of screen:
+# First, install the latest client RPMs to the system.
 
+zypper ar \
+  http://susemgr.example.com/pub/repositories/susemanager-client-setup \
+  susemanager-client-setup
+zypper in spacewalk-check spacewalk-client-setup spacewalk-client-tools \
+  rhncfg-actions rhncfg-client rhncfg-management zypp-plugin-spacewalk
+
+# Second,-->
+ <remark role="needinfo">emap 2014-04-07: Do the directories 'rhn_register'(unsupported) and 'up2date'(obsolete) still exist on SUMa?</remark>
 <screen>
 # Reconfigure the clients to talk to the correct server.
 perl -p -i -e 's/www\.rhns\.redhat\.com/susemgr\.example\.com/g' \
@@ -86,12 +86,13 @@ wget <replaceable>http://susemgr.example.com/pub/YOUR-RPM-GPG-KEY</replaceable>
 rpm --import <replaceable>/path/to/YOUR-RPM-GPG-KEY</replaceable></screen>
  <para>
   This script comprises a clean and repeatable process that should fully
-  configure any potential &susemgr; client in preparation for registration
-  to a &susemgr; Server. Remember, key values, such as the URL of your
-  &susemgr; Server, its public directory, and your actual GPG key must be
-  inserted into the placeholders listed within the script. Depending on your
-  environment, additional modifications may be required. Although this
-  script may work nearly verbatim, it should be used as for guidance only.
+  configure any potential &susemgr; client in preparation for
+  registration to a &susemgr; Server. Remember, key values, such as the
+  URL of your &susemgr; Server, its public directory, and your actual GPG
+  key must be inserted into the placeholders listed within the script.
+  Depending on your environment, additional modifications may be required.
+  Although this script may work nearly verbatim, it should be used as for
+  guidance only.
  </para>
  <para>
   Like its components, this script should be centrally located. By placing
@@ -103,14 +104,14 @@ rpm --import <replaceable>/path/to/YOUR-RPM-GPG-KEY</replaceable></screen>
 <screen>wget -O - http://susemgr.example.com/pub/bootstrap_script | bash</screen>
  <warning>
   <para>
-   Running a shell script directly from input piped in over an Internet connection
-   has some inherent security risks. Therefore, it is vital to ensure the
-   security of the source server.
+   Running a shell script directly from input piped in over an Internet
+   connection has some inherent security risks. Therefore, it is vital to
+   ensure the security of the source server.
   </para>
  </warning>
  <para>
   This one-line command may then be invoked across all systems on a network.
-  This script makes for a perfect
-  addition to the <literal>%post</literal> section of an existing &ay; script.
+  This script makes for a perfect addition to the <literal>%post</literal>
+  section of an existing &ay; script.
  </para>
 </chapter>

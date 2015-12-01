@@ -1,16 +1,61 @@
-<?xml version="1.0"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE chapter PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<chapter id="ch-pup">
- <title>Package Update Tools (&slea; and &rhela;)</title><indexterm>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ch-pup">
+<!-- xmllint says: this is valid!  emacs believes:  it is not.
+      anyhow, to make the docs build, this is needed for now.  
+
+      actually the schema is weird.  for chapters, the schema allows
+      _either_ a sequence of sections _or_ a sequence of refentries
+      _or_ a msgset _or_ a *single* xi:include ???
+
+/usr/share/xml/novdoc/schema/rng/1.0/novdocx-core.rnc
+
+chapter =
+  element chapter {
+    attlist_chapter,
+    title,
+    (abstract | all | procedure | qandaset)+,
+    (sect1* | refentry* | msgset? | xi_include.opt)
+  }
+
+no good.
+
+this is the part from 
+/usr/share/xml/novdoc/schema/dtd/1.0/novdocx.dtd
+
+<!-/- CHANGE_SEP_28 added msgset to Appendix, Chapter and Sect1 -/->
+<!ELEMENT appendix  (title , (%all; | procedure | qandaset)+ , (sect1* | refentry* | msgset?) ) >
+<!ELEMENT chapter   (title , (abstract | %all; | procedure | qandaset)+ , (sect1* |refentry* | msgset? %xi_include.opt;) ) >
+<!ELEMENT abstract  (title?, para+) >
+
+in case a chapter should continue to be either sect1 sections or
+refentries (man pages) or a single msgset (eror message catalogue),
+then chapter could instead be this:
+
+<!ELEMENT chapter   (title ,
+                     (abstract | %all; | procedure | qandaset)+ ,
+                     ( (sect1 %xi_include.opt; )* | (refentry %xi_include.opt;)* | (msgset %xi_include.opt;)?  ) ) >
+
+
+alternatively, if the restriction on chapter structure can be lifted,
+it could also look like this instead:
+
+<!ELEMENT chapter   (title , (abstract | %all; | procedure | qandaset)+ , (sect1 |refentry | msgset %xi_include.opt;)* ) >
+
+
+
+anyhow.  this will render the documentation for now.
+  -->
+ <title>Package Update Tools (&slea; and &rhela;)</title>
+ <info/><indexterm>
  <primary>package installation</primary>
  <secondary>complete description</secondary></indexterm>
  <para>
@@ -25,7 +70,7 @@
    to <xref linkend="s1-maintenance-update"/> for detailed instructions.
   </para>
  </warning>
-<sect1 id="pup-sle">
+ <sect1 xml:id="pup-sle">
 <!--status="rfc"-->
 
   <title>Updating Packages on &slea;</title><indexterm>
@@ -70,7 +115,7 @@
    <xref linkend="varentry-system-details-properties-auto"/>.
   </para>
 
-  <sect2 id="pup-sle-you">
+  <sect2 xml:id="pup-sle-you">
    <title>Using &yast; Online Update</title>
 <!-- 2011-01-31: taken from SLE_110/books/en/xml/yast2_you.xml -->
 <!-- FIXME: add special SM features, if any -->
@@ -86,7 +131,7 @@
     This section covers the tool for updating software packages: &yast;
     Online Update.
    </para>
-   <figure id="fig.ref.yast.repo.services">
+   <figure xml:id="fig.ref.yast.repo.services">
     <title>&yast; Software Repositories</title>
     <mediaobject>
      <imageobject role="fo">
@@ -158,10 +203,9 @@
     </step>
     <step>
      <para>
-      All new patches (except optional ones) currently
-      available for your system are already marked for
-      installation. Confirm the selection to automatically
-      install these patches.
+      All new patches (except optional ones) currently available for your
+      system are already marked for installation. Confirm the selection to
+      automatically install these patches.
      </para>
     </step>
     <step>
@@ -185,7 +229,7 @@
     </para>
    </tip>
    -->
-   <sect3 id="sec.onlineupdate.you.manually">
+   <sect3 xml:id="sec.onlineupdate.you.manually">
     <title>Installing Patches Manually Using the Qt Interface</title>
     <para>
      The <guimenu>Online Update</guimenu> window consists of four sections.
@@ -230,9 +274,9 @@
       <listitem>
        <para>
         Patches that either apply to packages not installed on your system,
-        or patches that have requirements which have already been
-        fulfilled (because the relevant packages have already been updated
-        from another source).
+        or patches that have requirements which have already been fulfilled
+        (because the relevant packages have already been updated from
+        another source).
        </para>
       </listitem>
      </varlistentry>
@@ -255,16 +299,17 @@
      actions are <guimenu>Autoinstall</guimenu>,
      <guimenu>Autoupdate</guimenu> and <guimenu>Autodelete</guimenu>.
      Actions for <literal>Optional</literal> patches are not
-     preset&mdash;right-click on a patch and choose an action from the list.
+     preset&mdash;right-click on a patch and choose an action from the
+     list.
     </para>
     <para>
      If you install an up-to-date package from a repository other than the
      update repository, the requirements of a patch for this package may be
-     fulfilled with this installation. If so, a check mark is
-     displayed in front of the patch summary. The patch will be visible in
-     the list until you mark it for installation. This will in fact not
-     install the patch (because the package already is up-to-date), but mark
-     the patch as installed.
+     fulfilled with this installation. If so, a check mark is displayed in
+     front of the patch summary. The patch will be visible in the list until
+     you mark it for installation. This will in fact not install the patch
+     (because the package already is up-to-date), but mark the patch as
+     installed.
     </para>
     <para>
      Most patches include updates for several packages. If you want to
@@ -273,7 +318,7 @@
      and packages as desired, proceed with <guimenu>Accept.</guimenu>
     </para>
    </sect3>
-   <sect3 id="sec.onlineupdate.you_gtk.manually">
+   <sect3 xml:id="sec.onlineupdate.you_gtk.manually">
     <title>Installing Patches Manually Using the GTK Interface</title>
     <remark>emap 2011-03-24: Do we need to add a few words
     on why there are two different interfaces? Something like 'If you selected
@@ -362,33 +407,33 @@
     </variablelist>
     <para>
      Click on a patch entry to open a row with detailed information about
-     the patch in the bottom of the window. Here you can see a
-     patch description as well as the versions available. You can also
-     choose to <guimenu>Install</guimenu> optional patches&mdash;security
-     and recommended patches are already preselected for installation.
+     the patch in the bottom of the window. Here you can see a patch
+     description as well as the versions available. You can also choose to
+     <guimenu>Install</guimenu> optional patches&mdash;security and
+     recommended patches are already preselected for installation.
     </para>
    </sect3>
-   <sect3 id="sec.onlineupdate.you.automatically">
+   <sect3 xml:id="sec.onlineupdate.you.automatically">
     <title>Automatic Online Update</title>
     <para>
-     &yast; also offers the possibility to set up an automatic update. Open
-     <menuchoice><guimenu>Software</guimenu><guimenu>Online Update
+     &yast; also offers the possibility to set up an automatic update.
+     Open <menuchoice><guimenu>Software</guimenu><guimenu>Online Update
      Configuration</guimenu></menuchoice>. Check <guimenu>Automatic Online
      Update</guimenu> and choose whether to update <guimenu>Daily</guimenu>,
      <guimenu>Weekly</guimenu>, or <guimenu>Monthly</guimenu>. Some patches,
      such as kernel updates, require user interaction, which would cause the
      automatic update procedure to stop. Therefore you should check
      <guimenu>Skip Interactive Patches</guimenu> if you want the update
-     procedure to proceed fully automatically. In that case, you should
-     run a manual <guimenu>Online Update</guimenu> from time to time in
-     order to install patches that require interaction.
+     procedure to proceed fully automatically. In that case, you should run
+     a manual <guimenu>Online Update</guimenu> from time to time in order to
+     install patches that require interaction.
     </para>
    </sect3>
   </sect2>
 
-  <sect2 id="pup-sle-zypper">
+  <sect2 xml:id="pup-sle-zypper">
    <title>Updating Packages from the Command Line with Zypper</title>
-<!-- <title>Update from the Command Line with zypper</title> --><indexterm id="idx.zypper" class="startofrange">
+<!-- <title>Update from the Command Line with zypper</title> --><indexterm xml:id="idx.zypper" class="startofrange">
    <primary>zypper</primary></indexterm><indexterm>
    <primary>commands</primary>
    <secondary>zypper</secondary></indexterm><indexterm>
@@ -407,13 +452,13 @@
    </para>
    <para>
     For more information on managing software from the command line, enter
-    <command>zypper help</command> or <command>zypper help
-    <replaceable>command</replaceable></command> or see the
+    <command>zypper help</command> or <command>zypper help</command>
+    <replaceable>command</replaceable> or see the
     <systemitem>zypper(8)</systemitem> manpage. <phrase os="osuse">Also see
-    <ulink url="http://en.opensuse.org/Zypper/Usage"/> for a complete and
-    detailed command-reference.</phrase>
+    <link xlink:href="http://en.opensuse.org/Zypper/Usage"/> for a complete
+    and detailed command-reference.</phrase>
    </para>
-   <sect3 id="sec.zypper.usage">
+   <sect3 xml:id="sec.zypper.usage">
     <title>General Usage</title>
     <para>
      The general syntax of Zypper is:
@@ -433,11 +478,10 @@
     </para>
 <screen>zypper --non-interactive patch</screen>
     <para>
-     To use options specific to a particular command, type them right
-     after the command. For example,
-     <option>--auto-agree-with-licenses</option> means applying all needed
-     patches to the system without asking to confirm any licenses (they will
-     automatically be accepted):
+     To use options specific to a particular command, type them right after
+     the command. For example, <option>--auto-agree-with-licenses</option>
+     means applying all needed patches to the system without asking to
+     confirm any licenses (they will automatically be accepted):
     </para>
 <screen>zypper patch --auto-agree-with-licenses</screen>
     <para>
@@ -445,7 +489,7 @@
      command, for example, you need to specify which package(s) to install:
     </para>
 <screen>zypper install mplayer</screen>
-    <!-- bnc#845470
+<!-- bnc#845470
          use patch instead of pattern to avoid confusion
     -->
     <para>
@@ -468,7 +512,7 @@
     </para>
 <screen>zypper remove --dry-run MozillaFirefox</screen>
    </sect3>
-   <sect3 id="sec.zypper.softman">
+   <sect3 xml:id="sec.zypper.softman">
     <title>Installing and Removing Software with Zypper</title>
     <para>
      To install or remove packages use the following commands:
@@ -511,8 +555,8 @@ zypper remove <replaceable>package</replaceable></screen>
       <term>By capability:</term>
       <listitem>
        <para>
-        For example, if you want to install a perl module without
-        knowing the name of the package, capabilities come in handy:
+        For example, if you want to install a perl module without knowing
+        the name of the package, capabilities come in handy:
        </para>
 <screen>zypper in 'perl(Time::ParseDate)'</screen>
       </listitem>
@@ -523,10 +567,11 @@ zypper remove <replaceable>package</replaceable></screen>
        <para>
         Together with a capability you can specify an architecture (such as
         <literal>i586</literal> or <literal>x86_64</literal>) and a version.
-        The version must be preceded by an operator: <literal>&lt;</literal>
-        (lesser than), <literal>&lt;=</literal> (lesser than or equal),
-        <literal>=</literal> (equal&gt;, <literal>&gt;=</literal> (greater
-        than or equal), <literal>&gt;</literal> (greater than).
+        The version must be preceded by an operator:
+        <literal>&lt;</literal> (lesser than),
+        <literal>&lt;=</literal> (lesser than or equal),
+        <literal>=</literal> (equal&gt;, <literal>&gt;=</literal>
+        (greater than or equal), <literal>&gt;</literal> (greater than).
        </para>
 <screen>zypper in 'firefox.x86_64'
 zypper in 'firefox&gt;=3.5.3'
@@ -569,9 +614,9 @@ zypper install vim -emacs        # Correct
 zypper install -- -emacs +vim    # Correct, same as above
 zypper remove emacs +vim         # Correct, same as above</screen>
     <para>
-     By default, Zypper asks for confirmation before installing or
-     removing a selected package, or when a problem occurs. You can override
-     this behavior using the <option>--non-interactive</option> option. This
+     By default, Zypper asks for confirmation before installing or removing
+     a selected package, or when a problem occurs. You can override this
+     behavior using the <option>--non-interactive</option> option. This
      option must be given before the actual command (install, remove, and
      patch) as in the following:
     </para>
@@ -590,7 +635,7 @@ zypper remove emacs +vim         # Correct, same as above</screen>
       altogether.
      </para>
     </warning>
-    <sect4 id="sec.zypper.softman.sources">
+    <sect4 xml:id="sec.zypper.softman.sources">
      <title>Installing Source Packages</title>
      <para>
       <indexterm>
@@ -604,9 +649,8 @@ zypper remove emacs +vim         # Correct, same as above</screen>
    </screen>
      <para>
       This command will also install the build dependencies of the specified
-      package. To avoid this, add the switch
-      <literal>-D</literal>. To install only the build dependencies use
-      <literal>-d</literal>.
+      package. To avoid this, add the switch <literal>-D</literal>. To
+      install only the build dependencies use <literal>-d</literal>.
      </para>
 <screen>zypper source-install -D <replaceable>package_name</replaceable> # source package only
 zypper source-install -d <replaceable>package_name</replaceable> # build dependencies only</screen>
@@ -622,7 +666,7 @@ zypper source-install -d <replaceable>package_name</replaceable> # build depende
      </para>
 <screen>zypper search -t srcpackage</screen>
     </sect4>
-    <sect4 id="sec.zypper.softman.util">
+    <sect4 xml:id="sec.zypper.softman.util">
      <title>Utilities</title>
      <para>
       To verify whether all dependencies are still fulfilled and to repair
@@ -639,15 +683,17 @@ zypper source-install -d <replaceable>package_name</replaceable> # build depende
 <screen>zypper install-new-recommends</screen>
     </sect4>
    </sect3>
-   <sect3 id="sec.zypper.softup">
+   <sect3 xml:id="sec.zypper.softup">
     <title>Updating Software with Zypper</title>
     <para>
      There are three different ways to update software using Zypper: by
      installing patches, by installing a new version of a package or by
-     updating the entire distribution. Do not use the latter (<command>zypper dist-upgrade</command>) for migrating &susemgr; 1.7 to version 2.1. Instead use &yast; Wagon as described in <xref
-        linkend="sec.update.online.wagon"/>.
+     updating the entire distribution. Do not use the latter
+     (<command>zypper dist-upgrade</command>) for migrating &susemgr; 1.7
+     to version 2.1. Instead use &yast; Wagon as described in
+     <xref linkend="sec.update.online.wagon"/>.
     </para>
-    <sect4 id="sec.zypper.softup.patch">
+    <sect4 xml:id="sec.zypper.softup.patch">
      <title>Installing Patches</title>
      <para>
       To install all officially released patches applying to your system,
@@ -663,8 +709,7 @@ zypper source-install -d <replaceable>package_name</replaceable> # build depende
       must enter in order to apply patches when needed.
      </para>
      <para>
-      Zypper knows three different commands to query for available
-      patches:
+      Zypper knows three different commands to query for available patches:
      </para>
      <variablelist>
       <varlistentry>
@@ -686,8 +731,8 @@ Reading installed packages...
        </term>
        <listitem>
         <para>
-         Lists all needed patches (patches that apply to your system but
-         are not yet installed).
+         Lists all needed patches (patches that apply to your system but are
+         not yet installed).
         </para>
 <!--taroth 2010-07-26: todo - (instead of zypper list-patches) the output 
        of zypper list-updates is given below, correct for next revision (fixed in 
@@ -764,7 +809,7 @@ patch [options]
 - -bz works, too. 
 Can this feature be closed, or we'll close it after the repo metadata have the CVE references?
 -->
-    <sect4 id="sec.zypper.softup.update">
+    <sect4 xml:id="sec.zypper.softup.update">
      <title>Installing Updates</title>
      <para>
       If a repository contains only new packages but does not provide
@@ -786,12 +831,12 @@ zypper install <replaceable>package</replaceable></screen>
      <note>
       <title>Updating packages to newer versions with <command>zypper update</command></title>
       <para>
-       Choose <command>zypper update</command> to update packages to
-       newer versions available for your product version while
-       maintaining system integrity. <command>zypper update</command>
-       will honor the following rules:
+       Choose <command>zypper update</command> to update packages to newer
+       versions available for your product version while maintaining system
+       integrity. <command>zypper update</command> will honor the following
+       rules:
       </para>
-      <itemizedlist>
+      <itemizedlist mark="bullet" spacing="normal">
        <listitem>
         <para>
          no vendor changes,
@@ -813,7 +858,7 @@ zypper install <replaceable>package</replaceable></screen>
         </para>
        </listitem>
       </itemizedlist>
-     <!-- <para>
+<!-- <para>
        To upgrade your installation to a new product version use
        <command>zypper dist-upgrade</command> with the required repositories
        (see <xref linkend="sec.zypper.instrepo"/> for details). This command
@@ -826,7 +871,7 @@ zypper install <replaceable>package</replaceable></screen>
      </note>
     </sect4>
    </sect3>
-   <sect3 id="sec.zypper.instrepo">
+   <sect3 xml:id="sec.zypper.instrepo">
     <title>Managing Repositories with Zypper</title>
     <para>
      All installation or patch commands of Zypper rely on a list of known
@@ -864,24 +909,24 @@ zypper install <replaceable>package</replaceable></screen>
      are not displayed. Use the following command to list all details:
     </para>
 <screen>zypper repos -d</screen>
-    <sect4 id="sec.zypper.instrepo.add">
+    <sect4 xml:id="sec.zypper.instrepo.add">
      <title>Adding Repositories</title>
      <para>
       To add a repository, run
      </para>
 <screen>zypper addrepo <replaceable>URI</replaceable> <replaceable>Alias</replaceable></screen>
      <para>
-      <replaceable>URI</replaceable> can either be an Internet
-      repository, a network resource, a directory, or a CD or DVD (see
-      <ulink url="http://en.opensuse.org/openSUSE:Libzypp_URIs"/> for
-      details). The <replaceable>Alias</replaceable> is a shorthand
-      and unique identifier of the repository. You can freely choose
-      it as long as it is unique. Zypper will issue a warning if you
-      specify an alias that is already in use. Use short and
-      easy-to-remember aliases for your own convenience.
+      <replaceable>URI</replaceable> can either be an Internet repository, a
+      network resource, a directory, or a CD or DVD (see
+      <link xlink:href="http://en.opensuse.org/openSUSE:Libzypp_URIs"/> for
+      details). The <replaceable>Alias</replaceable> is a shorthand and
+      unique identifier of the repository. You can freely choose it as long
+      as it is unique. Zypper will issue a warning if you specify an alias
+      that is already in use. Use short and easy-to-remember aliases for
+      your own convenience.
      </para>
     </sect4>
-    <sect4 id="sec.zypper.instrepo.rm">
+    <sect4 xml:id="sec.zypper.instrepo.rm">
      <title>Removing Repositories</title>
      <para>
       If you want to remove a repository from the list, use the command
@@ -891,7 +936,7 @@ zypper install <replaceable>package</replaceable></screen>
      </para>
 <screen>zypper removerepo 3</screen>
     </sect4>
-    <sect4 id="sec.zypper.instrepo.mofify">
+    <sect4 xml:id="sec.zypper.instrepo.mofify">
      <title>Modifying Repositories</title>
      <para>
       Enable or disable repositories with <command>zypper
@@ -903,10 +948,10 @@ zypper install <replaceable>package</replaceable></screen>
      </para>
 <screen>zypper mr -er -p 20 'updates'</screen>
      <para>
-      Modifying repositories is not limited to a single repository&mdash;you
-      can also operate on groups:
+      Modifying repositories is not limited to a single
+      repository&mdash;you can also operate on groups:
      </para>
-     <itemizedlist>
+     <itemizedlist mark="bullet" spacing="normal">
       <listitem>
        <para>
         <option>-a</option>: all repositories,
@@ -939,12 +984,12 @@ zypper install <replaceable>package</replaceable></screen>
 <screen>zypper renamerepo 'Mozilla Firefox' firefox</screen>
     </sect4>
    </sect3>
-   <sect3 id="sec.zypper.query">
+   <sect3 xml:id="sec.zypper.query">
     <title>Querying Repositories and Packages with Zypper</title>
     <para>
      Zypper offers various methods to query repositories or packages. To get
-     lists of all products, patterns, packages, or patches available, use the
-     following commands:
+     lists of all products, patterns, packages, or patches available, use
+     the following commands:
     </para>
 <screen>zypper products
 zypper patterns
@@ -953,8 +998,8 @@ zypper patches</screen>
     <para>
      To query all repositories for certain packages, use
      <literal>search</literal>. It works on package names, capabilities, or
-     optionally on package summaries and descriptions. Using the wildcards
-     * and ? in the search term is allowed. By default, the search is not
+     optionally on package summaries and descriptions. Using the wildcards *
+     and ? in the search term is allowed. By default, the search is not
      case-sensitive.
     </para>
 <screen>zypper se firefox       # simple search for "firefox"
@@ -962,9 +1007,9 @@ zypper se '*fire*'      # using wildcards
 zypper se -d fire       # also search in package descriptions and summaries
 zypper se -u firefox    # only display packages not already installed</screen>
     <para>
-     To search for packages which provide a special capability, use
-     the command <literal>what-provides</literal>. For example, if you
-     want to know which package provides the perl Module
+     To search for packages which provide a special capability, use the
+     command <literal>what-provides</literal>. For example, if you want to
+     know which package provides the perl Module
      <literal>SVN::Core</literal>, use the following command:
     </para>
 <screen>zypper what-provides 'perl(SVN::Core)'</screen>
@@ -978,16 +1023,16 @@ zypper se -u firefox    # only display packages not already installed</screen>
 <screen>zypper info --requires MozillaFirefox</screen>
     <para>
      The <literal>what-provides <replaceable>package</replaceable></literal>
-     is similar to <command>rpm -q --whatprovides
-     <replaceable>package</replaceable></command>, but rpm is only able to
-     query the RPM database (that is the database of all installed
-     packages). Zypper, on the other hand, will tell you about providers of
-     the capability from any repository, not only those that are installed.
+     is similar to <command>rpm -q --whatprovides</command>
+     <replaceable>package</replaceable>, but rpm is only able to query the
+     RPM database (that is the database of all installed packages). Zypper,
+     on the other hand, will tell you about providers of the capability from
+     any repository, not only those that are installed.
     </para><indexterm class="endofrange" startref="idx.zypper"/>
    </sect3>
   </sect2>
  </sect1>
- <sect1 id="pup-rhel">
+ <sect1 xml:id="pup-rhel">
   <title>Updating Packages on &rhela;&nbsp;5 and&nbsp;6</title><indexterm>
 
   <primary>package installation</primary>
@@ -999,24 +1044,28 @@ zypper se -u firefox    # only display packages not already installed</screen>
    other RH client systems and tools running on them are important, I
    need your feedback.
    </remark>
- <remark>emap: seems like all works the same for RHEL 6, added.</remark>
+
+  <remark>emap: seems like all works the same for RHEL 6, added.</remark>
+
   <para>
-   Depending on your version of Red Hat Enterprise Linux, systems
-   registered with &susemgr; can update client systems directly, using
-   various tools and applications installed on the system. For Red Hat
-   Enterprise Linux 5 and 6, you can use the Package Updater
-   (<command>pup</command>), the updater applet, and <command>yum</command> tools to keep
-   systems up-to-date.
-  </para>
- <remark role="needinfo">emap: RH only documents the package updater applet for updating packages. Couldn't find this content anymore in their 5.6 documentation, nor the yum section with command line options. Should we keep or drop?</remark>
-  <para>
-   The Package Updater (<command>pup</command>) is the desktop update
-   application for Red Hat Enterprise Linux 5 and later. Using this tool, you
-   can update packages and read information about the updated packages, such
-   as bug fix details, security alerts, enhancements, and more.
+   Depending on your version of Red Hat Enterprise Linux, systems registered
+   with &susemgr; can update client systems directly, using various tools
+   and applications installed on the system. For Red Hat Enterprise Linux 5
+   and 6, you can use the Package Updater (<command>pup</command>), the
+   updater applet, and <command>yum</command> tools to keep systems
+   up-to-date.
   </para>
 
-  <sect2 id="pup-start">
+  <remark role="needinfo">emap: RH only documents the package updater applet for updating packages. Couldn't find this content anymore in their 5.6 documentation, nor the yum section with command line options. Should we keep or drop?</remark>
+
+  <para>
+   The Package Updater (<command>pup</command>) is the desktop update
+   application for Red Hat Enterprise Linux 5 and later. Using this tool,
+   you can update packages and read information about the updated packages,
+   such as bug fix details, security alerts, enhancements, and more.
+  </para>
+
+  <sect2 xml:id="pup-start">
    <title>Using the Package Updater</title>
    <para>
     To start the Package Updater from the desktop, open
@@ -1041,10 +1090,10 @@ zypper se -u firefox    # only display packages not already installed</screen>
    </figure>
    <para>
     If there are multiple package updates, they will be listed with
-    pre-selected check boxes next to them so that you can choose which files to update.
-    Some packages (for example, kernel packages) may have a circular arrow
-    icon next to them, indicating that you are required to reboot your
-    system after updating the package.
+    pre-selected check boxes next to them so that you can choose which files
+    to update. Some packages (for example, kernel packages) may have a
+    circular arrow icon next to them, indicating that you are required to
+    reboot your system after updating the package.
    </para>
    <para>
     To view the update details of any package, highlight the package and
@@ -1073,8 +1122,9 @@ zypper se -u firefox    # only display packages not already installed</screen>
    </para>
    <para>
     If this is the first time you are using the Package Updater, the program
-    will prompt you to import the Red Hat GPG security key that verifies that
-    a package has been signed and is certified for Red Hat Enterprise Linux.
+    will prompt you to import the Red Hat GPG security key that verifies
+    that a package has been signed and is certified for Red Hat Enterprise
+    Linux.
    </para>
 <!--
   <figure>
@@ -1114,12 +1164,12 @@ zypper se -u firefox    # only display packages not already installed</screen>
    </para>
   </sect2>
 
-  <sect2 id="pup-puplet">
+  <sect2 xml:id="pup-puplet">
    <title>The Package Updater Applet</title>
    <para>
-    Red Hat Enterprise Linux 5 and later features an applet on the
-    graphical desktop panel that periodically checks for updates from the
-    &susemgr; server and alerts users when updates are available.
+    Red Hat Enterprise Linux 5 and later features an applet on the graphical
+    desktop panel that periodically checks for updates from the &susemgr;
+    server and alerts users when updates are available.
    </para>
    <figure>
     <title>Package Updater Applet</title>
@@ -1138,7 +1188,7 @@ zypper se -u firefox    # only display packages not already installed</screen>
     various package maintenance tasks. Click the notification icon and
     choose from the following actions:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
       <guimenu>Refresh</guimenu>: checks &susemgr; for new updates.
@@ -1147,8 +1197,8 @@ zypper se -u firefox    # only display packages not already installed</screen>
     <listitem>
      <para>
       <guimenu>View Updates</guimenu>: launches the Package Updater
-      application and displays available updates in more detail.
-      Configure the updates to your specifications.
+      application and displays available updates in more detail. Configure
+      the updates to your specifications.
      </para>
     </listitem>
     <listitem>
@@ -1165,9 +1215,10 @@ zypper se -u firefox    # only display packages not already installed</screen>
    </itemizedlist>
   </sect2>
 
-  <sect2 id="pup-yum">
+  <sect2 xml:id="pup-yum">
    <title>Updating Packages from the Command Line with yum</title>
-   <para><remark role="needinfo">emap: Couldn't find RH equivalent in 5.6, should still be useful to keep though. Or should we drop it?</remark>
+   <para>
+    <remark role="needinfo">emap: Couldn't find RH equivalent in 5.6, should still be useful to keep though. Or should we drop it?</remark>
     The foundation of the Package Updater is the Yum package manager,
     developed by Duke University. <command>yum</command> searches supported
     repositories for packages and their dependencies so they may be
@@ -1175,106 +1226,106 @@ zypper se -u firefox    # only display packages not already installed</screen>
     Enterprise Linux 5 and 6 use <command>yum</command> to fetch and install
     packages.
    </para>
-  <note>
-   <para>
-    <command>up2date</command> is no longer available on Red Hat Enterprise Linux
-    5 and later versions. The entire stack of update and installation tools is now based on Yum.
-    </para>
-  </note>
+   <note>
     <para>
-     Yum commands are typically typed as follows:
+     <command>up2date</command> is no longer available on Red Hat Enterprise
+     Linux 5 and later versions. The entire stack of update and installation
+     tools is now based on Yum.
     </para>
+   </note>
+   <para>
+    Yum commands are typically typed as follows:
+   </para>
 <screen>yum <replaceable>command</replaceable> [<replaceable>package_name</replaceable>]
 </screen>
-    <para>
-     By default, Yum will automatically attempt to check all configured
-     repositories to resolve all package dependencies during an installation
-     or upgrade. The following is a list of the most commonly-used
-     <command>yum</command> commands. For a complete list of available yum
-     commands, refer to <command>man yum</command>.
-    </para>
-    <variablelist>
-     <varlistentry>
-      <term><command>yum install <replaceable>package_name</replaceable></command>
-      </term>
-      <listitem>
-       <para>
-        Installs the latest version of a package or group of packages. If no
-        package matches the specified package name, the name is treated as a
-        shell wildcard. In this case, all matches are installed.
-       </para>
-      </listitem>
-     </varlistentry>
-     <varlistentry>
-      <term>yum update <replaceable>package_name</replaceable>
-      </term>
-      <listitem>
-       <para>
-        Updates the specified packages to the latest available version. If
-        no packages are specified, <command>yum</command> will attempt to
-        update all installed packages.
-       </para>
-       <para>
-        If the <option>--obsoletes</option> option is used (i.e.
-        <command>yum --obsoletes
-        <replaceable>package_name</replaceable></command>), yum will process
-        obsolete packages. Packages that are obsoleted across updates will
-        be removed and replaced accordingly.
-       </para>
-      </listitem>
-     </varlistentry>
-     <varlistentry>
-      <term>yum check-update</term>
-      <listitem>
-       <para>
-        This command determines whether updates are available for your
-        installed packages. <command>yum</command> returns a list of all
-        package updates from all repositories where updates are available.
-       </para>
-      </listitem>
-     </varlistentry>
-     <varlistentry>
-      <term>yum remove <replaceable>package_name</replaceable>
-      </term>
-      <listitem>
-       <para>
-        Removes specified packages and along with it all dependent packages.
-       </para>
-      </listitem>
-     </varlistentry>
-     <varlistentry>
-      <term>yum provides <replaceable>package_name</replaceable>
-      </term>
-      <listitem>
-       <para>
-        Determines which packages provide a specific file or feature.
-       </para>
-      </listitem>
-     </varlistentry>
-     <varlistentry>
-      <term>yum search <replaceable>keyword</replaceable>
-      </term>
-      <listitem>
-       <para>
-        This command finds any packages containing the specified keyword in
-        the description, summary, packager and package name fields of RPMs
-        in all supported repositories.
-       </para>
-      </listitem>
-     </varlistentry>
-     <varlistentry>
-      <term>yum localinstall <replaceable>absolute path to filename</replaceable>
-      </term>
-      <listitem>
-       <para>
-        Installs a local package stored on your system.
-       </para>
-      </listitem>
-     </varlistentry>
-    </variablelist>
+   <para>
+    By default, Yum will automatically attempt to check all configured
+    repositories to resolve all package dependencies during an installation
+    or upgrade. The following is a list of the most commonly-used
+    <command>yum</command> commands. For a complete list of available yum
+    commands, refer to <command>man yum</command>.
+   </para>
+   <variablelist>
+    <varlistentry>
+     <term><command>yum install</command><replaceable>package_name</replaceable>
+     </term>
+     <listitem>
+      <para>
+       Installs the latest version of a package or group of packages. If no
+       package matches the specified package name, the name is treated as a
+       shell wildcard. In this case, all matches are installed.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>yum update <replaceable>package_name</replaceable>
+     </term>
+     <listitem>
+      <para>
+       Updates the specified packages to the latest available version. If no
+       packages are specified, <command>yum</command> will attempt to update
+       all installed packages.
+      </para>
+      <para>
+       If the <option>--obsoletes</option> option is used (i.e. <command>yum
+       --obsoletes</command> <replaceable>package_name</replaceable>), yum
+       will process obsolete packages. Packages that are obsoleted across
+       updates will be removed and replaced accordingly.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>yum check-update</term>
+     <listitem>
+      <para>
+       This command determines whether updates are available for your
+       installed packages. <command>yum</command> returns a list of all
+       package updates from all repositories where updates are available.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>yum remove <replaceable>package_name</replaceable>
+     </term>
+     <listitem>
+      <para>
+       Removes specified packages and along with it all dependent packages.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>yum provides <replaceable>package_name</replaceable>
+     </term>
+     <listitem>
+      <para>
+       Determines which packages provide a specific file or feature.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>yum search <replaceable>keyword</replaceable>
+     </term>
+     <listitem>
+      <para>
+       This command finds any packages containing the specified keyword in
+       the description, summary, packager and package name fields of RPMs in
+       all supported repositories.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>yum localinstall <replaceable>absolute path to filename</replaceable>
+     </term>
+     <listitem>
+      <para>
+       Installs a local package stored on your system.
+      </para>
+     </listitem>
+    </varlistentry>
+   </variablelist>
   </sect2>
  </sect1>
- <!-- xmllint says: this is valid!  emacs believes:  it is not.
+<!-- xmllint says: this is valid!  emacs believes:  it is not.
       anyhow, to make the docs build, this is needed for now.  
 
       actually the schema is weird.  for chapters, the schema allows

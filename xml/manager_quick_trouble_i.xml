@@ -1,15 +1,14 @@
-<?xml version="1.0"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE sect1 PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<sect1 id="sec.manager.trouble">
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.manager.trouble">
  <title>Installation and Configuration</title>
 
  <para>
@@ -17,15 +16,15 @@
   following list.
  </para>
 
- <sect2 id="sec.manager.trouble.install">
+ <sect2 xml:id="sec.manager.trouble.install">
   <title>Installation and Basic Setup</title>
   <variablelist>
    <varlistentry>
     <term>CPU: 64-Bit and Virtualization Support</term>
     <listitem>
      <para>
-      For running &susemgr; in a virtual environment you need a machine with
-      a recent Linux Kernel on either an Intel processor with VT
+      For running &susemgr; in a virtual environment you need a machine
+      with a recent Linux Kernel on either an Intel processor with VT
       (Virtualization technology) extensions, or an AMD processor with SVM
       extensions (also called AMD-V).
      </para>
@@ -132,7 +131,7 @@ rclibvirtd start</screen>
   </variablelist>
  </sect2>
 
- <sect2 id="sec.manager.trouble.config">
+ <sect2 xml:id="sec.manager.trouble.config">
   <title>Basic Configuration</title>
   <variablelist>
    <varlistentry>
@@ -141,8 +140,8 @@ rclibvirtd start</screen>
      <para>
       This is often caused by a missing channel assignment. For example, if
       you want to register a client running a 64-bit version of &sls; 11
-      SP1, you need to add one or more channels for that version of &sls; 11
-      SP1. Check if the required steps mentioned at the beginning of
+      SP1, you need to add one or more channels for that version of &sls;
+      11 SP1. Check if the required steps mentioned at the beginning of
       <xref linkend="sec.manager.config"/> have been executed correctly.
      </para>
     </listitem>
@@ -152,10 +151,10 @@ rclibvirtd start</screen>
     <listitem>
      <para>
       If any functions or entries in the Web interface are not available,
-      check if you have the permission to access these functions. &susemgr;
-      uses a role-based model for granting permissions. For more
-      information, refer to <xref linkend="sec.manager.config.users"/> and
-      <xref linkend="sec.manager.config.organizations"/>.
+      check if you have the permission to access these functions.
+      &susemgr; uses a role-based model for granting permissions. For
+      more information, refer to <xref linkend="sec.manager.config.users"/>
+      and <xref linkend="sec.manager.config.organizations"/>.
      </para>
     </listitem>
    </varlistentry>
@@ -171,20 +170,17 @@ rclibvirtd start</screen>
    </varlistentry>
   </variablelist>
  </sect2>
- <sect2 id="sec.manager.trouble.mail">
-  <title>Mail and Notification Issues</title>
-  <indexterm>
-   <primary>terms to understand</primary>
-   <secondary>traceback email address</secondary>
-  </indexterm>
 
-  <!-- https://bugzilla.suse.com/show_bug.cgi?id=933298 -->
+ <sect2 xml:id="sec.manager.trouble.mail">
+  <title>Mail and Notification Issues</title><indexterm>
+  <primary>terms to understand</primary>
+  <secondary>traceback email address</secondary></indexterm>
+<!-- https://bugzilla.suse.com/show_bug.cgi?id=933298 -->
   <para>
    If you as the administrator are not receiving mail notification from
    &susemgr;, check and modify the following parameters in
    <filename>/etc/rhn/rhn.conf</filename>:
   </para>
-
   <variablelist>
    <varlistentry>
     <term>traceback_mail</term>
@@ -202,8 +198,8 @@ rclibvirtd start</screen>
     <listitem>
      <para>
       This is the mail address used by &susemgr; to send notification
-      mails about error messages and daily status reports.  You can set
-      this address that is valid for your organization.
+      mails about error messages and daily status reports. You can set this
+      address that is valid for your organization.
      </para>
     </listitem>
    </varlistentry>

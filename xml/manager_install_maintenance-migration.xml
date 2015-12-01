@@ -1,58 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE chapter PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<chapter id="s1-maintenance-migration">
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="s1-maintenance-migration">
  <title>Performing a System Upgrade (Offline Migration)</title>
+ <info/>
  <para>
   This chapter deals with system upgrade (<emphasis>offline</emphasis>
-  migration).  In this case, the machine reboots and performs the
-  upgrade. The process is controlled by &yast; and &ay; and not by
-  plain <command>zypper</command> commands.
+  migration). In this case, the machine reboots and performs the upgrade.
+  The process is controlled by &yast; and &ay; and not by plain
+  <command>zypper</command> commands.
  </para>
-
  <important>
   <para>
    Only perform an offline migration on client systems managed by
-   &susemgr; servers.  For upgrading the &susemgr; server itself, see
-   <xref linkend="s1-maintenance-update"/>.  This is a viable method for
-   major version upgrades such as an upgrade from &sle; 11 to 12.  Make
-   sure that you have migrated the &susemgr; server to &scc; first; for
-   more information, see <xref linkend="ch-user-scc"/>.
+   &susemgr; servers. For upgrading the &susemgr; server itself, see
+   <xref linkend="s1-maintenance-update"/>. This is a viable method for
+   major version upgrades such as an upgrade from &sle; 11 to 12. Make
+   sure that you have migrated the &susemgr; server to &scc; first;
+   for more information, see <xref linkend="ch-user-scc"/>.
   </para>
  </important>
  <para>
   Perform the following steps:
  </para>
-
  <procedure>
   <title>Preparing System Upgrade</title>
   <note>
    <para>
-    Make sure your &susemgr; and all the clients you want to upgrade
-    have installed all available updates, including the &susemgr;
-    tools. This is absolutely necessary, otherwise the system upgrade
-    will fail.
+    Make sure your &susemgr; and all the clients you want to upgrade have
+    installed all available updates, including the &susemgr; tools. This
+    is absolutely necessary, otherwise the system upgrade will fail.
    </para>
   </note>
   <step>
    <para>
     On the &susemgr; server, create a local tree with the SLES 12 SP1
-    installation sources.  This is needed for booting the clients into
-    the installation or upgrade scenario.  For example, download ISO
-    image of the DVD1 with the installation sources and mount it as
+    installation sources. This is needed for booting the clients into the
+    installation or upgrade scenario. For example, download ISO image of the
+    DVD1 with the installation sources and mount it as
     <filename>/mnt/sles12-sp1</filename>:
    </para>
-   <screen>mkdir /mnt/sles12-sp1
+<screen>mkdir /mnt/sles12-sp1
 mount -o loop <replaceable>DVD1</replaceable>.iso /mnt/sles12-sp1</screen>
-   <!--
+<!--
    <substeps>
     <step>
      <para>
@@ -72,37 +69,34 @@ mount -o loop <replaceable>DVD1</replaceable>.iso /mnt/sles12-sp1</screen>
   </step>
   <step>
    <para>
-    Create an autoinstallation distribution:
-    For all distributions we want to perform a system upgrade, we need
-    to create a SLE 12 SP1 distribution in &susemgr;. Use the following
-    steps to create one:
+    Create an autoinstallation distribution: For all distributions we want
+    to perform a system upgrade, we need to create a SLE 12 SP1 distribution
+    in &susemgr;. Use the following steps to create one:
    </para>
-   <substeps>
+   <substeps performance="required">
     <step>
-     <para>In the &susemgr; Web interface go to <menuchoice>
-     <guimenu>Systems</guimenu>
-     <guimenu>Autoinstallation</guimenu>
-     <guimenu>Distributions</guimenu>
-    </menuchoice>
+     <para>
+      In the &susemgr; Web interface go to <menuchoice>
+      <guimenu>Systems</guimenu> <guimenu>Autoinstallation</guimenu>
+      <guimenu>Distributions</guimenu> </menuchoice>
      </para>
     </step>
     <step>
      <para>
-      Enter a <guimenu>Distribution Label</guimenu> for your
-      distribution (for example, use as a <literal>spring2016</literal>)
-      and specify the <guimenu>Tree Path</guimenu>, which is the root
-      directory of the &sls; 12 SP1 installation sources (for example,
-      in this case <filename>/mnt/sles12-sp1</filename>).  As the
-      <guimenu>Base Channel</guimenu> use the update target distribution
-      (<quote>SLES12-SP1-Pool for x86_64</quote>. *** autoupgrade=1
-      *** ???</para>
+      Enter a <guimenu>Distribution Label</guimenu> for your distribution
+      (for example, use as a <literal>spring2016</literal>) and specify the
+      <guimenu>Tree Path</guimenu>, which is the root directory of the
+      &sls; 12 SP1 installation sources (for example, in this case
+      <filename>/mnt/sles12-sp1</filename>). As the <guimenu>Base
+      Channel</guimenu> use the update target distribution
+      (<quote>SLES12-SP1-Pool for x86_64</quote>. *** autoupgrade=1 *** ???
+     </para>
     </step>
     <step>
      <para>
-      Confirm with <guimenu>Create Autoinstallable
-      Distribution</guimenu>.
+      Confirm with <guimenu>Create Autoinstallable Distribution</guimenu>.
      </para>
-  <!-- 
+<!-- 
   <step>
    <para>
     Update the SP2 channels.</para><remark
@@ -167,149 +161,170 @@ mgr-ncc-sync -c sles11-sp2-updates-i586</screen>
    </substeps>
   </step>
   <step>
-            <para>Create an activation key for your SLE 12 SP1 systems.</para>
-            <para>
-             In order to switch from the old SLES 11 base channel to the
-             new SLE 12 SP1 base channel, we need an activation key.  Use the
-             following steps to create one:
-            </para>
-            <substeps>
-                <step>
-                    <para>
-                    Go to <menuchoice>
-                    <guimenu>Systems</guimenu>
-                    <guimenu>Activation Keys</guimenu>
-                </menuchoice> and click <guimenu>create new
-                    key</guimenu>.</para>
-                </step>
-                <step id="st.maintenance-migration.activationkey">
-                    <para>Enter a description for your key.</para>
-                </step>
-                <step>
-                    <para>Enter a key or leave it blank to generate an
-                        automatic key.</para>
-                </step>
-                <step>
-                    <para>If you limit the usage, enter your value in
-                        the <guimenu>Usage</guimenu> text field.
-                    </para>
-                </step>
-                <step>
-                 <para>Select the <quote>SLES12-SP1-Pool for
-                 x86_64</quote> base channel.</para>
-                </step>
-                <step>
-                    <para>Decide the entitlements.</para>
-                </step>
-                <step>
-                 <para>Click <guimenu>Create Activation
-                 Key</guimenu>.</para>
-                </step>
-                <step>
-                 <para>Click <guimenu>Child Channels</guimenu> and
-                 select the required channels. Finish with
-                 <guimenu>Update key</guimenu>.</para>
-                </step>
-            </substeps>
-        </step>
-        <!-- ============================================================ -->
-        <step id="st.maintenance-migration.upload">
-         <para>Upload an &ay; profile.</para>
-         <para></para>
-         <substeps>
-          <step>
-           <para>
-            Create an &ay; XML file according to <xref
-            linkend="ap-sample-autoinst-system-upgrade"/>.
-           </para>
-           <para>For more information about &ay;, see <xref
-           linkend="s3-sm-system-ay-intro"/>.</para>
-          </step>
-                <step>
-                 <para>Go to <menuchoice>
-                 <guimenu>Systems</guimenu>
-                 <guimenu>Autoinstallation</guimenu>
-                 </menuchoice> and click <guimenu>Upload
-                 Kickstart/Autoyast File</guimenu>.</para>
-                </step>
-                <step>
-                 <para>Paste the XML content in the text area or select
-                 the file to upload. Click
-                 <guimenu>Create</guimenu>.</para>
-                </step>
-                <step>
-                 <para>Add <literal>autoupgrade=1</literal> in the
-                 <guimenu>Kernel Options</guimenu> of the
-                 <guimenu>Details</guimenu> tab and click
-                 <guimenu>Update</guimenu>.</para>
-                </step>
-                <step>
-                 <para>Switch to the <guimenu>Variable</guimenu> tab.
-                 </para>
-                </step>
-                <step>
-                 <para>Enter in the text field
-                 <literal>registration_key=</literal> and the key from
-                 <xref
-                 linkend="st.maintenance-migration.activationkey"/>.
-                 </para>
-                </step>
-                <step>
-                 <para>Click <guimenu>Update Variables</guimenu>.</para>
-                </step>
-            </substeps>
-        </step>
-    </procedure>
-    
-    <para>
-     After you have successfully finished the previous procedure,
-     everything is prepared for an upgrade. If you want to upgrade a
-     system, do the following:
-    </para>
-    <procedure>
-     <title>Running System Upgrade</title>
-     <note>
-      <para>
-       Make sure that the target channel (for example, SLES12-SP1-Pool)
-       is completely mirrored to the &susemgr; server.  Watch progress
-       for example in
-       <filename>/var/log/rhn/reposync/sles12-sp1-pool-x86_64.log</filename>.
-      </para>
-     </note>
-     <step>
-      <para>Go to the system via <guimenu>Systems</guimenu> and click
-      the name of the system.  Then on the systems details page, click
-      <menuchoice>
-       <guimenu>Provisioning</guimenu>
-       <guimenu>Autoinstallation</guimenu>
-       <guimenu>Schedule</guimenu>
-       </menuchoice>, and choose the &ay; XML profile you have uploaded
-      in <xref linkend="st.maintenance-migration.upload"/>.</para>
-     </step>
-     <step>
-      <para>
-       Click <guimenu>Schedule Autoinstallation and Finish</guimenu>;
-       see <xref linkend="fig.maint.migration.autoinst.schedule"/>.
-      </para>
-     </step>
-    </procedure>
-    <figure id="fig.maint.migration.autoinst.schedule">
-     <title>Schedule Autoinstallation (System Upgrade, Offline Migration)</title>
-     <mediaobject>
-      <imageobject role="fo">
-       <imagedata fileref="susemanager_maint_migration_autoinst_schedule.png" width="85%"/>
-      </imageobject>
-      <imageobject role="html">
-       <imagedata fileref="susemanager_maint_migration_autoinst_schedule.png" width="75%"/>
-      </imageobject>
-     </mediaobject>
-    </figure>
-
-    <para>Next time the machine asks the &susemgr; server for jobs, it
-        will receive a reinstallation job which fetches Kernel and initrd and writes a new <filename>/boot/grub/menu.lst</filename> (contains pointers to the new Kernel and initrd).</para>
-    <para>When the machine boots, it will use the &grub; configuration
-        and boots the new Kernel with its initrd. No PXE boot is
-        required for this process. A shutdown of the machine is
-        initiated as well, effectively 3 minutes after the job was
-        fetched.</para>
+   <para>
+    Create an activation key for your SLE 12 SP1 systems.
+   </para>
+   <para>
+    In order to switch from the old SLES 11 base channel to the new SLE 12
+    SP1 base channel, we need an activation key. Use the following steps to
+    create one:
+   </para>
+   <substeps performance="required">
+    <step>
+     <para>
+      Go to <menuchoice> <guimenu>Systems</guimenu> <guimenu>Activation
+      Keys</guimenu> </menuchoice> and click <guimenu>create new
+      key</guimenu>.
+     </para>
+    </step>
+    <step xml:id="st.maintenance-migration.activationkey">
+     <para>
+      Enter a description for your key.
+     </para>
+    </step>
+    <step>
+     <para>
+      Enter a key or leave it blank to generate an automatic key.
+     </para>
+    </step>
+    <step>
+     <para>
+      If you limit the usage, enter your value in the
+      <guimenu>Usage</guimenu> text field.
+     </para>
+    </step>
+    <step>
+     <para>
+      Select the <quote>SLES12-SP1-Pool for x86_64</quote> base channel.
+     </para>
+    </step>
+    <step>
+     <para>
+      Decide the entitlements.
+     </para>
+    </step>
+    <step>
+     <para>
+      Click <guimenu>Create Activation Key</guimenu>.
+     </para>
+    </step>
+    <step>
+     <para>
+      Click <guimenu>Child Channels</guimenu> and select the required
+      channels. Finish with <guimenu>Update key</guimenu>.
+     </para>
+    </step>
+   </substeps>
+  </step>
+<!-- ============================================================ -->
+  <step xml:id="st.maintenance-migration.upload">
+   <para>
+    Upload an &ay; profile.
+   </para>
+   <para/>
+   <substeps performance="required">
+    <step>
+     <para>
+      Create an &ay; XML file according to
+      <xref linkend="ap-sample-autoinst-system-upgrade"/>.
+     </para>
+     <para>
+      For more information about &ay;, see
+      <xref linkend="s3-sm-system-ay-intro"/>.
+     </para>
+    </step>
+    <step>
+     <para>
+      Go to <menuchoice> <guimenu>Systems</guimenu>
+      <guimenu>Autoinstallation</guimenu> </menuchoice> and click
+      <guimenu>Upload Kickstart/Autoyast File</guimenu>.
+     </para>
+    </step>
+    <step>
+     <para>
+      Paste the XML content in the text area or select the file to upload.
+      Click <guimenu>Create</guimenu>.
+     </para>
+    </step>
+    <step>
+     <para>
+      Add <literal>autoupgrade=1</literal> in the <guimenu>Kernel
+      Options</guimenu> of the <guimenu>Details</guimenu> tab and click
+      <guimenu>Update</guimenu>.
+     </para>
+    </step>
+    <step>
+     <para>
+      Switch to the <guimenu>Variable</guimenu> tab.
+     </para>
+    </step>
+    <step>
+     <para>
+      Enter in the text field <literal>registration_key=</literal> and the
+      key from <xref linkend="st.maintenance-migration.activationkey"/>.
+     </para>
+    </step>
+    <step>
+     <para>
+      Click <guimenu>Update Variables</guimenu>.
+     </para>
+    </step>
+   </substeps>
+  </step>
+ </procedure>
+ <para>
+  After you have successfully finished the previous procedure, everything is
+  prepared for an upgrade. If you want to upgrade a system, do the
+  following:
+ </para>
+ <procedure>
+  <title>Running System Upgrade</title>
+  <note>
+   <para>
+    Make sure that the target channel (for example, SLES12-SP1-Pool) is
+    completely mirrored to the &susemgr; server. Watch progress for
+    example in
+    <filename>/var/log/rhn/reposync/sles12-sp1-pool-x86_64.log</filename>.
+   </para>
+  </note>
+  <step>
+   <para>
+    Go to the system via <guimenu>Systems</guimenu> and click the name of
+    the system. Then on the systems details page, click <menuchoice>
+    <guimenu>Provisioning</guimenu> <guimenu>Autoinstallation</guimenu>
+    <guimenu>Schedule</guimenu> </menuchoice>, and choose the &ay; XML
+    profile you have uploaded in
+    <xref linkend="st.maintenance-migration.upload"/>.
+   </para>
+  </step>
+  <step>
+   <para>
+    Click <guimenu>Schedule Autoinstallation and Finish</guimenu>; see
+    <xref linkend="fig.maint.migration.autoinst.schedule"/>.
+   </para>
+  </step>
+ </procedure>
+ <figure xml:id="fig.maint.migration.autoinst.schedule">
+  <title>Schedule Autoinstallation (System Upgrade, Offline Migration)</title>
+  <mediaobject>
+   <imageobject role="fo">
+    <imagedata fileref="susemanager_maint_migration_autoinst_schedule.png" width="85%"/>
+   </imageobject>
+   <imageobject role="html">
+    <imagedata fileref="susemanager_maint_migration_autoinst_schedule.png" width="75%"/>
+   </imageobject>
+  </mediaobject>
+ </figure>
+ <para>
+  Next time the machine asks the &susemgr; server for jobs, it will
+  receive a reinstallation job which fetches Kernel and initrd and writes a
+  new <filename>/boot/grub/menu.lst</filename> (contains pointers to the new
+  Kernel and initrd).
+ </para>
+ <para>
+  When the machine boots, it will use the &grub; configuration and boots
+  the new Kernel with its initrd. No PXE boot is required for this process.
+  A shutdown of the machine is initiated as well, effectively 3 minutes
+  after the job was fetched.
+ </para>
 </chapter>

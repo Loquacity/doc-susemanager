@@ -1,17 +1,41 @@
-<?xml version="1.0"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE chapter PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<chapter id="ch-intro-reference" >
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ch-intro-reference">
 <!--status="rfc"-->
- <title>&susemgr; Overview</title><indexterm>
+<!--
+ <para>
+  Have you ever read about a new version of a software package and wanted to
+  install it but could not find it?
+ </para>
+ <para>
+  Have you ever tried to find an RPM through an Internet search engine or an
+  RPM repository and been linked to an unknown site?
+ </para>
+ <para>
+  Have you ever searched for an RPM but instead found only source files that
+  you had to compile yourself?
+ </para>
+ <para>
+  Have you ever spent hours or even days visiting different websites to see
+  if you have the latest packages installed on your system, only to have to
+  do it again in a few months?
+ </para>
+ <para>
+  Those days are over with &susemgr; and the &ncc; (NCC). &susemgr; provides
+  the solution to all your system software management needs.
+ </para>
+-->
+ <title>&susemgr; Overview</title>
+ <info/>
+<!--status="rfc"--><indexterm>
  <primary>&susemgr;</primary>
  <secondary>Overview</secondary></indexterm><indexterm>
  <primary>Overview</primary></indexterm>
@@ -42,16 +66,16 @@
   &susemgr; is a server solution for managing
 <!-- a single &suselinux;
   system or -->
-  a network of &sle; or &rhel; systems.
-  All security alerts, bug fix alerts, and enhancement alerts (collectively
-  known as patch alerts) can be downloaded directly from &suse;, or Novell,
-  or your own custom collection. You can even schedule updates for delivery
-  to your system immediately after release.
+  a network of &sle; or &rhel; systems. All security alerts, bug fix
+  alerts, and enhancement alerts (collectively known as patch alerts) can be
+  downloaded directly from &suse;, or Novell, or your own custom
+  collection. You can even schedule updates for delivery to your system
+  immediately after release.
  </para>
  <para>
   The main components of &susemgr; are:
  </para>
- <itemizedlist>
+ <itemizedlist mark="bullet" spacing="normal">
   <listitem>
    <para>
     the update agent (<command>rhn_check</command>),
@@ -59,8 +83,8 @@
   </listitem>
   <listitem>
    <para>
-    the &susemgr; Web interface, whether this is hosted by a &susemgr; or fed
-    through a proxy server,
+    the &susemgr; Web interface, whether this is hosted by a &susemgr;
+    or fed through a proxy server,
    </para>
   </listitem>
   <listitem>
@@ -71,15 +95,15 @@
  </itemizedlist>
  <para>
   &susemgr; daemon enables channel subscription, package installs, and
-  management of system profiles. <phrase os="hidden">See <xref linkend="ch-up2date"/> for
-	  further information.</phrase>
+  management of system profiles. <phrase os="hidden">See
+  <xref linkend="ch-up2date"/> for further information.</phrase>
  </para>
  <para>
-  The &susemgr; daemon (<command>rhnsd</command>) runs in the background as
-  a service and probes &susemgr; for notifications and updates at set time
-  intervals (see <xref linkend="ch-rhnsd"/> for further information). This
-  daemon is necessary in order to schedule updates or other actions through
-  the Web interface.
+  The &susemgr; daemon (<command>rhnsd</command>) runs in the background
+  as a service and probes &susemgr; for notifications and updates at set
+  time intervals (see <xref linkend="ch-rhnsd"/> for further information).
+  This daemon is necessary in order to schedule updates or other actions
+  through the Web interface.
  </para>
  <remark role="generic">
   2011-01-27 - ke: mentioning low level reg tool?
@@ -88,9 +112,9 @@
   is not needed</remark>
  <para>
   Find out more about &susemgr; at
-  <ulink url="http://www.suse.com/products/suse-manager/technical-information/"/>.
+  <link xlink:href="http://www.suse.com/products/suse-manager/technical-information/"/>.
  </para>
- <sect1 id="s1-intro-rhn-workgroup">
+ <sect1 xml:id="s1-intro-rhn-workgroup">
   <title>Management</title><indexterm>
 
   <primary>&susemgr;  Administrator</primary>
@@ -98,29 +122,29 @@
   <secondary>Management</secondary></indexterm>
 
   <para>
-   In addition to the features offered in the &susemgr; update subscription
-   level, the &susemgr; management subscription service allows you to manage
-   your network of &sle; systems, users, and system groups through its
-   <guimenu>System Set Manager</guimenu> interface.
+   In addition to the features offered in the &susemgr; update
+   subscription level, the &susemgr; management subscription service
+   allows you to manage your network of &sle; systems, users, and system
+   groups through its <guimenu>System Set Manager</guimenu> interface.
   </para>
 
   <para>
    &susemgr; management is based on the concept of organizations. Each
-   management-level &suse; customer has the ability to establish users who
-   have administration privileges to system groups. An organization
-   administrator has overall control over each &susemgr; organization with
-   the ability to add and remove systems and users. When users other than
-   the &susemgr; administrator log into the &susemgr; Web interface, they see only
-   the systems they have permission to administer.
+   management-level &suse; customer has the ability to establish users
+   who have administration privileges to system groups. An organization
+   administrator has overall control over each &susemgr; organization
+   with the ability to add and remove systems and users. When users other
+   than the &susemgr; administrator log into the &susemgr; Web
+   interface, they see only the systems they have permission to administer.
   </para>
 
   <para>
-   The &susemgr; features available to you depend on the subscription level
-   for each &sle; system. With each management subscription, you receive the
-   functionality to update users, plus:
+   The &susemgr; features available to you depend on the subscription
+   level for each &sle; system. With each management subscription, you
+   receive the functionality to update users, plus:
   </para>
 
-  <itemizedlist>
+  <itemizedlist mark="bullet" spacing="normal">
    <listitem>
     <para>
      Package Profile Comparison — Compare the package set on one system
@@ -149,12 +173,12 @@
    </listitem>
    <listitem>
     <para>
-     System Set Manager — You can apply actions to sets of systems
-     instead of applying them to each system individually, work with
-     members of a predefined system group, or work with an ad-hoc
-     collection of systems. With a single action, install software
-     packages on each system in the set, subscribe the systems to a
-     new channel, or apply all patches to them.
+     System Set Manager — You can apply actions to sets of systems instead
+     of applying them to each system individually, work with members of a
+     predefined system group, or work with an ad-hoc collection of systems.
+     With a single action, install software packages on each system in the
+     set, subscribe the systems to a new channel, or apply all patches to
+     them.
     </para>
    </listitem>
    <listitem>
@@ -166,7 +190,7 @@
    </listitem>
   </itemizedlist>
  </sect1>
- <sect1 id="s1-intro-rhn-provisioning">
+ <sect1 xml:id="s1-intro-rhn-provisioning">
   <title>Provisioning</title><indexterm>
 
   <primary>&susemgr; Administrator</primary>
@@ -176,22 +200,23 @@
   <para>
    Provisioning service level is optional and encompasses all of the
    features offered in the update and management subscription levels. It is
-   designed to allow you to deploy and manage your network of &sle; systems,
-   users, and system groups.
+   designed to allow you to deploy and manage your network of &sle;
+   systems, users, and system groups.
   </para>
 
   <para>
-   Like management, provisioning is based on an organization. It takes
-   this concept a step further by enabling customers with provisioning
+   Like management, provisioning is based on an organization. It takes this
+   concept a step further by enabling customers with provisioning
    entitlements to autoinstall&mdash;using &ay; or Kickstart&mdash;
    to reconfigure, track, and revert systems on the fly.
   </para>
+
   <para>
    In addition to all of the features mentioned in lower service levels,
    Provisioning provides:
   </para>
 
-  <itemizedlist>
+  <itemizedlist mark="bullet" spacing="normal">
    <listitem>
     <para>
      Autoinstalling — Systems with provisioning entitlements may be
@@ -245,7 +270,7 @@
    </listitem>
   </itemizedlist>
  </sect1>
- <sect1 id="s1-intro-rhn-monitoring">
+ <sect1 xml:id="s1-intro-rhn-monitoring">
   <title>Monitoring</title><indexterm>
 
   <primary>&susemgr; Administrator</primary>
@@ -253,8 +278,8 @@
   <secondary>Monitoring</secondary></indexterm>
 
   <para>
-   Monitoring entitlements are available to &susemgr; customers with &sle;
-   systems.
+   Monitoring entitlements are available to &susemgr; customers with
+   &sle; systems.
   </para>
 
   <para>
@@ -268,7 +293,7 @@
    Specifically, monitoring provides:
   </para>
 
-  <itemizedlist>
+  <itemizedlist mark="bullet" spacing="normal">
    <listitem>
     <para>
      Probes — Dozens of probes can be run against each system. These range
@@ -278,9 +303,9 @@
    </listitem>
    <listitem>
     <para>
-     Notification — Alerts can be sent to email addresses with
-     contact methods identified by you when a probe changes state. Each
-     probe notification can be sent to a different method or address.
+     Notification — Alerts can be sent to email addresses with contact
+     methods identified by you when a probe changes state. Each probe
+     notification can be sent to a different method or address.
     </para>
    </listitem>
    <listitem>
@@ -316,7 +341,7 @@
    </listitem>
   </itemizedlist>
  </sect1>
- <sect1 id="s1-automatic-notifications">
+ <sect1 xml:id="s1-automatic-notifications">
   <title>Patch Notifications and Scheduled Package Installations</title><indexterm>
 
   <primary>package installation</primary>
@@ -335,7 +360,7 @@
    updates. The benefits include:
   </para>
 
-  <itemizedlist>
+  <itemizedlist mark="bullet" spacing="normal">
    <listitem>
     <para>
      Reduced time and effort required by system administrators to stay on
@@ -362,7 +387,7 @@
    </listitem>
   </itemizedlist>
  </sect1>
- <sect1 id="s1-security-note">
+ <sect1 xml:id="s1-security-note">
   <title>Security, Quality Assurance, and &susemgr;</title><indexterm>
 
   <primary>Digital Certificate</primary></indexterm><indexterm>
@@ -381,20 +406,20 @@
 
   <para>
    &susemgr; provides significant benefits to your network, including
-   security and quality assurance. All transactions between your
-   systems and &susemgr; are encrypted and all RPM packages are signed with
-   GNU Privacy Guard (GPG) signature to ensure authenticity.
+   security and quality assurance. All transactions between your systems and
+   &susemgr; are encrypted and all RPM packages are signed with GNU
+   Privacy Guard (GPG) signature to ensure authenticity.
   </para>
 
   <para>
    &susemgr; incorporates the following security measures:
   </para>
 
-  <orderedlist>
+  <orderedlist spacing="normal">
    <listitem>
     <para>
      Your system profile, available at &ncc;
-     <ulink url="http://novell.com/center"/> is accessible only with a
+     <link xlink:href="http://novell.com/center"/> is accessible only with a
      username and password.
     </para>
    </listitem>
@@ -402,14 +427,14 @@
     <para>
      A digital certificate is written to the client system after
      registration and is used to authenticate the system during each
-     transaction between the client and &susemgr;. The file is only readable
-     by the root user on the client system.
+     transaction between the client and &susemgr;. The file is only
+     readable by the root user on the client system.
     </para>
    </listitem>
    <listitem>
     <para>
-     &suse; signs all communications with an electronic signature using GPG.
-     RPM can verify the authenticity of the package before it is
+     &suse; signs all communications with an electronic signature using
+     GPG. RPM can verify the authenticity of the package before it is
      installed.
     </para>
    </listitem>

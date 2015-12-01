@@ -1,38 +1,41 @@
-<?xml version="1.0"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE chapter PUBLIC
-  "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-[
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<chapter id="ch-rhnreg-ks">
- <title>Implementing and Tracking Autoinstallation</title><indexterm>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ch-rhnreg-ks">
+<!-- ==================================================================== -->
+ <title>Implementing and Tracking Autoinstallation</title>
+ <info/><indexterm>
  <primary>Autoinstallation</primary>
  <secondary>use of</secondary></indexterm>
  <para>
-  Once configuration is finished, register the system with the local &susemgr;, using the
-  <command>rhnreg_ks</command> utility that comes with the
-  <filename>spacewalk-client-setup</filename> package. This chapter
-  discusses the use of <command>rhnreg_ks</command> to register systems
-  and track autoinstallations.
+  Once configuration is finished, register the system with the local
+  &susemgr;, using the <command>rhnreg_ks</command> utility that comes
+  with the <filename>spacewalk-client-setup</filename> package. This chapter
+  discusses the use of <command>rhnreg_ks</command> to register systems and
+  track autoinstallations.
  </para>
- <sect1 id="s1-rhnreg-ks-rhnreg-ks">
+ <sect1 xml:id="s1-rhnreg-ks-rhnreg-ks">
   <title>The Use of rhnreg_ks</title>
- <para>
-  The <command>rhnreg_ks</command> utility uses <emphasis>activation
-  keys</emphasis> to register, entitle, and subscribe systems to
-  specified channels in one go. For more information about
-  activation keys, refer to <xref
-  linkend="s2-sm-systems-activation-keys"/>.
- </para>
- <para>
-  The following commented Kickstart file is an example of how a &rhel;
-  system can be configured using Kickstart.
- </para>
+
+  <para>
+   The <command>rhnreg_ks</command> utility uses <emphasis>activation
+   keys</emphasis> to register, entitle, and subscribe systems to specified
+   channels in one go. For more information about activation keys, refer to
+   <xref linkend="s2-sm-systems-activation-keys"/>.
+  </para>
+
+  <para>
+   The following commented Kickstart file is an example of how a &rhel;
+   system can be configured using Kickstart.
+  </para>
+
 <screen># Generic 7.2 kickstart for laptops in the Widget Corporation (widgetco)
 
 # Standard kickstart options for a network-based install. For an
@@ -101,23 +104,26 @@ wget -O- http://proxy-or-sat.example.com/pub/bootstrap_script | /bin/bash
 # End the subshell and capture any output to a post-install log file.
 ) 1&gt;/root/post_install.log 2&gt;&amp;1</screen>
  </sect1>
- <!-- ==================================================================== -->
- <sect1 id="s1-rhnreg-ks-tracking">
+<!-- ==================================================================== -->
+ <sect1 xml:id="s1-rhnreg-ks-tracking">
   <title>Tracking Autoinstallations</title>
+
   <para>
    To track an autoinstallation, &susemgr; is creating a unique
-   registration key for each autoinstallation. If a client uses that
-   key to register, &susemgr; knows that the installation has
-   finished successfully.
+   registration key for each autoinstallation. If a client uses that key to
+   register, &susemgr; knows that the installation has finished
+   successfully.
   </para>
+
   <para>
-   If you upload a profile and want to track the
-   installation, you need to use this tracking key when you register the client with
-   &susemgr;. The key is stored in the
-   <literal>$redhat_management_key</literal> variable of the profile.
-   Use it like this (replace <replaceable>my_server_url</replaceable>
-   with the address of your server):
+   If you upload a profile and want to track the installation, you need to
+   use this tracking key when you register the client with &susemgr;. The
+   key is stored in the <literal>$redhat_management_key</literal> variable
+   of the profile. Use it like this (replace
+   <replaceable>my_server_url</replaceable> with the address of your
+   server):
   </para>
+
 <screen>rhnreg_ks --serverUrl=<replaceable>my_server_url</replaceable> \
   --sslCACert=$mycert \
   --activationkey=<replaceable>1-my-sles11-sp1-key-i586</replaceable>,$redhat_management_key</screen>
@@ -128,51 +134,58 @@ wget -O- http://proxy-or-sat.example.com/pub/bootstrap_script | /bin/bash
    example:
   </para>
 
-  <screen><![CDATA[...
-<scripts>
-  <init-scripts config:type="list">
-    <script>
-      <source><![CDATA[
+<screen>...
+&lt;scripts&gt;
+  &lt;init-scripts config:type="list"&gt;
+    &lt;script&gt;
+      &lt;source&gt;&lt;![CDATA[
 $SNIPPET('spacewalk/sles_register')
-]]]]><![CDATA[>
-      </source>
-      <filename>ay_suse_manager_register.sh</filename>
-      <debug config:type="boolean">true</debug>
-    </script>
+]]&gt;
+      &lt;/source&gt;
+      &lt;filename&gt;ay_suse_manager_register.sh&lt;/filename&gt;
+      &lt;debug config:type="boolean"&gt;true&lt;/debug&gt;
+    &lt;/script&gt;
     ...
-  </init-scripts>
+  &lt;/init-scripts&gt;
   ...
-</scripts>
+&lt;/scripts&gt;
 ...
-]]></screen>
+</screen>
 
-  <para>Integrate this init-script into the XML file you want to upload.
-  The registration will be done automatically with the correct tracking key. For an example XML file, see <xref
-  linkend="ap-sample-autoinst-tracking-script"/>. If you want to
-  register the client with your own registration key in addition to the
-  tracking key using this snippet, you must put the name of the key into the
-  <literal>registration_key</literal> variable.  In the Web interface
-  (<xref linkend="s4-sm-system-kick-details-variables"/>), click on
-  <guimenu>Variables</guimenu> and, for example, enter:</para>
+  <para>
+   Integrate this init-script into the XML file you want to upload. The
+   registration will be done automatically with the correct tracking key.
+   For an example XML file, see
+   <xref linkend="ap-sample-autoinst-tracking-script"/>. If you want to
+   register the client with your own registration key in addition to the
+   tracking key using this snippet, you must put the name of the key into
+   the <literal>registration_key</literal> variable. In the Web interface
+   (<xref linkend="s4-sm-system-kick-details-variables"/>), click on
+   <guimenu>Variables</guimenu> and, for example, enter:
+  </para>
 
-  <screen>registration_key=1-my-sles11-sp1-key-i586</screen>
+<screen>registration_key=1-my-sles11-sp1-key-i586</screen>
 
-  <para>This way the snippet will do the registration with your key in
-  addition to the tracking key.</para>
+  <para>
+   This way the snippet will do the registration with your key in addition
+   to the tracking key.
+  </para>
 
-  <para>To check the snippet, click <menuchoice>
-  <guimenu>Systems</guimenu>
-  <guimenu>Autoinstallation</guimenu>
-  <guimenu>Kickstart Snippets</guimenu></menuchoice>. There you can find
-  the <literal>sles_register</literal> snippet that will be included
-  with the <literal>$SNIPPET('spacewalk/sles_register')</literal>
-  statement as shown above in the XML fragment.</para>
+  <para>
+   To check the snippet, click <menuchoice> <guimenu>Systems</guimenu>
+   <guimenu>Autoinstallation</guimenu> <guimenu>Kickstart
+   Snippets</guimenu></menuchoice>. There you can find the
+   <literal>sles_register</literal> snippet that will be included with the
+   <literal>$SNIPPET('spacewalk/sles_register')</literal> statement as shown
+   above in the XML fragment.
+  </para>
 
-  <para>If you use an uploaded profile without a tracking key, &susemgr;
-  will never actually notice when the installation is finished. The
-  machine will appear as a registered client but after some time
-  &susemgr; will mark the installation as failed because the client did
-  not register with the tracking key.
+  <para>
+   If you use an uploaded profile without a tracking key, &susemgr; will
+   never actually notice when the installation is finished. The machine will
+   appear as a registered client but after some time &susemgr; will mark
+   the installation as failed because the client did not register with the
+   tracking key.
   </para>
  </sect1>
 </chapter>
