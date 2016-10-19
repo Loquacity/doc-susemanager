@@ -138,23 +138,11 @@
      </row>
     </thead>
     <tbody>
-     <!-- bnc#743430 -->
+     <!-- bsc#1000448 -->
      <row>
       <entry>
        <para>
-        &sle; 10 SP3 and SP4
-       </para>
-      </entry>
-      <entry>
-       <para>
-        &x86;, &x86;_64, &ipf;, IBM &ppc;, IBM &zseries;
-       </para>
-      </entry>
-     </row>
-     <row>
-      <entry>
-       <para>
-        &sle; 11 SP3 and SP4
+        &sle; 11 SP4 <emphasis role="bold">*)</emphasis>
        </para>
       </entry>
       <entry>
@@ -228,6 +216,11 @@
     </tbody>
    </tgroup>
   </informaltable>
+  <para>
+   <emphasis role="bold">*)</emphasis> &sle; 11 clients are supported
+   only with LTSS, unless using &sls; 11 SP4, which still has general
+   support.
+  </para>
 
   <!-- bsc#919445 -->
   <warning>
