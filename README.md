@@ -4,7 +4,7 @@
 ![](http://i560.photobucket.com/albums/ss45/joecayouette/docuimage_2.png)
 
 
-##This Branch will be used for all stable topics added during a suse manager sprint.##
+##The susecom branch will be used for all stable topics added during a suse manager sprint.##
 
 These may be published as often as every 2 weeks to SUSE.com and should only include topics that are stable and not based on new features. 
 
