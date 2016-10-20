@@ -1,6 +1,6 @@
 # doc-susemanager-new
 
-#suse.com Documentation STABLE#
+#suse.com Documentation Stable Releases#
 ![](http://i560.photobucket.com/albums/ss45/joecayouette/docuimage_2.png)
 
 
