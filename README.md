@@ -10,12 +10,6 @@ These may be published as often as every 2 weeks to SUSE.com and should only inc
 
 ##For Newer Feature Docs Check out the Develop Branch##
 
-##DEVEL Wiki Cleanup
-
-After each update remove obsolete pages from wiki and link to official docs. This is the removal list:
-
-- [ ] https://wiki.microfocus.com/index.php?title=SUSE_Manager%2FOsad_and_jabberd_troubleshooting&type=revision&diff=43882&oldid=43881
-
 ##Contributing##
 
 If you would like to contribute, please fork this repository and send pull requests.
@@ -24,42 +18,6 @@ Contributors with direct access to the repository are encouraged to use the git-
 Note:
 	
 Please do not make any commits to the master branch. master is reserved for releases only. 
-
-
-##Updating the SUMA 3 Documentation Package (susemanager-docs_en)##
-
-* The build repo is defined in DEF-susemanager_docs
-* Perform these steps on both, Head and 3.0 (set the OBS_REPO variable accordingly)
-
-
-```
-OBS_USER=keichwa
-OBS_USER=jcayouette
-
-Add for Head:
-OBS_REPO=Devel:Galaxy:Manager:Head
-
-Add for 3.0
-OBS_REPO=Devel:Galaxy:Manager:3.0
-
-daps -d DC-create-all package-src --set-date=$(date --iso) \
-     --def-file DEF-susemanager-docs
-
-# save old checkout
-old home:$OBS_USER:branches:$OBS_REPO/susemanager-docs_en
-
-osc -A https://api.suse.de bco $OBS_REPO susemanager-docs_en
-cd home:$OBS_USER:branches:$OBS_REPO/susemanager-docs_en
-cp ../../build/create-all/package/create-all_en_src_set.tar.bz2 .
-osc vc -m "Update text and image files."
-osc ci -m "update"
-
-# check results; e.g. with:
-osc pr
-
-osc sr -m 'update'
-
-```
 
 
 
