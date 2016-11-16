@@ -251,9 +251,9 @@
                         <systemitem>zFCP</systemitem> or <systemitem>DASD</systemitem> device as
                     these are preferred for use with <systemitem>HYPERPAV</systemitem>. This disk
                     should fulfill the following requirements</para>
-                <para>At least 30GB for</para>
-                <screen>/var/lib/pgSQL</screen>
-                <para>At least 100GB for</para>
+                <para>At least 30 GB for</para>
+                <screen>/var/lib/pgsql</screen>
+                <para>At least 100 GB for</para>
                 <screen>/var/spacewalk</screen>
 
             </listitem>
@@ -569,8 +569,10 @@ Hostname=s390vsl098.suse.de
 
 
         <para>After rebooting you will need to setup the additional storage required for
-            /var/spacewalk and /var/lib/pgSQL and swap space using the yast partitioner tool. This
-            step is required before running <systemitem>yast2 susemanager_setup</systemitem>
+            <filename>/var/spacewalk</filename> and
+            <filename>/var/lib/pgsql</filename> and swap space using the
+            yast partitioner tool. This
+            step is required before running <command>yast2 susemanager_setup</command>
         </para>
         <para>After having configured the storage requirements, executed a yast update and completed
             a system reboot, run &susemgr; setup to finalize the &susemgr; installation on your
