@@ -12,18 +12,18 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          version="5.0"
          xml:id="bp.sp.migration">
- <title>Performing a System Migration</title>
+ <title>&susemgr; Server Migration</title>
 
  <info>
   <abstract>
    <para>
-    Remarks how to upgrade the underlying operating system and migrate
-    &susemgr; server from one patch level to the other or from one
-    version to the next.  This works for migrating from version 3.0 to
-    3.1.
+    You can upgrade the underlying operating system and also migrate
+    &susemgr; server from one patch level to the other (SP migration) or
+    from one version to the next.  This works for migrating &susemgr;
+    server 3.0 to version 3.1.
    </para>
    <para>
-    For migrating from version 2.1 to 3.0, see <xref
+    For migrating from version 2.1 to 3.0, see <xref
     linkend="bp.chap.mgr.migration"/>.
    </para>
   </abstract>
@@ -44,6 +44,50 @@
    />.
   </para>
  </sect1>
+     <sect1 xml:id="update.suse.manager">
+     <title>Updating &susemgr;</title>
+     <para>
+      This section provides information on performing regular updates
+      and running a <command>spacewalk-schema-upgrade</command> on your
+      postgresql database.
+     </para>
+
+     <procedure>
+      <title>Updating &susemgr;</title>
+      <step>
+       <para>As the &rootuser; user stop Spacewalk services:</para>
+       <screen>spacewalk-service stop</screen>
+      </step>
+      <step>
+       <para>Apply latest patches with:</para>
+       <screen>zypper patch</screen>
+      </step>
+      <step>
+       <para>You will be informed if a database schema was included in
+       the latest patch. If the database is running on the same machine
+       as your &susemgr; server, start the database with:</para>
+       <screen>rcpostgresql start</screen>
+      </step>
+      <step>
+       <para>Perform the upgrade with:</para>
+       <screen>spacewalk-schema-upgrade</screen>
+      </step>
+      <step>
+       <para>Start Spacewalk services again with:</para>
+       <screen>spacewalk-service start</screen>
+       <important>
+        <title>Restart of Services and Applications</title>
+        <para>Services affected by a package update are not
+        automatically restarted after an update. You need to restart
+        these services manually to avoid potential failures. </para>
+        <para>You may use <command>zypper ps</command> to check for any
+        applications which may be using old code. Restart these
+        applications.</para>
+       </important>
+      </step>
+     </procedure>
+    </sect1>
+
  <sect1 xml:id="bp.sp.migration.version">
   <title>Migrating &susemgr; version 3.0 to 3.1</title>
   <para>
@@ -253,5 +297,8 @@ Available migrations:
   </para>
   </sect2>
  </sect1>
- 
+
+ <!-- SUSE Manager Migration from 2.1 - 3 -->
+ <xi:include href="bp_sec_mgr_21_migration.xml"/>
+
 </chapter>

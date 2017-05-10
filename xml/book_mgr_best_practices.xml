@@ -40,9 +40,6 @@
   <!-- This book contains best practice information regarding standard operating procedures for SUSE Manager Server. -->
 
 
-  <!-- SUSE Manager 3 Changes -->
-  <xi:include href="mgr_product_comparison.xml"/>
-
   <!-- SUSE Manager overview -->
   <xi:include href="mgr_conceptual_overview.xml"/>
 
@@ -80,18 +77,19 @@
   <!-- Live Patching -->
   <xi:include href="bp_live_patching.xml"/>
 
-  <!-- SP Migration -->
+  <!-- SP Migration (server) -->
   <xi:include href="bp_sp_migration.xml"/>
 
-  <!-- SUSE Manager Migration from 2.1 - 3 -->
-  <xi:include href="bp_chap_mgr_migration.xml"/>
+  <!-- Migration (client) -->
+  <xi:include href="bp_client_migration.xml"/>
 
   <!-- Organization and group management -->
   <!-- <xi:include href="bp_chap_org_wide_group_management.xml"/> -->
 
   <!-- Common Admin Tasks -->
-  <xi:include href="common_administration_tasks.xml"/>
-
+  <!-- Currently empty
+       <xi:include href="common_administration_tasks.xml"/>
+  -->
   <!-- Backup SUSE Manager -->
   <xi:include href="bp_chap_suma_backup.xml"/>
 
@@ -113,6 +111,9 @@
 
   <!-- Additional Resources -->
   <xi:include href="mgr_additional_resources.xml"/>
+
+  <!-- SUSE Manager 3 Changes -->
+  <xi:include href="mgr_product_comparison.xml"/>
 
   <!-- Legal -->
   <xi:include href="common_legal.xml"/>

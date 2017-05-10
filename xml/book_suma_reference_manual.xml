@@ -17,8 +17,6 @@
     <!-- ##################################################################### -->
     <!-- SUSE Manager Reference Manual  -->
     <!-- ##################################################################### -->
-    <!-- This book contains ... -->
-
     <info>
         <title>Reference Manual</title>
         <!-- <author>
@@ -37,19 +35,19 @@
 
     <xi:include href="reference-intro.xml"/>
 
-    <!-- Web Administration -->
     <!-- <part xml:id="part.ref.webui"> -->
-    <!-- <title>Web Interface</title> -->
-    <!-- Images need to be build to cover navigation for Karl -->
+
+    
     <xi:include href="reference-webui-overview.xml" parse="xml"/>
     <xi:include href="reference-webui-systems.xml" parse="xml"/>
     <xi:include href="reference-webui-salt.xml" parse="xml"/>
     <xi:include href="reference-webui-images.xml" parse="xml"/>
-    <!-- Add images to patches, this requires some casper scripting to shorten image length -->
+    
+    <!-- Images Done :TODO: Dynanmic pages (patch details/apply patches with ssm/packages/effected systems) -->
     <xi:include href="reference-webui-patches.xml" parse="xml"/>
-    <!-- Add images to channels, this requires some casper scripting to shorten image length -->
     <xi:include href="reference-webui-channels.xml" parse="xml"/>
     
+    <!-- Images Done but need to Update openscap images this requires some casper scripting -->
     <xi:include href="reference-webui-audit.xml" parse="xml"/>
     <xi:include href="reference-webui-configuration.xml" parse="xml"/>
     <xi:include href="reference-webui-schedule.xml" parse="xml"/>
