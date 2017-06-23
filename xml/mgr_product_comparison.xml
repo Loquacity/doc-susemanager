@@ -10,7 +10,6 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="mgr.product.comparison">
     <title>&susemgr; 2.1 and 3 Product Comparison</title>
-
     <sect1>
         <title>Overview of Changes</title>
         <para> You may already have experience managing your systems using SUSE Manager 2.1. The
