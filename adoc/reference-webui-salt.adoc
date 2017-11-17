@@ -1,0 +1,129 @@
+[[_ref.webui.salt]]
+= Salt
+:doctype: book
+:sectnums:
+:toc: left
+:icons: font
+:experimental:
+:sourcedir: .
+(((Web Interface,Salt)))
+
+
+Open the menu:Salt[]
+ menu on the left bar. menu:Keys[]
+ provides an overview of your Salt minions (clients). Use menu:Remote Commands[]
+ to execute remote commands on your Salt minions.
+You can also define a menu:State Catalog[]
+ for creating a collection of salt system states. 
+
+[[_ref.webui.salt.onboarding]]
+== Keys
+
+
+The menu:Keys[]
+ page provides a summary of your minions, including their names, fingerprints, state, and actions you may perform on them. 
+
+Once you have pointed a minion to the |000susemgr; server as its master within [replaceable]``/etc/salt/minion``, you can choose to accept or reject a minion from this page.
+Either click the check mark or cross in the actions column. 
+
+.Keys Overview
+image::onboarding.png[]
+
+
+For more information about key handling and onboarding, see <<_preparing.and.registering.clients.salt>>
+. 
+
+[[_ref.webui.salt.remote.commands]]
+== Remote Commands
+
+
+The remote commands page allows you to execute and run commands from the |000susemgr; server on several minions. 
+
+.Remote Commands
+image::remote_commands.png[]
+
+
+.Remote Commands Security
+[WARNING]
+====
+All commands run from the menu:Remote Commands[]
+ page are executed as |000rootuser; on minions.
+As you may use wildcards to run commands across any number of systems you must always take extra precaution as this may have drastic consequences for your systems. 
+====
+
+
+On the menu:Remote Commands[]
+ page located under menu:Salt[Remote Commands]
+ you will see two text boxes.
+The first box is for entering commands.
+The second box is for targeting minions by name, group or by using wildcards. 
+
+Input a command you want to execute, add a target minion, group or wildcard you want to execute the command on.
+Select the menu:Find
+   Targets[]
+ button to verify which machines will be targeted.
+Select the menu:Run Command[]
+ button to execute a command on selected systems. 
+
+[[_ref.webui.salt.states.catalog]]
+== State Catalog
+
+
+Selecting menu:Salt[State
+   Catalog]
+ presents you with the menu:State
+   Catalog[]
+ overview.
+You can use this page to manage custom Salt states.
+Salt states created on this page may be applied to organizations, groups, and single systems. 
+
+.State Catalog
+image::state_catalog.png[]
+
+
+Click the menu:Create State[]
+ button to open the menu:Create
+   State[]
+ page.
+On this page you can define custom states which will be stored within the menu:State Catalog[]
+.
+For example, to create a custom state for installation of the apache Web server you would provide a name: menu:Webserver[]
+ and the state content: 
+
+----
+apache:
+  pkg.installed: []
+  service.running:
+    - require:
+      - pkg: apache
+----
+
+
+When you have finished entering your custom state definition click the menu:Create State[]
+ button.
+This will save the state and allow use of this specific state at the minion, group, and organization level. 
+
+To add this state at the individual minion level perform the following actions: 
+
+.Procedure: Using a State with a Minion
+. From the menu:Systems[] overview page, select a salt managed minion. You will be taken to the menu:System Details[] page. 
+. Select menu:States[Custom] from the navigation tabs. 
+. Click the search button to look at an overview of all available states, or enter a custom state name to find it within the menu:State Catalog[] . 
+. Select the menu:Assign[] check box to assign the state to this minion. 
+. Click the menu:Save[] button to save this assignment to the database. Then click the menu:Apply[] button to finalize application of the state or states which you have selected. 
+
+
+.The Save Button
+[NOTE]
+====
+The menu:Save[]
+ button saves your changes but does not apply the state.
+If you leave the page after clicking the save button your state will be saved to the database but not yet applied.
+You must apply states for all minions, groups, or organizations for states to be finalized. 
+====
+
+ifdef::backend-docbook[]
+[index]
+== Index
+// Generated automatically by the DocBook toolchain.
+endif::backend-docbook[]

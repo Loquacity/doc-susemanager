@@ -1,0 +1,98 @@
+= Reference Manual
+
+:doctype: book
+:sectnums:
+:toc: left
+:icons: font
+:experimental:
+:amp: &
+:ay: AutoYaST
+:copy: ©
+:deploy: Deployment Guide
+:gt: >
+:kickstart: Kickstart
+:lt: <
+:mdash: —
+:mgradvtop: Advanced Topics Guide
+:mgrbestpract: Best Practices Guide
+:mgrgetstart: Getting Started Guide
+:mgrrefguide: Reference Guide
+:nbsp:  
+:openscap: OpenSCAP
+:productnumber: 3.2
+:quot: "
+:reg: ®
+:rh:  Red Hat
+:rhel: Red Hat Enterprise Linux
+:rhela: RHEL
+:rootuser: +Root+
+:scc: SUSE Customer Center
+:sle: SUSE Linux Enterprise
+:slea: SLE
+:slereg: SUSE® Linux Enterprise
+:sls: SUSE Linux Enterprise Server
+:suse: SUSE
+:susemgr: SUSE Manager
+:susemgrproxy: SUSE Manager Proxy
+:susemgrreg: SUSE® Manager
+:trade: ™
+:uarr: ↑
+:webui: Web UI
+:yast: YaST
+:zseries: z Systems
+
+:leveloffset: 1
+include::reference-intro.adoc[]
+:leveloffset: 0
+
+:leveloffset: 1
+include::reference-webui-overview.adoc[]
+:leveloffset: 0
+
+:leveloffset: 1
+include::reference-webui-systems.adoc[]
+:leveloffset: 0
+
+:leveloffset: 1
+include::reference-webui-salt.adoc[]
+:leveloffset: 0
+
+:leveloffset: 1
+include::reference-webui-images.adoc[]
+:leveloffset: 0
+
+:leveloffset: 1
+include::reference-webui-patches.adoc[]
+:leveloffset: 0
+
+:leveloffset: 1
+include::reference-webui-channels.adoc[]
+:leveloffset: 0
+
+:leveloffset: 1
+include::reference-webui-audit.adoc[]
+:leveloffset: 0
+
+:leveloffset: 1
+include::reference-webui-configuration.adoc[]
+:leveloffset: 0
+
+:leveloffset: 1
+include::reference-webui-schedule.adoc[]
+:leveloffset: 0
+
+:leveloffset: 1
+include::reference-webui-users.adoc[]
+:leveloffset: 0
+
+:leveloffset: 1
+include::reference-webui-admin.adoc[]
+:leveloffset: 0
+
+:leveloffset: 1
+include::reference-webui-help.adoc[]
+:leveloffset: 0
+
+:leveloffset: 1
+include::manager_reference_appendix_docupdates.adoc[]
+:leveloffset: 0

@@ -1,0 +1,30 @@
+:sectnums!:
+
+[appendix]
+= Documentation Updates
+
+
+This section contains information about documentation content changes made to the [ref]_|000mgrrefguide;_
+. 
+
+This document was updated on the following dates: 
+
+* {empty}
++
++ 
+<<_ap_ref.docupdate.2017_xxx>>
+
+
+[[_ap_ref.docupdate.2017_xxx]]
+== xx, 2017
+
+
+Updates were made to the following sections.
+The changes are explained below. 
+
+The changes are explained below. 
+
+General::
+References to the |000webui; throughout the whole book are adjusted: With |000susemgr; 3.1, we now have an improved left navigation menu instead of the top navigation bar with tabs. 
+
+:sectnums:

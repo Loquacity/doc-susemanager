@@ -1,0 +1,29 @@
+= Available Documentation
+(((help,Novell/|000suse; manuals)))
+
+
+The following manuals are available on this product: 
+
+<<_book.suma.getting_started>>::
+Lists installation scenarios and example topologies for different |000susemgr; setups.
+Guides you step by step through the installation, setup and basic configuration of |000susemgr;. Also contains detailed information about |000susemgr; maintenance and troubleshooting. 
+
+<<_book.suma.reference.manual>>::
+Reference documentation that covers the Web interface to |000susemgr; (|000webui;). 
+
+<<_book.suma.best.practices>>::
+Best practices on selected topics. 
+
+<<_book.suma.advanced.topics>>::
+A collection of advanced topics not covered under the Best Practices Guide. 
+
+
+HTML versions of the product manuals can be found in the installed system under [path]_/usr/share/doc/manual_
+.
+Find the latest documentation updates at http://www.suse.com/documentation/suse-manager/ where you can download PDF or HTML versions of the manuals for your product. 
+
+ifdef::backend-docbook[]
+[index]
+== Index
+// Generated automatically by the DocBook toolchain.
+endif::backend-docbook[]
