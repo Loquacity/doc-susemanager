@@ -5,7 +5,7 @@
 The Security Certification and Authorization Package (SCAP) is a standardized compliance checking solution for enterprise-level Linux infrastructures.
 It is a line of specifications maintained by the National Institute of Standards and Technology (NIST) for maintaining system security for enterprise systems. 
 
-|000susemgr; uses OpenSCAP to implement the SCAP specifications.
+{susemgr} uses OpenSCAP to implement the SCAP specifications.
 OpenSCAP is an auditing tool that utilizes the Extensible Configuration Checklist Description Format (XCCDF). XCCDF is a standard way of expressing checklist content and defines security checklists.
 It also combines with other specifications such as Common Platform Enumeration (CPE), Common Configuration Enumeration (CCE), and Open Vulnerability and Assessment Language (OVAL), to create a SCAP-expressed checklist that can be processed by SCAP-validated products. 
 
@@ -18,7 +18,7 @@ OpenSCAP verifies the presence of patches by using content produced by the SUSE 
 To effectively use OpenSCAP, the following must be available: 
 
 A tool to verify a system confirms to a standard::
-|000susemgr; uses OpenSCAP as an auditing feature.
+{susemgr} uses OpenSCAP as an auditing feature.
 It allows you to schedule and view compliance scans for any system. 
 
 SCAP content::
@@ -30,7 +30,7 @@ package provides default content guidance for systems via a template.
 
 [NOTE]
 ====
-|000suse; supports the use of templates to evaluate your systems.
+{suse} supports the use of templates to evaluate your systems.
 However, you are creating custom content at your own risk. 
 ====##
  ke 2013-08-28: Do we have SCAP content providers? Such as: The United States Government
@@ -44,16 +44,16 @@ New specifications are governed by NIST's SCAP Release cycle in order to provide
 For more information, see http://scap.nist.gov/timeline.html. 
 
 [[_s1_openscap_suma_prerq]]
-== Prerequisites for Using OpenSCAP in |000susemgr;
+== Prerequisites for Using OpenSCAP in {susemgr}
 
 
 The following sections describe the server and client prerequisites for using OpenSCAP. 
 
 Package Requirements::
-As Server: |000susemgr; 1.7 or later. 
+As Server: {susemgr} 1.7 or later. 
 +
 For the Client: [path]_spacewalk-oscap_
-package (available from the |000susemgr; Tools Child Channel). 
+package (available from the {susemgr} Tools Child Channel). 
 
 Other Requirements::
 Client: Distribution of the XCCDF content to all client machines. 
@@ -68,7 +68,7 @@ OpenSCAP auditing is not available on Salt SSH minions.
 You can distribute XCCDF content to client machines using any of the following methods: 
 
 * Traditional Methods (CD, USB, NFS, scp, ftp) 
-* |000susemgr; Scripts 
+* {susemgr} Scripts 
 * RPMs 
 
 
@@ -80,7 +80,7 @@ Installation, removal, and verification of RPM packages can be managed from the 
 == Performing Audit Scans
 
 
-OpenSCAP integration in |000susemgr; provides the ability to perform audit scans on client systems.
+OpenSCAP integration in {susemgr} provides the ability to perform audit scans on client systems.
 This section describes the available scanning methods. 
 
 .OpenSCAP Scans via Salt ssh-push Minions
@@ -91,7 +91,7 @@ This functionality will be adapted and enabled in a future release.
 ====
 
 .Procedure: Scans via the Web Interface
-. To perform a scan via the Web interface, log in to |000susemgr;. 
+. To perform a scan via the Web interface, log in to {susemgr}. 
 . Click on menu:Systems[] and select the target system. 
 . Click on menu:Audit[Schedule] . 
 . Fill in the Schedule New XCCDF Scan form. See <<_sm_audit_schedule>> for more information about the fields on this page. 
@@ -114,7 +114,7 @@ mgr_check -vv
 
 [NOTE]
 ====
-If the |000susemgr; daemon (``rhnsd``) or `osad` are running on the client system, the action will be picked up by these services.
+If the {susemgr} daemon (``rhnsd``) or `osad` are running on the client system, the action will be picked up by these services.
 To check if they are running, use: 
 
 ----
@@ -160,7 +160,7 @@ Where:
 mgr_check -vv
 ----
 +
-If the |000susemgr; daemon (``rhnsd``) or `osad` are running on the client system, the action will be picked up by these services.
+If the {susemgr} daemon (``rhnsd``) or `osad` are running on the client system, the action will be picked up by these services.
 To check if they are running, use: 
 +
 
@@ -209,10 +209,10 @@ spacewalk-report scap-scan-results
 
 
 [[_s2_openscap_suma_pages]]
-== OpenSCAP |000susemgr; Web Interface
+== OpenSCAP {susemgr} Web Interface
 
 
-The following sections describe the tabs in the |000susemgr; Web interface that provide access to OpenSCAP and its features. 
+The following sections describe the tabs in the {susemgr} Web interface that provide access to OpenSCAP and its features. 
 
 === OpenSCAP Scans Page
 
@@ -221,7 +221,7 @@ Click the menu:Audit[]
  tab on the top navigation bar, then OpenSCAP on the left.
 Here you can view, search for, and compare completed OpenSCAP scans. 
 
-==== menu:OpenSCAP[]|000gt; menu:All Scans[]
+==== menu:OpenSCAP[]{gt} menu:All Scans[]
 
 menu:All Scans[]
  is the default page that appears on the menu:Audit[OpenSCAP]
@@ -258,7 +258,7 @@ In such cases, the given rule is not included in the statistics on this page.
 See menu:System Details[Audit]
  for information on these types of results. 
 
-==== menu:OpenSCAP[]|000gt; menu:XCCDF Diff[]
+==== menu:OpenSCAP[]{gt} menu:XCCDF Diff[]
 
 
 XCCDF Diff is an application that visualizes the comparison of two XCCDF scans.
@@ -279,7 +279,7 @@ items that have changed.
 Only Invariant:::
 unchanged or similar items. 
 
-==== menu:OpenSCAP[]|000gt; menu:Advanced Search[]
+==== menu:OpenSCAP[]{gt} menu:Advanced Search[]
 
 
 Use the Advanced Search page to search through your scans according to specified criteria including: 
@@ -426,5 +426,5 @@ Specifying invalid arguments can cause `spacewalk-oscap` to fail to validate or 
 Due to security concerns, the `oscap xccdf eval` command only accepts a limited set of parameters. 
 ====
 
-For information about how to schedule scans using the |000webui;, refer to <<_pro_os_suma_audit_scans_webui>>
+For information about how to schedule scans using the {webui}, refer to <<_pro_os_suma_audit_scans_webui>>
 . 

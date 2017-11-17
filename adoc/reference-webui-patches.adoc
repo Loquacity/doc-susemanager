@@ -25,7 +25,7 @@ To receive an e-mail when patches are issued for your system, go to menu:Overvie
 ====
 
 
-|000suse; distinguishes three types of patches: security updates, bug fix updates, and enhancement updates.
+{suse} distinguishes three types of patches: security updates, bug fix updates, and enhancement updates.
 Each patch consists of a summary of the problem and solution, including the RPM packages fixing the problem. 
 
 Icons are used to identify the three types: 
@@ -74,7 +74,7 @@ Refer to <<_s3_sm_errata_details>>
 
 
 The menu:All[]
- patches page displays a list of all patches released by |000suse;, irrelevant of whether they apply to your registered systems or not. 
+ patches page displays a list of all patches released by {suse}, irrelevant of whether they apply to your registered systems or not. 
 
 .
 image::patches_all_patches.png[]
@@ -115,8 +115,8 @@ In addition, users with appropriate roles can apply patches using two other meth
 
 [IMPORTANT]
 ====
-If you use scheduled package installation, the packages or patches are installed via the |000susemgr; daemon (``rhnsd``). You must enable the |000susemgr; daemon on your systems.
-For more information about the |000susemgr; daemon, see <<_bp.contact.methods.rhnsd>>
+If you use scheduled package installation, the packages or patches are installed via the {susemgr} daemon (``rhnsd``). You must enable the {susemgr} daemon on your systems.
+For more information about the {susemgr} daemon, see <<_bp.contact.methods.rhnsd>>
 . 
 ====
 
@@ -140,10 +140,10 @@ If you click the advisory of a patch in the menu:Relevant[]
 This page is further divided into the following tabs: 
 
 [[_s4_sm_errata_details_details]]
-==== menu:Patch Details[]|000gt; menu:Details[]
+==== menu:Patch Details[]{gt} menu:Details[]
 
 
-This subtab displays the patch report issued by |000suse;. It provides a synopsis of the patch first (with the severity as a textual prefix in case of security updates, such as "`critical`"
+This subtab displays the patch report issued by {suse}. It provides a synopsis of the patch first (with the severity as a textual prefix in case of security updates, such as "`critical`"
 , "`important`"
 , "`moderate`"
 , or "`low`"
@@ -166,10 +166,10 @@ This information is listed below the menu:CVEs[]
 OVAL is an open vulnerability and assessment language promoted by Mitre, http://oval.mitre.org.
 Clicking the link below the menu:Oval[]
  label downloads this information to your system.
-More useful are the |000suse; Update Advisories at https://www.suse.com/support/update/. 
+More useful are the {suse} Update Advisories at https://www.suse.com/support/update/. 
 
 [[_s4_sm_errata_details_packages]]
-==== menu:Patch Details[]|000gt; menu:Packages[]
+==== menu:Patch Details[]{gt} menu:Packages[]
 
 
 This page provides links to each of the updated RPMs by channel.
@@ -177,7 +177,7 @@ Clicking the name of a package displays its menu:Package Details[]
  page. 
 
 [[_s4_sm_errata_details_systems]]
-==== menu:Patch Details[]|000gt; menu:Affected Systems[]
+==== menu:Patch Details[]{gt} menu:Affected Systems[]
 
 
 This page lists systems affected by the patches.
@@ -253,7 +253,7 @@ image::patches_published_patches.png[]
 
 [WARNING]
 ====
-If the organization is using both |000susemgr; and |000susemgr; Proxy server, then manage patches only on the |000susemgr; server since the proxy servers receive updates directly from it.
+If the organization is using both {susemgr} and {susemgr} Proxy server, then manage patches only on the {susemgr} server since the proxy servers receive updates directly from it.
 Managing patches on a proxy in this combined configuration risks putting your servers out of synchronization. 
 ====
 
@@ -279,7 +279,7 @@ Patch management distinguishes between published and unpublished patches.
 ** menu:Unublished[] : this page displays the patch alerts your organization has created but not yet distributed. To edit an existing unpublished patch, follow the steps described in <<_s3_sm_errata_create>> . To publish the patch, click menu:Publish Patch[] on the top-right corner of the menu:Patch Details[] page. Confirm the channels associated with the patch and click the menu:Publish Patch[] button, now in the lower-right corner. The patch alert is moved to the menu:Published[] page awaiting distribution. 
 
 
-|000susemgr; administrators can also create patches by cloning an existing one.
+{susemgr} administrators can also create patches by cloning an existing one.
 Cloning preserves package associations and simplifies issuing patches.
 See <<_ref.webui.patches.clone>>
  for instructions. 
@@ -358,7 +358,7 @@ Additionally, on a patch details page, you can click menu:Publish Patch[]
 (((Web UI,Cloning Patches)))
 
 
-Patches can be cloned for easy replication and distribution as part of |000susemgr;. 
+Patches can be cloned for easy replication and distribution as part of {susemgr}. 
 
 .
 image::patches_clone_patches.png[]

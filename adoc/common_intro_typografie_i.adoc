@@ -13,6 +13,6 @@ The following typographical conventions are used in this manual:
 * menu:File[] , menu:File[Save As] : menu items, buttons 
 * This paragraph is only relevant for the x86_64 architecture. The arrows mark the beginning and the end of the text block. 
 + 
-This paragraph is only relevant for the architectures `|000zseries;` and ``POWER``.
+This paragraph is only relevant for the architectures `{zseries}` and ``POWER``.
 The arrows mark the beginning and the end of the text block. 
-* _Dancing Penguins_ (Chapter __Penguins__, |000uarr;Another Manual): This is a reference to a chapter in another manual. 
+* _Dancing Penguins_ (Chapter __Penguins__, {uarr}Another Manual): This is a reference to a chapter in another manual. 

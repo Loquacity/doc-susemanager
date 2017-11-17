@@ -1,5 +1,5 @@
 [[_ref.webui]]
-= Web Interface |000mdash; Navigation and Home
+= Web Interface {mdash} Navigation and Home
 :doctype: book
 :sectnums:
 :toc: left
@@ -9,7 +9,7 @@
 
 [abstract]
 --
-This is a chapter about the layout of the Web Interface to |000susemgr;, basic usage information, and the menu:Home[]
+This is a chapter about the layout of the Web Interface to {susemgr}, basic usage information, and the menu:Home[]
  menu. 
 --
 
@@ -22,7 +22,7 @@ include::reference-webui-intro.adoc[]
 (((Overview,Web interface)))
 
 
-Entering the |000susemgr; URL in a browser takes you to the menu:Sign In[]
+Entering the {susemgr} URL in a browser takes you to the menu:Sign In[]
  screen.
 If you click the menu:About[]
  link before logging in, you will find documentation links, including a search function, and the option to request your login credentials if you forgot either password or login.
@@ -31,7 +31,7 @@ Click menu:Lookup Login/Password[]
 For more information, see <<_ref.webui.overview.account>>
 . 
 
-After logging into the Web interface of |000susemgr;, the first page to appear is the menu:Overview[]
+After logging into the Web interface of {susemgr}, the first page to appear is the menu:Overview[]
  page of the menu:Home[]
  menu.
 The menu:Overview[]
@@ -39,7 +39,7 @@ The menu:Overview[]
 
 [NOTE]
 ====
-If you are new to the |000susemgr; Web interface, read <<_ref.webui.intro>>
+If you are new to the {susemgr} Web interface, read <<_ref.webui.intro>>
  to familiarize yourself with the layout and symbols used throughout the interface. 
 ====
 
@@ -53,12 +53,12 @@ Users can control which of the following sections are displayed by making select
 Refer to <<_ref.webui.overview.prefs>>
  for more information. 
 
-* The menu:Tasks[] section lists the most common tasks an administrator performs via the Web interface. Click any link to reach the page within |000susemgr; that allows you to accomplish that task. 
+* The menu:Tasks[] section lists the most common tasks an administrator performs via the Web interface. Click any link to reach the page within {susemgr} that allows you to accomplish that task. 
 +
 
 .
 image::home_overview_tasks_pane.png[]
-* If any systems have not been checking in to |000susemgr;, they are listed under menu:Inactive Systems[] to the right. Highlighting them in this way allows an administrator to quickly select those systems for troubleshooting. 
+* If any systems have not been checking in to {susemgr}, they are listed under menu:Inactive Systems[] to the right. Highlighting them in this way allows an administrator to quickly select those systems for troubleshooting. 
 +
 
 .
@@ -83,7 +83,7 @@ image::home_overview_latest_errata_pane.png[]
 
 .
 image::home_overview_system_groups_pane.png[]
-* The menu:Recently Registered Systems[] section lists the systems added to the |000susemgr; in the past 30 days. Click a system's name to see its menu:System Details[] page. Click the link below this section to menu:View All Recently Registered Systems[] on one page. 
+* The menu:Recently Registered Systems[] section lists the systems added to the {susemgr} in the past 30 days. Click a system's name to see its menu:System Details[] page. Click the link below this section to menu:View All Recently Registered Systems[] on one page. 
 +
 
 .
@@ -111,7 +111,7 @@ To modify this information, make the changes in the appropriate text fields and 
 image::home_user_account_user_details.png[]
 
 
-If you change your |000susemgr; password, for security reasons you will not see the new password while you enter it.
+If you change your {susemgr} password, for security reasons you will not see the new password while you enter it.
 Replace the asterisks in the menu:Password[]
  and menu:Confirm Password[]
  text fields with the new password. 
@@ -157,7 +157,7 @@ image::home_user_account_edit_address.png[]
 
 
 The email address listed in the menu:Your Account[]
- page is the address to which |000susemgr; sends email notifications if you select to receive patch alerts or daily summaries for your systems on the menu:Your Preferences[]
+ page is the address to which {susemgr} sends email notifications if you select to receive patch alerts or daily summaries for your systems on the menu:Your Preferences[]
  page. 
 
 .
@@ -174,7 +174,7 @@ Enter your new email address and click the menu:Update[]
 === Credentials
 
 
-View or enter external system or API credentials associated with your |000susemgr; account, for example your |000suse; Studio credentials. 
+View or enter external system or API credentials associated with your {susemgr} account, for example your {suse} Studio credentials. 
 
 .
 image::home_user_account_credentials.png[]
@@ -186,21 +186,21 @@ image::home_user_account_credentials.png[]
 
 
 The menu:Account Deactivation[]
- page provides a means to cancel your |000susemgr; service.
+ page provides a means to cancel your {susemgr} service.
 To do so, click the menu:Deactivate
     Account[]
  button.
 The Web interface returns you to the login screen.
-If you attempt to log back in, an error message advises you to contact the |000susemgr; administrator for your organization. 
+If you attempt to log back in, an error message advises you to contact the {susemgr} administrator for your organization. 
 
 .
 image::home_user_account_account_deactivation.png[]
 
 
-.|000susemgr; Administrator Account
+.{susemgr} Administrator Account
 [NOTE]
 ====
-If you are the only |000susemgr; Administrator for your organization, you are unable to deactivate your account. 
+If you are the only {susemgr} Administrator for your organization, you are unable to deactivate your account. 
 ====
 
 [[_ref.webui.overview.prefs]]
@@ -210,7 +210,7 @@ If you are the only |000susemgr; Administrator for your organization, you are un
 
 The menu:Home[Your
    Preferences]
- page allows you to configure |000susemgr; options. 
+ page allows you to configure {susemgr} options. 
 
 .
 image::home_your_preferences.png[]
@@ -228,11 +228,11 @@ By default, all Management and Provisioning systems are included in the summary.
 Add more systems either individually on the menu:System Details[]
  page or for multiple systems at once in the menu:System Set Manager[]
  interface.
-Note that |000susemgr; sends these summaries only to verified email addresses.
+Note that {susemgr} sends these summaries only to verified email addresses.
 To disable all messages, simply deselect this check box. 
 ====
-* menu:|000susemgr; List Page Size[] -- Maximum number of items that appear in a list on a single page. If more items are in the list, clicking the menu:Next[] button displays the next group of items. This preference applies to system lists, patch lists, package lists, and so on. 
-* menu:|000quot;Overview|000quot; Start Page[] -- Select the information sections that are displayed on the menu:Overview[] page of the menu:Home[] menu. Check the box to the left of the information section you would like to include. 
+* menu:{susemgr} List Page Size[] -- Maximum number of items that appear in a list on a single page. If more items are in the list, clicking the menu:Next[] button displays the next group of items. This preference applies to system lists, patch lists, package lists, and so on. 
+* menu:{quot}Overview{quot} Start Page[] -- Select the information sections that are displayed on the menu:Overview[] page of the menu:Home[] menu. Check the box to the left of the information section you would like to include. 
 * menu:CSV Files[] -- Select the separator character to be used in downloadable CSV files. menu:Comma[] is the default; as an alternative use menu:Semicolon[] , which is more compatible with Microsoft Excel. 
 
 
@@ -248,7 +248,7 @@ After making changes to any of these options, click the menu:Save
 
 On the menu:Home[Locale
    Preferences]
- page set your |000susemgr; interface to your local time by selecting the appropriate menu:Time Zone[]
+ page set your {susemgr} interface to your local time by selecting the appropriate menu:Time Zone[]
  from the drop-down box, then click the menu:Save Preferences[]
  button to apply the selection. 
 
@@ -311,7 +311,7 @@ A state applied from this page will be applied to all minions within an organiza
 
 [NOTE]
 ====
-Keep in mind states are applied according to the following order of hierarchy within |000susemgr;: `Organization` > `Group` > ``Single System``. 
+Keep in mind states are applied according to the following order of hierarchy within {susemgr}: `Organization` > `Group` > ``Single System``. 
 ====
 
 .

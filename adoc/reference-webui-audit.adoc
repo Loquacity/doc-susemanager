@@ -13,7 +13,7 @@ Select menu:Audit[]
 
 [[_ref.webui.audit.cve]]
 == CVE Audit
-(((CVE audit,|000susemgr; data)))
+(((CVE audit,{susemgr} data)))
 
 
 The menu:CVE Audit[]
@@ -42,10 +42,10 @@ Performing this procedure will result in a list of client systems, where each sy
 Possible statuses are: 
 
 image:patch-status-affected-patch-inapplicable.png[[red]] -- Affected, patches are available in channels that are not assigned:::
-The system is affected by the vulnerability and |000susemgr; has one or more patches for it, but at this moment, the channels offering the patches are not assigned to the system. 
+The system is affected by the vulnerability and {susemgr} has one or more patches for it, but at this moment, the channels offering the patches are not assigned to the system. 
 
 image:patch-status-affected-patch-applicable.png[[orange]] -- Affected, at least one patch available in an assigned channel:::
-The system is affected by the vulnerability, |000susemgr; has at least one patch for it in a channel that is directly assigned to the system. 
+The system is affected by the vulnerability, {susemgr} has at least one patch for it in a channel that is directly assigned to the system. 
 
 image:patch-status-not-affected.png[[grey]] -- Not affected:::
 The system does not have any packages installed that are patchable. 
@@ -56,7 +56,7 @@ A patch has already been installed.
 
 In other words, it can mean the following: 
 ** More than one patch might be needed to fix a certain vulnerability. 
-** The image:patch-status-affected-patch-applicable.png[[orange]] state is displayed when |000susemgr; has at least one patch in an assigned channel. This might mean that, after installing such patch, others might be needed|000mdash;users should double check the CVE Audit page after applying a patch to be sure that their systems are not affected anymore. 
+** The image:patch-status-affected-patch-applicable.png[[orange]] state is displayed when {susemgr} has at least one patch in an assigned channel. This might mean that, after installing such patch, others might be needed{mdash}users should double check the CVE Audit page after applying a patch to be sure that their systems are not affected anymore. 
 
 
 For a more precise definitions of these states, see <<_sec_cve_tips>>
@@ -65,7 +65,7 @@ For a more precise definitions of these states, see <<_sec_cve_tips>>
 .Unknown CVE Number
 [NOTE]
 ====
-If the CVE number is not known to |000susemgr;, an error message is displayed because |000susemgr; cannot collect and display any audit data. 
+If the CVE number is not known to {susemgr}, an error message is displayed because {susemgr} cannot collect and display any audit data. 
 ====
 
 
@@ -90,7 +90,7 @@ Details on how to use it are available in the API guide.
 
 To produce correct results, CVE Audit must periodically refresh the data needed for the search in the background.
 By default, the refresh is scheduled at 11:00 PM every night.
-It is recommended to run such a refresh right after the |000susemgr; installation to get proper results immediately instead of waiting until the next day. 
+It is recommended to run such a refresh right after the {susemgr} installation to get proper results immediately instead of waiting until the next day. 
 
 .. In the Web interface, click menu:Admin[Task Schedules] in the left navigation menu. 
 .. Click the `cve-server-channels-default` schedule link. 
@@ -114,7 +114,7 @@ For more information, see <<_sec_cve_maint>>
 Systems are called "`affected`"
 , "`not affected`"
  or "`patched`"
- not in an absolute sense, but based on information available to |000susemgr;. This implies that concepts such as "`being
+ not in an absolute sense, but based on information available to {susemgr}. This implies that concepts such as "`being
     affected by a vulnerability`"
  have particular meanings in this context.
 The following definitions apply: 
@@ -129,10 +129,10 @@ System patched for a certain vulnerability:::
 A system which has an installed package with version equal to or greater than the version of the same package in a relevant patch marked for the vulnerability. 
 
 Relevant patch:::
-A patch known by |000susemgr; in a relevant channel. 
+A patch known by {susemgr} in a relevant channel. 
 
 Relevant channel:::
-A channel managed by |000susemgr;, which is either assigned to the system, the original of a cloned channel which is assigned to the system, a channel linked to a product which is installed on the system or a past or future service pack channel for the system. 
+A channel managed by {susemgr}, which is either assigned to the system, the original of a cloned channel which is assigned to the system, a channel linked to a product which is installed on the system or a past or future service pack channel for the system. 
 
 
 A notable consequence of the above definitions is that results can be incorrect in cases of unmanaged channels, unmanaged packages, or non-compliant systems. 
@@ -164,12 +164,12 @@ Selecting menu:Audit[Subscription
 [IMPORTANT]
 ====
 This tool's goal is to help provide visual coverage on current subscription use and support reporting.
-The Subscription Matcher is excellent at matching systems and products registered with |000susemgr;, however any systems, products or environments which are not found in the database will remain unmatched.
+The Subscription Matcher is excellent at matching systems and products registered with {susemgr}, however any systems, products or environments which are not found in the database will remain unmatched.
 This tool is not intended to act as a replacement for auditing.
 Auditing should always take precedence over subscription matching. 
 ====
 
-=== menu:Subscription Matching[]|000gt; menu:Subscriptions[]
+=== menu:Subscription Matching[]{gt} menu:Subscriptions[]
 
 
 The Subscription Matching overview provides subscription part numbers, product descriptions, policies, matched total subscriptions used and remaining, and the start and end dates of subscriptions. 
@@ -213,12 +213,12 @@ End date of the subscription
 === Subscription Matcher Reports
 
 
-|000susemgr; automatically generates up-to-date nightly status reports by matching your |000suse; subscriptions with all your registered systems.
+{susemgr} automatically generates up-to-date nightly status reports by matching your {suse} subscriptions with all your registered systems.
 These reports are stored in [path]_/var/lib/spacewalk/subscription-matcher_
  and provided in CSV format.
 These CSV files may be opened with a spreadsheet application such as LibreOffice Calc. 
 
-If you want to schedule these reports to be produced at different times, or at a certain frequency or schedule a one time completion you can perform this task by editing the Taskomatic settings for the gatherer-matcher located in the |000webui; at menu:Admin[Task Schedules > gatherer-matcher-default]
+If you want to schedule these reports to be produced at different times, or at a certain frequency or schedule a one time completion you can perform this task by editing the Taskomatic settings for the gatherer-matcher located in the {webui} at menu:Admin[Task Schedules > gatherer-matcher-default]
 . 
 
 .
@@ -226,11 +226,11 @@ image::audit_subscription_matching_gatherer_matcher_default.png[]
 
 
 [[_ref.webui.audit.submatch.unmatched.systems]]
-=== menu:Subscription Matching[]|000gt; menu:Unmatched Products[]
+=== menu:Subscription Matching[]{gt} menu:Unmatched Products[]
 
 
 Selecting the menu:Subscription Matching[Unmatched Products]
- tab provides an overview of all systems the matcher could not find in the database or which were not registered with |000susemgr;. The menu:Unmatched
+ tab provides an overview of all systems the matcher could not find in the database or which were not registered with {susemgr}. The menu:Unmatched
     Products[]
  overview contains product names and the number of systems which remain unmatched with known installed products. 
 
@@ -242,7 +242,7 @@ Show System List::
 Select to open and display a list of all systems which were detected with an installed product but remain unmatched with a subscription. 
 
 [[_ref.webui.audit.submatch.sub.pinning]]
-=== menu:Subscription Matching[]|000gt; menu:Pins[]
+=== menu:Subscription Matching[]{gt} menu:Pins[]
 
 
 The subscription pinning feature allows a user to instruct the subscription matcher to favor matching a specific subscription with a given system or group of systems.
@@ -286,7 +286,7 @@ Within the menu:Subscriptions Available for Selected System[]
  button to raise priority for subscription use on the selected system. 
 
 [[_ref.webui.audit.submatch.submatch.messages]]
-=== menu:Subscription Matching[]|000gt; menu:Messages[]
+=== menu:Subscription Matching[]{gt} menu:Messages[]
 
 
 You can review all messages related to menu:Subscription
@@ -318,11 +318,11 @@ image::audit_subscription_matching_messages.png[]
 
 
 A pre-requirement for matching subscriptions with systems is to have complete information covering which virtual systems are running on which virtual host.
-|000susemgr; gets this information without any further configuration if the hypervisor is a registered system running on |000sls; or |000rhel;. Third party hypervisors, like VMware or Hyper-V, will need further configuration as described in this chapter. 
+{susemgr} gets this information without any further configuration if the hypervisor is a registered system running on {sls} or {rhel}. Third party hypervisors, like VMware or Hyper-V, will need further configuration as described in this chapter. 
 
 Third party hypervisors and hypervisor managers such as VMWare vCenter are called "`Virtual Host Managers`"
- (VHM) within |000susemgr;, as they can manage one or multiple virtual hosts, which in turn may contain virtual guests.
-|000susemgr; |000productnumber; ships with a tool `virtual-host-gatherer` that can connect to VHMs using their API, and request information about virtual hosts.
+ (VHM) within {susemgr}, as they can manage one or multiple virtual hosts, which in turn may contain virtual guests.
+{susemgr} {productnumber} ships with a tool `virtual-host-gatherer` that can connect to VHMs using their API, and request information about virtual hosts.
 This tool is automatically invoked via Taskomatic nightly, therefore you need to configure your VHMs via XMLRPC APIs. `virtual-host-gatherer` maintains the concept of optional modules, where each module enables a specific Virtual Host Manager. 
 
 On the menu:Subscription Matching[]
@@ -421,7 +421,7 @@ The following json example describes how this file should look:
 ----
 
 
-For more information, see the man page on your |000susemgr; server for ``virtual-host-gatherer``: 
+For more information, see the man page on your {susemgr} server for ``virtual-host-gatherer``: 
 
 ----
  >man virtual-host-gatherer
@@ -452,7 +452,7 @@ The following APIs return information about configured VHMs:
 
 If you click menu:Audit[OpenSCAP > All
    Scans]
- in the left navigation menu, an overview of the |000openscap; Scans appears.
+ in the left navigation menu, an overview of the {openscap} Scans appears.
 SCAP (Security Content Automation Protocol) is a framework to maintain the security of enterprise systems.
 It mainly performs the following tasks: 
 *** Automatically verifying the availability of patches 
@@ -460,10 +460,10 @@ It mainly performs the following tasks:
 *** Examining systems for signs of compromise 
 
 
-For a description of the |000webui; dialogs, see <<_s2_openscap_suma_pages>>
+For a description of the {webui} dialogs, see <<_s2_openscap_suma_pages>>
 . 
 
-For instructions and tips on how to best use OpenSCAP with |000susemgr;, refer to <<_ch_openscap>>
+For instructions and tips on how to best use OpenSCAP with {susemgr}, refer to <<_ch_openscap>>
 .
 To learn more about OpenSCAP, see the project home page at http://open-scap.org. 
 

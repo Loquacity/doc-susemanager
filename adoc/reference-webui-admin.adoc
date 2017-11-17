@@ -9,24 +9,24 @@
 
 
 The menu:Admin[]
- pages allows |000susemgr; customers to manage the basic configuration, including creating and managing multiple organizations.
-Only the |000susemgr; administrator can access the menu:Admin[]
+ pages allows {susemgr} customers to manage the basic configuration, including creating and managing multiple organizations.
+Only the {susemgr} administrator can access the menu:Admin[]
  pages. 
 
 [[_ref.webui.admin.wizard]]
-== menu:Admin[]|000gt; menu:Setup Wizard[]
+== menu:Admin[]{gt} menu:Setup Wizard[]
 
 
-Setting up |000susemgr; typically requires some extra steps after installation for common configuration tasks. 
+Setting up {susemgr} typically requires some extra steps after installation for common configuration tasks. 
 
 The menu:Setup Wizard[]
- link is displayed when the |000susemgr; Web interface is used for the fist time and can be accessed later at any time by clicking menu:Admin[Setup
+ link is displayed when the {susemgr} Web interface is used for the fist time and can be accessed later at any time by clicking menu:Admin[Setup
    Wizard]
 .
-On the three tabs configure the HTTP proxy server, organization credentials, and |000suse; products. 
+On the three tabs configure the HTTP proxy server, organization credentials, and {suse} products. 
 
 menu:HTTP Proxy:[]::
-Configure a proxy server that |000susemgr; will use to access SCC (|000suse; Customer Center) and other remote servers here. 
+Configure a proxy server that {susemgr} will use to access SCC ({suse} Customer Center) and other remote servers here. 
 +
 
 
@@ -58,7 +58,7 @@ Buttons below the credential card allow you to:
 * delete the credential (trash can icon). 
 
 menu:SUSE Products:[]::
-On the menu:|000suse; Products[]
+On the menu:{suse} Products[]
 page, select product-specific channels you are entitled to. 
 +
 
@@ -67,7 +67,7 @@ page, select product-specific channels you are entitled to.
 image::admin_suse_products.png[]
 
 +
-The products displayed are directly linked to your organization credentials and your |000suse; subscriptions.
+The products displayed are directly linked to your organization credentials and your {suse} subscriptions.
 Product extentions and modules are shown when you select the corresponding base product or click the plus sign to its left.
 After you have made your selection, click menu:Add products[]
 .
@@ -79,7 +79,7 @@ This equals running `mgr-sync add products` or `mgr-sync` without any argument.
 [NOTE]
 ====
 Channel synchronization will start and might take several hours.
-When finished the corresponding channels can be used in |000susemgr;. 
+When finished the corresponding channels can be used in {susemgr}. 
 ====
 +
 
@@ -114,10 +114,10 @@ When a product is downloaded and ready to use, the state will change to menu:Fin
 . 
 
 [[_ref.webui.admin.org]]
-== menu:Admin[]|000gt; menu:Organizations[]
+== menu:Admin[]{gt} menu:Organizations[]
 
 
-The organizations feature allows |000susemgr; administrators to create and manage multiple organizations across |000susemgr;. Administrators can allocate software and system entitlements across various organizations, and control an organization's access to system management tasks. 
+The organizations feature allows {susemgr} administrators to create and manage multiple organizations across {susemgr}. Administrators can allocate software and system entitlements across various organizations, and control an organization's access to system management tasks. 
 
 .
 image::admin_list_organizations.png[]
@@ -126,7 +126,7 @@ image::admin_list_organizations.png[]
 If you click the name of an organization, the Organization Details page appears. 
 
 [[_s2_sattools_org_details_details]]
-=== menu:Organization Details[]|000gt; menu:Details[]
+=== menu:Organization Details[]{gt} menu:Details[]
 
 
 The menu:Organization Details[]
@@ -149,7 +149,7 @@ The following details are avialable:
 
 
 [[_s2_sattools_org_details_users]]
-=== menu:Organization Details[]|000gt; menu:Users[]
+=== menu:Organization Details[]{gt} menu:Users[]
 
 
 List of all the users of an organization. 
@@ -163,7 +163,7 @@ For more information, see <<_ref.webui.admin.users>>
 . 
 
 [[_s2_sattools_org_details_trust]]
-=== menu:Organization Details[]|000gt; menu:Trust[]
+=== menu:Organization Details[]{gt} menu:Trust[]
 
 
 Here establish trust between organizations. 
@@ -177,7 +177,7 @@ You may add a trust by checking the box next to an organization (or remove a tru
  button. 
 
 [[_s2_sattools_org_details_conf]]
-=== menu:Organization Details[]|000gt; menu:Configuration[]
+=== menu:Organization Details[]{gt} menu:Configuration[]
 
 
 Here you enable the Organization Administrator to manage Organization configuration, configure the organization to use staged contents ("`pre-fetching`"
@@ -228,7 +228,7 @@ stagingContentWindow=24
 `stagingContentWindow` is a time value expressed in hours and determines when downloading will start.
 It is the number of hours before the scheduled installation or update time.
 In this case, it means `24` hours before the installation time.
-The exact download start time depends on the contact method|000mdash;when the next `rhn_check` is performed. 
+The exact download start time depends on the contact method{mdash}when the next `rhn_check` is performed. 
 
 Next time an action is scheduled, packages will automatically be downloaded but not installed yet.
 When the scheduled time comes, the action will use the staged version. 
@@ -262,7 +262,7 @@ These parameters will only have an effect when Content Staging is enabled for th
 ====
 
 [[_s2_sattools_org_details_states]]
-=== menu:Organization Details[]|000gt; menu:States[]
+=== menu:Organization Details[]{gt} menu:States[]
 
 
 From the menu:Admin[Organizations > States]
@@ -277,12 +277,12 @@ For more information about the State Catalog and creating states, see <<_ref.web
 . 
 
 [[_ref.webui.admin.users]]
-== menu:Admin[]|000gt; menu:Users[]
+== menu:Admin[]{gt} menu:Users[]
 
 
 To view and manage all users of the organization you are currently logged in to, click menu:Users[]
  in the left navigation bar.
-The table lists user name, real name, organization and whether the user is organization or |000susemgr; administrator.
+The table lists user name, real name, organization and whether the user is organization or {susemgr} administrator.
 To modify administrator privileges, click the user name to get to the user's menu:Details[]
  page.
 For more information, see <<_s3_sm_user_active_details>>
@@ -290,28 +290,28 @@ For more information, see <<_s3_sm_user_active_details>>
    it will be disabled for 2.1 release. Possible used in future versions.#
 
 [[_ref.webui.admin.config]]
-== menu:Admin[]|000gt; menu:Manager Configuration[]
+== menu:Admin[]{gt} menu:Manager Configuration[]
 
 menu:Manager Configuration[]
- is split into tabs that allow you to configure most aspects of |000susemgr;. 
+ is split into tabs that allow you to configure most aspects of {susemgr}. 
 
 [[_s3_sattools_config_gen]]
-=== menu:Admin[]|000gt; menu:Manager Configuration[]|000gt; menu:General[]
+=== menu:Admin[]{gt} menu:Manager Configuration[]{gt} menu:General[]
 
 
-This page allows you to alter basic |000susemgr; administration settings. 
+This page allows you to alter basic {susemgr} administration settings. 
 
 .
 image::admin_general_configuration.png[]
 
 
 menu:Administrator Email Address[]::
-E-mail address of the |000susemgr; administrator. 
+E-mail address of the {susemgr} administrator. 
 
 menu:SUSE Manager Hostname[]::
-Host name of the |000susemgr; server. 
+Host name of the {susemgr} server. 
 
-|000susemgr; Proxy Configuration::
+{susemgr} Proxy Configuration::
 menu:HTTP proxy[]
 , menu:HTTP proxy username[]
 , menu:HTTP proxy password[]
@@ -319,9 +319,9 @@ menu:HTTP proxy[]
 password[]
 . 
 +
-The HTTP proxy settings are for the communication with a |000susemgr; parent server, if there is any.
+The HTTP proxy settings are for the communication with a {susemgr} parent server, if there is any.
 The HTTP proxy should be of the form: ``hostname:port``; the default port `8080` will be used if none is explicitly provided.
-HTTP proxy settings for client systems to connect to this |000susemgr; can be different, and will be configured separately, for example via <<_s3_sattools_config_bootstrap>>
+HTTP proxy settings for client systems to connect to this {susemgr} can be different, and will be configured separately, for example via <<_s3_sattools_config_bootstrap>>
 . 
 
 menu:RPM repository mount point[]::
@@ -337,19 +337,19 @@ When done, confirm with menu:Update[]
 . 
 
 [[_s3_sattools_config_bootstrap]]
-=== menu:Admin[]|000gt; menu:Manager Configuration[]|000gt; menu:Bootstrap Script[]
+=== menu:Admin[]{gt} menu:Manager Configuration[]{gt} menu:Bootstrap Script[]
 
 
 The menu:Manager Configuration[Bootstrap Script]
- page allows you to generate a bootstrap script that registers the client systems with |000susemgr; and disconnects them from the remote |000scc;. 
+ page allows you to generate a bootstrap script that registers the client systems with {susemgr} and disconnects them from the remote {scc}. 
 
 .
 image::admin_configuration_bootstrap.png[]
 
 
 This generated script will be placed within the [path]_/srv/www/htdocs/pub/bootstrap/_
- directory on your |000susemgr; server.
-The bootstrap script will significantly reduce the effort involved in reconfiguring all systems, which by default obtains packages from the |000scc;. The required fields are pre-populated with values derived from previous installation steps.
+ directory on your {susemgr} server.
+The bootstrap script will significantly reduce the effort involved in reconfiguring all systems, which by default obtains packages from the {scc}. The required fields are pre-populated with values derived from previous installation steps.
 Ensure this information is accurate. 
 
 To bootstrap traditional clients, uncheck menu:Bootstrap using
@@ -359,39 +359,39 @@ For more information, see <<_registering.clients.traditional>>
 . 
 
 Check boxes offer options for including built-in security SSL and GNU Privacy Guard (GPG) features, both of which are advised.
-In addition, you may enable remote command acceptance and remote configuration management of the systems to be bootstrapped to the |000susemgr;. Both features are useful for completing client configuration.
+In addition, you may enable remote command acceptance and remote configuration management of the systems to be bootstrapped to the {susemgr}. Both features are useful for completing client configuration.
 Finally, if you are using an HTTP proxy server, fill in the related fields.
 When finished, click menu:Update[]
 . 
 
 [[_s3_sattools_config_orgs]]
-=== menu:Admin[]|000gt; menu:Manager Configuration[]|000gt; menu:Organizations[]
+=== menu:Admin[]{gt} menu:Manager Configuration[]{gt} menu:Organizations[]
 
 
 The menu:Manager Configuration[Organizations]
- page contains details about the organizations feature of |000susemgr;, and links for creating and configuring organizations. 
+ page contains details about the organizations feature of {susemgr}, and links for creating and configuring organizations. 
 
 .
 image::admin_configuration_organization.png[]
 
 
 [[_s3_sattools_config_restart]]
-=== menu:Admin[]|000gt; menu:Manager Configuration[]|000gt; menu:Restart[]
+=== menu:Admin[]{gt} menu:Manager Configuration[]{gt} menu:Restart[]
 
 
 The menu:Manager Configuration[Restart]
- page comprises the final step in configuring |000susemgr;. 
+ page comprises the final step in configuring {susemgr}. 
 
 .
 image::admin_configuration_restart.png[]
 
 
 Click the menu:Restart[]
- button to restart |000susemgr; and incorporate all of the configuration options added on the previous screens.
+ button to restart {susemgr} and incorporate all of the configuration options added on the previous screens.
 It will take between four and five minutes for the restart to finish. 
 
 [[_s3_sattools_config_cobbler]]
-=== menu:Admin[]|000gt; menu:Manager Configuration[]|000gt; menu:Cobbler[]
+=== menu:Admin[]{gt} menu:Manager Configuration[]{gt} menu:Cobbler[]
 
 
 On the menu:Manager Configuration[Cobbler]
@@ -407,7 +407,7 @@ Cobbler synchronization is used to repair or rebuild the contents of [path]_/srv
  when a manual modification of the cobbler setup has occurred. 
 
 [[_s3_sattools_config_bare_metal]]
-=== menu:Admin[]|000gt; menu:Manager Configuration[]|000gt; menu:Bare-metal systems[]
+=== menu:Admin[]{gt} menu:Manager Configuration[]{gt} menu:Bare-metal systems[]
 
 
 Here you can add unprovisioned ("bare-metal") systems capable of booting using PXE to an organization. 
@@ -422,8 +422,8 @@ First click menu:Enable adding to this
 Those systems then will appear in the menu:Systems[]
  list, where regular provisioning via autoinstallation is possible in a completely unattended fashion.
 Only AMD64/Intel 64 systems with at least 1 GB of RAM are supported.
-|000susemgr; server will use its integrated Cobbler instance and will act as TFTP server for this feature to work, so the network segment that connects it to target systems must be properly configured.
-In particular, a DHCP server must exist and have a next-server configuration parameter set to the |000susemgr; server IP address or hostname. 
+{susemgr} server will use its integrated Cobbler instance and will act as TFTP server for this feature to work, so the network segment that connects it to target systems must be properly configured.
+In particular, a DHCP server must exist and have a next-server configuration parameter set to the {susemgr} server IP address or hostname. 
 
 When enabled, any bare-metal system connected to the SUSE Manager server network will be automatically added to the organization when it powers on.
 The process typically takes a few minutes; when it finishes, the system will automatically shut down and then appear in the menu:Systems[]
@@ -445,13 +445,13 @@ It is possible to use menu:System Set Manager[]
 This limitation also applies to mixed sets with regular and bare-metal systems: full features will be enabled again when all bare-metal systems are removed from the set. 
 
 [[_ref.webui.admin.iss]]
-== menu:Admin[]|000gt; menu:ISS Configuration[]
+== menu:Admin[]{gt} menu:ISS Configuration[]
 
 
-Inter-Server Synchronization (ISS) allows |000susemgr; synchronizing content and permissions from another |000susemgr; instance in a peer-to-peer relationship. 
+Inter-Server Synchronization (ISS) allows {susemgr} synchronizing content and permissions from another {susemgr} instance in a peer-to-peer relationship. 
 
 [[_s3_sattools_iss_master]]
-=== Configuring the Master |000susemgr; Server
+=== Configuring the Master {susemgr} Server
 
 
 The following will help you set up a master ISS server. 
@@ -460,7 +460,7 @@ The following will help you set up a master ISS server.
 image::admin_iss_configuration_master.png[]
 
 
-Click menu:Admin[|000gt;ISS
+Click menu:Admin[{gt}ISS
     Configuration > Master Setup]
 .
 In the top right-hand corner of this page, click menu:Add New
@@ -477,8 +477,8 @@ and fill in the following information:
 * {empty}
 +
 + 
-Allow Slave to Sync? |000mdash; Choosing this field will allow the slave |000susemgr; to access this master |000susemgr;. Otherwise, contact with this slave will be denied. 
-* Sync All Orgs to Slave? |000mdash; Checking this field will synchronize all organizations to the slave |000susemgr;. 
+Allow Slave to Sync? {mdash} Choosing this field will allow the slave {susemgr} to access this master {susemgr}. Otherwise, contact with this slave will be denied. 
+* Sync All Orgs to Slave? {mdash} Checking this field will synchronize all organizations to the slave {susemgr}. 
 
 
 [NOTE]
@@ -491,15 +491,15 @@ Choosing the menu:Sync All Orgs to Slave?[]
 
 Click menu:Create[]
 .
-Optionally, click any local organization to be exported to the slave |000susemgr; then click menu:Allow
+Optionally, click any local organization to be exported to the slave {susemgr} then click menu:Allow
     Orgs[]
 . 
 
 .Enabling Inter-server Synchronization
 [NOTE]
 ====
-ISS is enabled by default in |000susemgr; 3.1 and later.
-The following configuration change applies only to |000susemgr; 2.1 and earlier.
+ISS is enabled by default in {susemgr} 3.1 and later.
+The following configuration change applies only to {susemgr} 2.1 and earlier.
 To enable the inter-server synchronization (ISS) feature, edit the [path]_/etc/rhn/rhn.conf_
  file and set: ``disable_iss=0``.
 Save the file and restart the httpd service with ``service httpd restart``. 
@@ -550,17 +550,17 @@ mgr-inter-sync -c YOUR-CHANNEL
 ----
 
 [[_s3_sattools_iss_map_orgs]]
-=== Mapping |000susemgr; Master Server Organizations to Slave Organizations
+=== Mapping {susemgr} Master Server Organizations to Slave Organizations
 
 
-A mapping between organizational names on the master |000susemgr; allows for channel access permissions being set on the master server and propagated when content is synchronized to a slave |000susemgr;. Not all organization and channel details need to be mapped for all slaves.
-|000susemgr; administrators can select which permissions and organizations can be synchronized by allowing or omitting mappings. 
+A mapping between organizational names on the master {susemgr} allows for channel access permissions being set on the master server and propagated when content is synchronized to a slave {susemgr}. Not all organization and channel details need to be mapped for all slaves.
+{susemgr} administrators can select which permissions and organizations can be synchronized by allowing or omitting mappings. 
 
-To complete the mapping, log in to the Slave |000susemgr; as administrator.
+To complete the mapping, log in to the Slave {susemgr} as administrator.
 Click menu:Admin[ISS
     Configuration > Slave Setup]
- and select a master |000susemgr; by clicking its name.
-Use the drop-down box to map the exported master organization name to a matching local organization in the slave |000susemgr;, then click menu:Update Mapping[]
+ and select a master {susemgr} by clicking its name.
+Use the drop-down box to map the exported master organization name to a matching local organization in the slave {susemgr}, then click menu:Update Mapping[]
 . 
 
 On the command line, issue the synchronization command on each of the custom channels to obtain the correct trust structure and channel permissions: 
@@ -570,7 +570,7 @@ mgr-inter-sync -c YOUR-CHANNEL
 ----
 
 [[_ref.webui.admin.schedules]]
-== menu:Admin[]|000gt; menu:Task Schedules[]
+== menu:Admin[]{gt} menu:Task Schedules[]
 
 
 Under menu:Task Schedules[]
@@ -590,7 +590,7 @@ To delete a schedule, click menu:delete schedule[]
 
 [WARNING]
 ====
-Only disable or delete a schedule if you are absolutely certain this is necessary as they are essential for |000susemgr; to work properly. 
+Only disable or delete a schedule if you are absolutely certain this is necessary as they are essential for {susemgr} to work properly. 
 ====
 
 
@@ -610,7 +610,7 @@ menu:clear-taskologs-default:[]::
 clears task engine (taskomatic) history data older than a specified number of days, depending on the job type, from the database. 
 
 menu:cobbler-sync-default:[]::
-synchronizes distribution and profile data from |000susemgr; to Cobbler.
+synchronizes distribution and profile data from {susemgr} to Cobbler.
 For more information on Cobbler, see <<_advanced.topics.cobbler>>
 . 
 
@@ -675,14 +675,14 @@ menu:session-cleanup-default:[]::
 cleans up stale Web interface sessions, typically data that is temporarily stored when a user logs in and then closes the browser before logging out. 
 
 menu:ssh-push-default:[]::
-prompts clients to check in with |000susemgr; via SSH if they are configured with a menu:SSH Push[]
+prompts clients to check in with {susemgr} via SSH if they are configured with a menu:SSH Push[]
 contact method. 
 
 [[_ref.webui.admin.status]]
-== menu:Admin[]|000gt; menu:Task Engine Status[]
+== menu:Admin[]{gt} menu:Task Engine Status[]
 
 
-This is a status report of the various tasks running by the |000susemgr; task engine. 
+This is a status report of the various tasks running by the {susemgr} task engine. 
 
 .
 image::admin_task_status_last_execution.png[]
@@ -691,12 +691,12 @@ image::admin_task_status_last_execution.png[]
 Next to the task name you find the date and time of the last execution and the status. 
 
 [[_ref.webui.admin.logs]]
-== menu:Admin[]|000gt; menu:Show Tomcat Logs[]
+== menu:Admin[]{gt} menu:Show Tomcat Logs[]
 
 
-Here the |000susemgr; Admin user has access to the Tomcat log file located at [path]_/var/log/rhn/rhn_web_ui.log_
+Here the {susemgr} Admin user has access to the Tomcat log file located at [path]_/var/log/rhn/rhn_web_ui.log_
 .
-No |000rootuser; privileges are required. 
+No {rootuser} privileges are required. 
 
 .
 image::admin_show_tomcat_logs.png[]

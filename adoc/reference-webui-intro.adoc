@@ -1,7 +1,7 @@
 [[_ref.webui.intro]]
 = Navigation
 (((navigation)))
-(((|000webui;,navigation bar)))
+((({webui},navigation bar)))
 
 
 The top bar provides access to commonly used tools and user settings. 
@@ -18,7 +18,7 @@ The breadcrumb tells you how far you are from the root of the menu and it brings
 image::home-overview-legend.png[]
 
 
-The left navigation bar is the menu to the |000susemgr; |000webui; from where you load the |000webui; pages.
+The left navigation bar is the menu to the {susemgr} {webui} from where you load the {webui} pages.
 If you click a the label of a menu entry you either open that page, or, if it is just a container of sub-entries, it expands this part of the menu tree without actually loading a page.
 To collaps all open parts of the menu system, click the menu:Clear Menus[]
  button at the top of menu.
@@ -27,7 +27,7 @@ Enter a search string in the menu:Search
   page[]
  field to find an entry of the menu tree.
 Available menu entries depend on the roles of the user.
-Only |000susemgr; Administrators see the menu:Images[]
+Only {susemgr} Administrators see the menu:Images[]
 , menu:Users[]
 , and menu:Admin[]
  entries. 
@@ -57,7 +57,7 @@ This guide covers the administrator user role level, some tabs, pages, and even 
 (((overview Web interface)))
 
 
-This section summarizes all of the categories and primary pages (those linked from the left navigation bar) within the |000susemgr; Web interface (|000webui;). It does not list the many subpages, tabs and subtabs accessible from the individual pages.
+This section summarizes all of the categories and primary pages (those linked from the left navigation bar) within the {susemgr} Web interface ({webui}). It does not list the many subpages, tabs and subtabs accessible from the individual pages.
 Each area of the Web interface is explained in detail later in this guide. 
 
 .
@@ -145,7 +145,7 @@ Quickly search all your systems by specific criteria, such as name, hardware, de
 +
 
 .menu:Activation Keys[]
-Generate an activation key for a |000susemgr;-entitled system.
+Generate an activation key for a {susemgr}-entitled system.
 This activation key can be used to grant a specific level of entitlement or group membership to a newly registered system using the `rhnreg_ks` command. 
 * {empty}
 +
@@ -161,7 +161,7 @@ Create and edit system information keys with completely customizable values assi
 +
 
 .menu:Autoinstallation[]
-Display and modify various aspects of autoinstallation profiles (Kickstart and |000ay;) used in provisioning systems. 
+Display and modify various aspects of autoinstallation profiles (Kickstart and {ay}) used in provisioning systems. 
 * {empty}
 +
 
@@ -244,7 +244,7 @@ Clone patches for an organization for ease of replication and distribution acros
 
 
 .menu:Software[]
-View and manage the available |000susemgr; channels and the files they contain. 
+View and manage the available {susemgr} channels and the files they contain. 
 
 * {empty}
 +
@@ -289,7 +289,7 @@ View and search OpenSCAP (Security Content Automation Protocol) scans.
 
 
 .menu:Configuration[]
-Keep track of and manage configuration channels, actions, individual configuration files, and systems with |000susemgr;-managed configuration files. 
+Keep track of and manage configuration channels, actions, individual configuration files, and systems with {susemgr}-managed configuration files. 
 
 * {empty}
 +
@@ -310,7 +310,7 @@ List and create files from which systems receive configuration input.
 +
 
 .menu:Systems[]
-List the systems that have |000susemgr;-managed configuration files. 
+List the systems that have {susemgr}-managed configuration files. 
 
 
 .menu:Schedule[]
@@ -360,8 +360,8 @@ Configure user group creation.
 
 
 .menu:Admin[]
--- Use the Setup Wizard to configure |000susemgr;. List, create, and manage one or more |000susemgr; organizations.
-The |000susemgr; administrator can assign channel entitlements, create and assign administrators for each organization, and other tasks. 
+-- Use the Setup Wizard to configure {susemgr}. List, create, and manage one or more {susemgr} organizations.
+The {susemgr} administrator can assign channel entitlements, create and assign administrators for each organization, and other tasks. 
 
 * {empty}
 +
@@ -377,19 +377,19 @@ List and create new organizations.
 +
 
 .menu:Users[]
-List all users known by |000susemgr;, across all organizations.
+List all users known by {susemgr}, across all organizations.
 Click individual user names to change administrative privileges of the user. 
 +
 
 [NOTE]
 ====
-Users created for organization administration can only be configured by the organization administrator, _not_ the |000susemgr; administrator. 
+Users created for organization administration can only be configured by the organization administrator, _not_ the {susemgr} administrator. 
 ====
 * {empty}
 +
 
 .menu:Manager Configuration[]
-Make General configuration changes to the |000susemgr; server, including Proxy settings, Certificate configuration, Bootstrap Script configuration, Organization changes, and Restart the |000susemgr; server. 
+Make General configuration changes to the {susemgr} server, including Proxy settings, Certificate configuration, Bootstrap Script configuration, Organization changes, and Restart the {susemgr} server. 
 * {empty}
 +
 
@@ -404,12 +404,12 @@ View and create schedules.
 +
 
 .menu:Task Engine Status[]
-View the status of the various tasks of the |000susemgr; task engine. 
+View the status of the various tasks of the {susemgr} task engine. 
 * {empty}
 +
 
 .menu:Show Tomcat Logs[]
-Display the log entries of the Tomcat server, on which the |000susemgr; server is running. 
+Display the log entries of the Tomcat server, on which the {susemgr} server is running. 
 
 
 .menu:Help[]
@@ -423,16 +423,16 @@ List external links to the knowledge base and the online documentation.
 (((email address,explanation of)))
 
 
-Throughout |000susemgr; you will see three patch (errata) alert icons. 
+Throughout {susemgr} you will see three patch (errata) alert icons. 
 
 image:fa-shield.svg[Security Alert]
- |000mdash; represents a security alert. 
+ {mdash} represents a security alert. 
 
 image:fa-bug.svg[Bug Fix Alert]
- |000mdash; represents a bug fix alert. 
+ {mdash} represents a bug fix alert. 
 
 image:spacewalk-icon-enhancement.svg[Enhancement Alert]
- |000mdash; represents an enhancement alert. 
+ {mdash} represents an enhancement alert. 
 
 On the menu:Overview[]
  page of the menu:Home[]
@@ -451,7 +451,7 @@ Refer to <<_s3_sm_errata_details>>
 == Search
 
 
-In the top bar, |000susemgr; offers a search functionality for Packages, Patches (Errata), Documentation, and Systems.
+In the top bar, {susemgr} offers a search functionality for Packages, Patches (Errata), Documentation, and Systems.
 To use the search, click the magnifier, then select the search item (choose from menu:Systems[]
 , menu:Packages[]
 , menu:Documentation[]
@@ -465,13 +465,13 @@ Your results appear at the bottom of the page.
 image::top_search.png[]
 
 
-If you misspell a word during your search query, the |000susemgr; search engine performs approximate string (or fuzzy string) matching, returning results that may be similar in spelling to your misspelled queries. 
+If you misspell a word during your search query, the {susemgr} search engine performs approximate string (or fuzzy string) matching, returning results that may be similar in spelling to your misspelled queries. 
 
-For example, if you want to search for a certain development system called `test-1.example.com` that is registered with |000susemgr;, but you misspell your query ``tset``, the `test-1.example.com` system still appears in the search results. 
+For example, if you want to search for a certain development system called `test-1.example.com` that is registered with {susemgr}, but you misspell your query ``tset``, the `test-1.example.com` system still appears in the search results. 
 
 [NOTE]
 ====
-If you add a distribution or register a system with a |000susemgr; server, it may take several minutes for it to be indexed and appear in search results. 
+If you add a distribution or register a system with a {susemgr} server, it may take several minutes for it to be indexed and appear in search results. 
 ====
 
 * For advanced System searches, refer to <<_ref.webui.systems.search>> . 
@@ -515,7 +515,7 @@ Some lists also offer the option to retrieve items alphabetically by clicking nu
 .Performing Large List Operations
 [NOTE]
 ====
-Performing operations on large lists|000mdash;such as removing RPM packages from the database with the |000susemgr; Web interface|000mdash;may take some time and the system may become unresponsive or signal "`Internal Server
+Performing operations on large lists{mdash}such as removing RPM packages from the database with the {susemgr} Web interface{mdash}may take some time and the system may become unresponsive or signal "`Internal Server
     Error 500`"
 .
 Nevertheless, the command will succeed in the background if you wait long enough. 

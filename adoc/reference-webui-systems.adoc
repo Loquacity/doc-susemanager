@@ -16,7 +16,7 @@ Here you can select systems to perform actions on them and create system profile
 
 [[_ref.webui.systems.overview]]
 == Overview
-(((|000susemgr; Administrator,System Overview)))
+((({susemgr} Administrator,System Overview)))
 
 
 The menu:System Overview[]
@@ -50,8 +50,8 @@ Refer to <<_ref.webui.systems.ssm>>
 [[_ref.webui.systems.systems]]
 == Systems
 (((system list)))
-(((|000susemgr; Administrator,viewing a list of)))
-(((|000susemgr; Administrator,status)))
+((({susemgr} Administrator,viewing a list of)))
+((({susemgr} Administrator,status)))
 
 
 The menu:Systems[]
@@ -91,7 +91,7 @@ image:fa-lock.svg[Lock]
 -- System is locked; actions prohibited. 
 + 
 image:fa-rocket.svg[Rocket]
--- System is being deployed using |000ay; or Kickstart. 
+-- System is being deployed using {ay} or Kickstart. 
 + 
 image:fa-clock-o.svg[Clock]
 -- Updates have been scheduled. 
@@ -99,13 +99,13 @@ image:fa-clock-o.svg[Clock]
 image:fa-times-circle.svg[Times]
 -- System not entitled to any update service. 
 * menu:Patches[] : Total number of patch alerts applicable to the system. 
-* menu:Packages[] : Total number of package updates for the system, including packages related to patch alerts and newer versions of packages not related to patch alerts. For example, if a client system that has an earlier version of a package installed gets subscribed to the appropriate base channel (such as |000sle; 12 SP2), that channel may have an updated version of the package. If so, the package appears in the list of available package updates. 
+* menu:Packages[] : Total number of package updates for the system, including packages related to patch alerts and newer versions of packages not related to patch alerts. For example, if a client system that has an earlier version of a package installed gets subscribed to the appropriate base channel (such as {sle} 12 SP2), that channel may have an updated version of the package. If so, the package appears in the list of available package updates. 
 +
 
 .Package Conflict
 [IMPORTANT]
 ====
-If |000susemgr; identifies package updates for the system, but the package updater (such as Red Hat Update Agent or |000yast;) responds with a message like |000quot;Your system is fully updated|000quot;, a conflict likely exists in the system's package profile or in the [path]_up2date_
+If {susemgr} identifies package updates for the system, but the package updater (such as Red Hat Update Agent or {yast}) responds with a message like {quot}Your system is fully updated{quot}, a conflict likely exists in the system's package profile or in the [path]_up2date_
  configuration file.
 To resolve the conflict, either schedule a package list update or remove the packages from the package exceptions list.
 Refer to <<_s3_sm_system_details>>
@@ -127,7 +127,7 @@ All of the options described above can be applied within these pages.
 The menu:All[]
  page contains the default set of your systems.
 It displays every system you have permission to manage.
-You have permission if you are the only user in your organization, if you are a |000susemgr; Administrator, or if the system belongs to a group for which you have admin rights. 
+You have permission if you are the only user in your organization, if you are a {susemgr} Administrator, or if the system belongs to a group for which you have admin rights. 
 
 .
 image::systems_all.png[]
@@ -139,7 +139,7 @@ image::systems_all.png[]
 
 To reach this page, select menu:Systems[Systems > Physical Systems]
  from the left bar.
-This page lists each physical system of which |000susemgr; is aware. 
+This page lists each physical system of which {susemgr} is aware. 
 
 .
 image::systems_physical_systems.png[]
@@ -151,7 +151,7 @@ image::systems_physical_systems.png[]
 
 To reach this page, select menu:Systems[Systems > Virtual Systems]
  from the left bar.
-This page lists each virtual host of which |000susemgr; is aware and the guest systems on those hosts. 
+This page lists each virtual host of which {susemgr} is aware and the guest systems on those hosts. 
 
 .
 image::systems_virtual_systems.png[]
@@ -170,7 +170,7 @@ menu:Base Channel[]::
 This column displays the base channel to which the guest is currently subscribed. 
 
 
-Only guests registered with |000susemgr; are displayed with blue text.
+Only guests registered with {susemgr} are displayed with blue text.
 Clicking the host name of such a guest system displays its menu:System
     Details[]
  page. 
@@ -213,7 +213,7 @@ image::systems_requiringreboot.png[]
 === Non-compliant Systems
 
 
-Non-compliant systems have packages installed which are not available from |000susemgr;. menu:Packages[]
+Non-compliant systems have packages installed which are not available from {susemgr}. menu:Packages[]
  shows how many installed packages are not available in the channels assigned to the system.
 A non-compliant system cannot be reinstalled. 
 
@@ -249,23 +249,23 @@ image::systems_ungrouped.png[]
 
 
 The menu:Inactive Systems[]
- page displays systems that have not checked in with |000susemgr; for 24 hours or more. 
+ page displays systems that have not checked in with {susemgr} for 24 hours or more. 
 
 .
 image::systems_inactive.png[]
 
 
-Checking in means that Zypper on |000sle; or Red Hat Update Agent on |000rhel; client systems connects to |000susemgr; to see if there are any updates available or if any actions have been scheduled.
-If you see a message telling you that check-ins are not taking place, the client system is not successfully connecting to |000susemgr;. The reason may be one of the following: 
+Checking in means that Zypper on {sle} or Red Hat Update Agent on {rhel} client systems connects to {susemgr} to see if there are any updates available or if any actions have been scheduled.
+If you see a message telling you that check-ins are not taking place, the client system is not successfully connecting to {susemgr}. The reason may be one of the following: 
 
-* The system is not entitled to any |000susemgr; service. System profiles that remain unentitled for 180 days (6 months) are removed. 
-* The system is entitled, but the |000susemgr; daemon ([path]_rhnsd_ ) has been disabled on the system. Refer to <<_bp.contact.methods.rhnsd>> for instructions on restarting and troubleshooting. 
+* The system is not entitled to any {susemgr} service. System profiles that remain unentitled for 180 days (6 months) are removed. 
+* The system is entitled, but the {susemgr} daemon ([path]_rhnsd_ ) has been disabled on the system. Refer to <<_bp.contact.methods.rhnsd>> for instructions on restarting and troubleshooting. 
 * The system is behind a firewall that does not allow connections over [path]_https_ (port 443). 
 * The system is behind an HTTP proxy server that has not been properly configured. 
-* The system is connected to a |000susemgr; Proxy Server or |000susemgr; that has not been properly configured. 
-* The system itself has not been properly configured, perhaps pointing at the wrong |000susemgr; Server. 
+* The system is connected to a {susemgr} Proxy Server or {susemgr} that has not been properly configured. 
+* The system itself has not been properly configured, perhaps pointing at the wrong {susemgr} Server. 
 * The system is not in the network. 
-* Some other barrier exists between the system and the |000susemgr; Server. 
+* Some other barrier exists between the system and the {susemgr} Server. 
 
 
 [[_ref.webui.systems.systems.rregistered]]
@@ -285,7 +285,7 @@ image::systems_recently_registered.png[]
 
 
 The menu:Proxy[]
- page displays the |000susemgrproxy; Server systems registered with your |000susemgr; server. 
+ page displays the {susemgrproxy} Server systems registered with your {susemgr} server. 
 
 .
 image::systems_proxy.png[]
@@ -304,7 +304,7 @@ image::systems_duplicate_systems.png[]
 
 Active entitlements are in gray, while inactive entitlements are highlighted in yellow and their check boxes checked by default for you to delete them as needed by clicking the menu:Delete Selected[]
  button.
-Entitlements are inactive if the system has not checked in with |000susemgr; in a time specified via the drop-down box menu:A system
+Entitlements are inactive if the system has not checked in with {susemgr} in a time specified via the drop-down box menu:A system
     profile is inactive if its system has not checked in for[]
 . 
 
@@ -335,7 +335,7 @@ The System Currency Report displays an overview of severity scores of patches re
 The weighting is defined via the menu:System Details[]
  page.
 The default weight awards critical security patches with the heaviest weight and enhancements with the lowest.
-The report can be used to prioritize maintenance actions on the systems registered to |000susemgr;. 
+The report can be used to prioritize maintenance actions on the systems registered to {susemgr}. 
 
 .
 image::systems_currency_report.png[]
@@ -345,7 +345,7 @@ image::systems_currency_report.png[]
 === System Types
 
 
-System Types define the set of functionalities available for each system in |000susemgr; such as the ability of installing software or creating guest virtual machines. 
+System Types define the set of functionalities available for each system in {susemgr} such as the ability of installing software or creating guest virtual machines. 
 
 .
 image::systems_system_types.png[]
@@ -360,7 +360,7 @@ To change system types, select the systems you want to modify, and choose either
 == System Details
 
 
-When systems are registered to |000susemgr;, they are displayed on the menu:Systems[Overview]
+When systems are registered to {susemgr}, they are displayed on the menu:Systems[Overview]
  page.
 Here and on any other page, clicking the name takes you to the menu:System Details[]
  page of the client, where all kinds of administrative tasks can be performed, including the removal of a system. 
@@ -371,9 +371,9 @@ The menu:Delete System[]
  link in the upper right of this screen refers to the system profile only.
 Deleting a host system profile will not destroy or remove the registration of guest systems.
 Deleting a guest system profile does not remove it from the list of guests for its host, nor does it stop or pause the guest.
-It does, however, remove your ability to manage it via |000susemgr;. 
+It does, however, remove your ability to manage it via {susemgr}. 
 
-If you mistakenly deleted a system profile from |000susemgr;, you may re-register the system using the bootstrap script or `rhnreg_ks` manually. 
+If you mistakenly deleted a system profile from {susemgr}, you may re-register the system using the bootstrap script or `rhnreg_ks` manually. 
 ====
 
 
@@ -381,9 +381,9 @@ The Details page has numerous subtabs that provide specific system information a
 The following sections discuss these tabs and their subtabs in detail. 
 
 [[_s4_sm_system_details_details]]
-=== System Details|000gt;Details
+=== System Details{gt}Details
 (((deleting a system)))
-(((|000susemgr; Administrator,Details)))
+((({susemgr} Administrator,Details)))
 
 
 This page is not accessible from any of the left bar.
@@ -404,13 +404,13 @@ image::system_details_salt_overview.png[]
 
 
 [[_s5_sm_system_details_overview]]
-==== System Details |000gt;Details|000gt;Overview
+==== System Details {gt}Details{gt}Overview
 
 
 This system summary page displays the system status message and the following key information about the system: 
 
 .menu:System Status[]::
-This message indicates the current state of your system in relation to |000susemgr;. 
+This message indicates the current state of your system in relation to {susemgr}. 
 +
 
 
@@ -442,14 +442,14 @@ Displays the universally unique identifier.
 Kernel::
 The kernel installed and operating on the client system. 
 
-|000susemgr; System ID::
-A unique identifier generated each time a system registers with |000susemgr;. 
+{susemgr} System ID::
+A unique identifier generated each time a system registers with {susemgr}. 
 +
 
 
 [NOTE]
 ====
-The system ID can be used to eliminate duplicate profiles from |000susemgr;. Compare the system ID listed on this page with the information stored on the client system in the [path]_/etc/sysconfig/rhn/systemid_
+The system ID can be used to eliminate duplicate profiles from {susemgr}. Compare the system ID listed on this page with the information stored on the client system in the [path]_/etc/sysconfig/rhn/systemid_
  file.
 In that file, the system's current ID is listed under ``system_id``.
 The value starts after the characters ``ID-``.
@@ -482,7 +482,7 @@ For example, the system may be a production system that should not receive updat
 [IMPORTANT]
 ====
 Locking a system in the Web interface _will not_ prevent any actions that originate from the client system.
-For example, if a user logs in to the client directly and runs |000yast; Online Update (on |000slea;) or `pup` (on |000rhela;), the update tool will install available patches even if the system is locked in the Web interface. 
+For example, if a user logs in to the client directly and runs {yast} Online Update (on {slea}) or `pup` (on {rhela}), the update tool will install available patches even if the system is locked in the Web interface. 
 
 Locking a system _does not_ restrict the number of users who can access the system via the Web interface.
 If you want to restrict access to the system, associate that system with a System Group and assign a System Group Administrator to it.
@@ -512,15 +512,15 @@ The base channel should match the operating system of the client.
 
 Child Channels::
 The subsequent lines of text, which depend on the base channel, list child channels.
-An example is the menu:|000susemgr; Tools[]
+An example is the menu:{susemgr} Tools[]
 channel. 
 
 .menu:System Events[]
 Checked In::
-The date and time at which the system last checked in with |000susemgr;. 
+The date and time at which the system last checked in with {susemgr}. 
 
 Registered::
-The date and time at which the system registered with |000susemgr; and created this profile. 
+The date and time at which the system registered with {susemgr} and created this profile. 
 
 Last Booted::
 The date and time at which the system was last started or restarted. 
@@ -535,7 +535,7 @@ Systems with Salt or Management entitlement can be rebooted from this screen.
 . Provide the earliest date and time at which the reboot may take place. 
 . Click the menu:Schedule Reboot[] button in the lower right. 
 
-When the client checks in after the scheduled start time, |000susemgr; will instruct the system to restart itself. 
+When the client checks in after the scheduled start time, {susemgr} will instruct the system to restart itself. 
 ====
 .menu:System Properties[]
 System Types::
@@ -549,11 +549,11 @@ In addition, you may activate to include systems in the daily summary e-mail.
 Contact Method::
 Available methods: Default (Pull), Push via SSH, and Push via SSH tunnel. 
 +
-The so-called OSA status is also displayed for client systems registered with |000susemgr; that have the OSA dispatcher (osad) configured. 
+The so-called OSA status is also displayed for client systems registered with {susemgr} that have the OSA dispatcher (osad) configured. 
 +
-Push enables |000susemgr; customers to immediately initiate tasks rather than wait for those systems to check in with |000susemgr;. Scheduling actions through push is identical to the process of scheduling any other action, except that the task can immediately be carried out instead of waiting the set interval for the system to check in. 
+Push enables {susemgr} customers to immediately initiate tasks rather than wait for those systems to check in with {susemgr}. Scheduling actions through push is identical to the process of scheduling any other action, except that the task can immediately be carried out instead of waiting the set interval for the system to check in. 
 +
-In addition to the configuration of |000susemgr;, to receive pushed actions each client system must have the [path]_osad_
+In addition to the configuration of {susemgr}, to receive pushed actions each client system must have the [path]_osad_
 package installed and its service started. 
 
 Auto Patch Update::
@@ -578,7 +578,7 @@ On this page, edit any text you choose, then click the menu:Update Properties[]
  button to confirm. 
 
 [[_s5_sm_system_details_properties]]
-==== System Details |000gt;Details|000gt;Properties
+==== System Details {gt}Details{gt}Properties
 
 
 This subtab allows you to alter basic properties of the selected system. 
@@ -618,7 +618,7 @@ SSH[]
 Auto Patch Update::
 If this box is checked, available patches are automatically applied to the system when it checks in (Pull) or immediately if you select either Push option.
 This action takes place without user intervention.
-The |000susemgr; Daemon ([path]_rhnsd_
+The {susemgr} Daemon ([path]_rhnsd_
 ) must be enabled on the system for this feature to work. 
 +
 
@@ -648,7 +648,7 @@ For details, see <<_ref.webui.systems.ssm>>
 ====
 
 [[_s5_sm_system_details_remote]]
-==== System Details |000gt;Details|000gt;Remote Command
+==== System Details {gt}Details{gt}Remote Command
 
 
 This subtab allows you to run remote commands on the selected system. Before doing so, you must first configure the system to accept such commands. 
@@ -658,21 +658,21 @@ image::system_details_traditional_edit.png[]
 
 
 
-. On |000slea; clients, subscribe the system to the |000susemgr; Tools child channel. Then use Zypper to install the ``rhncfg``, ``rhncfg-client``, and `rhncfg-actions` packages, if not already installed: 
+. On {slea} clients, subscribe the system to the {susemgr} Tools child channel. Then use Zypper to install the ``rhncfg``, ``rhncfg-client``, and `rhncfg-actions` packages, if not already installed: 
 +
 
 ----
 zypper in rhncfg rhncfg-client rhncfg-actions
 ----
 +
-On |000rhela; clients, subscribe the system to the Tools child channel.
+On {rhela} clients, subscribe the system to the Tools child channel.
 Then use `up2date` or `yum` to install the ``rhncfg``, ``rhncfg-client``, and `rhncfg-actions` packages, if not already installed: 
 +
 
 ----
 yum install rhncfg rhncfg-client rhncfg-actions
 ----
-. Log in to the system as root and add the following file to the local |000susemgr; configuration directory: [path]_allowed-actions/scripts/run_ . 
+. Log in to the system as root and add the following file to the local {susemgr} configuration directory: [path]_allowed-actions/scripts/run_ . 
 +
 ** Create the necessary directory on the target system: 
 +
@@ -680,7 +680,7 @@ yum install rhncfg rhncfg-client rhncfg-actions
 ----
 mkdir -p /etc/sysconfig/rhn/allowed-actions/script
 ----
-** Create an empty [path]_run_ file in that directory to act as a flag to |000susemgr;, signaling permission to allow remote commands: 
+** Create an empty [path]_run_ file in that directory to act as a flag to {susemgr}, signaling permission to allow remote commands: 
 +
 
 ----
@@ -696,12 +696,12 @@ For further information on action chains, refer to <<_ref.webui.schedule.chains>
 . 
 
 [[_s5_sm_system_details_react]]
-==== System Details |000gt;Details|000gt;Reactivation[Management]
+==== System Details {gt}Details{gt}Reactivation[Management]
 (((reactivating,systems)))
 
 
 Reactivation keys include this system's ID, history, groups, and channels.
-This key can then be used only once with the `rhnreg_ks` command line utility to re-register this system and regain all |000susemgr; settings.
+This key can then be used only once with the `rhnreg_ks` command line utility to re-register this system and regain all {susemgr} settings.
 Unlike typical activation keys, which are not associated with a specific system ID, keys created here do not show up within the menu:Activation
      Keys[]
  page. 
@@ -720,13 +720,13 @@ rhnreg_ks --server=server-url \
 
 [WARNING]
 ====
-When autoinstalling a system with its existing |000susemgr; profile, the profile uses the system-specific activation key created here to re-register the system and return its other |000susemgr; settings.
+When autoinstalling a system with its existing {susemgr} profile, the profile uses the system-specific activation key created here to re-register the system and return its other {susemgr} settings.
 For this reason, you should not regenerate, delete, or use this key (with ``rhnreg_ks``) while a profile-based autoinstallation is in progress.
 If you do, the autoinstallation will fail. 
 ====
 
 [[_s5_sm_system_details_hardware]]
-==== System Details |000gt;Details|000gt;Hardware
+==== System Details {gt}Details{gt}Hardware
 (((hardware profile,Updating on server)))
 
 
@@ -735,11 +735,11 @@ This only works if you included the hardware profile during registration.
 If the hardware profile looks incomplete or outdated, click the menu:Schedule Hardware
      Refresh[]
  button.
-The next time the |000susemgr; Daemon ([path]_rhnsd_
-) connects to |000susemgr;, it will update your system profile with the latest hardware information. 
+The next time the {susemgr} Daemon ([path]_rhnsd_
+) connects to {susemgr}, it will update your system profile with the latest hardware information. 
 
 [[_s5_sm_system_details_migrate]]
-==== System Details |000gt;Details|000gt;Migrate
+==== System Details {gt}Details{gt}Migrate
 
 
 This subtab provides the option to migrate systems between organizations.
@@ -758,7 +758,7 @@ Defined system details such as channel assignments, system group membership, cus
 ====
 
 [[_s5_sm_system_details_notes]]
-==== System Details |000gt;Details|000gt;Notes
+==== System Details {gt}Details{gt}Notes
 (((navigation,about systems)))
 
 
@@ -777,7 +777,7 @@ image::system_details_traditional_notes.png[]
 
 
 [[_s5_sm_system_details_info]]
-==== System Details |000gt;Details|000gt;Custom Info
+==== System Details {gt}Details{gt}Custom Info
 (((changing e-mail address,about systems)))
 
 
@@ -804,20 +804,20 @@ Click the name of the key in the resulting list and enter a value for it in the 
  button. 
 
 [[_s5_sm_system_details_proxy]]
-==== System Details |000gt;Details|000gt;Proxy[Proxy]
+==== System Details {gt}Details{gt}Proxy[Proxy]
 
 
-This tab is only available for |000susemgrproxy; systems.
-The tab lists all clients registered with the selected |000susemgrproxy; server. 
+This tab is only available for {susemgrproxy} systems.
+The tab lists all clients registered with the selected {susemgrproxy} server. 
 
 [[_s4_sm_system_details_channels]]
-=== System Details |000gt;Software
+=== System Details {gt}Software
 
 
 This tab and its subtabs allow you to manage the software on the system: patches (errata), packages and package profiles, software channel memberships, and migrations. 
 
 [[_s4_sm_system_details_errata]]
-==== System Details|000gt;Software|000gt;Patches
+==== System Details{gt}Software{gt}Patches
 
 
 This subtab contains a list of patch (errata) alerts applicable to the system.
@@ -854,7 +854,7 @@ This column corresponds to the one on the menu:Affected
  page. 
 
 [[_s4_sm_system_details_packages]]
-==== System Details |000gt;Software|000gt;Packages
+==== System Details {gt}Software{gt}Packages
 (((package installation,Updating on server)))
 
 
@@ -869,7 +869,7 @@ image::system_details_traditional_software_packages.png[]
 
 [WARNING]
 ====
-When new packages or updates are installed on the client via |000susemgr;, any licenses (EULAs) requiring agreement before installation are automatically accepted. 
+When new packages or updates are installed on the client via {susemgr}, any licenses (EULAs) requiring agreement before installation are automatically accepted. 
 ====
 
 Packages::
@@ -877,8 +877,8 @@ The default display of the menu:Packages[]
 tab describes the options available and provides the means to update your package list.
 To update or complete a potentially outdated list, possibly because of the manual installation of packages, click the menu:Update Package List[]
 button in the bottom right-hand corner of this page.
-The next time the |000susemgr; daemon ([path]_rhnsd_
-) connects to |000susemgr;, it updates your system profile with the latest list of installed packages. 
+The next time the {susemgr} daemon ([path]_rhnsd_
+) connects to {susemgr}, it updates your system profile with the latest list of installed packages. 
 
 List / Remove::
 Lists installed packages and enables you to remove them.
@@ -973,7 +973,7 @@ Non Compliant::
 Lists packages that are installed on this system and are not present in any of its channels. 
 
 [[_s5_sm_system_details_channels_software]]
-==== System Details |000gt;Software|000gt;Software Channels
+==== System Details {gt}Software{gt}Software Channels
 
 
 Software channels provide a well-defined method to determine which packages should be available to a system for installation or upgrade based on its operating systems, installed packages, and functionality. 
@@ -996,7 +996,7 @@ For more information about channel management, see <<_ref.webui.channels.softwar
 . 
 
 [[_s5_sm_system_details_sp_migration]]
-==== System Details |000gt;Software|000gt;SP Migration
+==== System Details {gt}Software{gt}SP Migration
 
 
 Service Pack Migration (SP Migration) allows you to upgrade a system from one service pack to another. 
@@ -1007,11 +1007,11 @@ image::system_details_traditional_software_sp_migration.png[]
 
 [WARNING]
 ====
-During migration |000susemgr; automatically accepts any required licenses (EULAs) before installation. 
+During migration {susemgr} automatically accepts any required licenses (EULAs) before installation. 
 ====
 
 
-Beginning with SLE 12 |000suse; supports service pack skipping, it is now possible to migrate from for example, SLE 12 to SLE 12 SP2.
+Beginning with SLE 12 {suse} supports service pack skipping, it is now possible to migrate from for example, SLE 12 to SLE 12 SP2.
 Note that SLE 11 may only be migrated step by step and individual service packs should not be skipped.
 Supported migrations include any of the following: 
 *** SLE 11 > SLE 11 SP1 > SLE 11 SP2 > SLE 11 SP3 > SLE 11 SP4 
@@ -1041,7 +1041,7 @@ Therefore it is recommended to have a working system backup available for an eme
 
 
 [[_s5_sm_system_details_channels_config]]
-=== System Details |000gt;Configuration[Management]
+=== System Details {gt}Configuration[Management]
 
 
 This tab and its subtabs assist in managing the configuration files associated with the system.
@@ -1065,7 +1065,7 @@ Also unlike with software packages, various versions of configuration files may 
 Only the latest version can be deployed. 
 
 [[_s5_sdc_configuration_overview]]
-==== System Details|000gt;Configuration|000gt;Overview
+==== System Details{gt}Configuration{gt}Overview
 
 
 This subtab provides access to the configuration files of your system and to the most common tasks used to manage configuration files. 
@@ -1084,7 +1084,7 @@ ke 2016-11-09: checked. updated where appropriate, but I did not mention every d
      change!#
 
 [[_s5_sdc_configuration_mngfiles]]
-==== System Details |000gt;Configuration|000gt;View/Modify Files
+==== System Details {gt}Configuration{gt}View/Modify Files
 
 
 This subtab lists all configuration files currently associated with the system.
@@ -1127,7 +1127,7 @@ When done, the file will end up on the menu:Locally-Managed Files[]
 subtab. 
 
 [[_s5_sdc_configuration_add_files]]
-==== System Details |000gt;Configuration|000gt;Add Files
+==== System Details {gt}Configuration{gt}Add Files
 
 
 To upload, import, or create new configuration files, click menu:Add
@@ -1155,7 +1155,7 @@ Files will be imported the next time `rhn_check` runs on the system.
 To deploy these files or override configuration files in global channels, copy this file into your local override channel after the import has occurred. 
 +
 In the text box under menu:Import New Files[]
-enter the full path of any files you want import into |000susemgr; or select deployable configuration files from the menu:Import Existing
+enter the full path of any files you want import into {susemgr} or select deployable configuration files from the menu:Import Existing
 Files[]
 list.
 When done, click menu:Import Configuration
@@ -1182,7 +1182,7 @@ Configuration File[]
 . 
 
 [[_s5_sdc_configuration_deploy_files]]
-==== System Details |000gt;Configuration|000gt;Deploy Files
+==== System Details {gt}Configuration{gt}Deploy Files
 
 
 Under menu:Deploy Files[]
@@ -1196,10 +1196,10 @@ Files from configuration channels with a higher priority take precedence over fi
       see if the rest is still accurate or has changed.#
 
 [[_s5_sdc_configuration_diff]]
-==== System Details |000gt;Configuration|000gt;Compare Files
+==== System Details {gt}Configuration{gt}Compare Files
 
 ##emap 2014-04-22: Still accurate?#
- This subtab compares a configuration file stored on the |000susemgr; with the file stored on the client.
+ This subtab compares a configuration file stored on the {susemgr} with the file stored on the client.
 (It does not compare versions of the same file stored in different channels.) 
 
 .
@@ -1218,7 +1218,7 @@ After the diff has been performed, go to menu:Recent Events[]
  to see the results. 
 
 [[_s5_sdc_configuration_channels]]
-==== System Details|000gt;Configuration|000gt;Manage Configuration Channels
+==== System Details{gt}Configuration{gt}Manage Configuration Channels
 
 
 This subtab allows you to subscribe to and rank configuration channels associated with the system, lowest first. 
@@ -1249,19 +1249,19 @@ For example, the higher-ranked channel may have an [path]_httpd.conf_
  file that will take precedence over the same file in a lower-ranked channel. 
 
 [[_s4_sm_system_details_kick]]
-=== System Details |000gt;Provisioning[Management]
+=== System Details {gt}Provisioning[Management]
 
 
 The menu:Provisioning[]
- tab and its subtabs allow you to schedule and monitor |000ay; or Kickstart installations and to restore a system to its previous state. 
+ tab and its subtabs allow you to schedule and monitor {ay} or Kickstart installations and to restore a system to its previous state. 
 
-|000ay; is a |000sle; and Kickstart is a Red Hat utility|000mdash;both allow you to automate the reinstallation of a system.
+{ay} is a {sle} and Kickstart is a Red Hat utility{mdash}both allow you to automate the reinstallation of a system.
 Snapshot rollbacks provide the ability to revert certain changes on the system.
 You can roll back a set of RPM packages, but rolling back across multiple update levels is not supported.
 Both features are described in the sections that follow. 
 
 [[_s5_sdc_provisioning_kickstart]]
-==== System Details|000gt;Provisioning|000gt;Autoinstallation
+==== System Details{gt}Provisioning{gt}Autoinstallation
 
 The menu:Schedule[]
  subtab allows you to configure and schedule an autoinstallation for this system.
@@ -1301,7 +1301,7 @@ Alternatively, click menu:Create PXE Installation
      Configuration[]
  to create a Cobbler system record.
 The selected autoinstallation profile will be used to automatically install the configured distribution next time that particular system boots from PXE.
-In this case |000susemgr; and its network must be properly configured to allow boot using PXE. 
+In this case {susemgr} and its network must be properly configured to allow boot using PXE. 
 
 [NOTE]
 ====
@@ -1314,7 +1314,7 @@ The menu:Variables[]
  subtab can be used to create Kickstart variables, which substitute values in Kickstart files.
 To define a variable, create a name-value pair ([replaceable]``name/value``) in the text box. 
 
-For example, to |000kickstart; a system that joins the network of a specific organization (for example the Engineering department) you can create a profile variable to set the IP address and the gateway server address to a variable that any system using that profile will use.
+For example, to {kickstart} a system that joins the network of a specific organization (for example the Engineering department) you can create a profile variable to set the IP address and the gateway server address to a variable that any system using that profile will use.
 Add the following line to the menu:Variables[]
  text box: 
 
@@ -1325,7 +1325,7 @@ GATEWAY=192.168.0.1
 
 
 To use the system variable, use the name of the variable in the profile instead of the value.
-For example, the [option]``network`` portion of a |000kickstart; file could look like the following: 
+For example, the [option]``network`` portion of a {kickstart} file could look like the following: 
 
 ----
 network --bootproto=static --device=eth0 --onboot=on --ip=$IPADDR \
@@ -1337,28 +1337,28 @@ The [option]``$IPADDR`` will be ``192.168.0.28``, and the [option]``$GATEWAY`` w
 
 [NOTE]
 ====
-There is a hierarchy when creating and using variables in |000kickstart; files.
-System |000kickstart; variables take precedence over profile variables, which in turn take precedence over distribution variables.
-Understanding this hierarchy can alleviate confusion when using variables in |000kickstart;s. 
+There is a hierarchy when creating and using variables in {kickstart} files.
+System {kickstart} variables take precedence over profile variables, which in turn take precedence over distribution variables.
+Understanding this hierarchy can alleviate confusion when using variables in {kickstart}s. 
 ====
 
 
 Using variables are one part of the larger Cobbler infrastructure for creating templates that can be shared between multiple profiles and systems.
-For more information about Cobbler and |000kickstart; templates, refer to <<_advanced.topics.cobbler>>
+For more information about Cobbler and {kickstart} templates, refer to <<_advanced.topics.cobbler>>
 . 
 
 [[_s5_sdc_provisioning_powermgnt]]
-==== System Details|000gt;Provisioning|000gt;Power Management
+==== System Details{gt}Provisioning{gt}Power Management
 
 
-|000susemgr; allows you to power on, off, and reboot systems via the IPMI protocol if the systems are IPMI-enabled. 
+{susemgr} allows you to power on, off, and reboot systems via the IPMI protocol if the systems are IPMI-enabled. 
 
 .
 image::system_details_traditional_provisioning_power_management.png[]
 
 
-You need a fully patched |000susemgr; installation.
-To use any power management functionality, IPMI configuration details must be added to |000susemgr;. First select the target system on the systems list, then select menu:Provisioning[Power
+You need a fully patched {susemgr} installation.
+To use any power management functionality, IPMI configuration details must be added to {susemgr}. First select the target system on the systems list, then select menu:Provisioning[Power
      Management]
 .
 On the displayed configuration page, edit all required fields (marked with a red asterisk) and click menu:Save[]
@@ -1389,13 +1389,13 @@ This feature uses Cobbler power management, thus a Cobbler system record is auto
 In that case, the automatically created system record will not be bootable from the network and will reference a dummy image.
 This is needed because Cobbler does not currently support system records without profiles or images.
 The current implementation of Cobbler power management uses the fence-agent tools to support multiple protocols besides IPMI.
-Those are not supported by |000susemgr; but can be used by adding the fence agent names as a comma-separated list to the `java.power_management.types` configuration parameter. 
+Those are not supported by {susemgr} but can be used by adding the fence agent names as a comma-separated list to the `java.power_management.types` configuration parameter. 
 
 [[_s4_sm_system_details_shots]]
-==== System Details|000gt;Provisioning|000gt;Snapshots
+==== System Details{gt}Provisioning{gt}Snapshots
 
 
-Snapshots enable you to roll back the system's package profile, configuration files, and |000susemgr; settings. 
+Snapshots enable you to roll back the system's package profile, configuration files, and {susemgr} settings. 
 
 .
 image::system_details_traditional_provisioning_snapshot_index.png[]
@@ -1447,7 +1447,7 @@ To see the list again, click menu:Return to
 .Background Information About Snapshots
 [NOTE]
 ====
-There is no maximum number of snapshots that |000susemgr; will keep, thus related database tables will grow with system count, package count, channel count, and the number of configuration changes over time.
+There is no maximum number of snapshots that {susemgr} will keep, thus related database tables will grow with system count, package count, channel count, and the number of configuration changes over time.
 Installations with more than a thousand systems should consider setting up a recurring cleanup script via the API or disabling this feature altogether. 
 
 There is currently no integrated support for "`rotated
@@ -1458,7 +1458,7 @@ Snapshot rollback gets scheduled like any other action, this means the rollback 
 ====
 
 [[_s5_sm_system_details_shots_tags]]
-==== System Details |000gt;Provisioning|000gt;Snapshot Tags
+==== System Details {gt}Provisioning{gt}Snapshot Tags
 
 
 Snapshot tags provide a means to add meaningful descriptions to your most recent system snapshot.
@@ -1474,7 +1474,7 @@ To delete tags, select their check boxes, click menu:Remove Tags[]
 , and confirm the action. 
 
 [[_s4_sm_system_details_virtualization]]
-=== System Details |000gt;Virtualization
+=== System Details {gt}Virtualization
 
 
 This tab allows you to create a new virtual guest on a host system or change the status of virtual guests. 
@@ -1491,7 +1491,7 @@ It is not possible to create a guest system that runs on another guest system.
 
 [float]
 [[_sdc_virt_host_place]]
-==== System Details |000gt; Virtualization|000gt; Details
+==== System Details {gt} Virtualization{gt} Details
 
 menu:Details[]
  is the default tab.
@@ -1509,7 +1509,7 @@ This field indicates the Base Channel to which the guest is subscribed.
 
 [NOTE]
 ====
-If a guest system has not registered with |000susemgr;, this information appears as plain text in the table. 
+If a guest system has not registered with {susemgr}, this information appears as plain text in the table. 
 ====
 
 
@@ -1520,15 +1520,15 @@ This is because it is possible to assign virtual guests on a single host to mult
 Only users that have System Group Administrator privileges on the host system may create new virtual guests. 
 
 [[_s4_sm_system_details_groups]]
-=== System Details |000gt;Groups
-(((|000susemgr; Administrator,assigning and removing)))
+=== System Details {gt}Groups
+((({susemgr} Administrator,assigning and removing)))
 
 
 The menu:Groups[]
  tab and its subtabs allow you to manage the system's group memberships. 
 
 [[_s5_sm_system_details_groups_list]]
-==== System Details|000gt;Groups|000gt;List/Leave
+==== System Details{gt}Groups{gt}List/Leave
 
 
 This subtab lists groups to which the system belongs and enables you to cancel membership. 
@@ -1537,7 +1537,7 @@ This subtab lists groups to which the system belongs and enables you to cancel m
 image::system_details_traditional_list_groups.png[]
 
 
-Only System Group Administrators and |000susemgr; Administrators can remove systems from groups.
+Only System Group Administrators and {susemgr} Administrators can remove systems from groups.
 Non-admins see a menu:Review this system's group
      membership[]
  page.
@@ -1549,7 +1549,7 @@ Refer to <<_ref.webui.systems.systemgroups.details>>
  for more information. 
 
 [[_s5_sm_system_details_groups_join]]
-==== System Details |000gt;Groups|000gt;Join
+==== System Details {gt}Groups{gt}Join
 
 
 Lists groups that the system can be subscribed to. 
@@ -1558,7 +1558,7 @@ Lists groups that the system can be subscribed to.
 image::system_details_traditional_add_group.png[]
 
 
-Only System Group Administrators and |000susemgr; Administrators can add a system to groups.
+Only System Group Administrators and {susemgr} Administrators can add a system to groups.
 Non-admins see a menu:Review this system's group
      membership[]
  page.
@@ -1566,7 +1566,7 @@ To add the system to groups, select the groups' check boxes and click the menu:J
  button. 
 
 [[_s4_sm_system_details_audit]]
-=== System Details |000gt;Audit[Management]
+=== System Details {gt}Audit[Management]
 
 
 Via the menu:Audit[]
@@ -1583,9 +1583,9 @@ image::system_details_traditional_schedule_audit.png[]
 
 
 [[_s4_sm_system_details_states]]
-=== System Details |000gt;States[Salt]
+=== System Details {gt}States[Salt]
 (((system states)))
-(((|000susemgr; Administrator,System states)))
+((({susemgr} Administrator,System states)))
 (((Web Interface,System States Custom)))
 
 
@@ -1597,7 +1597,7 @@ Overview of menu:States[]
 The following subtabs are only available for Salt minions. 
 ====
 
-==== System Details |000gt;States|000gt;Packages
+==== System Details {gt}States{gt}Packages
 
 menu:Search and install[]
  packages then assign them with a pre-defined state for a selected machine. 
@@ -1622,7 +1622,7 @@ Click the menu:Save[]
  to apply the new package state. 
 
 [[_s5_sm_system_details_states_custom]]
-==== System Details |000gt;States|000gt;Custom
+==== System Details {gt}States{gt}Custom
 
 
 States which have been created on the menu:States Catalog[]
@@ -1642,7 +1642,7 @@ Click menu:Save[]
 States applied at the system level will only be applied to the selected system. 
 
 [[_s5_sm_system_details_states_highstate]]
-==== System Details |000gt;States|000gt;Highstate
+==== System Details {gt}States{gt}Highstate
 
 
 From the menu:Highstate[]
@@ -1658,7 +1658,7 @@ Then click menu:Apply
 . 
 
 [[_s4_sm_system_details_formualas]]
-=== System Details |000gt;Formulas[Salt]
+=== System Details {gt}Formulas[Salt]
 
 
 This is a feature preview.
@@ -1676,7 +1676,7 @@ For usage information, see <<_best.practice.salt.formulas.using>>
 . 
 
 [[_s4_sm_system_details_events]]
-=== System Details |000gt;Events
+=== System Details {gt}Events
 
 
 The menu:Events[]
@@ -1686,7 +1686,7 @@ The following sections describe the menu:Events[]
  subtabs and the features they offer. 
 
 [[_s5_sm_system_details_events_pend]]
-==== System Details|000gt;Events|000gt;Pending
+==== System Details{gt}Events{gt}Pending
 
 
 Lists events that are scheduled but have not started. 
@@ -1718,7 +1718,7 @@ image:fa-desktop.png[]
  -- System Event. 
 
 [[_s5_sm_system_details_events_hist]]
-==== System Details |000gt;Events|000gt;History
+==== System Details {gt}Events{gt}History
 
 
 The default display of the menu:Events[]
@@ -1737,20 +1737,20 @@ To go back to the table again, click menu:Return to history list[]
 [[_ref.webui.systems.systemgroups]]
 == System Groups
 (((system group)))
-(((|000susemgr; Administrator,list of)))
-(((|000susemgr; Administrator,System Group List)))
+((({susemgr} Administrator,list of)))
+((({susemgr} Administrator,System Group List)))
 (((Web Interface,System Groups)))
 
 
 The menu:System Groups[]
- page allows |000susemgr; users to view the menu:System Groups[]
+ page allows {susemgr} users to view the menu:System Groups[]
  list. 
 
 .
 image::systems_systemgroups.png[]
 
 
-Only System Group Administrators and |000susemgr; Administrators may perform the following additional tasks: 
+Only System Group Administrators and {susemgr} Administrators may perform the following additional tasks: 
 ..... Create system groups. (Refer to <<_ref.webui.systems.systemgroups.create>> .) 
 ..... Add systems to system groups. (Refer to <<_ref.webui.systems.systemgroups.add>> .) 
 ..... Remove systems from system groups. (Refer to <<_s3_sm_system_details>> .) 
@@ -1792,7 +1792,7 @@ The new group will appear in the menu:System Groups[]
 
 [[_ref.webui.systems.systemgroups.add]]
 === Adding and Removing Systems in Groups
-(((|000susemgr; Administrator,adding and removing)))
+((({susemgr} Administrator,adding and removing)))
 
 
 Systems can be added and removed from system groups.
@@ -1834,8 +1834,8 @@ The menu:System Group Details[]
  page is split into the following tabs: 
 
 [[_s4_sm_system_group_details_details]]
-==== System Group Details|000gt;Details
-(((|000susemgr; Administrator,deleting)))
+==== System Group Details{gt}Details
+((({susemgr} Administrator,deleting)))
 
 
 Provides the group name and group description.
@@ -1844,7 +1844,7 @@ To change this information, click menu:Edit These Properties[]
  button. 
 
 [[_s4_sm_system_group_details_systems]]
-==== System Group Details |000gt;Systems
+==== System Group Details {gt}Systems
 
 
 Lists all members of the system group.
@@ -1853,7 +1853,7 @@ Clicking links within the table takes you to corresponding tabs within the menu:
  page for the associated system.
 To remove systems from the group, select the appropriate check boxes and click the menu:Remove Systems[]
  button on the bottom of the page.
-Clicking it does not delete systems from |000susemgr; entirely.
+Clicking it does not delete systems from {susemgr} entirely.
 This is done through the menu:System Set Manager[]
  or menu:System
      Details[]
@@ -1863,7 +1863,7 @@ Refer to <<_ref.webui.systems.ssm>>
 , respectively. 
 
 [[_s4_sm_system_group_details_target]]
-==== System Group Details |000gt;Target Systems
+==== System Group Details {gt}Target Systems
 
 menu:Target Systems[]
  -- Lists all systems in your organization.
@@ -1871,7 +1871,7 @@ To add systems to the specified system group, click the check boxes to their lef
  button on the bottom right-hand corner of the page. 
 
 [[_s4_sm_system_group_details_errata]]
-==== System Group Details |000gt;Patches
+==== System Group Details {gt}Patches
 
 
 List of relevant patches for systems in the system group.
@@ -1884,21 +1884,21 @@ To apply the patch updates in this list, select the systems and click the menu:A
  button. 
 
 [[_s4_sm_system_group_details_admins]]
-==== System Group Details |000gt;Admins
+==== System Group Details {gt}Admins
 
 
 List of all organization users that have permission to manage the system group.
-|000susemgr; Administrators are clearly identified.
+{susemgr} Administrators are clearly identified.
 System Group Administrators are marked with an asterisk (*). To change the system group's users, select and deselect the appropriate check boxes and click the menu:Update[]
  button. 
 
 [[_s4_sm_system_group_details_states]]
-==== System Group Details |000gt;States[Salt]
+==== System Group Details {gt}States[Salt]
 
 
 The menu:States[]
  tab displays states which have been created and added using the menu:Salt[]
- |000gt; menu:State
+ {gt} menu:State
      Catalog[]
 .
 From this page you can select which states should be applied across a group of systems.
@@ -1906,7 +1906,7 @@ A state applied from this page will be applied to all minions within a group.
 
 [NOTE]
 ====
-States are applied according to the following order of hierarchy within |000susemgr;: 
+States are applied according to the following order of hierarchy within {susemgr}: 
 
 ----
 Organization > Group > Single System
@@ -2127,7 +2127,7 @@ Additionally, you can access the System Set Manager in three different ways:
 
 
 [[_ref.webui.systems.ssm.overview]]
-=== System Set Manager |000gt;Overview
+=== System Set Manager {gt}Overview
 
 
 This page contains links to most SSM option tabs with short explanations. 
@@ -2137,7 +2137,7 @@ image::systems_ssm_overview.png[]
 
 
 [[_ref.webui.systems.ssm.systems]]
-=== System Set Manager |000gt;Systems
+=== System Set Manager {gt}Systems
 
 
 List of selected systems. 
@@ -2147,7 +2147,7 @@ image::systems_ssm_list_systems.png[]
 
 
 [[_ref.webui.systems.ssm.patches]]
-=== System Set Manager |000gt;Patches
+=== System Set Manager {gt}Patches
 
 
 List of patch updates applicable to the current system set. 
@@ -2161,7 +2161,7 @@ To apply updates, select the patches and click the menu:Apply Patches[]
  button. 
 
 [[_ref.webui.systems.ssm.packages]]
-=== System Set Manager |000gt;Packages
+=== System Set Manager {gt}Packages
 
 
 Click the number in the Systems column to see the systems in the System Set Manager to which a package applies.
@@ -2172,7 +2172,7 @@ image::systems_ssm_packages_overview.png[]
 
 
 [[_s4_sm_ssm_packages_install]]
-==== System Set Manager |000gt;Packages|000gt;Install
+==== System Set Manager {gt}Packages{gt}Install
 
 
 This list includes all channels to which systems in the set are subscribed.
@@ -2187,7 +2187,7 @@ Then click the menu:Install Packages[]
  button. 
 
 [[_s4_sm_ssm_packages_remove]]
-==== System Set Manager |000gt;Packages|000gt;Remove
+==== System Set Manager {gt}Packages{gt}Remove
 
 
 A list of all the packages installed on the selected systems that might be removed. 
@@ -2201,7 +2201,7 @@ Select the packages to be deleted, then click the menu:Remove Packages[]
  button. 
 
 [[_s4_sm_ssm_packages_upgrade]]
-==== System Set Manager |000gt;Packages|000gt;Upgrade
+==== System Set Manager {gt}Packages{gt}Upgrade
 
 
 A list of all the packages installed on the selected systems that might be upgraded. 
@@ -2216,7 +2216,7 @@ Select the packages to be upgraded, then click the menu:Upgrade Packages[]
  button. 
 
 [[_s3_sm_ssm_verify]]
-==== System Set Manager |000gt;Packages|000gt;Verify
+==== System Set Manager {gt}Packages{gt}Verify
 
 
 A list of all installed packages whose contents, file checksum, and other details may be verified. 
@@ -2236,7 +2236,7 @@ On the next page, select a date and time for the verification, then click the me
  button. 
 
 [[_ref.webui.systems.ssm.groups]]
-=== System Set Manager |000gt;Groups
+=== System Set Manager {gt}Groups
 
 
 Tools to create groups and manage system memberships. 
@@ -2245,7 +2245,7 @@ Tools to create groups and manage system memberships.
 image::systems_ssm_groups.png[]
 
 
-These functions are limited to |000susemgr; Administrators and System Group Administrators.
+These functions are limited to {susemgr} Administrators and System Group Administrators.
 To add a new group, click menu:Create Group[]
  on the top-right corner.
 In the next page, type the group name and description in the respective fields and click the menu:Create
@@ -2255,13 +2255,13 @@ To add or remove selected systems in any of the system groups, toggle the approp
  button. 
 
 [[_ref.webui.systems.ssm.channels]]
-=== System Set Manager |000gt;Channels
+=== System Set Manager {gt}Channels
 
 
 Manage channel associations through the following subtabs: 
 
 [[_s4_sm_ssm_channels_base]]
-==== System Set Manager|000gt;Channels|000gt;Base Channels
+==== System Set Manager{gt}Channels{gt}Base Channels
 
 
 As a Channel Administrator, you may change the base channels your systems are subscribed to. 
@@ -2286,7 +2286,7 @@ To change the base channel, select the new one from the menu:Desired
  and confirm the action. 
 
 [[_s4_sm_ssm_channels_child]]
-==== System Set Manager |000gt;Channels|000gt;Child Channels
+==== System Set Manager {gt}Channels{gt}Child Channels
 
 
 The menu:Child Channels[]
@@ -2304,7 +2304,7 @@ If too few entitlements are available, some systems fail to subscribe.
 Systems must subscribe to a base channel before subscribing to a child channel. 
 
 [[_ref.webui.systems.ssm.config]]
-=== System Set Manager |000gt;Configuration
+=== System Set Manager {gt}Configuration
 
 
 Like in the menu:System Details[Channels > Configuration]
@@ -2322,10 +2322,10 @@ Refer to <<_ref.webui.config.preparing>>
  for instructions on enabling and disabling scheduled actions for a system. 
 
 [[_ref.webui.systems.ssm.config.deploy]]
-==== System Set Manager|000gt;Configuration|000gt;Deploy Files
+==== System Set Manager{gt}Configuration{gt}Deploy Files
 
 
-Use this subtab to distribute configuration files from your central repository on |000susemgr; to each of the selected systems. 
+Use this subtab to distribute configuration files from your central repository on {susemgr} to each of the selected systems. 
 
 .
 image::systems_ssm_config_deploy_files.png[]
@@ -2341,10 +2341,10 @@ Note that the latest versions of the files, at the time of scheduling, are deplo
 Newer versions created after scheduling are disregarded. 
 
 [[_ref.webui.systems.ssm.config.verify]]
-==== System Set Manager |000gt;Configuration|000gt;Compare Files
+==== System Set Manager {gt}Configuration{gt}Compare Files
 
 
-Use this subtab to validate configuration files on the selected systems against copies in your central repository on |000susemgr;. 
+Use this subtab to validate configuration files on the selected systems against copies in your central repository on {susemgr}. 
 
 .
 image::systems_ssm_config_compare_files.png[]
@@ -2353,11 +2353,11 @@ image::systems_ssm_config_compare_files.png[]
 The table lists the configuration files associated with any of the selected systems.
 Clicking a file's system count displays the systems already subscribed to the file. 
 
-To compare the configuration files deployed on the systems with those in |000susemgr;, select the check box for each file to be validated.
+To compare the configuration files deployed on the systems with those in {susemgr}, select the check box for each file to be validated.
 Then click menu:Analyze Differences[Schedule File
      Comparison]
 .
-The comparisons for each system will not complete until each system checks in to |000susemgr;. When each comparison is complete, any differences between the files will be accessible from each system's events page. 
+The comparisons for each system will not complete until each system checks in to {susemgr}. When each comparison is complete, any differences between the files will be accessible from each system's events page. 
 
 Note that the latest versions of the files, at the time of scheduling, are compared.
 Newer versions created after scheduling are disregarded.
@@ -2366,11 +2366,11 @@ Find the results in the main menu:Schedule[]
  tab. 
 
 [[_ref.webui.systems.ssm.config.subs]]
-==== System Set Manager |000gt;Configuration|000gt;Subscribe to Channels
+==== System Set Manager {gt}Configuration{gt}Subscribe to Channels
 
 
 Subscribe systems to configuration channels, and in a second step rank these channels according to the order of preference.
-This tab is available only to |000susemgr; Administrators and Configuration Administrators. 
+This tab is available only to {susemgr} Administrators and Configuration Administrators. 
 
 .
 image::systems_ssm_config_subscribe_to_channels.png[]
@@ -2406,7 +2406,7 @@ Channels are accessed in the order of their rank.
 Your local configuration channel always overrides all other channels. 
 
 [[_ref.webui.systems.ssm.config.unsubs]]
-==== System Set Manager |000gt;Configuration|000gt;Unsubscribe from Channels
+==== System Set Manager {gt}Configuration{gt}Unsubscribe from Channels
 
 
 Administrators may unsubscribe systems from configuration channels by clicking the check box next to the channel name and clicking the menu:Unsubscribe Systems[]
@@ -2417,7 +2417,7 @@ image::systems_ssm_config_unsubscribe_from_channels.png[]
 
 
 [[_ref.webui.systems.ssm.config.enable]]
-==== System Set Manager |000gt;Configuration|000gt;Enable Configuration
+==== System Set Manager {gt}Configuration{gt}Enable Configuration
 
 
 Registered systems without configuration management preparation will appear here in a list. 
@@ -2433,17 +2433,17 @@ You can also schedule the action by adjusting the menu:Schedule no
  date and time setting using the drop-down box, then clicking menu:Enable SUSE Manager Configuration Management[]
 . 
 
-Then the systems will get subscribed to the required |000susemgr; tools channel and required [package]#rhncfg*#
+Then the systems will get subscribed to the required {susemgr} tools channel and required [package]#rhncfg*#
  packages will get installed. 
 
 [[_ref.webui.systems.ssm.provision]]
-=== System Set Manager |000gt;Provisioning
+=== System Set Manager {gt}Provisioning
 
 
 Set the options for provisioning systems via the following subtabs. 
 
 [[_ref.webui.systems.ssm.provision_autoinst]]
-==== System Set Manager|000gt;Provisioning|000gt;Autoinstallation
+==== System Set Manager{gt}Provisioning{gt}Autoinstallation
 
 
 Use this subtab to reinstall clients. 
@@ -2467,16 +2467,16 @@ Choose menu:Autoinstall by IP Address[]
 To do so, at least two autoinstallation profiles must be configured with associated IP ranges. 
 
 If you use menu:Autoinstall by IP Address[]
-, |000susemgr; will automatically pick a profile for each system so that the system's IP address will be in one of the IP ranges specified in the profile itself.
-If such a profile cannot be found, |000susemgr; will look for an organization default profile and apply that instead. If no matching IP ranges nor organization default profiles can be found, no autoinstallation will be performed on the system.
+, {susemgr} will automatically pick a profile for each system so that the system's IP address will be in one of the IP ranges specified in the profile itself.
+If such a profile cannot be found, {susemgr} will look for an organization default profile and apply that instead. If no matching IP ranges nor organization default profiles can be found, no autoinstallation will be performed on the system.
 You will be notified on the next page if that happens. 
 
 To use Cobbler system records for autoinstallation, select menu:Create
      PXE Installation Configuration[]
 .
 With PXE boot, you cannot only reinstall clients, but automatically install machines that do not have an operating system installed yet.
-|000susemgr; and its network must be properly configured to enable boot using PXE.
-For more information on Cobbler and |000kickstart; templates, refer to <<_advanced.topics.cobbler>>
+{susemgr} and its network must be properly configured to enable boot using PXE.
+For more information on Cobbler and {kickstart} templates, refer to <<_advanced.topics.cobbler>>
 . 
 
 [NOTE]
@@ -2486,7 +2486,7 @@ Full features will be enabled again when all bare-metal systems are removed from
 ====
 
 
-If any of the systems connect to |000susemgr; via a proxy server, choose either the menu:Preserve Existing Configuration[]
+If any of the systems connect to {susemgr} via a proxy server, choose either the menu:Preserve Existing Configuration[]
  radio button or the menu:Use Proxy[]
  radio button.
 If you choose to autoinstall through a proxy server, select from the available proxies listed in the drop-down box beside the menu:Use Proxy[]
@@ -2499,7 +2499,7 @@ When the autoinstallations for the selected systems are successfully scheduled, 
  page. 
 
 [[_ref.webui.systems.ssm.provision.tag]]
-==== System Set Manager |000gt;Provisioning|000gt;Tag Systems
+==== System Set Manager {gt}Provisioning{gt}Tag Systems
 
 
 Use this subtab to add meaningful descriptions to the most recent snapshots of your selected systems. 
@@ -2514,7 +2514,7 @@ To tag the most recent system snapshots, enter a descriptive term in the menu:Ta
  button. 
 
 [[_ref.webui.systems.ssm.provision.roll]]
-==== System Set Manager |000gt;Provisioning|000gt;Rollback
+==== System Set Manager {gt}Provisioning{gt}Rollback
 
 
 Use this subtab to rollback selected Provisioning-entitled systems to previous snapshots marked with a tag. 
@@ -2527,7 +2527,7 @@ Click the tag name, verify the systems to be reverted, and click the menu:Rollba
  button. 
 
 [[_ref.webui.systems.ssm.provision.remote]]
-==== System Set Manager |000gt;Provisioning|000gt;Remote Command
+==== System Set Manager {gt}Provisioning{gt}Remote Command
 
 
 Use this subtab to issue remote commands on selected Provisioning-entitled systems. 
@@ -2545,7 +2545,7 @@ Select a date and time to execute the command and click menu:Schedule[]
 . 
 
 [[_ref.webui.systems.ssm.provision.pm_config]]
-==== System Set Manager |000gt;Provisioning|000gt;Power Management Configuration
+==== System Set Manager {gt}Provisioning{gt}Power Management Configuration
 
 .
 image::systems_ssm_power_management_config.png[]
@@ -2553,7 +2553,7 @@ image::systems_ssm_power_management_config.png[]
 
 
 [[_ref.webui.systems.ssm.provision.pm_op]]
-==== System Set Manager |000gt;Provisioning|000gt;Power Management Operation
+==== System Set Manager {gt}Provisioning{gt}Power Management Operation
 
 .
 image::systems_ssm_power_management_operations.png[]
@@ -2561,7 +2561,7 @@ image::systems_ssm_power_management_operations.png[]
 
 
 [[_ref.webui.systems.ssm.audit]]
-=== System Set Manager |000gt;Audit
+=== System Set Manager {gt}Audit
 
 
 System sets can be scheduled for XCCDF scans; XCCDF stands for "`The
@@ -2579,7 +2579,7 @@ For more details on OpenSCAP and audits, refer to <<_ref.webui.audit>>
 . 
 
 [[_ref.webui.systems.ssm.misc]]
-=== System Set Manager |000gt;Misc
+=== System Set Manager {gt}Misc
 
 
 On the menu:Misc[]
@@ -2601,7 +2601,7 @@ Set menu:System Preferences[]
  via the respective radio buttons. 
 
 [[_s4_sm_ssm_misc_updates_hw]]
-==== System Set Manager|000gt;Misc|000gt;Hardware
+==== System Set Manager{gt}Misc{gt}Hardware
 
 
 Click the menu:Hardware[]
@@ -2614,7 +2614,7 @@ image::systems_ssm_misc_hardware_refresh.png[]
 
 
 [[_s4_sm_ssm_misc_updates_sw]]
-==== System Set Manager |000gt;Misc|000gt;Software
+==== System Set Manager {gt}Misc{gt}Software
 
 
 Click the menu:Software[]
@@ -2627,7 +2627,7 @@ image::systems_ssm_misc_software_refresh.png[]
 
 
 [[_s4_sm_ssm_misc_migrate]]
-==== System Set Manager |000gt;Misc|000gt;Migrate
+==== System Set Manager {gt}Misc{gt}Migrate
 
 
 Click the menu:Migrate[]
@@ -2638,7 +2638,7 @@ image::systems_ssm_misc_migrate_systems.png[]
 
 
 [[_s4_sm_ssm_misc_lock]]
-==== System Set Manager |000gt;Misc|000gt;Lock/Unlock
+==== System Set Manager {gt}Misc{gt}Lock/Unlock
 
 
 Select the menu:Lock/Unlock[]
@@ -2656,7 +2656,7 @@ Select them and click menu:Unlock[]
 . 
 
 [[_s4_sm_ssm_misc_delete]]
-==== System Set Manager |000gt;Misc|000gt;Delete
+==== System Set Manager {gt}Misc{gt}Delete
 
 
 Click the menu:Delete[]
@@ -2669,7 +2669,7 @@ image::systems_ssm_misc_delete_confirm.png[]
 
 
 [[_s4_sm_ssm_misc_reboot]]
-==== System Set Manager |000gt;Misc|000gt;Reboot
+==== System Set Manager {gt}Misc{gt}Reboot
 
 
 Select the appropriate systems, then click the menu:Reboot
@@ -2684,7 +2684,7 @@ To cancel a reboot action, see <<_ref.webui.schedule.pending>>
 
 
 The menu:Bootstrapp Minions[]
- page allows you to bootstrap Salt minions from the |000webui;. 
+ page allows you to bootstrap Salt minions from the {webui}. 
 
 .Bootstrapping
 image::bootstrapping.png[]
@@ -2700,7 +2700,7 @@ The default is ``22``.
 
 User::
 Input the minions user login.
-The default is |000rootuser;. 
+The default is {rootuser}. 
 
 Password::
 Input the minions login password. 
@@ -2815,7 +2815,7 @@ image::visualization_system_grouping.png[]
 
 [[_ref.webui.systems.search]]
 == Advanced Search
-(((|000susemgr; Administrator,searching)))
+((({susemgr} Administrator,searching)))
 (((Web Interface,System Search)))
 
 
@@ -2851,8 +2851,8 @@ For details on how to use the resulting system list, refer to <<_ref.webui.syste
 (((Web Interface,activation keys)))
 
 
-Users with the Activation Key Administrator role (including |000susemgr; Administrators) can generate activation keys in the |000susemgr; Web interface.
-With such an activation key, register a |000sle; or Red Hat Enterprise Linux system, entitle the system to a |000susemgr; service level and subscribe the system to specific channels and system groups through the `rhnreg_ks` command line utility. 
+Users with the Activation Key Administrator role (including {susemgr} Administrators) can generate activation keys in the {susemgr} Web interface.
+With such an activation key, register a {sle} or Red Hat Enterprise Linux system, entitle the system to a {susemgr} service level and subscribe the system to specific channels and system groups through the `rhnreg_ks` command line utility. 
 
 [NOTE]
 ====
@@ -2884,28 +2884,28 @@ To create an activation key:
 .Procedure: Creating Activation Keys....... Select menu:Systems[Activation Keys] from the left bar. 
 ....... Click the menu:Create Key[] link at the upper right corner. 
 ....... menu:Description[] -- Enter a menu:Description[] to identify the generated activation key. 
-....... menu:Key[] -- Either choose automatic generation by leaving this field blank or enter the key you want to generate in the menu:Key[] field. This string of characters can then be used with `rhnreg_ks` to register client systems with |000susemgr;. Refer to <<_s3_sm_system_keys_multiple>> for details. 
+....... menu:Key[] -- Either choose automatic generation by leaving this field blank or enter the key you want to generate in the menu:Key[] field. This string of characters can then be used with `rhnreg_ks` to register client systems with {susemgr}. Refer to <<_s3_sm_system_keys_multiple>> for details. 
 +
 
 .Allowed Characters
 [WARNING]
 ====
 ## 2011-03-24 - ke: bwiedemann 20110210: # wirklich alle? auch "'\ und
-        0 bytes? Also see the quick starts! 2016-02-17 - moio: ," are not allowed |000lt;> (){} will
+        0 bytes? Also see the quick starts! 2016-02-17 - moio: ," are not allowed {lt}> (){} will
         get removed automatically #
  Do not insert commas or double quotes in the key.
-All other characters are allowed, but `|000lt;> (){}` (this includes the space) will get removed automatically.
+All other characters are allowed, but `{lt}> (){}` (this includes the space) will get removed automatically.
 If the string is empty, a random one is generated. 
 
 Commas are problematic because they are used as separator when two or more activation keys are used at once. 
 ====
 ....... menu:Usage[] -- The maximum number systems that can be registered with the activation key concurrently. Leave blank for unlimited use. Deleting a system profile reduces the usage count by one and registering a system profile with the key increases the usage count by one. 
-....... menu:Base Channels[] -- The primary channel for the key. This can be either the `|000susemgr; Default` channel, a |000suse; provided channel, or a custom base channel. 
+....... menu:Base Channels[] -- The primary channel for the key. This can be either the `{susemgr} Default` channel, a {suse} provided channel, or a custom base channel. 
 + 
-Selecting `|000susemgr; Default` allows client systems to register with the |000suse;-provided default channel that corresponds with their installed version of |000sle;. You can also associate the key with a custom base channel.
-If a system using this key is not compatible with the selected channel, it will fall back to the |000susemgr; default channel. 
-....... menu:Add-on System Types[] -- The supplemental system types for the key, e.|000nbsp;g. Virtualization Host. All systems will receive these system types with the key. 
-....... menu:Contact Method[] - Select how clients communicate with |000susemgr;. menu:Default[] (Pull) waits for the client to check in. With menu:Push via SSH[] and menu:Push via SSH tunnel[] the server contacts the client via SSH (with or without tunnel) and pushes updates and actions, etc. 
+Selecting `{susemgr} Default` allows client systems to register with the {suse}-provided default channel that corresponds with their installed version of {sle}. You can also associate the key with a custom base channel.
+If a system using this key is not compatible with the selected channel, it will fall back to the {susemgr} default channel. 
+....... menu:Add-on System Types[] -- The supplemental system types for the key, e.{nbsp}g. Virtualization Host. All systems will receive these system types with the key. 
+....... menu:Contact Method[] - Select how clients communicate with {susemgr}. menu:Default[] (Pull) waits for the client to check in. With menu:Push via SSH[] and menu:Push via SSH tunnel[] the server contacts the client via SSH (with or without tunnel) and pushes updates and actions, etc. 
 + 
 For more information about contact methods, see <<_bp.systems.management>>
 . 
@@ -2987,7 +2987,7 @@ Click the menu:Update Activation
 
 Multiple activation keys can be specified at the command line or in a single autoinstallation profile.
 This allows you to aggregate the aspects of various keys without re-creating a specific key for every system that you want to register, simplifying the registration and autoinstallation processes while slowing the growth of your key list.
-Separate keys with a comma at the command line with `rhnreg_ks` or in a |000kickstart; profile in the menu:Activation Keys[]
+Separate keys with a comma at the command line with `rhnreg_ks` or in a {kickstart} profile in the menu:Activation Keys[]
  tab of the menu:Autoinstallation Details[]
  page. 
 
@@ -3009,7 +3009,7 @@ You are now ready to use multiple activation keys at once.
 (((Web Interface,stored profiles)))
 
 
-|000susemgr; Provisioning customers can create package profiles via the menu:System Details[]
+{susemgr} Provisioning customers can create package profiles via the menu:System Details[]
  page. 
 
 .
@@ -3045,7 +3045,7 @@ For more information about stored profiles, see <<_s1_package_profiles>>
 == Custom System Info
 
 
-|000susemgr; customers may include completely customizable information about their systems. 
+{susemgr} customers may include completely customizable information about their systems. 
 
 .
 image::systems_custom_system_info.png[]
@@ -3077,8 +3077,8 @@ include::reference-webui-systems-autoinstallation.adoc[]
 
 
 Third party hypervisors and hypervisor managers such as VMWare vCenter are called "`Virtual Host Managers`"
- (VHM) within |000susemgr;. These managers can manage one or multiple virtual hosts, which in turn may contain virtual guests.
-|000susemgr; ships with a tool called `virtual-host-gatherer` that can connect to VHMs using their API, and request information about virtual hosts.
+ (VHM) within {susemgr}. These managers can manage one or multiple virtual hosts, which in turn may contain virtual guests.
+{susemgr} ships with a tool called `virtual-host-gatherer` that can connect to VHMs using their API, and request information about virtual hosts.
 This tool is automatically invoked via Taskomatic nightly, therefore you need to configure your VHMs via XMLRPC APIs. `virtual-host-gatherer` maintains the concept of optional modules, where each module enables a specific Virtual Host Manager. 
 
 Proceed to menu:Systems[Virtual Host
@@ -3177,7 +3177,7 @@ The following json example describes how this file should look:
 ----
 
 
-For more information, see the man page on your |000susemgr; server for ``virtual-host-gatherer``: 
+For more information, see the man page on your {susemgr} server for ``virtual-host-gatherer``: 
 
 ----
  >man virtual-host-gatherer

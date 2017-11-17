@@ -8,7 +8,7 @@
 :sourcedir: .
 
 
-Only Configuration Administrators or |000susemgr; Administrators see the menu:Configuration[]
+Only Configuration Administrators or {susemgr} Administrators see the menu:Configuration[]
  pages. 
 
 On this configuration pages, manage systems with configuration files, channels offering configuration files, and configartion files themselves.
@@ -25,17 +25,17 @@ Configuration Managment is only supported on clients registered via the traditio
 (((changing email address,system preparation)))
 
 
-To manage a system's configuration with |000susemgr;, it must have the appropriate tools and the [path]_config-enable_
+To manage a system's configuration with {susemgr}, it must have the appropriate tools and the [path]_config-enable_
  file installed.
-These tools will be available if you installed the system with the configuration management functionality using |000ay; or Kickstart.
+These tools will be available if you installed the system with the configuration management functionality using {ay} or Kickstart.
 If not, they can be found in the Tools child channel for your distribution.
 Download and install the latest [path]_rhncfg*_
  packages: 
 
 * [path]_rhncfg_ -- the base libraries and functions needed by all [path]_rhncfg-*_ packages, 
-* [path]_rhncfg-actions_ -- the RPM package required to run configuration actions scheduled via |000susemgr;, 
+* [path]_rhncfg-actions_ -- the RPM package required to run configuration actions scheduled via {susemgr}, 
 * [path]_rhncfg-client_ -- the RPM package with a command line interface to the client features of the Configuration Management system, 
-* [path]_rhncfg-management_ -- the RPM package with a command line interface used to manage |000susemgr; configuration. 
+* [path]_rhncfg-management_ -- the RPM package with a command line interface used to manage {susemgr} configuration. 
 
 
 [[_ref.webui.config.overview]]
@@ -43,7 +43,7 @@ Download and install the latest [path]_rhncfg*_
 
 
 The menu:Configuration Overview[]
- page shows all of the configuration files that are managed by your organization in |000susemgr;. 
+ page shows all of the configuration files that are managed by your organization in {susemgr}. 
 
 .
 image::configuration_overview.png[]
@@ -92,7 +92,7 @@ page for the specified system.
 (((actions,create)))
 
 
-As mentioned above, |000susemgr; manages both central and local configuration channels and files.
+As mentioned above, {susemgr} manages both central and local configuration channels and files.
 Central configuration management allows you to deploy configuration files to multiple systems.
 Local configuration management allows you to specify overrides or configuration files that are not changed by subscribing the system to a central channel. 
 
@@ -110,14 +110,14 @@ To create a new central configuration channel:
 
 . Click the menu:Create Config Channel[] link in the upper right of this screen. 
 . Enter a name for the channel. 
-. Enter a label for the channel. This field must contain only alphanumeric characters, |000quot;-|000quot;, |000quot;_|000quot;, and |000quot;.|000quot;. 
+. Enter a label for the channel. This field must contain only alphanumeric characters, {quot}-{quot}, {quot}_{quot}, and {quot}.{quot}. 
 . Enter a mandatory description for the channel that allows you to distinguish it from other channels. No character restrictions apply. 
 . Click the menu:Create Config Channel[] button to create the new channel. 
 . The following page is a subset of the menu:Channel Details[] page and has three tabs: menu:Overview[] , menu:Add Files[] , and menu:Systems[] . The menu:Channel Details[] page is discussed in <<_config_config_channels_channel_details>> . 
 
 
 [[_config_config_channels_channel_details]]
-=== menu:Configuration[]|000gt; menu:Configuration Channels[]|000gt; menu:Configuration Channel Details[]
+=== menu:Configuration[]{gt} menu:Configuration Channels[]{gt} menu:Configuration Channel Details[]
 
 Overview::
 The menu:Overview[]
@@ -201,7 +201,7 @@ button.
 Select to which systems the file(s) should be applied.
 All systems subscribed to this channel are listed.
 If you want to apply the file to a different system, subscribe it to the channel first.
-To deploy the files, click menu:Confirm |000amp; Deploy to Selected
+To deploy the files, click menu:Confirm {amp} Deploy to Selected
 Systems[]
 . 
 
@@ -227,12 +227,12 @@ Both centrally-managed and locally-managed files can be reached from sub-pages.
 .Maximum Size for Configuration Files
 [NOTE]
 ====
-By default, the maximum file size for configuration files is 128 KB (131072 bytes). |000suse; supports a configuration file size up to 1 MB; larger values are not guaranteed to work. 
+By default, the maximum file size for configuration files is 128 KB (131072 bytes). {suse} supports a configuration file size up to 1 MB; larger values are not guaranteed to work. 
 ====
 
 ## 2010-12-21 - ke: will "rhn" stay here? 2010-12-28 - kkaempf: "rhn" will
     stay here. #
- To change the file size limit, edit all the following files on the |000susemgr; server and edit or add the following variables: 
+ To change the file size limit, edit all the following files on the {susemgr} server and edit or add the following variables: 
 
 ----
 # /usr/share/rhn/config-defaults/rhn_web.conf
@@ -303,7 +303,7 @@ Click the name of the system to which it belongs to see its menu:System Details[
 Being able to store one file and share identical configurations is useful, but what if you have many variations of the same configuration file? What do you do if you have configuration files that differ only in system-specific details, such as host name and MAC address? 
 
 Traditional file management would require to upload and distribute each file separately, even if the distinction is nominal and the number of variations is in the hundreds or thousands.
-|000susemgr; addresses this by allowing the inclusion of macros, or variables, within the configuration files it manages.
+{susemgr} addresses this by allowing the inclusion of macros, or variables, within the configuration files it manages.
 In addition to variables for custom system information, the following standard macros are supported: ## 2010-12-21 - ke: will "rhn" stay here? 2010-12-28 - ke: see bug
     660807#c3 #
 
@@ -343,7 +343,7 @@ ip_address={| rhn.system.net_interface.ip_address(eth0) |}
 ----
 
 ## 2010-12-21 - ke: will "rhn" stay here? #
- Upon delivery of the file to individual systems, whether through a scheduled action in the |000susemgr; Web interface or at the command line with the |000susemgr; Configuration Client (``mgrcfg-client``), the variables will be replaced with the host name and IP address of the system as recorded in |000susemgr;'s system profile.
+ Upon delivery of the file to individual systems, whether through a scheduled action in the {susemgr} Web interface or at the command line with the {susemgr} Configuration Client (``mgrcfg-client``), the variables will be replaced with the host name and IP address of the system as recorded in {susemgr}'s system profile.
 In the above example configuration file the deployed version resembles the following: 
 
 ----
@@ -352,7 +352,7 @@ ip_address=177.18.54.7
 ----
 
 
-To capture custom system information, insert the key label into the custom information macro (``rhn.system.custom_info``). For example, if you developed a key labeled |000quot;``asset``|000quot; you can add it to the custom information macro in a configuration file to have the value substituted on any system containing it.
+To capture custom system information, insert the key label into the custom information macro (``rhn.system.custom_info``). For example, if you developed a key labeled {quot}``asset``{quot} you can add it to the custom information macro in a configuration file to have the value substituted on any system containing it.
 The macro would look like this: 
 
 ----
@@ -376,7 +376,7 @@ asset={@ rhn.system.custom_info(asset) = 'Asset #' @}
 
 This default is overridden by the value on any system containing it. 
 
-Using the |000susemgr; Configuration Manager (``mgrcfg-manager``) will not translate or alter files, as this tool is system agnostic. `mgrcfg-manager` does not depend on system settings.
+Using the {susemgr} Configuration Manager (``mgrcfg-manager``) will not translate or alter files, as this tool is system agnostic. `mgrcfg-manager` does not depend on system settings.
 Binary files cannot be interpolated. 
 
 [[_ref.webui.config.systems]]
@@ -411,10 +411,10 @@ Here you unsubscribe from any channels you want.
 Here you see the systems either not prepared for configuration file deployment or not yet subscribed to a configuration channel.
 The table has three columns.
 The first identifies the system name, the second shows whether the system is prepared for configuration file deployment, and the third lists the steps necessary to prepare the system.
-To prepare a system, check the box to the left of the profile name then click the menu:Enable |000susemgr; Configuration
+To prepare a system, check the box to the left of the profile name then click the menu:Enable {susemgr} Configuration
      Management[]
  button.
-All of the preparatory steps that can be automatically performed are scheduled by |000susemgr;. 
+All of the preparatory steps that can be automatically performed are scheduled by {susemgr}. 
 
 [NOTE]
 ====

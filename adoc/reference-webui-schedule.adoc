@@ -21,7 +21,7 @@ An action is a scheduled task to be performed on one or more client systems.
 For example, an action can be scheduled to apply all patches to a system.
 Actions can also be grouped into action chains to schedule them at the same time in a particular order, for example to reboot a system after deploying patches. 
 
-|000susemgr; keeps track of the following action types: 
+{susemgr} keeps track of the following action types: 
 
 * package alteration (installation, upgrade, and removal), 
 * rollback package actions, 
@@ -59,7 +59,7 @@ To cancel an action, select the action, and click menu:Cancel
 
 [[_ref.webui.schedule.fail]]
 == Failed Actions
-(((|000susemgr; Administrator,Failed Actions)))
+((({susemgr} Administrator,Failed Actions)))
 
 
 Sometimes actions cannot be completed.
@@ -81,7 +81,7 @@ image::schedule_completed_actions.png[]
 
 [[_s2_sm_action_arch]]
 == Archived Actions
-(((|000susemgr; Administrator,Archived Actions)))
+((({susemgr} Administrator,Archived Actions)))
 
 
 If you selected actions to store for review, they are displayed here and can be deleted. 
@@ -94,7 +94,7 @@ image::schedule_archived_actions.png[]
 == Action Chains
 
 
-You can create action chains|000mdash;that are grouped actions|000mdash;for example, in the menu:Software[Packages]
+You can create action chains{mdash}that are grouped actions{mdash}for example, in the menu:Software[Packages]
  or menu:Software[Packages]
  subtabs on a system details page (see <<_s4_sm_system_details_errata>>
  or <<_s4_sm_system_details_packages>>
@@ -164,7 +164,7 @@ Because of technical limitations it is not possible to reuse Action Chains.
 
 [[_ref.webui.schedule.list]]
 == Actions List
-(((|000susemgr; Administrator,Actions List)))
+((({susemgr} Administrator,Actions List)))
 
 
 On each action page, each row in the list represents a single scheduled event or action that might affect multiple systems and involve various packages.
@@ -188,7 +188,7 @@ If you click the name of an action, the menu:Action Details[]
 This page is split into the following tabs. 
 
 [[_s4_sm_action_details_details]]
-=== Action Details |000gt;Details
+=== Action Details {gt}Details
 
 
 General information about the action.
@@ -207,7 +207,7 @@ Refer to <<_s3_sm_errata_details>>
 ====
 
 [[_s4_sm_action_details_completed]]
-=== Action Details |000gt; Completed Systems
+=== Action Details {gt} Completed Systems
 
 
 List of systems on which the action has been successfully performed.
@@ -217,7 +217,7 @@ Refer to <<_s3_sm_system_details>>
  for more information. 
 
 [[_s4_sm_action_details_progress]]
-=== Action Details |000gt; In Progress Systems
+=== Action Details {gt} In Progress Systems
 
 
 List of systems on which the action is now being carried out.
@@ -229,7 +229,7 @@ Refer to <<_s3_sm_system_details>>
  for more information. 
 
 [[_s4_sm_action_details_failed]]
-=== Action Details |000gt; Failed Systems
+=== Action Details {gt} Failed Systems
 
 
 List of systems on which the action has failed.
@@ -240,7 +240,7 @@ Refer to <<_s3_sm_system_details>>
  for more information. 
 
 [[_s4_sm_action_details_packagelist]]
-=== Action Details |000gt; Package List
+=== Action Details {gt} Package List
 
 
 List of packages are associated with this action.

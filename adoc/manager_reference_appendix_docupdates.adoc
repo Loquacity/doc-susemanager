@@ -4,7 +4,7 @@
 = Documentation Updates
 
 
-This section contains information about documentation content changes made to the [ref]_|000mgrrefguide;_
+This section contains information about documentation content changes made to the [ref]_{mgrrefguide}_
 . 
 
 This document was updated on the following dates: 
@@ -25,6 +25,6 @@ The changes are explained below.
 The changes are explained below. 
 
 General::
-References to the |000webui; throughout the whole book are adjusted: With |000susemgr; 3.1, we now have an improved left navigation menu instead of the top navigation bar with tabs. 
+References to the {webui} throughout the whole book are adjusted: With {susemgr} 3.1, we now have an improved left navigation menu instead of the top navigation bar with tabs. 
 
 :sectnums:

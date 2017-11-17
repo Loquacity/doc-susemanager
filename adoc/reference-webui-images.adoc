@@ -9,7 +9,7 @@
 
 [abstract]
 --
-|000susemgr; enables system administrators to build containers with the help of profiles and create image stores. 
+{susemgr} enables system administrators to build containers with the help of profiles and create image stores. 
 
 For background information, see <<_bp.images>>
 . 

@@ -1,15 +1,15 @@
 = Available Documentation
-(((help,Novell/|000suse; manuals)))
+(((help,Novell/{suse} manuals)))
 
 
 The following manuals are available on this product: 
 
 <<_book.suma.getting_started>>::
-Lists installation scenarios and example topologies for different |000susemgr; setups.
-Guides you step by step through the installation, setup and basic configuration of |000susemgr;. Also contains detailed information about |000susemgr; maintenance and troubleshooting. 
+Lists installation scenarios and example topologies for different {susemgr} setups.
+Guides you step by step through the installation, setup and basic configuration of {susemgr}. Also contains detailed information about {susemgr} maintenance and troubleshooting. 
 
 <<_book.suma.reference.manual>>::
-Reference documentation that covers the Web interface to |000susemgr; (|000webui;). 
+Reference documentation that covers the Web interface to {susemgr} ({webui}). 
 
 <<_book.suma.best.practices>>::
 Best practices on selected topics. 

@@ -29,23 +29,23 @@ There are two types of software channels: base channels and child channels.
 
 Base Channels::
 A base channel consists of packages built for a specific architecture and release.
-For example, all of the packages in |000sls;|000nbsp;12 for the `x86_64` architecture make up a base channel.
-The list of packages in |000sls;|000nbsp;12 for the `s390x` architecture make up a different base channel. 
+For example, all of the packages in {sls}{nbsp}12 for the `x86_64` architecture make up a base channel.
+The list of packages in {sls}{nbsp}12 for the `s390x` architecture make up a different base channel. 
 +
-A system must be subscribed to only one base channel assigned automatically during registration based on the |000sle; release and system architecture.
+A system must be subscribed to only one base channel assigned automatically during registration based on the {sle} release and system architecture.
 For paid base channels, an associated subscription must exist. 
 +
 ##toms 2011-02-07: Need to add a section about Long Term Support?#
 Child Channels::
 A child channel is associated with a base channel and provides extra packages.
-For example, an organization can create a child channel associated with |000sls; on `x86_64` architecture that contains extra packages for a custom application. 
+For example, an organization can create a child channel associated with {sls} on `x86_64` architecture that contains extra packages for a custom application. 
 +
-Especially important are the |000susemgr; Tools channels that are available for every base channel.
-These tools channels provide the tools needed to connect the clients with the |000susemgr; server. 
+Especially important are the {susemgr} Tools channels that are available for every base channel.
+These tools channels provide the tools needed to connect the clients with the {susemgr} server. 
 +
 A system can be subscribed to multiple child channels of its base channel.
 Only packages provided by a subscribed channel can be installed or updated.
-|000susemgr; Administrators and Channel Administrators have channel management authority.
+{susemgr} Administrators and Channel Administrators have channel management authority.
 This authority gives them the ability to create and manage their own custom channels. 
 +
 
@@ -56,7 +56,7 @@ Do not create child channels containing packages that are not compatible with th
 ====
 +
 Channels can be further distinguished by relevance: menu:All[]
-, menu:|000suse;[]
+, menu:{suse}[]
 , menu:Channels[]
 , menu:My Channels[]
 , menu:Shared[]
@@ -96,21 +96,21 @@ When packages have completed the initial download, packages will begin to increm
 ====
 
 [[_s3_sm_channel_list_redhat]]
-=== |000suse;
+=== {suse}
 (((channels,Novell)))
 
 
-The menu:|000suse;[]
- page displays all |000suse; channels and any available child channels. 
+The menu:{suse}[]
+ page displays all {suse} channels and any available child channels. 
 
 .
 image::channels_vendor_channels.png[]
 
 
-.|000suse; Channels Cannot be Deleted
+.{suse} Channels Cannot be Deleted
 [WARNING]
 ====
-When imported, |000suse; channels cannot be deleted.
+When imported, {suse} channels cannot be deleted.
 Only custom software channels can be deleted. 
 ====
 
@@ -133,7 +133,7 @@ You can refine the search by using the drop-down box to list only the channels w
 
 
 The menu:My Channels[]
- page displays all software channels that belong to your organization, including both |000suse; and custom channels.
+ page displays all software channels that belong to your organization, including both {suse} and custom channels.
 Use the text box to filter by channel name. 
 
 .
@@ -173,7 +173,7 @@ If you click the name of a channel, the menu:Channel
  page appears. 
 
 [[_s4_sm_channel_details_details]]
-==== menu:Channel Details[]|000gt; menu:Details[]
+==== menu:Channel Details[]{gt} menu:Details[]
 
 
 General information about the channel and its parent if applicable.
@@ -184,7 +184,7 @@ image::channels_details_channels.png[]
 
 
 In addition, menu:Per-User Subscription Restrictions[]
- can be set globally by |000susemgr; administrators and channel administrators.
+ can be set globally by {susemgr} administrators and channel administrators.
 By default, any user can subscribe channels to a system.
 To manage user permissions, select menu:Only selected users within your organization
      may subscribe to this channel[]
@@ -193,9 +193,9 @@ To manage user permissions, select menu:Only selected users within your organiza
 The menu:Subscribers[]
  tab appears.
 Click it to grant specific users subscription permissions to a channel.
-|000susemgr; administrators and channel administrators can always subscribe any channels to a system. 
+{susemgr} administrators and channel administrators can always subscribe any channels to a system. 
 
-Only customers with custom base channels can change their systems' base channel assignments via the |000susemgr; Web interface in two ways: 
+Only customers with custom base channels can change their systems' base channel assignments via the {susemgr} Web interface in two ways: 
 
 * Assign the system to a custom base channel. 
 * Revert subscriptions from a custom base channel to the appropriate distribution-based base channel. 
@@ -204,14 +204,14 @@ Only customers with custom base channels can change their systems' base channel 
 [NOTE]
 ====
 The assigned base channel must match the installed system.
-For example, a system running |000sle;|000nbsp;11 for `x86_64` cannot be registered to a |000sle;|000nbsp;12 for `s390x` base channel.
+For example, a system running {sle}{nbsp}11 for `x86_64` cannot be registered to a {sle}{nbsp}12 for `s390x` base channel.
 Use the files [path]_/etc/os-release_
  or [path]_/etc/SuSE-release_
  to check your product, architecture (try ``uname -a``), version, and patch level. 
 ====
 
 [[_s4_sm_channel_details_managers]]
-==== menu:Channel Details[]|000gt; menu:Managers[]
+==== menu:Channel Details[]{gt} menu:Managers[]
 
 
 On the menu:Managers[]
@@ -223,14 +223,14 @@ image::channels_details_managers_channels.png[]
 
 Real name and e-mail address are listed with the user names.
 Organization and Channel administrators can manage any channel.
-As a |000susemgr; administrator you can change roles for specific users by clicking the name.
+As a {susemgr} administrator you can change roles for specific users by clicking the name.
 For more information on user management and the menu:User
      Details[]
  page, see <<_ref.webui.users>>
 . 
 
 [[_s4_sm_channel_details_errata]]
-==== menu:Channel Details[]|000gt; menu:Patches[]
+==== menu:Channel Details[]{gt} menu:Patches[]
 (((software channels,patches)))
 
 
@@ -249,7 +249,7 @@ Refer to <<_s3_sm_errata_details>>
  for more information. 
 
 [[_s4_sm_channel_details_packages]]
-==== menu:Channel Details[]|000gt; menu:Packages[]
+==== menu:Channel Details[]{gt} menu:Packages[]
 (((package installation,filter)))
 
 
@@ -273,7 +273,7 @@ For example, typing `dd` in the filter might return: [path]_dd_rescue_
 The filter is case-insensitive. 
 
 [[_s4_sm_channel_details_subsys]]
-==== menu:Channel Details[]|000gt; menu:Subscribed Systems[]
+==== menu:Channel Details[]{gt} menu:Subscribed Systems[]
 
 
 The list displays system names and their system type.
@@ -283,7 +283,7 @@ Refer to <<_s3_sm_system_details>>
  for more information. 
 
 [[_s4_sm_channel_details_tarsys]]
-==== menu:Software Channel Details[]|000gt; menu:Target Systems[]
+==== menu:Software Channel Details[]{gt} menu:Target Systems[]
 
 
 List of systems eligible for subscription to the channel.
@@ -300,7 +300,7 @@ Refer to <<_s3_sm_system_details>>
 
 [[_ref.webui.channels.search]]
 == Package Search
-(((|000susemgr; Administrator,searching)))
+((({susemgr} Administrator,searching)))
 
 .
 image::channels_search_channels.png[]
@@ -320,7 +320,7 @@ The menu:Package Search[]
 The menu:Free Form[]
  field additionally allows you to search using field names that you prepend to search queries and filter results by that field keyword. 
 
-For example, if you wanted to search all of the |000sle; packages for the word `java` in the description and summary, type the following in the menu:Free Form[]
+For example, if you wanted to search all of the {sle} packages for the word `java` in the description and summary, type the following in the menu:Free Form[]
  field: 
 
 ----
@@ -356,7 +356,7 @@ This menu allows administrators to create, clone, and delete custom channels.
 These channels may contain altered versions of distribution-based channels or custom packages. 
 
 [[_ref.webui.channels.manage.overview]]
-=== Manage Software Channels |000gt; Overview
+=== Manage Software Channels {gt} Overview
 
 
 The menu:Overview[]
@@ -381,21 +381,21 @@ You must either upload software packages or add packages from other repositories
 You may also choose to include patches in your custom channel. 
 
 [[_s3_chnl_mgmt_channel_details]]
-=== menu:Manage Software Channels[]|000gt; menu:Channel Details[]
+=== menu:Manage Software Channels[]{gt} menu:Channel Details[]
 
 
 
 [[_s4_chnlmgmt_cdetails_cdetails]]
-==== menu:Manage Software Channels []|000gt; menu:Channel Details[]|000gt; menu:Details[]
+==== menu:Manage Software Channels []{gt} menu:Channel Details[]{gt} menu:Details[]
 
 
 This page lists the settings made during channel creation. 
 
 [[_s4_chnlmgmt_cdetails_manage]]
-==== menu:Manage Software Channels[]|000gt; menu:Channel Details[]|000gt; menu:Managers[]
+==== menu:Manage Software Channels[]{gt} menu:Channel Details[]{gt} menu:Managers[]
 
 
-|000susemgr; administrators and channel administrators may alter or delete any channel.
+{susemgr} administrators and channel administrators may alter or delete any channel.
 To grant other users rights to alter or delete this channel, check the box next to the user's name and click menu:Update[]
 . 
 
@@ -407,7 +407,7 @@ To remove a user's right to manage the channel, uncheck the box next to their na
 . 
 
 [[_s4_chnlmgmt_cdetails_errata]]
-==== menu:Manage Software Channels[]|000gt; menu:Channel Details[]|000gt; menu:Patches[]
+==== menu:Manage Software Channels[]{gt} menu:Channel Details[]{gt} menu:Patches[]
 
 
 Channel managers can list, remove, clone, and add patches to their custom channel.
@@ -432,7 +432,7 @@ Clicking the menu:Confirm[]
  button in the confirmation page results in such patches being copied over from the original channel to the cloned channel, thus updating corresponding packages. 
 
 [[_s4_cnlmgmt_cdetails_pkgs]]
-==== menu:Manage Software Channels[]|000gt; menu:Channel Details[]|000gt; menu:Packages[]
+==== menu:Manage Software Channels[]{gt} menu:Channel Details[]{gt} menu:Packages[]
 
 
 As with patches, administrators can list, remove, compare, and add packages to a custom channel. 
@@ -467,7 +467,7 @@ Click menu:Merge Packages[]
  to perform the merge. 
 
 [[_s4_chnlmgmt_cdetails_repos]]
-==== menu:Manage Software Channels[]|000gt; menu:Channel Details[]|000gt; menu:Repositories[]
+==== menu:Manage Software Channels[]{gt} menu:Channel Details[]{gt} menu:Repositories[]
 
 
 On the menu:Repositories[]
@@ -482,7 +482,7 @@ The menu:Manage Repositories[]
 Click a name to see details and possibly delete a repository. 
 
 [[_s3_chnl_mgmt_mng_pkgs]]
-=== menu:Manage Software Channels[]|000gt; menu:Manage Software Packages[]
+=== menu:Manage Software Channels[]{gt} menu:Manage Software Packages[]
 
 
 This page allows managing custom software packages, listing all software or viewing only packages in a custom channel.
@@ -491,7 +491,7 @@ Select the respective channel from the drop-down box and click menu:View
 . 
 
 [[_s3_chnl_mgmt_mng_repos]]
-=== menu:Manage Software Channels[]|000gt; menu:Manage Repositories[]
+=== menu:Manage Software Channels[]{gt} menu:Manage Repositories[]
 
 
 Add or manage custom or third-party package repositories and link the repositories to an existing channel.
@@ -524,7 +524,7 @@ You can also perform a synchronization via command line by using the `spacewalk-
 
 `spacewalk-repo-sync` creates log files in the [path]_/var/log/rhn/reposync_
  directory.
-|000susemgr; uses one log file per channel and reuses it with the next synchronization run. 
+{susemgr} uses one log file per channel and reuses it with the next synchronization run. 
 
 [[_ref.webui.channels.mapping]]
 == Distribution Channel Mapping
