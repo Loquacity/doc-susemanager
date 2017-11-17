@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl"
-                 type="text/xml" 
+                 type="text/xml"
                  title="Profiling step"?>
 
 <!DOCTYPE chapter[
@@ -10,7 +10,7 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
          xmlns:xlink="http://www.w3.org/1999/xlink"
          version="5.0" xml:id="ref.webui.images">
- 
+
  <title>Images</title>
  <info>
   <abstract>
@@ -31,7 +31,7 @@
    an overview listing of your <guimenu>Images</guimenu> appears.
    Several columns provide information about each image:
   </para>
-   <informalfigure>
+   <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="images_list_images.png" width="400"/>
@@ -40,7 +40,7 @@
      <imagedata fileref="images_list_images.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
  <itemizedlist mark="bullet" spacing="normal">
   <listitem>
@@ -125,7 +125,7 @@
    <guimenu>Build</guimenu> </menuchoice> on the left navigation menu,
    the dialog for building images appears:
   </para>
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="images_image_build.png" width="400"/>
@@ -134,7 +134,7 @@
      <imagedata fileref="images_image_build.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
@@ -207,13 +207,13 @@
    </para>
   </listitem>
   </itemizedlist>
-  
+
   <para>
    <guimenu>Refresh</guimenu> and <guimenu>Create</guimenu> are default
    buttons in the upper right corner.  <guimenu>Create</guimenu> opens
    the <guimenu>Create Image Profile</guimenu> dialog:
   </para>
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="images_image_create_profile.png" width="400"/>
@@ -222,7 +222,7 @@
      <imagedata fileref="images_image_create_profile.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
  </sect1>
  <sect1 xml:id="ref.webui.images.stores">
   <title>Stores</title>
@@ -232,7 +232,7 @@
    a listing of your <guimenu>Image Stores</guimenu> appears.  Several
    columns provide information about each store:
   </para>
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="images_image_stores.png" width="400"/>
@@ -241,7 +241,7 @@
      <imagedata fileref="images_image_stores.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
     <para>
@@ -276,7 +276,7 @@
    are default buttons.  <guimenu>Create</guimenu> opens the
    <guimenu>Create Image Store</guimenu> dialog:
   </para>
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="imeages_image_stores_create.png" width="400"/>
@@ -285,6 +285,6 @@
      <imagedata fileref="imeages_image_stores_create.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
  </sect1>
 </chapter>

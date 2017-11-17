@@ -5,7 +5,7 @@
     %entities;
 ]>
 <!-- z: s1-sm-users ref.webui.users -->
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl"
  type="text/xml"
  title="Profiling step"?>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -107,7 +107,7 @@
      </para>
     </listitem>
    </itemizedlist>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="users_user_list.png" width="80%"/>
@@ -116,7 +116,7 @@
       <imagedata fileref="users_user_list.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
   </sect2>
 
 <!-- z: s2-sm-users-deactivated ref.webui.users.list.deact -->
@@ -127,7 +127,7 @@
     The deactivated user list shows all deactivated users. You may also
     reactivate any user listed here.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="users_deactivated_user_list.png" width="80%"/>
@@ -136,7 +136,7 @@
       <imagedata fileref="users_deactivated_user_list.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     Click the check box to the left of their name and click the
     <guimenu>Reactivate</guimenu> button then the <guimenu>Confirm</guimenu>
@@ -154,7 +154,7 @@
     The <guimenu>All</guimenu> page lists all users that belong to your
     organization.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="users_all_users.png" width="80%"/>
@@ -163,7 +163,7 @@
       <imagedata fileref="users_all_users.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     In addition to the fields listed in the previous two screens, the table of
     users includes a <guimenu>Status</guimenu> field. This field indicates
@@ -187,7 +187,7 @@
     <guimenu>User List</guimenu> </menuchoice> listing displays the
     <guimenu>User Details</guimenu> page.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="users_user_list.png" width="80%"/>
@@ -196,7 +196,7 @@
       <imagedata fileref="users_user_list.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     Here &susemgr; administrators manage the permissions and activity of all
     the users. Here you can also delete or deactivate users.
@@ -301,7 +301,7 @@
      last name, e-mail address, roles of a user, and other details about the
      user.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="users_user_details.png" width="80%"/>
@@ -310,7 +310,7 @@
        <imagedata fileref="users_user_details.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
     <para>
      Edit this information as needed and then confirm with
      <guimenu>Update</guimenu>. When changing a user's password, you will only
@@ -427,7 +427,7 @@
      more information about system groups, see
      <xref linkend="ref.webui.systems.systemgroups"/>
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="users_details_system_groups.png" width="80%"/>
@@ -436,7 +436,7 @@
        <imagedata fileref="users_details_system_groups.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
     <para>
      <xref linkend="ref.webui.systems.systemgroups"/>. &susemgr; administrators
      can set this user's access permissions to each system group. Check or
@@ -457,7 +457,7 @@
      This tab lists all systems a user can access according to the system
      groups assigned to the user.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="users_details_systems.png" width="80%"/>
@@ -466,7 +466,7 @@
        <imagedata fileref="users_details_systems.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
     <para>
      To carry out tasks on some of these systems, select the set of systems by
      checking the boxes to the left and click the <guimenu>Update
@@ -481,7 +481,7 @@
     <para>
      This tab lists all channels available to your organization.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="users_details_channel_permissions.png" width="80%"/>
@@ -490,7 +490,7 @@
        <imagedata fileref="users_details_channel_permissions.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
     <para>
      Grant explicit channel subscription permission to a user for each of the
      channels listed by checking the box to the left of the channel, then click
@@ -529,7 +529,7 @@
     <para>
      Configure the following preference settings for a user.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="users_details_preferences.png" width="80%"/>
@@ -538,7 +538,7 @@
        <imagedata fileref="users_details_preferences.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
     <itemizedlist mark="bullet" spacing="normal">
      <listitem>
       <para>
@@ -585,7 +585,7 @@
     <para>
      This tab lists mailing addresses associated with the user's account.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="users_details_addresses.png" width="80%"/>
@@ -594,7 +594,7 @@
        <imagedata fileref="users_details_addresses.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
     <para>
      If there is no address specified yet, click <guimenu>Fill in this
      address</guimenu> and fill out the form. When finished, click
@@ -624,7 +624,7 @@
     <guimenu>Groups</guimenu> <guimenu>Join</guimenu> </menuchoice> subtab of
     systems details page.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="users_system_group_config.png" width="80%"/>
@@ -633,7 +633,7 @@
       <imagedata fileref="users_system_group_config.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     For more information, see
     <xref linkend="s5-sm-system-details-groups-join"/> or
@@ -653,7 +653,7 @@
     user details page, then check the wanted <guimenu>Group</guimenu>, and
     confirm with <guimenu>Update Permissions</guimenu>.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="users_system_group_config_external_auth.png" width="80%"/>
@@ -662,7 +662,7 @@
       <imagedata fileref="users_system_group_config_external_auth.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     For more information, see <xref linkend="s4-usr-active-details-sysg"/>.
    </para>

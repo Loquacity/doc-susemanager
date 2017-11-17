@@ -5,7 +5,7 @@
     %entities;
 ]>
 <!-- Converted by suse-upgrade version 1.1 -->
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl"
  type="text/xml"
  title="Profiling step"?>
 <!-- TODO: What is up with the RHN Tools child channel? -->
@@ -69,7 +69,7 @@
   <para> The <guimenu>Configuration Overview</guimenu> page shows all of the configuration files
    that are managed by your organization in &susemgr;. </para>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="configuration_overview.png" width="400"/>
@@ -78,7 +78,7 @@
      <imagedata fileref="configuration_overview.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
   <para> This list includes files that are managed centrally in configuration channels and files
    that are managed locally via individual system profiles. </para>
@@ -108,8 +108,8 @@
        <guimenu>Details</guimenu> page. Click the channel name to see its <guimenu>Channel
        Details</guimenu> page. </para>
      <para> File types that can appear here: </para>
-     <simplelist>
-      <member><inlinemediaobject>
+
+      <para><inlinemediaobject>
         <textobject role="description">
          <phrase>Spacewalk Icon Software Channels</phrase>
         </textobject>
@@ -120,8 +120,8 @@
          <imagedata fileref="spacewalk-icon-software-channels.png" width="1em" format="PNG"/>
         </imageobject>
        </inlinemediaobject> — Centrally-managed configuration file provided by a global
-       configuration channel. </member>
-      <member><inlinemediaobject>
+       configuration channel. </para>
+      <para><inlinemediaobject>
         <textobject role="description">
          <phrase>FA Desktop</phrase>
         </textobject>
@@ -132,8 +132,8 @@
          <imagedata fileref="fa-desktop.png" width="1em" format="PNG"/>
         </imageobject>
        </inlinemediaobject> — Locally-managed configuration file, maybe overriding a
-       centrally-managed file. </member>
-      <member><inlinemediaobject>
+       centrally-managed file. </para>
+      <para><inlinemediaobject>
         <textobject role="description">
          <phrase>Spacewalk Icon Sandbox</phrase>
         </textobject>
@@ -143,8 +143,8 @@
         <imageobject role="html">
          <imagedata fileref="spacewalk-icon-sandbox.png" width="1em" format="PNG"/>
         </imageobject>
-       </inlinemediaobject> — Sandbox configuration file. </member>
-     </simplelist>
+       </inlinemediaobject> — Sandbox configuration file. </para>
+
     </listitem>
    </varlistentry>
    <varlistentry>

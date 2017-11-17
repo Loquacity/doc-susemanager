@@ -5,7 +5,7 @@
     %entities;
 ]>
 <!-- Converted by suse-upgrade version 1.1 -->
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl"
  type="text/xml"
  title="Profiling step"?>
 <!-- z: s1-sm-errata ref.webui.patches -->
@@ -122,7 +122,7 @@
    patches applying to your registered systems.
   </para>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="patches_relevant_patches.png" width="80%"/>
@@ -131,7 +131,7 @@
      <imagedata fileref="patches_relevant_patches.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
   <para>
    Clicking an <guimenu>Advisory</guimenu> ID of a patch takes you to the
@@ -166,7 +166,7 @@
    systems or not.
   </para>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="patches_all_patches.png" width="80%"/>
@@ -175,7 +175,7 @@
      <imagedata fileref="patches_all_patches.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
   <para>
    Like in the <guimenu>Relevant Patches</guimenu> page, clicking either
@@ -375,7 +375,7 @@
    patches by specific criteria.
   </para>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="patches_advanced_search_patches.png" width="80%"/>
@@ -384,7 +384,7 @@
      <imagedata fileref="patches_advanced_search_patches.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
@@ -476,7 +476,7 @@
    organizations.
   </para>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="patches_published_patches.png" width="80%"/>
@@ -485,7 +485,7 @@
      <imagedata fileref="patches_published_patches.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
   <warning>
    <para>
@@ -514,7 +514,7 @@
       the <guimenu>Patches Management</guimenu> page, click <guimenu>Create
       Patch</guimenu>.
      </para>
-     <informalfigure>
+     <figure><title/>
       <mediaobject>
        <imageobject role="fo">
         <imagedata fileref="patches_create_patch.png" width="80%"/>
@@ -523,7 +523,7 @@
         <imagedata fileref="patches_create_patch.png" width="80%"/>
        </imageobject>
       </mediaobject>
-     </informalfigure>
+     </figure>
     </step>
     <step>
      <para>
@@ -747,7 +747,7 @@
    &susemgr;.
   </para>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="patches_clone_patches.png" width="80%"/>
@@ -756,7 +756,7 @@
      <imagedata fileref="patches_clone_patches.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
   <para>
    Only patches potentially applicable to one of your channels can be cloned.

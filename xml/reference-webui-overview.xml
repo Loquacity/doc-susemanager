@@ -4,7 +4,7 @@
   <!ENTITY % entities SYSTEM "entity-decl.ent">
     %entities;
 ]>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl"
  type="text/xml"
  title="Profiling step"?>
 <!-- z: s1-sm-your-rhn ref.webui xxx -->
@@ -93,7 +93,7 @@
      administrator performs via the Web interface. Click any link to reach the
      page within &susemgr; that allows you to accomplish that task.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="home_overview_tasks_pane.png" width="344"/>
@@ -102,7 +102,7 @@
        <imagedata fileref="home_overview_tasks_pane.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
    </listitem>
    <listitem>
     <para>
@@ -111,7 +111,7 @@
      in this way allows an administrator to quickly select those systems for
      troubleshooting.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="home_overview_inactive_systems_pane.png" width="344"/>
@@ -120,7 +120,7 @@
        <imagedata fileref="home_overview_inactive_systems_pane.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
    </listitem>
    <listitem>
     <para>
@@ -132,7 +132,7 @@
      Below the list is a link to <guimenu>View All Critical Systems</guimenu>
      on one page.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="home_overview_critical_systems_pane.png" width="400"/>
@@ -141,7 +141,7 @@
        <imagedata fileref="home_overview_critical_systems_pane.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
    </listitem>
    <listitem>
     <para>
@@ -152,7 +152,7 @@
      on one page, which lists all actions that have not yet been carried out on
      your client systems.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="home_overview_pending_actions_pane.png" width="400"/>
@@ -161,7 +161,7 @@
        <imagedata fileref="home_overview_pending_actions_pane.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
    </listitem>
    <listitem>
     <para>
@@ -172,7 +172,7 @@
      (<guimenu>View All Patches</guimenu>) and to the patches that apply to
      your systems (<guimenu>View All Relevant Patches</guimenu>).
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="home_overview_latest_errata_pane.png" width="400"/>
@@ -181,7 +181,7 @@
        <imagedata fileref="home_overview_latest_errata_pane.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
    </listitem>
    <listitem>
     <para>
@@ -191,7 +191,7 @@
      Groups</guimenu> page, where you can choose <guimenu>System
      Groups</guimenu> to use with the System Set Manager.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="home_overview_system_groups_pane.png" width="400"/>
@@ -200,7 +200,7 @@
        <imagedata fileref="home_overview_system_groups_pane.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
    </listitem>
    <listitem>
     <para>
@@ -210,7 +210,7 @@
      this section to <guimenu>View All Recently Registered Systems</guimenu> on
      one page.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="home_overview_recently_registered_pane.png" width="400"/>
@@ -219,7 +219,7 @@
        <imagedata fileref="home_overview_recently_registered_pane.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
    </listitem>
   </itemizedlist>
 
@@ -254,7 +254,7 @@
    <guimenu>Update</guimenu> button at the bottom.
   </para>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="home_user_account_user_details.png" width="400"/>
@@ -263,7 +263,7 @@
      <imagedata fileref="home_user_account_user_details.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
   <para>
    If you change your &susemgr; password, for security reasons you will not see
@@ -295,7 +295,7 @@
     On the <guimenu>Addresses</guimenu> page you can manage your mailing,
     billing and shipping addresses, and associated phone numbers.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="home_user_account_addresses.png" width="400"/>
@@ -304,13 +304,13 @@
       <imagedata fileref="home_user_account_addresses.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     Click <guimenu>Fill in this address</guimenu> or <guimenu>Edit this
     address</guimenu> below the address to be modified or added, make your
     changes, and click <guimenu>Update</guimenu>.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="home_user_account_edit_address.png" width="400"/>
@@ -319,7 +319,7 @@
       <imagedata fileref="home_user_account_edit_address.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
   </sect2>
 
 <!-- z: s3-sm-your-rhn-email ref.webui.overview.account.email -->
@@ -336,7 +336,7 @@
     receive patch alerts or daily summaries for your systems on the
     <guimenu>Your Preferences</guimenu> page.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="home_user_account_change_email.png" width="400"/>
@@ -345,7 +345,7 @@
       <imagedata fileref="home_user_account_change_email.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     To change your preferred email address, click <guimenu>Change
     Email</guimenu> in the left navigation bar. Enter your new email address
@@ -369,7 +369,7 @@
     View or enter external system or API credentials associated with your
     &susemgr; account, for example your &suse; Studio credentials.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="home_user_account_credentials.png" width="400"/>
@@ -378,7 +378,7 @@
       <imagedata fileref="home_user_account_credentials.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
   </sect2>
 
 <!-- z: s3-sm-your-rhn-deactivate ref.webui.overview.account.deactivate -->
@@ -396,7 +396,7 @@
     screen. If you attempt to log back in, an error message advises you to
     contact the &susemgr; administrator for your organization.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="home_user_account_account_deactivation.png" width="400"/>
@@ -405,7 +405,7 @@
       <imagedata fileref="home_user_account_account_deactivation.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
 
    <note>
     <title>&susemgr; Administrator Account</title>
@@ -434,7 +434,7 @@
    &susemgr; options.
   </para>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="home_your_preferences.png" width="400"/>
@@ -443,7 +443,7 @@
      <imagedata fileref="home_your_preferences.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
@@ -528,7 +528,7 @@
    button to apply the selection.
   </para>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="home_locale_preferences.png" width="400"/>
@@ -537,7 +537,7 @@
      <imagedata fileref="home_locale_preferences.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
 <!-- FIXME: ATM, language selection is disabled
    <para>
@@ -574,7 +574,7 @@
     information, make the changes in the appropriate text fields and click the
     <guimenu>Update</guimenu> button at the bottom.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="home_your_organization_configuration.png" width="400"/>
@@ -583,7 +583,7 @@
       <imagedata fileref="home_your_organization_configuration.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
   </sect2>
 
 <!-- z: yourrhn-orgtrusts ref.webui.overview.org.trust -->
@@ -597,7 +597,7 @@
     <guimenu>Channels Shared</guimenu>, which refers to channels available to
     your organization via others in the established trusts.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="home_your_organization_trusts.png" width="400"/>
@@ -606,7 +606,7 @@
       <imagedata fileref="home_your_organization_trusts.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     You can filter the list of trusts by keyword using the <guimenu>Filter by
     Organization</guimenu> text box and clicking <guimenu>Go</guimenu>.
@@ -636,7 +636,7 @@
      <literal>Group</literal> > <literal>Single System</literal>.
     </para>
    </note>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="home_your_organization_custom_states.png" width="400"/>
@@ -645,7 +645,7 @@
       <imagedata fileref="home_your_organization_custom_states.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <procedure>
     <title>Apply a Custom State at the Organization Level</title>
     <step>

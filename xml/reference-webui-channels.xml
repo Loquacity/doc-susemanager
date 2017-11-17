@@ -5,7 +5,7 @@
     %entities;
 ]>
 <!-- Converted by suse-upgrade version 1.1 -->
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl"
  type="text/xml"
  title="Profiling step"?>
 <!-- z: s1-sm-channels-packages ref.webui.channels -->
@@ -144,7 +144,7 @@
     select <guimenu>All</guimenu>. All channels available to your
     organization are listed.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="channels_all_channels.png" width="80%"/>
@@ -153,7 +153,7 @@
       <imagedata fileref="channels_all_channels.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     Links within this list go to different tabs of the <guimenu>Software
     Channel Details</guimenu> page. Clicking a channel name takes you to the
@@ -181,7 +181,7 @@
     The <guimenu>&suse;</guimenu> page displays all &suse; channels
     and any available child channels.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="channels_vendor_channels.png" width="80%"/>
@@ -190,7 +190,7 @@
       <imagedata fileref="channels_vendor_channels.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <warning>
     <title>&suse; Channels Cannot be Deleted</title>
     <para>
@@ -208,7 +208,7 @@
     The <guimenu>Popular</guimenu> page displays the software channels
     most subscribed by systems registered to your organization.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="channels_popular_channels.png" width="80%"/>
@@ -217,7 +217,7 @@
       <imagedata fileref="channels_popular_channels.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     You can refine the search by using the drop-down box to list only the
     channels with at least a certain number of systems subscribed.
@@ -233,7 +233,7 @@
     belong to your organization, including both &suse; and custom channels. Use
     the text box to filter by channel name.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="channels_custom_channels.png" width="80%"/>
@@ -242,7 +242,7 @@
       <imagedata fileref="channels_custom_channels.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
   </sect2>
 
   <sect2 xml:id="s3-sm-channel-list-shared">
@@ -253,7 +253,7 @@
     The <guimenu>Shared</guimenu> page displays the channels shared
     with others in the organizational trust.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="channels_shared_channels.png" width="80%"/>
@@ -262,7 +262,7 @@
       <imagedata fileref="channels_shared_channels.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
   </sect2>
 
   <sect2 xml:id="s3-sm-channel-list-retired">
@@ -273,7 +273,7 @@
     The <guimenu>Retired</guimenu> page displays available channels
     that have reached their end-of-life dates and do not receive updates.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="channels_retired_channels.png" width="80%"/>
@@ -282,7 +282,7 @@
       <imagedata fileref="channels_retired_channels.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
   </sect2>
 
   <sect2 xml:id="s3-sm-channel-details">
@@ -302,7 +302,7 @@
      summary, description, and architecture is also displayed when clicking
      a channel.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="channels_details_channels.png" width="80%"/>
@@ -311,7 +311,7 @@
        <imagedata fileref="channels_details_channels.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
     <para>
      In addition, <guimenu>Per-User Subscription Restrictions</guimenu> can be
      set globally by &susemgr; administrators and channel administrators. By
@@ -361,7 +361,7 @@
      On the <guimenu>Managers</guimenu> page, you can check which users are
      authorized to manage the selected channel.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="channels_details_managers_channels.png" width="80%"/>
@@ -370,7 +370,7 @@
        <imagedata fileref="channels_details_managers_channels.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
     <para>
      Real name and e-mail address are listed with the user names. Organization
      and Channel administrators can manage any channel. As a &susemgr;
@@ -387,7 +387,7 @@
      The <guimenu>Patches</guimenu> page lists patches to be applied to
      packages provided in the channel.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="channels_details_patches_channels.png" width="80%"/>
@@ -396,7 +396,7 @@
        <imagedata fileref="channels_details_patches_channels.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
     <para>
      The list displays advisory types, names, summaries, and issue dates.
      Clicking an advisory name takes you to its <guimenu>Patch
@@ -415,7 +415,7 @@
      This page lists packages in the channel. Clicking a package name takes
      you to the <guimenu>Package Details</guimenu> page.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="channels_details_packages_channels.png" width="80%"/>
@@ -424,7 +424,7 @@
        <imagedata fileref="channels_details_packages_channels.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
     <para>
      This page displays a set of tabs with information about the package,
      including architectures on which it runs, the package size, build date,
@@ -486,7 +486,7 @@
 
   <secondary>software search</secondary></indexterm>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="channels_search_channels.png" width="80%"/>
@@ -495,7 +495,7 @@
      <imagedata fileref="channels_search_channels.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
   <para>
    The <guimenu>Package Search</guimenu> page allows you to search through
@@ -869,7 +869,7 @@
    Several columns provide information for each mapping.
   </para>
 <!--
-      Operating System 	Release 	Architecture 	Channel Label 	Organization Specific
+      Operating System  Release         Architecture    Channel Label   Organization Specific
   -->
  </sect1>
 </chapter>

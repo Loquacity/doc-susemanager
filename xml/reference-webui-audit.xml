@@ -4,7 +4,7 @@
     %entities;
 ]>
 <!-- Converted by suse-upgrade version 1.1 -->
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl"
  type="text/xml"
  title="Profiling step"?>
 <!-- z: s1-sm-audit ref.webui.audit -->
@@ -30,7 +30,7 @@
    Exposures) number.
   </para>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="audit_cve_audit.png" width="400"/>
@@ -39,7 +39,7 @@
      <imagedata fileref="audit_cve_audit.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
   <sect2 xml:id="s1-cve-usage">
    <title>Normal Usage</title><indexterm>
@@ -348,7 +348,7 @@
    <xref linkend="ref.webui.audit.submatch.vhm"/>.
   </para>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="audit_subscription_matching.png" width="400"/>
@@ -357,7 +357,7 @@
      <imagedata fileref="audit_subscription_matching.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
   <para>
    It gathers information about systems, subscriptions and pinned matches
@@ -549,7 +549,7 @@
     <guimenu>Admin</guimenu> <guimenu>Task Schedules</guimenu>
     <guimenu>gatherer-matcher-default</guimenu> </menuchoice>.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="audit_subscription_matching_gatherer_matcher_default.png" width="96%"/>
@@ -558,7 +558,7 @@
       <imagedata fileref="audit_subscription_matching_gatherer_matcher_default.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
   </sect2>
 
   <sect2 xml:id="ref.webui.audit.submatch.unmatched.systems">
@@ -603,7 +603,7 @@
     group of systems. This is achieved by creating pins. Each pin contains
     information about the preferred subscription-system match.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="audit_subscription_matching_pins.png" width="96%"/>
@@ -612,7 +612,7 @@
       <imagedata fileref="audit_subscription_matching_pins.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <note>
     <title>Respecting Pins</title>
     <para>
@@ -728,7 +728,7 @@
      </listitem>
     </varlistentry>
    </variablelist>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="audit_subscription_matching_messages.png" width="96%"/>
@@ -737,7 +737,7 @@
       <imagedata fileref="audit_subscription_matching_messages.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
   </sect2>
 
   <sect2 xml:id="ref.webui.audit.submatch.vhm">
@@ -785,7 +785,7 @@
      <guimenu>Password</guimenu>. Finally click the <guimenu>Add Virtual Host
      Manager</guimenu> button.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="systems_virtual_host_managers_vmware.png" width="96%"/>
@@ -794,7 +794,7 @@
        <imagedata fileref="systems_virtual_host_managers_vmware.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
    </sect3>
    <sect3>
     <title>File-based Virtual Host Manager</title>
@@ -805,7 +805,7 @@
      Manager</guimenu>, then enter a label and URL leading to the location of
      this file for the <command>virtual-host-gatherer</command>.
     </para>
-    <informalfigure>
+    <figure><title/>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="systems_virtual_host_managers_file.png" width="96%"/>
@@ -814,7 +814,7 @@
        <imagedata fileref="systems_virtual_host_managers_file.png" width="80%"/>
       </imageobject>
      </mediaobject>
-    </informalfigure>
+    </figure>
     <para>
      The following json example describes how this file should look:
     </para>

@@ -5,7 +5,7 @@
     %entities;
 ]>
 <!-- Converted by suse-upgrade version 1.1 -->
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl"
  type="text/xml"
  title="Profiling step"?>
 <!-- z: s1-sm-sattools ref.webui.admin -->
@@ -45,7 +45,7 @@
       Configure a proxy server that &susemgr; will use to access SCC (&suse;
       Customer Center) and other remote servers here.
      </para>
-     <informalfigure>
+     <figure><title/>
       <mediaobject>
        <imageobject role="fo">
         <imagedata fileref="admin_proxy_settings.png" width="400"/>
@@ -54,7 +54,7 @@
         <imagedata fileref="admin_proxy_settings.png" width="80%"/>
        </imageobject>
       </mediaobject>
-     </informalfigure>
+     </figure>
      <para>
       Use <literal>hostname:port</literal> syntax in the
       <guimenu>Hostname</guimenu> field if the proxy port is not 8080. Clearing
@@ -70,7 +70,7 @@
       Click <guimenu>Add a new credential</guimenu> and enter user name and
       password to allow a user to access SCC.
      </para>
-     <informalfigure>
+     <figure><title/>
       <mediaobject>
        <imageobject role="fo">
         <imagedata fileref="admin_organization_credentials.png" width="400"/>
@@ -79,7 +79,7 @@
         <imagedata fileref="admin_organization_credentials.png" width="80%"/>
        </imageobject>
       </mediaobject>
-     </informalfigure>
+     </figure>
      <para>
       After saving, a new credential card will be displayed. Buttons below the
       credential card allow you to:
@@ -123,7 +123,7 @@
       On the <guimenu>&suse; Products</guimenu> page, select product-specific
       channels you are entitled to.
      </para>
-     <informalfigure>
+     <figure><title/>
       <mediaobject>
        <imageobject role="fo">
         <imagedata fileref="admin_suse_products.png" width="400"/>
@@ -132,7 +132,7 @@
         <imagedata fileref="admin_suse_products.png" width="80%"/>
        </imageobject>
       </mediaobject>
-     </informalfigure>
+     </figure>
      <para>
       The products displayed are directly linked to your organization
       credentials and your &suse; subscriptions. Product extentions and
@@ -197,7 +197,7 @@
    management tasks.
   </para>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="admin_list_organizations.png" width="400"/>
@@ -206,7 +206,7 @@
      <imagedata fileref="admin_list_organizations.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
 <!--
   <sect2 id="s2-sattools-org-details">
@@ -234,7 +234,7 @@
     The <guimenu>Organization Details</guimenu> page lists the details of the
     selected organization.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="admin_organization_details.png" width="400"/>
@@ -243,7 +243,7 @@
       <imagedata fileref="admin_organization_details.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     The following details are avialable:
    </para>
@@ -301,7 +301,7 @@
    <para>
     List of all the users of an organization.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="admin_organization_users.png" width="400"/>
@@ -310,7 +310,7 @@
       <imagedata fileref="admin_organization_users.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     You can modify the user details if you belong to that organization
     and have organization administrator privileges. For more
@@ -323,7 +323,7 @@
    <para>
     Here establish trust between organizations.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="admin_organization_trusts.png" width="400"/>
@@ -332,7 +332,7 @@
       <imagedata fileref="admin_organization_trusts.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     Such a trust allows sharing contents and migrate systems between these two
     organizations. You may add a trust by checking the box next to an
@@ -344,7 +344,7 @@
   <sect2 xml:id="s2-sattools-org-details-conf">
    <title><guimenu>Organization Details</guimenu> &gt; <guimenu>Configuration</guimenu></title>
 <!--
-       
+
 SUSE Manager Configuration
 
 As SUSE Manager Admin you can configure, whether Organization Administrators may configure Organization Configuration. Organizaton Configuration settings may have huge impact on the SUSE Manager performance.
@@ -368,7 +368,7 @@ Allow Deletion After (period
     (<quote>pre-fetching</quote> packages, etc.), set up software crash
     reporting, and upload of SCAP files.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="admin_organization_configuration.png" width="400"/>
@@ -377,7 +377,7 @@ Allow Deletion After (period
       <imagedata fileref="admin_organization_configuration.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
 <!-- Crash file and SCAP -->
 <!-- file upload limit is a non negative number, zero means no limit. -->
@@ -524,7 +524,7 @@ stagingContentWindow=24</screen>
     equal to <emphasis
      role="bold">salt_content_staging_window</emphasis>
     results in the content staging window closing exactly when the
-    installation/upgrade is scheduled to be executed, a larger value allows 
+    installation/upgrade is scheduled to be executed, a larger value allows
     separating the download time from the installation time.
    </para>
    <para>
@@ -562,7 +562,7 @@ stagingContentWindow=24</screen>
     possible to define a few global security policies or add a common
     admin user to all machines.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="admin_organization_states.png" width="400"/>
@@ -571,7 +571,7 @@ stagingContentWindow=24</screen>
       <imagedata fileref="admin_organization_states.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     For more information about the State Catalog and creating states, see
     <xref
@@ -714,7 +714,7 @@ stagingContentWindow=24</screen>
    <para>
     This page allows you to alter basic &susemgr; administration settings.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="admin_general_configuration.png" width="400"/>
@@ -723,7 +723,7 @@ stagingContentWindow=24</screen>
       <imagedata fileref="admin_general_configuration.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <variablelist>
     <varlistentry>
      <term><guimenu>Administrator Email Address</guimenu>
@@ -831,7 +831,7 @@ stagingContentWindow=24</screen>
     generate a bootstrap script that registers the client systems with
     &susemgr; and disconnects them from the remote &scc;.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="admin_configuration_bootstrap.png" width="400"/>
@@ -840,7 +840,7 @@ stagingContentWindow=24</screen>
       <imagedata fileref="admin_configuration_bootstrap.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     This generated script will be placed within the
     <filename>/srv/www/htdocs/pub/bootstrap/</filename> directory on your
@@ -873,7 +873,7 @@ stagingContentWindow=24</screen>
     about the organizations feature of &susemgr;, and links for creating
     and configuring organizations.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="admin_configuration_organization.png" width="400"/>
@@ -882,7 +882,7 @@ stagingContentWindow=24</screen>
       <imagedata fileref="admin_configuration_organization.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
 <!-- refer to <xref linkend="ch-multiorg"/>. -->
   </sect2>
 
@@ -893,7 +893,7 @@ stagingContentWindow=24</screen>
     <guimenu>Restart</guimenu> </menuchoice> page comprises the final step in
     configuring &susemgr;.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="admin_configuration_restart.png" width="400"/>
@@ -902,7 +902,7 @@ stagingContentWindow=24</screen>
       <imagedata fileref="admin_configuration_restart.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     Click the <guimenu>Restart</guimenu> button to restart &susemgr; and
     incorporate all of the configuration options added on the previous screens.
@@ -917,7 +917,7 @@ stagingContentWindow=24</screen>
     <guimenu>Cobbler</guimenu> </menuchoice> page you can run the
     Cobbler synchronization by clicking <guimenu>Update</guimenu>.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="admin_configuration_cobbler.png" width="400"/>
@@ -926,7 +926,7 @@ stagingContentWindow=24</screen>
       <imagedata fileref="admin_configuration_cobbler.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     Cobbler synchronization is used to repair or rebuild the contents of
     <filename>/srv/tftpboot</filename> or <filename>/srv/www/cobbler</filename>
@@ -946,7 +946,7 @@ stagingContentWindow=24</screen>
     Here you can add unprovisioned ("bare-metal") systems capable of
     booting using PXE to an organization.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="admin_configuration_bare_metal_systems.png" width="400"/>
@@ -955,7 +955,7 @@ stagingContentWindow=24</screen>
       <imagedata fileref="admin_configuration_bare_metal_systems.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     First click <guimenu>Enable adding to this
     organization</guimenu>. Those systems then will appear in the
@@ -1015,7 +1015,7 @@ stagingContentWindow=24</screen>
    <para>
     The following will help you set up a master ISS server.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="admin_iss_configuration_master.png" width="400"/>
@@ -1024,14 +1024,14 @@ stagingContentWindow=24</screen>
       <imagedata fileref="admin_iss_configuration_master.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     Click <menuchoice> <guimenu>Admin</guimenu> <guimenu>&gt;ISS
     Configuration</guimenu> <guimenu>Master Setup</guimenu> </menuchoice>. In
     the top right-hand corner of this page, click <guimenu>Add New
     Slave</guimenu>:
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="admin_iss_configuration_edit_slave.png" width="400"/>
@@ -1040,7 +1040,7 @@ stagingContentWindow=24</screen>
       <imagedata fileref="admin_iss_configuration_edit_slave.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     and fill in the following information:
    </para>
@@ -1100,7 +1100,7 @@ stagingContentWindow=24</screen>
    <para>
     Slave servers receive content synchronized from the master server.
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="admin_iss_configuration_slave.png" width="400"/>
@@ -1109,7 +1109,7 @@ stagingContentWindow=24</screen>
       <imagedata fileref="admin_iss_configuration_slave.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     To securely transfer content to the slave servers, the ORG-SSL certificate
     from the master server is needed. Click <menuchoice>
@@ -1117,7 +1117,7 @@ stagingContentWindow=24</screen>
     <guimenu>Slave Setup</guimenu> </menuchoice>. In the top right-hand corner,
     click <guimenu>Add New Master:</guimenu>
    </para>
-   <informalfigure>
+   <figure><title/>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="admin_iss_configuration_edit_master.png" width="400"/>
@@ -1126,7 +1126,7 @@ stagingContentWindow=24</screen>
       <imagedata fileref="admin_iss_configuration_edit_master.png" width="80%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
+   </figure>
    <para>
     <guimenu/> and fill in the following information:
    </para>
@@ -1153,7 +1153,7 @@ stagingContentWindow=24</screen>
     Click <guimenu>Add New Master</guimenu>.
    </para>
 <!-- moio:
-        sync must be done manually for the subset of channels customer 
+        sync must be done manually for the subset of channels customer
         wants. No automatic mechanism is in place
    -->
    <para>
@@ -1207,7 +1207,7 @@ https://www.suse.com/documentation/suse-manager-3/singlehtml/suse_manager21/book
    listed.
   </para>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="admin_task_schedules.png" width="400"/>
@@ -1216,7 +1216,7 @@ https://www.suse.com/documentation/suse-manager-3/singlehtml/suse_manager21/book
      <imagedata fileref="admin_task_schedules.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
   <para>
    Click a <guimenu>Schedule name</guimenu> to open its <guimenu>Basic Schedule
@@ -1488,7 +1488,7 @@ https://www.suse.com/documentation/suse-manager-3/singlehtml/suse_manager21/book
    engine.
   </para>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="admin_task_status_last_execution.png" width="400"/>
@@ -1497,7 +1497,7 @@ https://www.suse.com/documentation/suse-manager-3/singlehtml/suse_manager21/book
      <imagedata fileref="admin_task_status_last_execution.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
   <para>
    Next to the task name you find the date and time of the last execution and
@@ -1514,7 +1514,7 @@ https://www.suse.com/documentation/suse-manager-3/singlehtml/suse_manager21/book
    &rootuser; privileges are required.
   </para>
 
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="admin_show_tomcat_logs.png" width="400"/>
@@ -1523,7 +1523,7 @@ https://www.suse.com/documentation/suse-manager-3/singlehtml/suse_manager21/book
      <imagedata fileref="admin_show_tomcat_logs.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
 
  </sect1>
 </chapter>

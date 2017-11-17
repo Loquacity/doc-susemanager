@@ -4,7 +4,7 @@
   <!ENTITY % entities SYSTEM "entity-decl.ent">
     %entities;
 ]>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl"
  type="text/xml"
  title="Profiling step"?>
 <!-- z: s1-sm-intro ref.webui.intro -->
@@ -28,7 +28,7 @@
   The top bar provides access to commonly used tools and user settings.
  </para>
 
- <informalfigure>
+ <figure><title/>
   <mediaobject>
    <imageobject role="fo">
     <imagedata fileref="topnav.png" width="400"/>
@@ -37,7 +37,7 @@
     <imagedata fileref="topnav.png" width="80%"/>
    </imageobject>
   </mediaobject>
- </informalfigure>
+ </figure>
 
  <para>
   The right part of the top bar contains functionalities such as,
@@ -48,7 +48,7 @@
   back to any previous step.
  </para>
 
- <informalfigure>
+ <figure><title/>
   <mediaobject>
    <imageobject role="fo">
     <imagedata fileref="home-overview-legend.png" width="400"/>
@@ -57,7 +57,7 @@
     <imagedata fileref="home-overview-legend.png" width="80%"/>
    </imageobject>
   </mediaobject>
- </informalfigure>
+ </figure>
 
 
  <para>
@@ -75,7 +75,7 @@
   <guimenu>Admin</guimenu> entries.
  </para>
 
- <informalfigure>
+ <figure><title/>
   <mediaobject>
    <imageobject role="fo">
     <imagedata fileref="sidenav.png" width="400"/>
@@ -84,7 +84,7 @@
     <imagedata fileref="sidenav.png" width="60%"/>
    </imageobject>
   </mediaobject>
- </informalfigure>
+ </figure>
 
  <para>
   Some pages have tabs and subtabs. These tabs offer an additional layer of
@@ -94,7 +94,7 @@
   </menuchoice>.  Green bars underline active subtabs.
  </para>
 
- <informalfigure>
+ <figure><title/>
   <mediaobject>
    <imageobject role="fo">
     <imagedata fileref="subtabs.png" width="400"/>
@@ -103,7 +103,7 @@
     <imagedata fileref="subtabs.png" width="60%"/>
    </imageobject>
   </mediaobject>
- </informalfigure>
+ </figure>
 
  <important xml:id="ref.webui.intro.views">
   <title>Views Depending on User Roles</title>
@@ -128,7 +128,7 @@
    from the individual pages. Each area of the Web interface is explained in
    detail later in this guide.
   </para>
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="sidenav.png" width="400"/>
@@ -137,7 +137,7 @@
      <imagedata fileref="sidenav.png" width="80%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
   <formalpara>
    <title><guimenu>Home</guimenu></title>
    <para>
@@ -391,7 +391,7 @@
    <!-- FIXME -->
    <title><guimenu>Images</guimenu></title>
    <para>
-    
+
    </para>
   </formalpara>
 
@@ -789,8 +789,8 @@
   <para>
    Throughout &susemgr; you will see three patch (errata) alert icons.
   </para>
-  <simplelist>
-   <member><inlinemediaobject>
+
+   <para><inlinemediaobject>
     <textobject role="description"><phrase>Security Alert</phrase>
     </textobject>
     <imageobject role="fo">
@@ -798,8 +798,8 @@
     </imageobject>
     <imageobject role="html">
      <imagedata fileref="fa-shield.png" width="1em" format="PNG"/>
-    </imageobject></inlinemediaobject> &mdash; represents a security alert. </member>
-   <member><inlinemediaobject>
+    </imageobject></inlinemediaobject> &mdash; represents a security alert. </para>
+   <para><inlinemediaobject>
     <textobject role="description"><phrase>Bug Fix Alert</phrase>
     </textobject>
     <imageobject role="fo">
@@ -807,8 +807,8 @@
     </imageobject>
     <imageobject role="html">
      <imagedata fileref="fa-bug.png" width="1em" format="PNG"/>
-    </imageobject></inlinemediaobject> &mdash; represents a bug fix alert. </member>
-   <member><inlinemediaobject>
+    </imageobject></inlinemediaobject> &mdash; represents a bug fix alert. </para>
+   <para><inlinemediaobject>
     <textobject role="description"><phrase>Enhancement Alert</phrase>
     </textobject>
     <imageobject role="fo">
@@ -816,8 +816,8 @@
     </imageobject>
     <imageobject role="html">
      <imagedata fileref="spacewalk-icon-enhancement.png" width="1em" format="PNG"/>
-    </imageobject></inlinemediaobject> &mdash; represents an enhancement alert. </member>
-  </simplelist>
+    </imageobject></inlinemediaobject> &mdash; represents an enhancement alert. </para>
+
   <para>
    On the <guimenu>Overview</guimenu> page of the
    <guimenu>Home</guimenu> menu, in the <guimenu>Relevant Security
@@ -843,7 +843,7 @@
    string to look for a name match. Click the <guimenu>Search</guimenu> button.
    Your results appear at the bottom of the page.
   </para>
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="top_search.png" width="400"/>
@@ -852,7 +852,7 @@
      <imagedata fileref="top_search.png" width="50%"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
   <para>
    If you misspell a word during your search query, the &susemgr; search engine
    performs approximate string (or fuzzy string) matching, returning results

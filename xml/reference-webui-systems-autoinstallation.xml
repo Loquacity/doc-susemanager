@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" 
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl"
  type="text/xml"
  title="Profiling step"?>
 <!DOCTYPE sect1
@@ -432,12 +432,12 @@ kernel vmlinuz
       example, a bootloader configuration file for Red Hat Enterprise Linux
       AS 2.1 should contain:
      </para>
-<screen>port 0 
-prompt 0 
-timeout 1 
-default My_Label 
-label My_Label 
-      kernel vmlinuz 
+<screen>port 0
+prompt 0
+timeout 1
+default My_Label
+label My_Label
+      kernel vmlinuz
       append ks=http://<replaceable>my_susemanager_server</replaceable>/<replaceable>path</replaceable> \
           initrd=initrd.img network apic</screen>
     </listitem>
@@ -512,21 +512,21 @@ label My_Label
     <filename>isolinux.cfg</filename> file to default to 'ks'. Change the
     'ks' section to the following template:
    </para>
-<screen>label ks 
-kernel vmlinuz 
+<screen>label ks
+kernel vmlinuz
   append text ks=<replaceable>url</replaceable> initrd=initrd.img lang= devfs=nomount \
     ramdisk_size=16438 <replaceable>ksdevice</replaceable></screen>
    <para>
     IP address-based &kickstart; URLs will look like this:
    </para>
-<screen>http://<replaceable>my.manager.server</replaceable>/kickstart/ks/mode/ip_range 
+<screen>http://<replaceable>my.manager.server</replaceable>/kickstart/ks/mode/ip_range
 </screen>
    <para>
     The &kickstart; distribution defined via the IP range should match
     the distribution from which you are building, or errors will occur.
     <replaceable>ksdevice</replaceable> is optional, but looks like:
    </para>
-<screen>ksdevice=eth0 
+<screen>ksdevice=eth0
 </screen>
    <para>
     It is possible to change the distribution for a Kickstart profile within
@@ -607,11 +607,11 @@ kernel vmlinuz
 
     <sect2 xml:id="ref.webui.systems.autoinst.profiles">
      <title>Autoinstallation > Profiles (Kickstart and &ay;)</title>
-  
+
 
   <para> This page lists all profiles for your organization, shows whether these profiles are
    active, and specifies the distribution tree with which each profile is associated.</para>
-     <informalfigure>
+     <figure><title/>
       <mediaobject>
        <imageobject role="fo">
         <imagedata fileref="systems_kickstart_overview.png" width="444"/>
@@ -620,8 +620,8 @@ kernel vmlinuz
         <imagedata fileref="systems_kickstart_overview.png" width="444"/>
        </imageobject>
       </mediaobject>
-     </informalfigure>
-     
+     </figure>
+
   <para> You can either create a Kickstart profile by clicking the <guimenu>Create Kickstart
     Profile</guimenu> link, upload or paste the contents of a new profile using the <guimenu>Upload
     Kickstart/Autoyast File</guimenu>, or edit an existing Kickstart profile by clicking the name of
@@ -643,7 +643,7 @@ kernel vmlinuz
    page to start the wizard that populates the base values needed for a
    Kickstart profile.
   </para>
-  <informalfigure>
+  <figure><title/>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="create_profile_wizard.png" width="444"/>
@@ -652,7 +652,7 @@ kernel vmlinuz
      <imagedata fileref="create_profile_wizard.png" width="444"/>
     </imageobject>
    </mediaobject>
-  </informalfigure>
+  </figure>
   <procedure>
    <title>Creating a Kickstart Profile</title>
    <step>
@@ -1171,9 +1171,9 @@ GATEWAY=192.168.0.1</screen>
     From this subtab, indicate the partitions that you wish to create during
     installation. For example:
    </para>
-<screen>partition /boot --fstype=ext3 --size=200 
-partition swap --size=2000 
-partition pv.01 --size=1000 --grow 
+<screen>partition /boot --fstype=ext3 --size=200
+partition swap --size=2000
+partition pv.01 --size=1000 --grow
 volgroup myvg pv.01 logvol / --vgname=myvg --name=rootvol --size=1000 --grow</screen>
   </sect4>
   <sect4 xml:id="s4-system-ks-sysd-file-pres">
@@ -1614,7 +1614,7 @@ volgroup myvg pv.01 logvol / --vgname=myvg --name=rootvol --size=1000 --grow</sc
       <para>
        In the <guimenu>Tree Path</guimenu> field, paste the path to the base
        of the installation tree.
-<!-- FIXME: checkit; at least on Fedora, README does not exist in the root dir of the medium 
+<!-- FIXME: checkit; at least on Fedora, README does not exist in the root dir of the medium
        For &rhel; systems, you can test this by appending
        &quot;images/pxeboot/README&quot; to the URL in a Web browser,
        pressing <keycap>Enter</keycap>, and ensuring that the readme file
