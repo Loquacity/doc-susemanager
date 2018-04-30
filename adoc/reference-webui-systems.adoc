@@ -72,8 +72,7 @@ Several columns provide information for each system:
 * image:fa-lock.svg[Lock,scaledwidth=1.8em]
  -- System is locked; actions prohibited.
 * image:fa-rocket.svg[Rocket,scaledwidth=1.6em]
- -- System is being deployed using {ay}
- or Kickstart.
+ -- System is being deployed using {ay} or Kickstart.
 * image:fa-clock-o.svg[Clock,scaledwidth=1.8em]
  -- Updates have been scheduled.
 * image:fa-times-circle.svg[Times,scaledwidth=1.8em]
@@ -83,8 +82,7 @@ Several columns provide information for each system:
 +
 .Package Conflict
 IMPORTANT: If {susemgr}
-identifies package updates for the system, but the package updater (such as Red Hat Update Agent or {yast}
-) responds with a message like "Your system is fully updated", a conflict likely exists in the system's package profile or in the [path]``up2date``
+identifies package updates for the system, but the package updater (such as Red Hat Update Agent or {yast}) responds with a message like "Your system is fully updated", a conflict likely exists in the system's package profile or in the [path]``up2date``
  configuration file.
 To resolve the conflict, either schedule a package list update or remove the packages from the package exceptions list.
 Refer to <<_s3_sm_system_details>> for instructions.
@@ -104,8 +102,7 @@ All of the options described above can be applied within these pages.
 
 The menu:All[] page contains the default set of your systems.
 It displays every system you have permission to manage.
-You have permission if you are the only user in your organization, if you are a {susemgr}
- Administrator, or if the system belongs to a group for which you have admin rights.
+You have permission if you are the only user in your organization, if you are a {susemgr} Administrator, or if the system belongs to a group for which you have admin rights.
 
 
 image::systems_all.png[scaledwidth=80%]
@@ -117,8 +114,7 @@ image::systems_all.png[scaledwidth=80%]
 
 To reach this page, select menu:Systems[Systems > Physical Systems]
  from the left bar.
-This page lists each physical system of which {susemgr}
- is aware.
+This page lists each physical system of which {susemgr} is aware.
 
 
 image::systems_physical_systems.png[scaledwidth=80%]
@@ -130,8 +126,7 @@ image::systems_physical_systems.png[scaledwidth=80%]
 
 To reach this page, select menu:Systems[Systems > Virtual Systems]
  from the left bar.
-This page lists each virtual host of which {susemgr}
- is aware and the guest systems on those hosts.
+This page lists each virtual host of which {susemgr} is aware and the guest systems on those hosts.
 
 
 image::systems_virtual_systems.png[scaledwidth=80%]
@@ -190,8 +185,7 @@ image::systems_requiringreboot.png[scaledwidth=80%]
 === Non-compliant Systems
 
 
-Non-compliant systems have packages installed which are not available from {susemgr}
-. menu:Packages[] shows how many installed packages are not available in the channels assigned to the system.
+Non-compliant systems have packages installed which are not available from {susemgr}. menu:Packages[] shows how many installed packages are not available in the channels assigned to the system.
 A non-compliant system cannot be reinstalled.
 
 
@@ -223,8 +217,7 @@ image::systems_ungrouped.png[scaledwidth=80%]
 === Inactive
 
 
-The menu:Inactive Systems[] page displays systems that have not checked in with {susemgr}
- for 24 hours or more.
+The menu:Inactive Systems[] page displays systems that have not checked in with {susemgr} for 24 hours or more.
 
 
 image::systems_inactive.png[scaledwidth=80%]
@@ -234,8 +227,7 @@ Checking in means that Zypper on {sle}
 or Red Hat Update Agent on {rhel}
 client systems connects to {susemgr}
 to see if there are any updates available or if any actions have been scheduled.
-If you see a message telling you that check-ins are not taking place, the client system is not successfully connecting to {susemgr}
-.
+If you see a message telling you that check-ins are not taking place, the client system is not successfully connecting to {susemgr}.
 The reason may be one of the following:
 
 * The system is not entitled to any {susemgr} service. System profiles that remain unentitled for 180 days (6 months) are removed.
@@ -263,9 +255,7 @@ image::systems_recently_registered.png[scaledwidth=80%]
 === Proxy
 
 
-The menu:Proxy[] page displays the {susemgrproxy}
- Server systems registered with your {susemgr}
- server.
+The menu:Proxy[] page displays the {susemgrproxy} Server systems registered with your {susemgr} server.
 
 
 image::systems_proxy.png[scaledwidth=80%]
@@ -282,8 +272,7 @@ image::systems_duplicate_systems.png[scaledwidth=80%]
 
 
 Active entitlements are in gray, while inactive entitlements are highlighted in yellow and their check boxes checked by default for you to delete them as needed by clicking the menu:Delete Selected[] button.
-Entitlements are inactive if the system has not checked in with {susemgr}
- in a time specified via the drop-down box menu:A system profile is inactive if its system has not checked in for[].
+Entitlements are inactive if the system has not checked in with {susemgr} in a time specified via the drop-down box menu:A system profile is inactive if its system has not checked in for[].
 
 You can filter duplicate entitlements by menu:IP Address[], menu:IPv6 Address[], menu:Hostname[], or menu:MAC address[] by clicking the respective tab.
 You may filter further by inactive time or typing the system's host name, IP address, IPv6 address, or MAC address in the corresponding menu:Filter by[] text box.
@@ -300,8 +289,7 @@ Click the menu:Confirm Deletion[] button to confirm your choice.
 The System Currency Report displays an overview of severity scores of patches relevant to the system.
 The weighting is defined via the menu:System Details[] page.
 The default weight awards critical security patches with the heaviest weight and enhancements with the lowest.
-The report can be used to prioritize maintenance actions on the systems registered to {susemgr}
-.
+The report can be used to prioritize maintenance actions on the systems registered to {susemgr}.
 
 
 image::systems_currency_report.png[scaledwidth=80%]
@@ -325,8 +313,7 @@ To change system types, select the systems you want to modify, and choose either
 == System Details
 
 
-When systems are registered to {susemgr}
-, they are displayed on the menu:Systems[Overview]
+When systems are registered to {susemgr}, they are displayed on the menu:Systems[Overview]
  page.
 Here and on any other page, clicking the name takes you to the menu:System Details[] page of the client, where all kinds of administrative tasks can be performed, including the removal of a system.
 
@@ -335,11 +322,9 @@ Here and on any other page, clicking the name takes you to the menu:System Detai
 The menu:Delete System[] link in the upper right of this screen refers to the system profile only.
 Deleting a host system profile will not destroy or remove the registration of guest systems.
 Deleting a guest system profile does not remove it from the list of guests for its host, nor does it stop or pause the guest.
-It does, however, remove your ability to manage it via {susemgr}
-.
+It does, however, remove your ability to manage it via {susemgr}.
 
-If you mistakenly deleted a system profile from {susemgr}
-, you may re-register the system using the bootstrap script or [command]``rhnreg_ks`` manually.
+If you mistakenly deleted a system profile from {susemgr}, you may re-register the system using the bootstrap script or [command]``rhnreg_ks`` manually.
 ====
 
 
@@ -378,8 +363,7 @@ image::system_details_salt_overview.png[scaledwidth=80%]
 This system summary page displays the system status message and the following key information about the system:
 
 .menu:System Status[]::
-This message indicates the current state of your system in relation to {susemgr}
-.
+This message indicates the current state of your system in relation to {susemgr}.
 +
 
 NOTE: If updates are available for any entitled system, the message menu:Software Updates Available[] appears, displaying the number of critical and non-critical updates and the sum of affected packages.
@@ -413,12 +397,10 @@ Kernel::
 The kernel installed and operating on the client system.
 
 {susemgr} System ID::
-A unique identifier generated each time a system registers with {susemgr}
-.
+A unique identifier generated each time a system registers with {susemgr}.
 +
 
-NOTE: The system ID can be used to eliminate duplicate profiles from {susemgr}
-.
+NOTE: The system ID can be used to eliminate duplicate profiles from {susemgr}.
 Compare the system ID listed on this page with the information stored on the client system in the [path]``/etc/sysconfig/rhn/systemid``
  file.
 In that file, the system's current ID is listed under ``system_id``.
@@ -448,10 +430,7 @@ For example, the system may be a production system that should not receive updat
 +
 
 IMPORTANT: Locking a system in the Web interface _will not_ prevent any actions that originate from the client system.
-For example, if a user logs in to the client directly and runs {yast}
- Online Update (on {slea}
-) or [command]``pup`` (on {rhela}
-), the update tool will install available patches even if the system is locked in the Web interface.
+For example, if a user logs in to the client directly and runs {yast} Online Update (on {slea}) or [command]``pup`` (on {rhela}), the update tool will install available patches even if the system is locked in the Web interface.
 
 Locking a system _does not_ restrict the number of users who can access the system via the Web interface.
 If you want to restrict access to the system, associate that system with a System Group and assign a System Group Administrator to it.
@@ -484,8 +463,7 @@ channel.
 
 .menu:System Events[]
 Checked In::
-The date and time at which the system last checked in with {susemgr}
-.
+The date and time at which the system last checked in with {susemgr}.
 
 Registered::
 The date and time at which the system registered with {susemgr}
@@ -522,12 +500,10 @@ The so-called OSA status is also displayed for client systems registered with {s
 that have the OSA dispatcher (osad) configured.
 +
 Push enables {susemgr}
-customers to immediately initiate tasks rather than wait for those systems to check in with {susemgr}
-.
+customers to immediately initiate tasks rather than wait for those systems to check in with {susemgr}.
 Scheduling actions through push is identical to the process of scheduling any other action, except that the task can immediately be carried out instead of waiting the set interval for the system to check in.
 +
-In addition to the configuration of {susemgr}
-, to receive pushed actions each client system must have the [systemitem]``osad``
+In addition to the configuration of {susemgr}, to receive pushed actions each client system must have the [systemitem]``osad``
 package installed and its service started.
 
 Auto Patch Update::
@@ -665,8 +641,7 @@ For further information on action chains, refer to <<_ref.webui.schedule.chains>
 
 
 Reactivation keys include this system's ID, history, groups, and channels.
-This key can then be used only once with the [command]``rhnreg_ks`` command line utility to re-register this system and regain all {susemgr}
- settings.
+This key can then be used only once with the [command]``rhnreg_ks`` command line utility to re-register this system and regain all {susemgr} settings.
 Unlike typical activation keys, which are not associated with a specific system ID, keys created here do not show up within the menu:Activation Keys[] page.
 
 
@@ -699,10 +674,8 @@ If you do, the autoinstallation will fail.
 This subtab provides information about the system, such as networking, BIOS, memory, and other devices.
 This only works if you included the hardware profile during registration.
 If the hardware profile looks incomplete or outdated, click the menu:Schedule Hardware Refresh[] button.
-The next time the {susemgr}
- Daemon ([systemitem]``rhnsd``
-) connects to {susemgr}
-, it will update your system profile with the latest hardware information.
+The next time the {susemgr} Daemon ([systemitem]``rhnsd``
+) connects to {susemgr}, it will update your system profile with the latest hardware information.
 
 [[_s5_sm_system_details_migrate]]
 ==== System Details >  Details  >  Migrate
@@ -810,8 +783,7 @@ image::system_details_traditional_software_packages.png[scaledwidth=80%]
 
 [WARNING]
 ====
-When new packages or updates are installed on the client via {susemgr}
-, any licenses (EULAs) requiring agreement before installation are automatically accepted.
+When new packages or updates are installed on the client via {susemgr}, any licenses (EULAs) requiring agreement before installation are automatically accepted.
 ====
 
 Packages::
@@ -820,8 +792,7 @@ To update or complete a potentially outdated list, possibly because of the manua
 button in the bottom right-hand corner of this page.
 The next time the {susemgr}
 daemon ([systemitem]``rhnsd``
-) connects to {susemgr}
-, it updates your system profile with the latest list of installed packages.
+) connects to {susemgr}, it updates your system profile with the latest list of installed packages.
 
 List / Remove::
 Lists installed packages and enables you to remove them.
@@ -925,8 +896,7 @@ To change the base software channel the system is subscribed to select a differe
 To modify the child channels associated with this system, in the right selection box use the check boxes left to the channel names.
 If you enable menu:include recommended[]
 , recommended child channels are automatically selected for subscription.
-Starting with {sle}
- 15, child channels can depend on each other.
+Starting with {sle} 15, child channels can depend on each other.
 In the channel subscription you can see the dependencies by hovering with a mouse on a child channel name.
 Selecting a channel that depends on another channel will select this channel, too; unselecting a channel on which some other channels depend will also unselect those channels.
 
@@ -1145,8 +1115,7 @@ ifdef::showremarks[]
 #emap 2014-04-22: Still accurate?#
 endif::showremarks[]
 
-This subtab compares a configuration file stored on the {susemgr}
- with the file stored on the client.
+This subtab compares a configuration file stored on the {susemgr} with the file stored on the client.
 (It does not compare versions of the same file stored in different channels.)
 
 
@@ -1185,8 +1154,7 @@ For example, the higher-ranked channel may have an [path]``httpd.conf``
 === System Details >  Provisioning  [Management]
 
 
-The menu:Provisioning[] tab and its subtabs allow you to schedule and monitor {ay}
- or Kickstart installations and to restore a system to its previous state.
+The menu:Provisioning[] tab and its subtabs allow you to schedule and monitor {ay} or Kickstart installations and to restore a system to its previous state.
 
 .Available for Clients Using the "`Traditional`"Method
 [NOTE]
@@ -1233,8 +1201,7 @@ Select a time for the autoinstallation to begin and click menu:Schedule Autoinst
 
 Alternatively, click menu:Create PXE Installation Configuration[] to create a Cobbler system record.
 The selected autoinstallation profile will be used to automatically install the configured distribution next time that particular system boots from PXE.
-In this case {susemgr}
- and its network must be properly configured to allow boot using PXE.
+In this case {susemgr} and its network must be properly configured to allow boot using PXE.
 
 [NOTE]
 ====
@@ -1256,8 +1223,7 @@ GATEWAY=192.168.0.1
 
 
 To use the system variable, use the name of the variable in the profile instead of the value.
-For example, the [option]``network`` portion of a {kickstart}
- file could look like the following:
+For example, the [option]``network`` portion of a {kickstart} file could look like the following:
 
 ----
 network --bootproto=static --device=eth0 --onboot=on --ip=$IPADDR \
@@ -1273,8 +1239,7 @@ There is a hierarchy when creating and using variables in {kickstart}
 files.
 System {kickstart}
 variables take precedence over profile variables, which in turn take precedence over distribution variables.
-Understanding this hierarchy can alleviate confusion when using variables in {kickstart}
-s.
+Understanding this hierarchy can alleviate confusion when using variables in {kickstart}s.
 ====
 
 
@@ -1294,8 +1259,7 @@ image::system_details_traditional_provisioning_power_management.png[scaledwidth=
 
 You need a fully patched {susemgr}
 installation.
-To use any power management functionality, IPMI configuration details must be added to {susemgr}
-.
+To use any power management functionality, IPMI configuration details must be added to {susemgr}.
 First select the target system on the systems list, then select menu:Provisioning[Power
      Management]
 .
@@ -1434,8 +1398,7 @@ This field indicates the Base Channel to which the guest is subscribed.
 
 [NOTE]
 ====
-If a guest system has not registered with {susemgr}
-, this information appears as plain text in the table.
+If a guest system has not registered with {susemgr}, this information appears as plain text in the table.
 ====
 
 
@@ -1634,8 +1597,7 @@ To go back to the table again, click menu:Return to history list[] at the bottom
 (((Web Interface,System Groups)))
 
 
-The menu:System Groups[] page allows {susemgr}
- users to view the menu:System Groups[] list.
+The menu:System Groups[] page allows {susemgr} users to view the menu:System Groups[] list.
 
 
 image::systems_systemgroups.png[scaledwidth=80%]
@@ -1720,8 +1682,7 @@ To change this information, click menu:Edit These Properties[], make your change
 Lists all members of the system group.
 Clicking links within the table takes you to corresponding tabs within the menu:System Details[] page for the associated system.
 To remove systems from the group, select the appropriate check boxes and click the menu:Remove Systems[] button on the bottom of the page.
-Clicking it does not delete systems from {susemgr}
- entirely.
+Clicking it does not delete systems from {susemgr} entirely.
 This is done through the menu:System Set Manager[] or menu:System Details[] pages.
 Refer to <<_ref.webui.systems.ssm>> or <<_s3_sm_system_details>>, respectively.
 
@@ -1758,8 +1719,7 @@ A state applied from this page will be applied to all minions within a group.
 
 [NOTE]
 ====
-States are applied according to the following order of hierarchy within {susemgr}
-:
+States are applied according to the following order of hierarchy within {susemgr}:
 
 ----
 Organization > Group > Single System
@@ -2222,8 +2182,7 @@ Newer versions created after scheduling are disregarded.
 ==== System Set Manager >  Configuration  >  Compare Files
 
 
-Use this subtab to validate configuration files on the selected systems against copies in your central repository on {susemgr}
-.
+Use this subtab to validate configuration files on the selected systems against copies in your central repository on {susemgr}.
 
 
 image::systems_ssm_config_compare_files.png[scaledwidth=80%]
@@ -2232,13 +2191,11 @@ image::systems_ssm_config_compare_files.png[scaledwidth=80%]
 The table lists the configuration files associated with any of the selected systems.
 Clicking a file's system count displays the systems already subscribed to the file.
 
-To compare the configuration files deployed on the systems with those in {susemgr}
-, select the check box for each file to be validated.
+To compare the configuration files deployed on the systems with those in {susemgr}, select the check box for each file to be validated.
 Then click menu:Analyze Differences[Schedule File
      Comparison]
 .
-The comparisons for each system will not complete until each system checks in to {susemgr}
-.
+The comparisons for each system will not complete until each system checks in to {susemgr}.
 When each comparison is complete, any differences between the files will be accessible from each system's events page.
 
 Note that the latest versions of the files, at the time of scheduling, are compared.
@@ -2339,17 +2296,13 @@ You will see a list of available profiles to select from when you click menu:Con
 Choose menu:Autoinstall by IP Address[] to apply different autoinstallation profiles to different systems in the set, by IP address.
 To do so, at least two autoinstallation profiles must be configured with associated IP ranges.
 
-If you use menu:Autoinstall by IP Address[], {susemgr}
- will automatically pick a profile for each system so that the system's IP address will be in one of the IP ranges specified in the profile itself.
-If such a profile cannot be found, {susemgr}
- will look for an organization default profile and apply that instead. If no matching IP ranges nor organization default profiles can be found, no autoinstallation will be performed on the system.
+If you use menu:Autoinstall by IP Address[], {susemgr} will automatically pick a profile for each system so that the system's IP address will be in one of the IP ranges specified in the profile itself.
+If such a profile cannot be found, {susemgr} will look for an organization default profile and apply that instead. If no matching IP ranges nor organization default profiles can be found, no autoinstallation will be performed on the system.
 You will be notified on the next page if that happens.
 
 To use Cobbler system records for autoinstallation, select menu:Create PXE Installation Configuration[].
-With PXE boot, you cannot only reinstall clients, but automatically install machines that do not have an operating system installed yet. {susemgr}
- and its network must be properly configured to enable boot using PXE.
-For more information on Cobbler and {kickstart}
- templates, refer to <<_advanced.topics.cobbler>>.
+With PXE boot, you cannot only reinstall clients, but automatically install machines that do not have an operating system installed yet. {susemgr} and its network must be properly configured to enable boot using PXE.
+For more information on Cobbler and {kickstart} templates, refer to <<_advanced.topics.cobbler>>.
 
 [NOTE]
 ====
@@ -2518,8 +2471,7 @@ To cancel a reboot action, see <<_ref.webui.schedule.pending>>.
 == Bootstrapping [Salt]
 
 
-The menu:Bootstrapp Minions[] page allows you to bootstrap Salt minions from the {webui}
-.
+The menu:Bootstrapp Minions[] page allows you to bootstrap Salt minions from the {webui}.
 
 .Bootstrapping
 
@@ -2536,8 +2488,7 @@ The default is ``22``.
 
 User::
 Input the minions user login.
-The default is {rootuser}
-.
+The default is {rootuser}.
 
 Password::
 Input the minions login password.
@@ -2613,8 +2564,7 @@ This can be performed in two ways:
 === Virtualization Hierarchy
 
 
-The following is an example graphical representation tree of the virtual network hierarchy of virtual systems registered with {susemgr}
-.
+The following is an example graphical representation tree of the virtual network hierarchy of virtual systems registered with {susemgr}.
 
 
 image::systems_visualization_virtualization_hierarchy.png[scaledwidth=80%]
@@ -2624,8 +2574,7 @@ image::systems_visualization_virtualization_hierarchy.png[scaledwidth=80%]
 === Proxy Hierarchy
 
 
-The following is an example graphical representation tree of the proxy network hierarchy of proxy systems and their clients registered with {susemgr}
-.
+The following is an example graphical representation tree of the proxy network hierarchy of proxy systems and their clients registered with {susemgr}.
 
 
 image::systems_proxy_heirarchy.png[scaledwidth=80%]
@@ -2635,8 +2584,7 @@ image::systems_proxy_heirarchy.png[scaledwidth=80%]
 === Systems Grouping
 
 
-The following is a graphical representation tree of the all systems registered with {susemgr}
-.
+The following is a graphical representation tree of the all systems registered with {susemgr}.
 
 
 image::visualization_system_grouping_all.png[scaledwidth=80%]
@@ -2739,9 +2687,7 @@ Commas are problematic because they are used as separator when two or more activ
 . menu:Base Channels[] -- The primary channel for the key. This can be either the `{susemgr} Default` channel, a {suse} provided channel, or a custom base channel.
 +
 Selecting `{susemgr}
-Default` allows client systems to register with the {suse}
--provided default channel that corresponds with their installed version of {sle}
-.
+Default` allows client systems to register with the {suse}-provided default channel that corresponds with their installed version of {sle}.
 You can also associate the key with a custom base channel.
 If a system using this key is not compatible with the selected channel, it will fall back to the {susemgr}
 default channel.
@@ -2808,8 +2754,7 @@ Click the menu:Update Activation Keys[] button on the bottom right-hand corner o
 
 Multiple activation keys can be specified at the command line or in a single autoinstallation profile.
 This allows you to aggregate the aspects of various keys without re-creating a specific key for every system that you want to register, simplifying the registration and autoinstallation processes while slowing the growth of your key list.
-Separate keys with a comma at the command line with [command]``rhnreg_ks`` or in a {kickstart}
- profile in the menu:Activation Keys[] tab of the menu:Autoinstallation Details[] page.
+Separate keys with a comma at the command line with [command]``rhnreg_ks`` or in a {kickstart} profile in the menu:Activation Keys[] tab of the menu:Autoinstallation Details[] page.
 
 Registering with multiple activation keys requires some caution.
 Conflicts between some values cause registration to fail.
@@ -2877,16 +2822,13 @@ include::reference-webui-systems-autoinstallation.adoc[leveloffset=1]
 
 
 Third party hypervisors and hypervisor managers such as VMWare vCenter are called "`Virtual Host Managers`"
- (VHM) within {susemgr}
-.
-These managers can manage one or multiple virtual hosts, which in turn may contain virtual guests. {susemgr}
- ships with a tool called [command]``virtual-host-gatherer`` that can connect to VHMs using their API, and request information about virtual hosts.
+ (VHM) within {susemgr}.
+These managers can manage one or multiple virtual hosts, which in turn may contain virtual guests. {susemgr} ships with a tool called [command]``virtual-host-gatherer`` that can connect to VHMs using their API, and request information about virtual hosts.
 This tool is automatically invoked via Taskomatic nightly, therefore you need to configure your VHMs via XMLRPC APIs. [command]``virtual-host-gatherer`` maintains the concept of optional modules, where each module enables a specific Virtual Host Manager.
 
 Proceed to menu:Systems[Virtual Host
    Managers]
- page in the {webui}
- to begin working with a Virtual Host Manager.
+ page in the {webui} to begin working with a Virtual Host Manager.
 In the upper right you can click menu:Create[] and select either menu:VMware-based[] or menu:File-based[].
 
 [[_ref.webui.systems.virt_host_managers.vmware]]
