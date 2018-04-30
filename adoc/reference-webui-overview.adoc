@@ -214,9 +214,7 @@ IMPORTANT: This setting also enables Management and Provisioning customers to re
 These include actions affecting packages, such as scheduled patches, system reboots, or failures to check in.
 In addition to selecting this check box, you must identify each system to be included in this summary email.
 By default, all Management and Provisioning systems are included in the summary.
-Add more systems either individually on the menu:System Details[]
- page or for multiple systems at once in the menu:Systems[System Set Manager]
- interface.
+Add more systems either individually on the menu:System Details[] page or for multiple systems at once in the menu:Systems[System Set Manager] interface.
 +
 {susemgr} sends these summaries only to verified email addresses.
 +
