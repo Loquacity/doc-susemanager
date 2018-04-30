@@ -13,13 +13,11 @@
 :icons: font
 :experimental:
 
-If you click menu:Systems[Overview] on the left bar, an overview listing of your menu:Systems[] appears.
+Clicking menu:Systems[Overview] on the left bar, shows an overview listing of your Systems.
 Here you can select systems to perform actions on them and create system profiles.
 
 [[_ref.webui.systems.overview]]
 == Overview
-
-(((SUSE Manager Administrator,System Overview)))
 
 
 The menu:System Overview[] page provides a summary of your systems, including their status, number of associated patches (errata) and packages, and their so-called system type.
